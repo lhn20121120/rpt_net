@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.RangeTemp" 
+    table="RANGE_TEMP"
+>
+	<id
+        name="orgId" 
+        column="ORG_ID" 
+        type="java.lang.String"
+        length="20"
+    >
+        <generator class="sequence">
+			<param name="sequence">Seq_Range_Temp</param>
+		</generator>
+    </id>
+	
+    <property
+        name="childRepId" 
+        column="CHILD_REP_ID" 
+        type="java.lang.String"
+        length="5"
+    >  
+    </property>
+
+	<property
+        name="versionId" 
+        column="VERSION_ID" 
+        type="java.lang.String"
+        length="4"
+    >  
+    </property>
+	
+	<property
+        name="orgClsId"
+		type="java.lang.String"
+		column="Org_Cls_Id"
+		length="10"
+    >  
+    </property>
+
+</class>
+</hibernate-mapping>

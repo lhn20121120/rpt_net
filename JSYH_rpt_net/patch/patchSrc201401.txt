@@ -1,0 +1,6 @@
+src\com\cbrc\smis\adapter\StrutsReportInDelegate.class
+src\com\fitech\gznx\action\ExportPbocAFReportAction.class
+src\com\fitech\gznx\action\UploadFileNXAction.class
+src\com\fitech\gznx\action\ViewReportAgainNXAction.class
+src\com\fitech\gznx\service\AFReportDealDelegate.class
+WebRoot\gznx\report_data\viewNXDataReport.jsp

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.Policy" 
+    table="POLICY"
+>
+
+    <id
+        name="policyId"
+        type="java.lang.Integer"
+        column="POLICY_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">seq_policy</param>
+		</generator>
+    </id>
+
+    <property
+        name="calId"
+        type="int"
+        column="CAL_ID"
+        not-null="true"
+        length="10"
+    />
+    <property
+        name="defineTime"
+        type="java.sql.Timestamp"
+        column="DEFINE_TIME"
+        length="22"
+    />
+    <property
+        name="policyName"
+        type="java.lang.String"
+        column="POLICY_NAME"
+        length="50"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to PolicyExecDetail -->
+    <set
+        name="policyExecDetails"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="POLICY_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.PolicyExecDetail"
+        />
+    </set>
+    <!-- bi-directional many-to-one association to PolicyType -->
+    <many-to-one
+        name="policyType"
+        class="com.cbrc.smis.hibernate.PolicyType"
+        not-null="true"
+    >
+        <column name="POLICY_TYPE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

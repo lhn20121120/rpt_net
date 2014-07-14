@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+<hibernate-mapping>
+ <class name="com.fitech.net.hibernate.JobLog" table="Job_Log">
+        <composite-id name="id" class="com.fitech.net.hibernate.JobLogKey">
+            <key-property name="repId" column="REP_ID" type="java.lang.String"/>
+            <key-property name="year" column="YEAR" type="java.lang.Integer"/>
+            <key-property name="term" column="TERM" type="java.lang.Integer"/>
+            <key-property name="versionId" column="VERSION_ID" type="java.lang.String"/>
+            <key-many-to-one name="org" class="com.fitech.net.hibernate.OrgNet">
+            	<column name="ORG_ID" />
+            </key-many-to-one>
+            <key-many-to-one name="cur" class="com.cbrc.smis.hibernate.MCurr">
+            	<column name="CUR_ID" />
+            </key-many-to-one>
+            <key-many-to-one name="dataRange" class="com.cbrc.smis.hibernate.MDataRgType">
+            	<column name="DATA_RANGE_ID" />
+            </key-many-to-one>
+        </composite-id>
+ 
+        <property name="repName" column="REP_NAME" type="java.lang.String" ></property>
+        <property name="actStTm" column="ACT_ST_TM" type="java.lang.String" />
+        <property name="actEndTm" column="ACT_END_TM" type="java.lang.String" />
+        <property name="jobLog" column="JOB_LOG" type="java.lang.String" />
+        <property name="jobSts" column="JOB_STS" type="java.lang.String" />
+    </class>
+</hibernate-mapping>

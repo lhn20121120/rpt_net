@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.ListingTable" 
+    table="LISTING_TABLES"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.ListingTablePK">
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="tableName" 
+            column="TABLE_NAME" 
+            type="java.lang.String"
+            length="40"
+        />
+    </composite-id>    
+
+    <property
+        name="createTime"
+        type="java.sql.Timestamp"
+        column="CREATE_TIME"
+        length="26"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to MChildReport -->
+    <many-to-one
+        name="MChildReport"
+	    class="com.cbrc.smis.hibernate.MChildReport"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CHILD_REP_ID" />
+    	<column name="VERSION_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

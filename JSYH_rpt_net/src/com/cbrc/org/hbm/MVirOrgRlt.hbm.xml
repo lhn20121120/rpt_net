@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.org.hibernate.MVirOrgRlt" 
+    table="M_VIRORGRLT"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.org.hibernate.MVirOrgRltPK">
+        <key-property 
+            name="virOrgId" 
+            column="VIRORGID" 
+            type="java.lang.String"
+            length="20"
+        />
+        <key-property 
+            name="orgId" 
+            column="ORGID" 
+            type="java.lang.String"
+            length="20"
+        />
+    </composite-id>    
+
+    <property
+        name="sumProp"
+        type="java.lang.String"
+        column="SUMPROP"
+        length="20"
+    />
+    <property
+        name="startDate"
+        type="java.lang.String"
+        column="STARTDATE"
+        length="10"
+    />
+    <property
+        name="endDate"
+        type="java.lang.String"
+        column="ENDDATE"
+        length="10"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

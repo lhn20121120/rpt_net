@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+<data-sources />
+
+
+ <form-beans>
+ 	<!--报表模板FormBean-->
+  <form-bean name="mChildReportForm" type="com.cbrc.smis.form.MChildReportForm"/>
+  <form-bean name="fromCompareForm" type="com.fitech.net.form.FromCompareForm"/>
+  <!--异常变化设定FormBean-->
+	<form-bean name="abnormityChangeForm" type="com.cbrc.smis.form.AbnormityChangeForm"/>
+	 <form-bean name="reportInInfoForm" type="com.cbrc.smis.form.ReportInInfoForm" />
+  <form-bean name="aCompareLogFrom" type="com.fitech.net.form.ACompareLogFrom"/>
+  <form-bean name="aAnalysisTPForm" type="com.fitech.net.form.AAnalysisTPForm"/>
+  
+</form-beans>
+
+ <global-exceptions />
+   <global-forwards />
+	
+   <action-mappings >
+   <!--数据比对列表-->
+	  <action path="/analysis/selectACompareLog"
+	   			type="com.fitech.net.action.SelectACompareLogAction"
+	   			name="aCompareLogFrom"
+	   			scope="request"
+	   			validate="false">
+	   			<forward path="/analysis/ACompareLogList.jsp" name="view"/>
+ 	   	</action>
+ 	 <!--插入比对信息-->
+	  <action path="/analysis/InsertACompareLog"
+	   			type="com.fitech.net.action.InsertACompareLogAction"
+	   			name="aCompareLogFrom"
+	   			scope="request"
+	   			validate="false">
+	   			<forward path="/analysis/selectACompareLog.do" name="view"/>
+ 	   	</action>
+ 	   	
+ 	   	
+ 	   <!--新增统计分析报表模板-->
+	  <action path="/analysis/addAnalysisTemplate"
+	   			type="com.fitech.net.action.AddAnalysisTemplateAction"
+	   			name="aAnalysisTPForm"
+	   			scope="request"
+	   			validate="false">
+	   			<forward path="/analysis/addStatAnalysisTemplate.jsp" name="view"/>
+ 	   	</action>	
+		<!-- 统计报表查看		-->
+ 	   	<action path="/analysis/viewAnalysisTemplate"
+	   			type="com.fitech.net.action.viewAnalysisTemplateAction"
+	   			name="aAnalysisTPForm"
+	   			scope="request"
+	   			validate="false">
+	   			<forward path="/analysis/viewAnalysisTemplate.jsp" name="view"/>
+ 	   	</action>	
+ 	   	<!-- 统计报表删除		-->
+ 	   	<action path="/analysis/deleteAnalysisTemplate"
+	   			type="com.fitech.net.action.DeleteAnalysisTemplateAction"
+	   			name="aAnalysisTPForm"
+	   			scope="request"
+	   			validate="false">
+	   			<forward path="/analysis/viewAnalysisTemplate.do" name="view"/>
+ 	   	</action>	
+ 	   	<!--异常变化设定的显示页面   -->
+ 	   		   	<action path="/analysis/viewMChildReport"
+	   			type="com.fitech.net.action.ViewAnalyMChildReportAction"
+	   			name="mChildReportForm"
+	   			scope="request"
+	   			validate="false">
+	   			<forward path="/analysis/viewMChildReportTemplate.jsp" name="view"/>
+ 	   	</action>
+ 	   	 <!--异常变化标准修改-->
+	   <action path="/analysis/editReportYCBH"
+			   type="com.fitech.net.action.AnalyEditYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false">
+		   <forward name="view" path="/analysis/viewAnalyYCBH.jsp"/>
+	   </action>
+	    <!--更新异常变化标准设定修改-->
+	   <action path="/analysis/analyUpdateYCBH"
+			   type="com.fitech.net.action.AnalyUpdateYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/analysis/editReportYCBH.do">
+		   <forward name="view" path="/analysis/viewMChildReport.do"/>
+	   </action>
+ 	   
+ 	   	  <!--异常变化报表显示列表-->
+ 		<action path="/analysis/viewAnalyReportYCBH"
+			type="com.fitech.net.action.ViewAnalyReportYCBHAction"
+			name="reportInInfoForm" scope="request" validate="false">
+			<forward name="viewSearch"
+			path="/analysis/analy_ycbh_view.jsp" />
+<!--			path="/analysis/analy_ycbh_detail.jsp" />-->
+			
+		</action>
+		<!--异常变化查看-->
+	   <action path="/analysis/viewAnalyYCBHDetail"
+			type="com.fitech.net.action.ViewAnalyYCBHDetailAction" scope="request">
+			<forward name="view"
+				path="/analysis/analy_ycbh_detail.jsp" />
+		</action>
+	   <!-- 动态查询报表的对应单元格 @author wh-->
+		<action path="/analysis/selectCellId"
+			type="com.fitech.net.action.SelectCellIdAction"
+			 validate="false" scope="request">
+		</action>
+		 <action path="/analysis/viewCompare"
+			type="com.fitech.net.action.ViewAnalyCompareAction" 
+			name="fromCompareForm" 
+			scope="request">
+			
+			<forward name="view" path="/analysis/view_Compare.jsp" />
+		</action>
+    </action-mappings>
+    
+</struts-config>

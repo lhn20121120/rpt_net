@@ -1,0 +1,9 @@
+--以下为经济资本报表导出时带机构简称和修正导出Excel错误显示时间的bug
+src\com\fitech\gznx\action\ExportAFReportAction.java
+src\com\fitech\gznx\service\DayReportDelegate.java
+src\com\fitech\gznx\servlet\CreateNXReportServlet.java
+--以下为修改Excel导出时填报机构的需求
+src\com\fitech\gznx\action\EditAFTemplateAction.java
+src\com\fitech\gznx\action\EditRaqAction.java
+src\com\cbrc\smis\excel\CreateExcel.java
+src\com\fitech\gznx\util\ExcelUtil.java

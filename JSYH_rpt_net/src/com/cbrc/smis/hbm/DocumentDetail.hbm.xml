@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.DocumentDetail" 
+    table="DOCUMENT_DETAIL"
+>
+
+    <id
+        name="docDetailId"
+        type="java.lang.Integer"
+        column="DOC_DETAIL_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">seq_document_detail</param>
+		</generator>
+    </id>
+
+    <property
+        name="docContent"
+        type="java.sql.Blob"
+        column="DOC_CONTENT"
+        length="1048576"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to Document -->
+    <many-to-one
+        name="document"
+        class="com.cbrc.smis.hibernate.Document"
+        not-null="true"
+    >
+        <column name="DOC_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

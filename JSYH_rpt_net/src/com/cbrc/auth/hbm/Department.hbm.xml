@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.Department" 
+    table="DEPARTMENT"
+>
+
+    <id
+        name="departmentId"
+        type="java.lang.Long"
+        column="DEPARTMENT_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">SEQ_DEPARTMENT</param>
+		</generator>
+    </id>
+
+    <property
+        name="deptName"
+        type="java.lang.String"
+        column="DEPT_NAME"
+        length="50"
+    />
+
+	<property
+        name="orgId"
+        type="java.lang.String"
+        column="ORG_ID"
+        length="17"
+    />
+    
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to ProductUser -->
+    <many-to-one
+        name="productUser"
+        class="com.cbrc.auth.hibernate.ProductUser"
+        not-null="true"
+    >
+        <column name="PRODUCT_USER_ID" />
+    </many-to-one>
+    <!-- bi-directional one-to-many association to Operator -->
+    <set
+        name="operators"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="DEPARTMENT_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.Operator"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

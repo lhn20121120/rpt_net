@@ -1,0 +1,9 @@
+--以下为经济资本报表导出时带机构简称和修正导出Excel错误显示时间的bug
+WEB-INF\classes\com\fitech\gznx\action\ExportAFReportAction.class
+WEB-INF\classes\com\fitech\gznx\service\DayReportDelegate.class
+WEB-INF\classes\com\fitech\gznx\servlet\CreateNXReportServlet.class
+--以下为修改Excel导出时填报机构的需求
+WEB-INF\classes\com\fitech\gznx\action\EditAFTemplateAction.class
+WEB-INF\classes\com\fitech\gznx\action\EditRaqAction.class
+WEB-INF\classes\com\cbrc\smis\excel\CreateExcel.class
+WEB-INF\classes\com\fitech\gznx\util\ExcelUtil.class

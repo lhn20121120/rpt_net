@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form1>
+	<Subform1>
+		<detailHeader>
+			<A3>A</A3>
+			<FH1>B</FH1>
+			<FH3>D</FH3>
+			<FH4>E</FH4>
+			<FH5>F</FH5>
+			<FH7>H</FH7>
+			<FH8>I</FH8>
+			<F6>贷款</F6>
+			<I6>其他</I6>
+			<FH2>C</FH2>
+			<FH6>G</FH6>
+			<A4>序 号</A4>
+			<B4>股东及其关联人名称</B4>
+			<E4>授 信 余 额</E4>
+			<J4>所缴纳出资额</J4>
+			<K4>授信余额与出资额之比</K4>
+			<E5>合计</E5>
+			<F5>其 中</F5>
+			<G6>担保</G6>
+			<fitechTitle>S38汽车金融公司向股东及其关联人授信情况表</fitechTitle>
+			<fitechUnit>万元</fitechUnit>
+			<fitechRange />
+			<fitechSubmitMonth />
+			<fitechSubmitYear />
+		</detailHeader>
+		<total>
+			<COL1 />
+			<COL4 />
+			<COL5 />
+			<COL7 />
+			<COL8 />
+			<COL9 />
+			<B20 />
+			<C20>不需填报</C20>
+			<COL2>合 计</COL2>
+			<COL6 />
+			<fitechPrincipal />
+			<fitechFiller />
+			<fitechChecker />
+			<fitechVersion>0513</fitechVersion>
+			<jiaoyanwei />
+		</total>
+	</Subform1>
+</form1>

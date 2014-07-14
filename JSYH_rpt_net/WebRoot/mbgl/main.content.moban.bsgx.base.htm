@@ -1,0 +1,1873 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<meta name="Author" content="BroadContact Business Software Co.">
+		<link href="../css/common.css" rel="stylesheet" type="text/css">
+			<style type="text/css"> <!-- .style1 {color: #FF00FF}
+	--></style>
+			<script src="../script/globalScript.js" type="text/javascript" language="javascript"></script>
+	<script id=clientEventHandlersJS language=javascript>
+<!--
+
+function CheckboxTest_onclick() {
+	if (window.CheckboxTest.checked!=false) 
+		//window.open('main.moban.select.htm','newwindow','height=520, width=335, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
+		window.parent.contents.location.assign('main.moban.select.zhengce.htm');
+	else
+		window.CheckboxTest.style.backgroundColor='';
+}
+
+function CheckboxTest2_onclick() {
+	if (window.CheckboxTest2.checked!=false) 
+		//window.open('main.moban.select.htm','newwindow','height=520, width=335, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
+		window.parent.contents.location.assign('main.moban.select.guoyou.htm');
+	else
+		window.CheckboxTest2.style.backgroundColor='';
+}
+
+function Button1_onclick() {
+	window.alert('报送关系已设定，请设定报送频率！');
+	window.parent.contents.location.assign('main.content.moban.bspl.base.htm');
+}
+
+function Button2_onclick() {
+	window.alert('报送关系已发布，请发布最新报送频率！');
+	window.parent.contents.location.assign('main.content.moban.bspl.base.htm');
+}
+
+//-->
+</script>
+</head>
+	<body background="../image/total.gif">
+		<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="1220" border="1">
+			<TR class="tbcolor1">
+				<th colspan="17" align="center" id="list" height="30">
+					<span style="FONT-SIZE: 11pt">基础报表填报范围</span></th>
+			</TR>
+			<TR>
+				<TD height="20" align="center" width="34" class="tableHeader">
+					<b>编号</b></TD>
+				<TD height="20" align="center" width="358" class="tableHeader">
+					<b>报表名称</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>政策性</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>国有</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>股份制</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>城商</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>城信</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>农商</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>农合</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>农信</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>财务</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>信托</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>租赁</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>汽车</b></TD>
+				<TD height="20" align="center" width="58" class="tableHeader">
+					<b>外资法人</b></TD>
+				<TD height="20" align="center" width="58" class="tableHeader">
+					<b>外资分支</b></TD>
+				<TD height="20" align="center" width="48" class="tableHeader">
+					<b>邮储</b></TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G01</font></TD>
+				<TD width="358">资产负债表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox1" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox40" type="checkbox" name="Checkbox2" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox586" type="checkbox" name="Checkbox548" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox625" type="checkbox" name="Checkbox587" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox664" type="checkbox" name="Checkbox626" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox703" type="checkbox" name="Checkbox665" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox742" type="checkbox" name="Checkbox704" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox781" type="checkbox" name="Checkbox743" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox820" type="checkbox" name="Checkbox782" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox859" type="checkbox" name="Checkbox821" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox898" type="checkbox" name="Checkbox860" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox937" type="checkbox" name="Checkbox899" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox469" type="checkbox" name="Checkbox431" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox976" type="checkbox" name="Checkbox938" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox547" type="checkbox" name="Checkbox509" CHECKED>
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center" rowspan="10"><font face="Arial"> G01附注</font></TD>
+				<TD width="358"><font color="#ff0000">第Ⅰ部分：非应计贷款、委托业务及债券发行情况报表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox2" type="checkbox" name="Checkbox1"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox41" type="checkbox" name="Checkbox3" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox587" type="checkbox" name="Checkbox549" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox626" type="checkbox" name="Checkbox588" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox665" type="checkbox" name="Checkbox627"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox704" type="checkbox" name="Checkbox666" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox743" type="checkbox" name="Checkbox705" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox782" type="checkbox" name="Checkbox744" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox821" type="checkbox" name="Checkbox783" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox860" type="checkbox" name="Checkbox822" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox899" type="checkbox" name="Checkbox861"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox938" type="checkbox" name="Checkbox900"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox470" type="checkbox" name="Checkbox432"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox977" type="checkbox" name="Checkbox939"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox548" type="checkbox" name="Checkbox510"></TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅱ部分：贷款质量五级分类情况简表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox3" type="checkbox" name="Checkbox1"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox42" type="checkbox" name="Checkbox4" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox588" type="checkbox" name="Checkbox550" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox627" type="checkbox" name="Checkbox589" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox666" type="checkbox" name="Checkbox628" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox705" type="checkbox" name="Checkbox667" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox744" type="checkbox" name="Checkbox706" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox783" type="checkbox" name="Checkbox745"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox822" type="checkbox" name="Checkbox784"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox861" type="checkbox" name="Checkbox823" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox900" type="checkbox" name="Checkbox862"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox939" type="checkbox" name="Checkbox901"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox471" type="checkbox" name="Checkbox433" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox978" type="checkbox" name="Checkbox940" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox549" type="checkbox" name="Checkbox511"></TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅲ部分：存贷款明细报表（一）</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox4" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox43" type="checkbox" name="Checkbox5" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox589" type="checkbox" name="Checkbox551" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox628" type="checkbox" name="Checkbox590" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox667" type="checkbox" name="Checkbox629" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox706" type="checkbox" name="Checkbox668" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox745" type="checkbox" name="Checkbox707" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox784" type="checkbox" name="Checkbox746" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox823" type="checkbox" name="Checkbox785" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox862" type="checkbox" name="Checkbox824">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox901" type="checkbox" name="Checkbox863">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox940" type="checkbox" name="Checkbox902" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox472" type="checkbox" name="Checkbox434" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox979" type="checkbox" name="Checkbox941" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox550" type="checkbox" name="Checkbox512" CHECKED>
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅳ部分：存贷款明细报表（二）</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox5" type="checkbox" name="Checkbox1"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox44" type="checkbox" name="Checkbox6" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox590" type="checkbox" name="Checkbox552" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox629" type="checkbox" name="Checkbox591" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox668" type="checkbox" name="Checkbox630" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox707" type="checkbox" name="Checkbox669" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox746" type="checkbox" name="Checkbox708" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox785" type="checkbox" name="Checkbox747" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox824" type="checkbox" name="Checkbox786" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox863" type="checkbox" name="Checkbox825"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox902" type="checkbox" name="Checkbox864"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox941" type="checkbox" name="Checkbox903" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox473" type="checkbox" name="Checkbox435" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox980" type="checkbox" name="Checkbox942" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox551" type="checkbox" name="Checkbox513" CHECKED></TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅴ部分：人民币备付率和存贷比报表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox6" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox45" type="checkbox" name="Checkbox7" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox591" type="checkbox" name="Checkbox553" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox630" type="checkbox" name="Checkbox592" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox669" type="checkbox" name="Checkbox631" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox708" type="checkbox" name="Checkbox670" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox747" type="checkbox" name="Checkbox709" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox786" type="checkbox" name="Checkbox748" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox825" type="checkbox" name="Checkbox787" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox864" type="checkbox" name="Checkbox826">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox903" type="checkbox" name="Checkbox865">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox942" type="checkbox" name="Checkbox904">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox474" type="checkbox" name="Checkbox436" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox981" type="checkbox" name="Checkbox943" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox552" type="checkbox" name="Checkbox514">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅵ部分：各项垫款情况表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox7" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox46" type="checkbox" name="Checkbox8" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox592" type="checkbox" name="Checkbox554" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox631" type="checkbox" name="Checkbox593" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox670" type="checkbox" name="Checkbox632" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox709" type="checkbox" name="Checkbox671" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox748" type="checkbox" name="Checkbox710" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox787" type="checkbox" name="Checkbox749" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox826" type="checkbox" name="Checkbox788" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox865" type="checkbox" name="Checkbox827" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox904" type="checkbox" name="Checkbox866" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox943" type="checkbox" name="Checkbox905" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox475" type="checkbox" name="Checkbox437" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox982" type="checkbox" name="Checkbox944" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox553" type="checkbox" name="Checkbox515">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅶ部分：外资银行报表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox8" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox47" type="checkbox" name="Checkbox9">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox593" type="checkbox" name="Checkbox555">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox632" type="checkbox" name="Checkbox594">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox671" type="checkbox" name="Checkbox633">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox710" type="checkbox" name="Checkbox672">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox749" type="checkbox" name="Checkbox711">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox788" type="checkbox" name="Checkbox750">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox827" type="checkbox" name="Checkbox789">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox866" type="checkbox" name="Checkbox828">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox905" type="checkbox" name="Checkbox867">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox944" type="checkbox" name="Checkbox906">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox476" type="checkbox" name="Checkbox438" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox983" type="checkbox" name="Checkbox945" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox554" type="checkbox" name="Checkbox516">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅷ部分：开办租赁业务的机构、信托投资公司报表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox9" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox48" type="checkbox" name="Checkbox10">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox594" type="checkbox" name="Checkbox556">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox633" type="checkbox" name="Checkbox595">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox672" type="checkbox" name="Checkbox634">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox711" type="checkbox" name="Checkbox673">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox750" type="checkbox" name="Checkbox712">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox789" type="checkbox" name="Checkbox751">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox828" type="checkbox" name="Checkbox790" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox867" type="checkbox" name="Checkbox829" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox906" type="checkbox" name="Checkbox868" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox945" type="checkbox" name="Checkbox907">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox477" type="checkbox" name="Checkbox439"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox984" type="checkbox" name="Checkbox946">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox555" type="checkbox" name="Checkbox517">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅸ部分：中国农业发展银行报表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox10" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox49" type="checkbox" name="Checkbox11">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox595" type="checkbox" name="Checkbox557">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox634" type="checkbox" name="Checkbox596">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox673" type="checkbox" name="Checkbox635">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox712" type="checkbox" name="Checkbox674">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox751" type="checkbox" name="Checkbox713">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox790" type="checkbox" name="Checkbox752">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox829" type="checkbox" name="Checkbox791">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox868" type="checkbox" name="Checkbox830">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox907" type="checkbox" name="Checkbox869">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox946" type="checkbox" name="Checkbox908">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox478" type="checkbox" name="Checkbox440"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox985" type="checkbox" name="Checkbox947">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox556" type="checkbox" name="Checkbox518">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅹ部分：中国进出口银行报表 </font>
+				</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox11" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox50" type="checkbox" name="Checkbox12">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox596" type="checkbox" name="Checkbox558">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox635" type="checkbox" name="Checkbox597">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox674" type="checkbox" name="Checkbox636">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox713" type="checkbox" name="Checkbox675">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox752" type="checkbox" name="Checkbox714">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox791" type="checkbox" name="Checkbox753">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox830" type="checkbox" name="Checkbox792">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox869" type="checkbox" name="Checkbox831">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox908" type="checkbox" name="Checkbox870">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox947" type="checkbox" name="Checkbox909">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox479" type="checkbox" name="Checkbox441"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox986" type="checkbox" name="Checkbox948">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox557" type="checkbox" name="Checkbox519">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G02</font></TD>
+				<TD width="358">表外业务统计表</TD>
+				<TD width="48" align="center">
+					<INPUT id="CheckboxTest" style="BACKGROUND-COLOR: #c0c0c0" type="checkbox" name="CheckboxTest"
+						CHECKED onclick="return CheckboxTest_onclick()">
+				</TD>
+				<TD width="48" align="center"><INPUT id="CheckboxTest2" style="BACKGROUND-COLOR: #c0c0c0" type="checkbox" CHECKED name="CheckboxTest2" onclick="return CheckboxTest2_onclick()"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox597" type="checkbox" CHECKED name="Checkbox559"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox636" type="checkbox" CHECKED name="Checkbox598"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox675" type="checkbox" name="Checkbox637"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox714" type="checkbox" CHECKED name="Checkbox676"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox753" type="checkbox" CHECKED name="Checkbox715"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox792" type="checkbox" name="Checkbox754"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox831" type="checkbox" name="Checkbox793"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox870" type="checkbox" CHECKED name="Checkbox832"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox909" type="checkbox" name="Checkbox871"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox948" type="checkbox" name="Checkbox910"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox480" type="checkbox" name="Checkbox442" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox987" type="checkbox" name="Checkbox949" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox558" type="checkbox" name="Checkbox520">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G03</font></TD>
+				<TD width="358">各项资产减值准备情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox13" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox52" type="checkbox" name="Checkbox14" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox598" type="checkbox" name="Checkbox560" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox637" type="checkbox" name="Checkbox599" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox676" type="checkbox" name="Checkbox638" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox715" type="checkbox" name="Checkbox677" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox754" type="checkbox" name="Checkbox716" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox793" type="checkbox" name="Checkbox755" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox832" type="checkbox" name="Checkbox794" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox871" type="checkbox" name="Checkbox833" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox910" type="checkbox" name="Checkbox872" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox949" type="checkbox" name="Checkbox911" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox481" type="checkbox" name="Checkbox443" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox988" type="checkbox" name="Checkbox950" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox559" type="checkbox" name="Checkbox521">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G04</font></TD>
+				<TD width="358">利润表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox14" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox53" type="checkbox" name="Checkbox15" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox599" type="checkbox" name="Checkbox561" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox638" type="checkbox" name="Checkbox600" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox677" type="checkbox" name="Checkbox639" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox716" type="checkbox" name="Checkbox678" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox755" type="checkbox" name="Checkbox717" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox794" type="checkbox" name="Checkbox756" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox833" type="checkbox" name="Checkbox795" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox872" type="checkbox" name="Checkbox834" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox911" type="checkbox" name="Checkbox873" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox950" type="checkbox" name="Checkbox912" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox482" type="checkbox" name="Checkbox444" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox989" type="checkbox" name="Checkbox951" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox560" type="checkbox" name="Checkbox522">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G05</font></TD>
+				<TD width="358">利润分配表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox15" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox54" type="checkbox" name="Checkbox16" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox600" type="checkbox" name="Checkbox562" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox639" type="checkbox" name="Checkbox601" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox678" type="checkbox" name="Checkbox640" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox717" type="checkbox" name="Checkbox679" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox756" type="checkbox" name="Checkbox718" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox795" type="checkbox" name="Checkbox757">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox834" type="checkbox" name="Checkbox796" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox873" type="checkbox" name="Checkbox835" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox912" type="checkbox" name="Checkbox874" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox951" type="checkbox" name="Checkbox913" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox483" type="checkbox" name="Checkbox445" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox990" type="checkbox" name="Checkbox952" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox561" type="checkbox" name="Checkbox523">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center" rowspan="3" height="82"><font face="Arial">G11</font></TD>
+				<TD width="358">
+					<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+						<font color="#ff0000">资产质量五级分类情况表</font></p>
+					<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+						<font color="#ff0000">第Ⅰ部分：按行业分的贷款（按贷款投向）</font></p>
+				</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox16" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox55" type="checkbox" name="Checkbox17" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox601" type="checkbox" name="Checkbox563" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox640" type="checkbox" name="Checkbox602" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox679" type="checkbox" name="Checkbox641">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox718" type="checkbox" name="Checkbox680" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox757" type="checkbox" name="Checkbox719" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox796" type="checkbox" name="Checkbox758">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox835" type="checkbox" name="Checkbox797">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox874" type="checkbox" name="Checkbox836" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox913" type="checkbox" name="Checkbox875">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox952" type="checkbox" name="Checkbox914">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox484" type="checkbox" name="Checkbox446" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox991" type="checkbox" name="Checkbox953" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox562" type="checkbox" name="Checkbox524">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅱ部分：资产质量及准备金</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox17" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox56" type="checkbox" name="Checkbox18" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox602" type="checkbox" name="Checkbox564" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox641" type="checkbox" name="Checkbox603" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox680" type="checkbox" name="Checkbox642">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox719" type="checkbox" name="Checkbox681" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox758" type="checkbox" name="Checkbox720" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox797" type="checkbox" name="Checkbox759">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox836" type="checkbox" name="Checkbox798">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox875" type="checkbox" name="Checkbox837" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox914" type="checkbox" name="Checkbox876">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox953" type="checkbox" name="Checkbox915">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox485" type="checkbox" name="Checkbox447" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox992" type="checkbox" name="Checkbox954" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox563" type="checkbox" name="Checkbox525">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358" height="24"><font color="#ff0000">第Ⅲ部分：汽车金融公司适用的贷款分类情况</font></TD>
+				<TD width="48" align="center" height="24"><INPUT id="Checkbox18" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox57" type="checkbox" name="Checkbox19">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox603" type="checkbox" name="Checkbox565">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox642" type="checkbox" name="Checkbox604">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox681" type="checkbox" name="Checkbox643">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox720" type="checkbox" name="Checkbox682">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox759" type="checkbox" name="Checkbox721">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox798" type="checkbox" name="Checkbox760">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox837" type="checkbox" name="Checkbox799">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox876" type="checkbox" name="Checkbox838" CHECKED>
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox915" type="checkbox" name="Checkbox877">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox954" type="checkbox" name="Checkbox916">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox486" type="checkbox" name="Checkbox448"></TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox993" type="checkbox" name="Checkbox955">
+				</TD>
+				<TD width="48" align="center" height="24">
+					<INPUT id="Checkbox564" type="checkbox" name="Checkbox526">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G12</font></TD>
+				<TD width="358">贷款质量迁徙变化情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox19" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox58" type="checkbox" name="Checkbox20" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox604" type="checkbox" name="Checkbox566" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox643" type="checkbox" name="Checkbox605" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox682" type="checkbox" name="Checkbox644" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox721" type="checkbox" name="Checkbox683" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox760" type="checkbox" name="Checkbox722" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox799" type="checkbox" name="Checkbox761">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox838" type="checkbox" name="Checkbox800" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox877" type="checkbox" name="Checkbox839" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox916" type="checkbox" name="Checkbox878" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox955" type="checkbox" name="Checkbox917" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox487" type="checkbox" name="Checkbox449" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox994" type="checkbox" name="Checkbox956" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox565" type="checkbox" name="Checkbox527">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G13</font></TD>
+				<TD width="358">最大十家关注类/次级类/可疑类/损失类贷款情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox20" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox59" type="checkbox" name="Checkbox21" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox605" type="checkbox" name="Checkbox567" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox644" type="checkbox" name="Checkbox606" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox683" type="checkbox" name="Checkbox645" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox722" type="checkbox" name="Checkbox684" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox761" type="checkbox" name="Checkbox723" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox800" type="checkbox" name="Checkbox762">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox839" type="checkbox" name="Checkbox801" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox878" type="checkbox" name="Checkbox840" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox917" type="checkbox" name="Checkbox879" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox956" type="checkbox" name="Checkbox918" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox488" type="checkbox" name="Checkbox450" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox995" type="checkbox" name="Checkbox957" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox566" type="checkbox" name="Checkbox528">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G14</font></TD>
+				<TD width="358">授信集中情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox21" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox60" type="checkbox" name="Checkbox22" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox606" type="checkbox" name="Checkbox568" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox645" type="checkbox" name="Checkbox607" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox684" type="checkbox" name="Checkbox646" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox723" type="checkbox" name="Checkbox685" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox762" type="checkbox" name="Checkbox724" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox801" type="checkbox" name="Checkbox763">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox840" type="checkbox" name="Checkbox802" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox879" type="checkbox" name="Checkbox841">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox918" type="checkbox" name="Checkbox880" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox957" type="checkbox" name="Checkbox919" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox489" type="checkbox" name="Checkbox451" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox996" type="checkbox" name="Checkbox958" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox567" type="checkbox" name="Checkbox529">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G15</font></TD>
+				<TD width="358">最大二十家关联方关联交易情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox22" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox61" type="checkbox" name="Checkbox23" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox607" type="checkbox" name="Checkbox569" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox646" type="checkbox" name="Checkbox608" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox685" type="checkbox" name="Checkbox647" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox724" type="checkbox" name="Checkbox686" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox763" type="checkbox" name="Checkbox725" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox802" type="checkbox" name="Checkbox764">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox841" type="checkbox" name="Checkbox803">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox880" type="checkbox" name="Checkbox842">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox919" type="checkbox" name="Checkbox881" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox958" type="checkbox" name="Checkbox920" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox490" type="checkbox" name="Checkbox452" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox997" type="checkbox" name="Checkbox959" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox568" type="checkbox" name="Checkbox530">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center" height="5"><font face="Arial">G16</font></TD>
+				<TD width="358" height="5">抵债资产账龄情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox23" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox62" type="checkbox" name="Checkbox24" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox608" type="checkbox" name="Checkbox570" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox647" type="checkbox" name="Checkbox609" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox686" type="checkbox" name="Checkbox648" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox725" type="checkbox" name="Checkbox687" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox764" type="checkbox" name="Checkbox726" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox803" type="checkbox" name="Checkbox765" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox842" type="checkbox" name="Checkbox804" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox881" type="checkbox" name="Checkbox843" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox920" type="checkbox" name="Checkbox882" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox959" type="checkbox" name="Checkbox921" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox491" type="checkbox" name="Checkbox453" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox998" type="checkbox" name="Checkbox960" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox569" type="checkbox" name="Checkbox531">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G21</font></TD>
+				<TD width="358">流动性期限缺口统计表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox24" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox63" type="checkbox" name="Checkbox25" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox609" type="checkbox" name="Checkbox571" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox648" type="checkbox" name="Checkbox610" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox687" type="checkbox" name="Checkbox649" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox726" type="checkbox" name="Checkbox688" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox765" type="checkbox" name="Checkbox727" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox804" type="checkbox" name="Checkbox766">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox843" type="checkbox" name="Checkbox805" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox882" type="checkbox" name="Checkbox844">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox921" type="checkbox" name="Checkbox883">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox960" type="checkbox" name="Checkbox922" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox492" type="checkbox" name="Checkbox454" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox999" type="checkbox" name="Checkbox961" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox570" type="checkbox" name="Checkbox532">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G22</font></TD>
+				<TD width="358">流动性比例监测表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox25" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox64" type="checkbox" name="Checkbox26" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox610" type="checkbox" name="Checkbox572" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox649" type="checkbox" name="Checkbox611" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox688" type="checkbox" name="Checkbox650" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox727" type="checkbox" name="Checkbox689" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox766" type="checkbox" name="Checkbox728" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox805" type="checkbox" name="Checkbox767" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox844" type="checkbox" name="Checkbox806" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox883" type="checkbox" name="Checkbox845" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox922" type="checkbox" name="Checkbox884" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox961" type="checkbox" name="Checkbox923" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox493" type="checkbox" name="Checkbox455" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1000" type="checkbox" name="Checkbox962" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox571" type="checkbox" name="Checkbox533">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G23</font></TD>
+				<TD width="358">最大十家存款客户情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox26" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox65" type="checkbox" name="Checkbox27" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox611" type="checkbox" name="Checkbox573" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox650" type="checkbox" name="Checkbox612" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox689" type="checkbox" name="Checkbox651" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox728" type="checkbox" name="Checkbox690" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox767" type="checkbox" name="Checkbox729" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox806" type="checkbox" name="Checkbox768" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox845" type="checkbox" name="Checkbox807" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox884" type="checkbox" name="Checkbox846">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox923" type="checkbox" name="Checkbox885">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox962" type="checkbox" name="Checkbox924">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox494" type="checkbox" name="Checkbox456" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1001" type="checkbox" name="Checkbox963" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox572" type="checkbox" name="Checkbox534">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G24</font></TD>
+				<TD width="358">最大十家金融机构同业拆入情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox27" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox66" type="checkbox" name="Checkbox28" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox612" type="checkbox" name="Checkbox574" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox651" type="checkbox" name="Checkbox613" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox690" type="checkbox" name="Checkbox652" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox729" type="checkbox" name="Checkbox691" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox768" type="checkbox" name="Checkbox730" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox807" type="checkbox" name="Checkbox769" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox846" type="checkbox" name="Checkbox808" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox885" type="checkbox" name="Checkbox847" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox924" type="checkbox" name="Checkbox886">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox963" type="checkbox" name="Checkbox925" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox495" type="checkbox" name="Checkbox457" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1002" type="checkbox" name="Checkbox964" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox573" type="checkbox" name="Checkbox535">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G31</font></TD>
+				<TD width="358">有价证券及投资情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox28" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox67" type="checkbox" name="Checkbox29" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox613" type="checkbox" name="Checkbox575" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox652" type="checkbox" name="Checkbox614" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox691" type="checkbox" name="Checkbox653" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox730" type="checkbox" name="Checkbox692" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox769" type="checkbox" name="Checkbox731" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox808" type="checkbox" name="Checkbox770" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox847" type="checkbox" name="Checkbox809" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox886" type="checkbox" name="Checkbox848">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox925" type="checkbox" name="Checkbox887">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox964" type="checkbox" name="Checkbox926">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox496" type="checkbox" name="Checkbox458" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1003" type="checkbox" name="Checkbox965" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox574" type="checkbox" name="Checkbox536">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G32</font></TD>
+				<TD width="358">外汇风险敞口情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox29" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox68" type="checkbox" name="Checkbox30" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox614" type="checkbox" name="Checkbox576" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox653" type="checkbox" name="Checkbox615" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox692" type="checkbox" name="Checkbox654">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox731" type="checkbox" name="Checkbox693" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox770" type="checkbox" name="Checkbox732" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox809" type="checkbox" name="Checkbox771">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox848" type="checkbox" name="Checkbox810" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox887" type="checkbox" name="Checkbox849">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox926" type="checkbox" name="Checkbox888">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox965" type="checkbox" name="Checkbox927">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox497" type="checkbox" name="Checkbox459" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1004" type="checkbox" name="Checkbox966" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox575" type="checkbox" name="Checkbox537">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G33</font></TD>
+				<TD width="358">利率风险情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox30" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox69" type="checkbox" name="Checkbox31" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox615" type="checkbox" name="Checkbox577" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox654" type="checkbox" name="Checkbox616" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox693" type="checkbox" name="Checkbox655">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox732" type="checkbox" name="Checkbox694" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox771" type="checkbox" name="Checkbox733" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox810" type="checkbox" name="Checkbox772">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox849" type="checkbox" name="Checkbox811" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox888" type="checkbox" name="Checkbox850" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox927" type="checkbox" name="Checkbox889">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox966" type="checkbox" name="Checkbox928" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox498" type="checkbox" name="Checkbox460" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1005" type="checkbox" name="Checkbox967" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox576" type="checkbox" name="Checkbox538">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G41</font></TD>
+				<TD width="358">资本充足率汇总表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox31" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox70" type="checkbox" name="Checkbox32" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox616" type="checkbox" name="Checkbox578" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox655" type="checkbox" name="Checkbox617" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox694" type="checkbox" name="Checkbox656" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox733" type="checkbox" name="Checkbox695" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox772" type="checkbox" name="Checkbox734" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox811" type="checkbox" name="Checkbox773">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox850" type="checkbox" name="Checkbox812" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox889" type="checkbox" name="Checkbox851" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox928" type="checkbox" name="Checkbox890" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox967" type="checkbox" name="Checkbox929" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox499" type="checkbox" name="Checkbox461" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1006" type="checkbox" name="Checkbox968" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox577" type="checkbox" name="Checkbox539">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G42</font></TD>
+				<TD width="358">表内加权风险资产情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox32" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox71" type="checkbox" name="Checkbox33" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox617" type="checkbox" name="Checkbox579" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox656" type="checkbox" name="Checkbox618" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox695" type="checkbox" name="Checkbox657" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox734" type="checkbox" name="Checkbox696" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox773" type="checkbox" name="Checkbox735" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox812" type="checkbox" name="Checkbox774">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox851" type="checkbox" name="Checkbox813" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox890" type="checkbox" name="Checkbox852" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox929" type="checkbox" name="Checkbox891" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox968" type="checkbox" name="Checkbox930" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox500" type="checkbox" name="Checkbox462" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1007" type="checkbox" name="Checkbox969" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox578" type="checkbox" name="Checkbox540">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center" height="20"><font face="Arial">G43</font></TD>
+				<TD width="358" height="20">表外加权风险资产情况表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox33" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox72" type="checkbox" name="Checkbox34" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox618" type="checkbox" name="Checkbox580" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox657" type="checkbox" name="Checkbox619" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox696" type="checkbox" name="Checkbox658" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox735" type="checkbox" name="Checkbox697" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox774" type="checkbox" name="Checkbox736" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox813" type="checkbox" name="Checkbox775">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox852" type="checkbox" name="Checkbox814" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox891" type="checkbox" name="Checkbox853" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox930" type="checkbox" name="Checkbox892" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox969" type="checkbox" name="Checkbox931" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox501" type="checkbox" name="Checkbox463" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1008" type="checkbox" name="Checkbox970" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox579" type="checkbox" name="Checkbox541">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G51</font></TD>
+				<TD width="358">客户大额授信统计表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox34" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox73" type="checkbox" name="Checkbox35" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox619" type="checkbox" name="Checkbox581" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox658" type="checkbox" name="Checkbox620" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox697" type="checkbox" name="Checkbox659" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox736" type="checkbox" name="Checkbox698" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox775" type="checkbox" name="Checkbox737" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox814" type="checkbox" name="Checkbox776" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox853" type="checkbox" name="Checkbox815" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox892" type="checkbox" name="Checkbox854" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox931" type="checkbox" name="Checkbox893" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox970" type="checkbox" name="Checkbox932" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox502" type="checkbox" name="Checkbox464" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1009" type="checkbox" name="Checkbox971" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox580" type="checkbox" name="Checkbox542">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center"><font face="Arial">G52</font></TD>
+				<TD width="358">房地产汽车零售贷款违约统计表</TD>
+				<TD width="48" align="center"><INPUT id="Checkbox35" type="checkbox" name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox74" type="checkbox" name="Checkbox36" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox620" type="checkbox" name="Checkbox582" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox659" type="checkbox" name="Checkbox621" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox698" type="checkbox" name="Checkbox660" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox737" type="checkbox" name="Checkbox699" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox776" type="checkbox" name="Checkbox738" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox815" type="checkbox" name="Checkbox777" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox854" type="checkbox" name="Checkbox816" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox893" type="checkbox" name="Checkbox855" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox932" type="checkbox" name="Checkbox894">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox971" type="checkbox" name="Checkbox933" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox503" type="checkbox" name="Checkbox465" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1010" type="checkbox" name="Checkbox972" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox581" type="checkbox" name="Checkbox543">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="34" align="center" rowspan="4"><font face="Arial">G53</font></TD>
+				<TD width="358"><font color="#ff0000">分地区情况表<br>
+						第Ⅰ部分：资产负债简表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox36" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox75" type="checkbox" name="Checkbox37" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox621" type="checkbox" name="Checkbox583" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox660" type="checkbox" name="Checkbox622" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox699" type="checkbox" name="Checkbox661" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox738" type="checkbox" name="Checkbox700">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox777" type="checkbox" name="Checkbox739">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox816" type="checkbox" name="Checkbox778">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox855" type="checkbox" name="Checkbox817">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox894" type="checkbox" name="Checkbox856">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox933" type="checkbox" name="Checkbox895">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox972" type="checkbox" name="Checkbox934">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox504" type="checkbox" name="Checkbox466" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1011" type="checkbox" name="Checkbox973" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox582" type="checkbox" name="Checkbox544">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅱ部分：利润简表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox37" type="checkbox" CHECKED name="Checkbox1">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox76" type="checkbox" CHECKED name="Checkbox38">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox622" type="checkbox" CHECKED name="Checkbox584">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox661" type="checkbox" CHECKED name="Checkbox623">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox700" type="checkbox" CHECKED name="Checkbox662">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox739" type="checkbox" name="Checkbox701">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox778" type="checkbox" name="Checkbox740">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox817" type="checkbox" name="Checkbox779">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox856" type="checkbox" name="Checkbox818">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox895" type="checkbox" name="Checkbox857">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox934" type="checkbox" name="Checkbox896">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox973" type="checkbox" name="Checkbox935">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox505" type="checkbox" CHECKED name="Checkbox467"></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1012" type="checkbox" CHECKED name="Checkbox974">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox583" type="checkbox" CHECKED name="Checkbox545">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅲ部分：贷款行业情况简表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox38" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox77" type="checkbox" name="Checkbox39" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox623" type="checkbox" name="Checkbox585" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox662" type="checkbox" name="Checkbox624" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox701" type="checkbox" name="Checkbox663" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox740" type="checkbox" name="Checkbox702">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox779" type="checkbox" name="Checkbox741">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox818" type="checkbox" name="Checkbox780">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox857" type="checkbox" name="Checkbox819">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox896" type="checkbox" name="Checkbox858">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox935" type="checkbox" name="Checkbox897">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox974" type="checkbox" name="Checkbox936">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox506" type="checkbox" name="Checkbox468" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1013" type="checkbox" name="Checkbox975" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox584" type="checkbox" name="Checkbox546">
+				</TD>
+			</TR>
+			<TR>
+				<TD width="358"><font color="#ff0000">第Ⅳ部分：五级分类情况简表</font></TD>
+				<TD width="48" align="center"><INPUT id="Checkbox39" type="checkbox" name="Checkbox1" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox78" type="checkbox" name="Checkbox40" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox624" type="checkbox" name="Checkbox586" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox663" type="checkbox" name="Checkbox625" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox702" type="checkbox" name="Checkbox664" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox741" type="checkbox" name="Checkbox703">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox780" type="checkbox" name="Checkbox742">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox819" type="checkbox" name="Checkbox781">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox858" type="checkbox" name="Checkbox820">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox897" type="checkbox" name="Checkbox859">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox936" type="checkbox" name="Checkbox898">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox975" type="checkbox" name="Checkbox937">
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox507" type="checkbox" name="Checkbox469" CHECKED></TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox1014" type="checkbox" name="Checkbox976" CHECKED>
+				</TD>
+				<TD width="48" align="center">
+					<INPUT id="Checkbox585" type="checkbox" name="Checkbox547">
+				</TD>
+			</TR>
+			<TR>
+				<TD colSpan="17" height="17">
+				</TD>
+			</TR>
+			<TR>
+				<TD colSpan="17">
+					<P align="center">
+						有效期：<INPUT class="input-text" id="Text2" type="text" size="10" name="Text1" value="0000/00/00"> 
+						-
+									<INPUT class="input-text" id="Text3" type="text" size="10" name="Text2" value="0000/00/00">&nbsp;&nbsp;&nbsp;
+						<INPUT id="Button1" type="submit" value=" 保 存 " name="Button1" class="input-button" onclick="return Button1_onclick()">&nbsp;&nbsp;&nbsp;
+						<INPUT id="Button2" type="submit" value=" 发 布 " name="Button2" class="input-button" onclick="return Button2_onclick()">&nbsp;&nbsp;&nbsp;
+						<input class="input-button" id="OK" onclick="window.history.back()" type="submit" value=" 返 回 "
+						name="OK"></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.MPurBanklevel" 
+    table="M_PUR_BANKLEVEL"
+>
+	<composite-id name="comp_id" class="com.cbrc.auth.hibernate.MPurBanklevelKey">
+		<key-many-to-one
+	        name="MBankLevel"
+		    class="com.cbrc.auth.hibernate.MBankLevel"
+		>
+	        <column name="BANK_LEVEL_ID" />
+		</key-many-to-one>
+		
+		<key-property 
+		    name="childRepId" 
+		    type="java.lang.String"
+		    column="CHILD_REP_ID" 
+		/>
+		
+		<key-property 
+		    name="powType" 
+		    type="java.lang.Integer"
+		    column="POW_TYPE" 
+		/>
+		
+		<key-many-to-one
+	        name="MUserGrp"
+		    class="com.cbrc.auth.hibernate.MUserGrp"
+		>
+	        <column name="USER_GRP_ID" />
+	    </key-many-to-one>        
+    </composite-id>	
+</class>
+</hibernate-mapping>

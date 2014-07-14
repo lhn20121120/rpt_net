@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="afForceRepForm" type="com.cbrc.smis.form.AFForceRepForm"></form-bean>
+		<form-bean name="afReportForm" type="com.fitech.gznx.form.AFReportForm" />
+		<!-- 数据痕迹form -->
+		<form-bean name="afDataTraceForm" type="com.cbrc.org.form.AFDataTraceForm"></form-bean>
+		<form-bean name="afTemplatForm" type="com.fitech.gznx.form.AFTemplateForm" />
+		<form-bean name="afTemplateForm" type="com.fitech.gznx.form.AFTemplateForm" />
+		<form-bean name="reportCheckForm" type="com.fitech.gznx.form.ReportCheckForm" />
+		<form-bean name="afGatherformulaFrom" type="com.fitech.gznx.form.AFGatherformulaFrom" />
+		<form-bean name="AddcheckForm" type="com.fitech.gznx.form.AddcheckForm" />
+		<form-bean name="rhReportForm" type="com.fitech.gznx.form.RhReportForm" />
+		<!--在线用户 -->
+		<form-bean name="onlineUserForm" type="com.fitech.gznx.form.OnlineUserForm" />
+		<!--机构-->
+		<form-bean name="orgInfoForm" type="com.fitech.gznx.form.OrgInfoForm" />
+		<!--汇总关系-->
+		<form-bean name="collectRelationForm" type="com.fitech.gznx.form.CollectRelationForm" />
+		<!-- 公告信息 -->
+		<form-bean name="placardForm" type="com.fitech.gznx.form.PlacardForm">
+		</form-bean>
+		<form-bean name="placardUserViewForm" type="com.fitech.gznx.form.PlacardUserViewForm">
+		</form-bean>
+		<!--系统字典表 -->
+		<form-bean name="codeLibForm" type="com.fitech.gznx.form.CodeLibForm" />
+		<form-bean name="mCellForumForm" type="com.cbrc.smis.form.MCellFormuForm" />
+		<form-bean type="com.cbrc.smis.form.UpdateBSFWForm" name="updateBSFWForm" />
+		<form-bean name="mActuRepForm" type="com.cbrc.smis.form.MActuRepForm" />
+		<form-bean name="mCellToFormuForm" type="com.cbrc.smis.form.MCellToFormuForm" />
+		<form-bean type="com.cbrc.smis.form.UpdateBSFWForm" name="updateBSFWForm" />
+		<form-bean name="customViewForm" type="com.fitech.gznx.form.CustomViewForm" />
+		<!-- 领导 -->
+		<form-bean name="LendingQueryForm" type="com.fitech.gznx.form.LendingQueryForm" />
+		<form-bean name="mChildReportForm" type="com.cbrc.smis.form.MChildReportForm" />
+		<form-bean name="afPbocReportForm" type="com.fitech.gznx.form.AFPBOCReportForm" />
+		<!-- 汇率 -->
+    	<form-bean name="exchangeRateForm" type="com.fitech.gznx.form.ExchangeRateForm" />
+    	<form-bean name="sqlQueryForm" type="com.fitech.gznx.form.SqlQueryForm" />
+    	<!-- 特殊校验 -->
+    	<form-bean name="specialValForm" type="com.fitech.specval.form.SpecialValForm" /> 
+    	
+    	<!-- 大额授信校验 -->
+    	<form-bean name="qdValidateForm" type="com.fitech.gznx.form.QDValidateForm" /> 
+    	
+    	<form-bean name="searchDataForm" type="com.fitech.gznx.form.SeachDataForm"></form-bean>
+    	
+    	<form-bean name="vorgRelForm" type="com.cbrc.smis.form.VorgRelForm"></form-bean>
+    	<form-bean name="afTemplateCollRuleForm" type="com.cbrc.smis.form.AfTemplateCollRuleForm"></form-bean>
+    	    	
+    	<form-bean name="dayTaskForm" type="com.fitech.gznx.form.DayTaskForm"></form-bean>
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+
+	<action-mappings>
+		<!-- 归并关系查询 -->
+		<action path="/afreportmerger" type="com.fitech.gznx.action.AFReportMergerAction"
+			name="afTemplatForm" scope="request" validate="false">
+			<forward name="index"
+				path="/gznx/report_supervise/baobiaoguibingguanli.jsp" />
+		</action>
+		
+		<!-- 数据反查 -->
+		<action path="/baobiaofancha" type="com.fitech.gznx.action.AFReportMergerAction"
+			name="afTemplatForm" scope="request" validate="false">
+			<forward name="index"
+				path="/gznx/report_supervise/baobiaofancha.jsp" />
+		</action>
+		<!-- 校验关系查询 -->
+		<action path="/afreportcheck" type="com.fitech.gznx.action.AFReportCheckAction"
+			name="afTemplatForm" scope="request" validate="false">
+			<forward name="index"
+				path="/gznx/report_supervise/jiaoyanguanxiguanli.jsp" />
+		</action>
+		<action path="/reportPortal" type="com.fitech.gznx.action.ReportPortalAction"
+			scope="request" validate="false">
+			<forward name="index" path="/navimenu.jsp" />
+		</action>
+
+		<action path="/afreportDefine" type="com.fitech.gznx.action.AFReportDedineAction"
+			name="afTemplateForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportmgr/reportList.jsp" />
+			<forward name="addreport" path="/gznx/reportmgr/addreport.jsp" />
+		</action>
+		<!-- 汇总公式设定 add by wangmm-->
+		<action path="/gznx/hzformula" type="com.fitech.gznx.action.AFHZFormulaAction"
+			name="orgInfoForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportmgr/hzFormulaList.jsp" />
+			
+		</action>
+		<!-- 汇总公式设定 add by wangmm-->
+		<action path="/gznx/HZRule" type="com.fitech.gznx.action.AFHZRuleAction"
+			name="afTemplateCollRuleForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportmgr/hzRule.jsp" />
+		</action>
+		<action path="/gznx/saveHZRule" type="com.fitech.gznx.action.AFHZRuleSaveAction"
+			name="afTemplateCollRuleForm" scope="request" validate="false">
+			<forward name="fail" path="/gznx/reportmgr/hzRule.jsp" />
+		</action>
+		<action path="/gznx/hzformula" type="com.fitech.gznx.action.AFHZFormulaAction"
+			name="orgInfoForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportmgr/hzFormulaList.jsp" />
+		</action>
+		<!--汇总公式修改-->
+		<action path="/gznx/EditHZGS" type="com.fitech.gznx.action.EditHZGSAction" name="orgInfoForm" validate="false"
+			scope="request">
+			<forward path="/gznx/reportmgr/modHZGS.jsp" name="edit" />
+			<forward path="/gznx/reportmgr/viewHZGS.jsp" name="view" />
+		</action>
+		<!-- 汇总公式设定 add by wangmm-->
+		<!-- 报表定义-->
+		<action path="/afReportAdd" type="com.fitech.gznx.action.AFReportAddAction"
+			name="afTemplateForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportmgr/reportList.jsp" />
+			<forward name="addreport" path="/gznx/reportmgr/addNXTemplate.jsp" />
+			<forward name="addbjgx" path="/gznx/reportmgr/addbjgx.jsp" />
+		</action>
+		<!-- 报表修改-->
+		<action path="/gznx/afTemplateEdit" attribute="afTemplateForm"
+			type="com.fitech.gznx.action.EditAFTemplateAction" name="afTemplateForm"
+			scope="request" validate="false">
+			<forward name="index" path="/gznx/modtemplate/editAFTemplate.jsp" />
+		</action>
+		<action path="/template/viewTemplateRAQ" type="com.fitech.gznx.action.ViewTemplateRaqAction"
+			name="mChildReportForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/modtemplate/editRAQ.jsp" />
+		</action>
+		<action path="/template/updateRAQ" type="com.fitech.gznx.action.EditRaqAction"
+			name="mChildReportForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/modtemplate/editRAQ.jsp" />
+		</action>
+		<!-- 报表生成 -->
+		<action path="/afReportProduct" type="com.fitech.gznx.action.AFReportProductAction"
+			name="afReportForm" attribute="afReportForm" scope="request"
+			validate="false">
+			<forward name="index" path="/gznx/reportdel/reportproductList.jsp" />
+		</action>
+		<!-- 报表生成 -->
+		<action path="/productReport" type="com.fitech.gznx.action.ProductReport"
+			attribute="afReportForm" name="afReportForm" scope="request"
+			validate="false">
+			<forward name="index" path="/afReportProduct.do" />
+		</action>
+		<!-- 报表导出 -->
+		<action path="/exportAFReport" type="com.fitech.gznx.action.ExportAFReportAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportsearch/exportReport.jsp" />
+		</action>
+		<action path="/exportRhAFReport" type="com.fitech.gznx.action.ExportRhAFReportAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportsearch/exportAFReport.jsp" />
+			<forward name="newindex" path="/gznx/reportsearch/exportPbocText.jsp" />
+		</action>
+		<action path="/exportPbocAFReport" attribute="afPbocReportForm"
+			type="com.fitech.gznx.action.ExportPbocAFReportAction" name="afPbocReportForm"
+			scope="request" validate="false">
+			<forward name="index" path="/gznx/reportsearch/exportPbocReport.jsp" />
+			<forward name="add" path="/gznx/reportsearch/pbocexplane.jsp" />
+		</action>
+		<action path="/exportPrintReport" type="com.fitech.gznx.action.ExportPrintReport"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportsearch/exportReport.jsp" />
+			<forward name="print" path="/gznx/reportsearch/directprint1.jsp" />
+		</action>
+
+		<action path="/editAFReport" type="com.fitech.gznx.action.EditAFReportAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="oldindex" path="/gznx/reportadd/editReport.jsp" /> 
+			<!-- 数据痕迹页面 -->
+			<forward name="index" path="/sjhj.jsp" />
+			<forward name="search" path="/gznx/reportadd/viewReport.jsp" />
+			<forward name="searchqd" path="/gznx/reportadd/showqdreport.jsp" />
+		</action>
+		<!-- 报表采集 -->
+		<action path="/editFXAFReport" type="com.fitech.gznx.action.EditFXAFReportAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/reportadd/editFXReport.jsp" />
+		</action>
+		<!-- 灵活查询 -->
+		<action path="/customViewAFReport" type="com.fitech.gznx.action.CustomViewAFReportAction"
+			name="afTemplateForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/customview/customviewList.jsp" />
+
+		</action>
+		<action path="/viewCustomAFReportDetail"
+			type="com.fitech.gznx.action.ViewCustomAFReportDetailAction" name="customViewForm"
+			attribute="customViewForm" scope="request" validate="false">
+			<!-- 数据查询（江苏银行） -->
+			<forward name="index" path="/gznx/customview/shujuchaxuntest.jsp" />
+			<!-- 原本的灵活查询 -->
+			<forward name="indexOld" path="/gznx/customview/viewcustomDetail.jsp" />
+			<forward name="serch" path="/gznx/customview/viewcustomSearch.jsp" />
+			<forward name="view" path="/gznx/customview/viewCustomReport.jsp" />
+		</action>
+
+		<!--********************** 在线用户列表 Begin**************************-->
+		<!-- 校验关系查询 -->
+		<action path="/check" name="reportCheckForm" validate="false"
+			scope="request" type="com.fitech.gznx.action.AFReportCheckViewAction">
+			<forward name="check" path="/gznx/report_supervise/check.jsp" />
+		</action>
+
+		<!-- 校验关系添加 -->
+		<!--
+			<action path="/addcheck" name="mCellForumForm" validate="false"
+			scope="request" type="com.fitech.gznx.action.AddCheckAction">
+			<forward path="/gznx/report_supervise/addcheckfull.jsp" name="add"/>
+			<forward path="/check.do" name="append"/> </action>
+		-->
+		<action path="/gznx/addsaveCheck" type="com.fitech.gznx.action.AddSaveCheckAction"
+			name="mCellForumForm" scope="request" validate="false" parameter="add">
+			<forward path="/check.do" name="check" />
+		</action>
+
+		<!-- 校验关系删除 -->
+		<action path="/deletecheck" name="AddcheckForm" validate="false"
+			scope="request" type="com.fitech.gznx.action.DeleteCheckAction">
+			<forward name="check" path="/gznx/report_supervise/checkfull.jsp" />
+			<forward name="deletecheck" path="/check.do"></forward>
+		<!-- 校验关系上传 -->
+		</action>
+		<action path="/gznx/uploadcheck" type="com.fitech.gznx.action.UploadCheckAction"
+			name="mCellForumForm" scope="request" validate="false">
+			<forward path="/gznx/report_supervise/checkfull.jsp" name="add" />
+			<forward path="/gznx/report_supervise/load_check.jsp" name="append" />
+		</action>
+		<action path="/gznx/saveCheck" type="com.fitech.gznx.action.SaveCheckAction"
+			name="mCellForumForm" scope="request" validate="false" parameter="add"
+			input="/gznx/report_supervise/load_check.jsp">
+			<forward path="/check.do" name="check" />
+		</action>
+		<!-- 校验关系更新 -->
+		<action path="/updatecheck" attribute="reportCheckForm" validate="false"
+			scope="request" name="reportCheckForm" type="com.fitech.gznx.action.UpdateCheckAction">
+			<forward path="/gznx/report_supervise/updatecheck.jsp" name="check" />
+		</action>
+		<action path="/gznx/updatesaveCheck" type="com.fitech.gznx.action.UpdateSaveCheckAction"
+			name="reportCheckForm" scope="request" validate="false" parameter="add">
+			<forward path="/check.do" name="check" />
+			<forward path="/updatecheck.do" name="nocheck" />
+		</action>
+		<!-- 归并关系管理 -->
+		<action path="/guibin" name="afGatherformulaFrom" validate="false"
+			scope="request" type="com.fitech.gznx.action.AFReportmergerViewAction">
+			  <forward name="guibin" path="/gznx/report_supervise/guibin.jsp" />
+			<!--<forward name="guibin" path="/sjfc.jsp" />-->
+		</action>
+		<action path="/system_mgr/viewOnlineUser" type="com.fitech.gznx.action.ViewOnlineUserAction"
+			name="onlineUserForm" scope="request" validate="false">
+			<forward name="onlineList" path="/gznx/systemmgr/online_user_mgr.jsp" />
+		</action>
+
+		<!-- 新增复核start -->
+		<action path="/dateQuary/saveAllCheckRepRecheck"
+			type="com.fitech.gznx.action.UpdateAllReportInRecheckAction" name="saveReportInForm"
+			scope="request" validate="false" input="/report_mgr/report_check/manualReCheck.jsp">
+			<forward name="saveAllCheck" path="/dateQuary/manualCheckRepRecheck.do" />
+		</action>
+		<action path="/dateQuary/saveCheckRepRecheck"
+			type="com.fitech.gznx.action.UpdateReportInRecheckAction" name="saveReportInForm"
+			scope="request" validate="false" input="/report_mgr/report_check/manualReCheck.jsp">
+			<forward name="saveCheck" path="/dateQuary/manualCheckRepRecheck.do" />
+		</action>
+		<action path="/dateQuary/manualCheckRepRecheck" type="com.fitech.gznx.action.ViewReportInRecheckAction"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="viewCheck" path="/report_mgr/report_check/manualReCheck.jsp" />
+		</action>
+		<!-- 新增复核end -->
+		<!-- nx复核start -->
+		<action path="/dateQuary/saveAllCheckRepNXRecheck"
+			type="com.fitech.gznx.action.UpdateAllReportInRecheckAction" name="afReportForm"
+			scope="request" validate="false" input="/gznx/report_data/manualReNXCheck.jsp">
+			<forward name="saveAllCheck" path="/dateQuary/manualCheckRepNXRecheck.do" />
+		</action>
+
+		<action path="/dateQuary/saveCheckRepRecheckNX"
+			type="com.fitech.gznx.action.UpdateNXReportRecheckAction" name="afReportForm"
+			scope="request" validate="false" input="/gznx/report_data/manualReNXCheck.jsp">
+			<forward name="saveCheck" path="/dateQuary/manualCheckRepNXRecheck.do" />
+		</action>
+
+		<action path="/dateQuary/manualCheckRepNXRecheck" type="com.fitech.gznx.action.ViewReportNXRecheckAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="viewCheck" path="/gznx/report_data/manualReNXCheck.jsp" />
+		</action>
+
+		<action path="/dateQuary/manualCheckRepNX" type="com.fitech.gznx.action.ViewReportNXAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="viewCheck" path="/gznx/report_data/manualNXCheck.jsp" />
+
+		</action>
+		<action path="/report/viewNXNotPassInfo" type="com.fitech.gznx.action.ViewNXNotPassInfoAction"
+			scope="request">
+			<forward name="dd_view" path="/gznx/report_data/dd_notPassCause.jsp" />
+			<forward name="qd_view" path="/gznx/report_data/qd_notPassCause.jsp" />
+		</action>
+
+		<action path="/gznx/report_data/viewNXDetail" type="com.fitech.gznx.action.ViewNXDetail"
+			scope="request">
+			<forward name="dd_view" path="/gznx/report_data/dd_jy_detail.jsp" />
+			<forward name="qd_view" path="/gznx/report_data/qd_jy_detail.jsp" />
+		</action>
+
+		<action path="/dateQuary/saveCheckRepNX" type="com.fitech.gznx.action.UpdateReportNXAction"
+			name="afReportForm" scope="request" validate="false"
+			input="/gznx/report_data/manualNXCheck.jsp">
+			<forward name="saveCheck" path="/dateQuary/manualCheckRepNX.do" />
+		</action>
+
+		<!-- nx复核end -->
+		<!--*************机构校验Begin**************-->
+		<!-- 机构校验 -->
+		<action path="/report/validateOrgReport"
+			type="com.fitech.gznx.action.ValidateOrgReportAction" name="afReportForm"
+			validate="false" scope="request">
+		</action>
+		<action path="/report/viewOrgValidateInfo"
+			type="com.fitech.gznx.action.ViewOrgValidateInfoAction" scope="request">
+			<forward name="success" path="/gznx/report_check/org_validate_detail.jsp" /> 
+		</action>
+		<!--*************机构校验end****************-->
+		<!--*************稽核校验Begin**************-->
+		<!-- 校验报表查看 -->
+		<action path="/dateQuary/manualCheckRepValidate"
+			type="com.fitech.gznx.action.ViewValidateReportNXAction" name="afReportForm"
+			scope="request" validate="false">
+			<forward name="viewCheck" path="/gznx/report_check/manualCheckValidate.jsp" />
+		</action>
+		<!-- 批量校验 -->
+		<action path="/dateQuary/validateManualCheckRep" 
+			type="com.fitech.gznx.action.ValidateReportAction"
+			name="afReportForm" scope="request" validate="false">
+		</action>
+		<!--*************稽核校验End**************-->
+
+		<!--*************机构管理Begin**************-->
+		<!--机构信息查看-->
+		<action path="/system_mgr/OrgInfo/view" attribute="orgInfoForm"
+			input="/gznx/org_manager/org_setting.jsp" name="orgInfoForm"
+			validate="false" scope="request" parameter="view"
+			type="com.fitech.gznx.action.OrgInfoAction">
+			<forward name="success" path="/gznx/org_manager/org_setting.jsp" />
+		</action>
+		<!--机构信息增加之前-->
+		<action path="/system_mgr/OrgInfo/beforeAdd" attribute="orgInfoForm"
+			input="/gznx/org_manager/org_setting.jsp" name="orgInfoForm"
+			validate="false" scope="request" parameter="beforeAdd"
+			type="com.fitech.gznx.action.OrgInfoAction">
+			<forward name="success" path="/gznx/org_manager/orgAdd.jsp" />
+		</action>
+		<!--机构信息增加-->
+		<action path="/system_mgr/OrgInfo/add" attribute="orgInfoForm"
+			input="/gznx/org_manager/orgAdd.jsp" name="orgInfoForm" validate="false"
+			scope="request" parameter="add" type="com.fitech.gznx.action.OrgInfoAction">
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+			<forward name="failed" path="/system_mgr/OrgInfo/beforeAdd.do" />
+			<forward name="addCollect" path="/system_mgr/collect/beforeAdd.do" />
+		</action>
+		<!--机构信息删除-->
+		<action path="/system_mgr/OrgInfo/delete" attribute="orgInfoForm"
+			input="/gznx/org_manager/org_setting.jsp" name="orgInfoForm"
+			validate="false" scope="request" parameter="delete"
+			type="com.fitech.gznx.action.OrgInfoAction">
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+			<forward name="failed" path="/system_mgr/OrgInfo/view.do" />
+		</action>
+		<!--机构信息修改之前-->
+		<action path="/system_mgr/OrgInfo/beforeEdit" attribute="orgInfoForm"
+			input="/gznx/org_manager/org_setting.jsp" name="orgInfoForm"
+			validate="false" scope="request" parameter="beforeEdit"
+			type="com.fitech.gznx.action.OrgInfoAction">
+			<forward name="update" path="/gznx/org_manager/orgUpdate.jsp" />
+			<forward name="detail" path="/gznx/org_manager/orgDetail.jsp" />
+		</action>
+		<!--机构信息修改-->
+		<action path="/system_mgr/OrgInfo/edit" attribute="orgInfoForm"
+			input="/gznx/org_manager/orgUpdate.jsp" name="orgInfoForm" validate="false"
+			scope="request" parameter="edit" type="com.fitech.gznx.action.OrgInfoAction">
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+			<forward name="updateCollect" path="/system_mgr/collect/beforeEdit.do" />
+		</action>
+		<!--机构信息修改[设置一级节点]-->
+		<action path="/system_mgr/OrgInfo/setFirstNode" attribute="orgInfoForm"
+			input="/gznx/org_manager/org_setting.jsp" name="orgInfoForm"
+			validate="false" scope="request" parameter="setFirstNode"
+			type="com.fitech.gznx.action.OrgInfoAction">
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+			<forward name="failed" path="/system_mgr/OrgInfo/view.do" />
+		</action>
+		<!--*************机构管理End**************-->
+
+		<!--*************汇总关系管理Begin**************-->
+		<!--汇总关系增加之前-->
+		<action path="/system_mgr/collect/beforeAdd" attribute="collectRelationForm"
+			input="/gznx/org_manager/index_orgInfo.jsp" name="collectRelationForm"
+			validate="false" scope="request" parameter="beforeAdd"
+			type="com.fitech.gznx.action.CollectRelationAction">
+			<forward name="success" path="/gznx/org_manager/collectAdd.jsp" />
+			<forward name="failed" path="/system_mgr/OrgInfo/view.do" />
+		</action>
+		<!--汇总关系增加-->
+		<action path="/system_mgr/collect/add" attribute="collectRelationForm"
+			input="/gznx/org_manager/collectAdd.jsp" name="collectRelationForm"
+			validate="false" scope="request" parameter="add"
+			type="com.fitech.gznx.action.CollectRelationAction">
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+		</action>
+		<!--汇总关系修改之前-->
+		<action path="/system_mgr/collect/beforeEdit" attribute="collectRelationForm"
+			input="/gznx/org_manager/index_orgInfo.jsp" name="collectRelationForm"
+			validate="false" scope="request" parameter="beforeEdit"
+			type="com.fitech.gznx.action.CollectRelationAction">
+			<forward name="detail" path="/gznx/org_manager/collectDetail.jsp" />
+			<forward name="update" path="/gznx/org_manager/collectUpdate.jsp" />
+			<forward name="failed" path="/system_mgr/OrgInfo/view.do" />
+		</action>
+		<!--汇总关系修改-->
+		<action path="/system_mgr/collect/edit" attribute="collectRelationForm"
+			input="/gznx/org_manager/collectUpdate.jsp" name="collectRelationForm"
+			validate="false" scope="request" parameter="edit"
+			type="com.fitech.gznx.action.CollectRelationAction">
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+		</action>
+		<!--*************汇总关系管理End**************-->
+
+		<!-- ********************公告管理（Begin）**********************-->
+		<!--公告查看-->
+		<action path="/placard_mgr/viewPlacardAction" attribute="placardForm"
+			name="placardForm" scope="session" type="com.fitech.gznx.action.ViewPlacardAction"
+			validate="false">
+			<forward name="view" path="/gznx/placard_mgr/placard_mgr.jsp" />
+		</action>
+
+		<!-- ********************查看公告(Begin)**********************-->
+		<!--公告发布-->
+		<action path="/placard_mgr/addPlacardAction" attribute="placardForm"
+			name="placardForm" validate="false" scope="request"
+			type="com.fitech.gznx.action.AddPlacardAction">
+			<forward name="add" path="/gznx/placard_mgr/placard_add.jsp" />
+		</action>
+
+		<!--删除公告-->
+		<action path="/placard_mgr/deletePlacardAction" attribute="placardForm"
+			name="placardForm" scope="request" type="com.fitech.gznx.action.DeletePlacardAction"
+			validate="false">
+		</action>
+
+		<!--修改公告-->
+		<action path="/placard_mgr/updatePlacardAction" attribute="placardForm"
+			name="placardForm" scope="request" type="com.fitech.gznx.action.UpdatePlacardAction"
+			validate="false">
+			<forward name="update" path="/gznx/placard_mgr/placard_update.jsp" />
+		</action>
+
+		<!--查看公告详细信息 -->
+		<action path="/placard_mgr/viewPlacardDetailAction" attribute="placardForm"
+			name="placardForm" scope="request"
+			type="com.fitech.gznx.action.ViewPlacardDetailAction" validate="false">
+			<forward name="update" path="/gznx/placard_mgr/placard_update.jsp" />
+			<forward name="detail" path="/gznx/placard_mgr/placard_detail.jsp" />
+			<forward name="viewState" path="/gznx/placard_mgr/placard_view_state.jsp" />
+			<forward name="userView" path="/gznx/placard_mgr/placard_view_detail.jsp" />
+		</action>
+
+		<action path="/placard_mgr/viewPlacardUserViewAction"
+			attribute="placardUserViewForm" name="placardUserViewForm" scope="session"
+			type="com.fitech.gznx.action.ViewPlacardUserViewAction" validate="false">
+			<forward name="view" path="/gznx/placard_mgr/placard_view.jsp" />
+		</action>
+
+		<!-- ********************查看公告(End)**********************-->
+
+		<!--
+			*********************** 系统字典管理 BEGIN ****************************
+		-->
+		<!-- 系统字典浏览 -->
+		<action path="/system_mgr/viewCodeLib" attribute="codeLibForm"
+			input="/gznx/codeLib_mgr/codeLib_mgr.jsp" name="codeLibForm"
+			validate="false" scope="request" type="com.fitech.gznx.action.ViewCodeLibAction">
+			<forward name="codeLib_mgr" path="/gznx/codeLib_mgr/codeLib_mgr.jsp" />
+		</action>
+		<!--系统字典增加-->
+		<action path="/system_mgr/addCodeLib" type="com.fitech.gznx.action.AddCodeLibAction"
+			attribute="codeLibForm" input="/gznx/codeLib_mgr/addCodeLib.jsp"
+			name="codeLibForm" validate="false" scope="request">
+			<forward name="addCodeLib" path="/gznx/codeLib_mgr/codeLib_mgr.jsp" />
+		</action>
+		<!--系统字典修改信息-->
+		<action path="/system_mgr/codeLibUpdate" attribute="codeLibForm"
+			input="/gznx/codeLib_mgr/codeLib_mgr.jsp" name="codeLibForm"
+			validate="false" scope="request" type="com.fitech.gznx.action.EditCodeLibAction">
+			<forward name="codeLibUpdate" path="/gznx/codeLib_mgr/updateCodeLib.jsp" />
+		</action>
+		<!--系统字典信息修改-->
+		<action path="/system_mgr/updateCodeLib" type="com.fitech.gznx.action.UpdateCodeLibAction"
+			attribute="codeLibForm" input="/gznx/codeLib_mgr/updateCodeLib.jsp"
+			name="codeLibForm" validate="false" scope="request">
+			<forward name="codeLibUpdate" path="/gznx/updateCodeLib.do" />
+		</action>
+		<!--系统字典删除-->
+		<action path="/system_mgr/deleteCodeLib" type="com.fitech.gznx.action.DeleteCodeLibAction"
+			attribute="codeLibForm" input="/gznx/codeLib_mgr/codeLib_mgr.jsp"
+			name="codeLibForm" validate="false" scope="request">
+			<forward name="codeLibDelete" path="/gznx/codeLib_mgr/codeLib_mgr.jsp" />
+		</action>
+		<!-- *********************** 系统字典管理 END ****************************-->
+
+
+		<!--机构报表报送情况统计-->
+		<action path="/reportStatisticsCollect"
+			type="com.fitech.gznx.action.ReportStatisticsCollectAction" name="orgNetForm"
+			scope="request" validate="false">
+			<forward name="view" path="/gznx/report_stat/orgReportStatCol.jsp" />
+		</action>
+		<!-- 查看该机构报表报送情况 -->
+		<action path="/searchReportStat" type="com.fitech.gznx.action.ReportStatAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_stat/report_stat.jsp" />
+		</action>
+		<!--机构报表报送情况统计end-->
+
+
+		<!--淇濆瓨琛ㄥ唴琛ㄩ棿鍏崇郴璁惧畾-->
+		<action path="/gznx/saveBJGX" type="com.fitech.gznx.action.SaveBJGXAction"
+			name="mCellForumForm" scope="request" validate="false" parameter="add"
+			input="/gznx/reportmgr/addbjgx.jsp">
+			<forward path="/gznx/viewBSFW.do" name="tbfwSet" />
+		</action>
+		<action path="/gznx/uploadBJGX" type="com.fitech.gznx.action.UploadBJGXAction"
+			name="mCellForumForm" scope="request" validate="false"
+			input="/gznx/reportmgr/load_gx.jsp">
+			<forward path="/gznx/reportmgr/addbjgx.jsp" name="bjgxSet" />
+			<forward path="/gznx/reportmgr/bjgx_append.jsp" name="bjgx_append" />
+
+		</action>
+		<action path="/gznx/viewBSFW" type="com.fitech.gznx.action.ViewBSFWAction"
+			name="mRepRangeForm" scope="request" validate="false">
+			<forward path="/gznx/reportmgr/addBSFW.jsp" name="view" />
+		</action>
+		<action path="/gznx/insertBSFW" type="com.fitech.gznx.action.InsertBSFWAction"
+			name="updateBSFWForm" scope="request" validate="false">
+			<forward path="/gznx/reportmgr/bspl.jsp" name="setBSPL" />
+		</action>
+		<action path="/gznx/insertAFTemRep" type="com.fitech.gznx.action.InsertAFTemRepAction"
+			name="mActuRepForm" scope="request" validate="false" input="/template/add/bspl.jsp">
+			<forward path="/gznx/reportmgr/addNXTemplate.jsp" name="addtemplate" />
+			<forward path="/gznx/reportmgr/addYCBH.do" name="ycbhSet" />
+			<forward path="/gznx/reportmgr/bspl.jsp" name="bspl" />
+			<forward path="/gznx/addRHReport.do" name="rhsb" />
+		</action>
+		<action path="/gznx/addRHReport" type="com.fitech.gznx.action.AddRHReportAction"
+			name="rhReportForm" scope="request" validate="false" input="/template/add/bspl.jsp">
+			<forward path="/gznx/reportmgr/rhsb.jsp" name="rhsb" />
+		</action>
+		<action path="/viewAFTemplateDetail" attribute="afTemplateForm"
+			name="afTemplateForm" validate="false" scope="request"
+			type="com.fitech.gznx.action.ViewAFTemplateDetailAction">
+			<forward name="templateDetailView" path="/gznx/reportmgr/templateDetailView.jsp" />
+			<forward name="templateList" path="/afreportDefine.do" />
+			<forward name="templateDetailEdit" path="/gznx/reportmgr/templateDetailEdit.jsp" />
+		</action>
+		<action path="/gznx/viewAFCellToFormu" type="com.fitech.gznx.action.ViewAFCellToFormuAction"
+			name="mCellToFormuForm" scope="request" validate="false"
+			input="/gznx/reportmgr/viewbjgx.jsp">
+			<forward path="/gznx/reportmgr/viewbjgx.jsp" name="bjgx" />
+		</action>
+		<action path="/gznx/viewPreBSFW" type="com.fitech.gznx.action.ViewPreBSFWAction"
+			scope="request" validate="false">
+			<forward path="/gznx/reportmgr/viewPreBSFW.jsp" name="view" />
+		</action>
+
+		<action path="/gznx/viewAFActuRept" type="com.fitech.gznx.action.ViewAFActuRepAction"
+			name="mActuRepForm" scope="request" validate="false"
+			input="/gznx/reportmgr/viewbspl.jsp">
+			<forward path="/gznx/reportmgr/viewbspl.jsp" name="bspl" />
+		</action>
+		<action path="/gznx/editBJGXInit" type="com.fitech.gznx.action.EditBJGXAction"
+			scope="request" validate="false" >
+			<forward path="/gznx/reportmgr/bjgx_mod.jsp" name="view" />
+		</action>
+		<!-- 下载表内表间关系 -->
+		<action path="/gznx/downBJGXInit" type="com.fitech.gznx.action.DownBJGXAction"
+			scope="request" validate="false" name="mCellForumForm">
+		
+		</action>
+		<action path="/gznx/preEditBSFW" type="com.fitech.gznx.action.PreEditBSFWAction"
+			scope="request">
+			<forward path="/gznx/reportmgr/modBSFW.jsp" name="view" />
+		</action>
+		
+		<!--汇总修改设定-->
+		<action path="/gznx/preEditHZSD" type="com.fitech.gznx.action.PreEditHZSDAction"
+			scope="request">
+			<forward path="/gznx/reportmgr/modHZSD.jsp" name="edit" />
+			<forward path="/gznx/reportmgr/viewHZSD.jsp" name="view" />
+		</action>
+		
+		<!--报送修改设定-->
+		<action path="/gznx/preEditBSSD" type="com.fitech.gznx.action.PreEditBSSDAction"
+			scope="request">
+			<forward path="/gznx/reportmgr/modBSSD.jsp" name="edit" />
+			<forward path="/gznx/reportmgr/setBSSD.jsp" name="next" />
+			<forward path="/gznx/reportmgr/viewBSSD.jsp" name="view" />
+		</action>
+		
+			<!--新增模版汇总设定-->
+		<action path="/gznx/preSetHZSD" type="com.fitech.gznx.action.PreSetHZSDAction"
+			scope="request">
+			<forward path="/gznx/reportmgr/setHZSD.jsp" name="next" />
+		</action>
+		
+			<!--新增模版汇总设定-->
+		<action path="/gznx/preSetBSSD" type="com.fitech.gznx.action.PreSetBSSDAction"
+			scope="request">
+			<forward path="/gznx/reportmgr/setBSSD.jsp" name="next" />
+		</action>
+		
+		
+		<action path="/gznx/updateBSFW" type="com.fitech.gznx.action.UpdateBSFWAction"
+			name="updateBSFWForm" scope="request" validate="false">
+		</action>
+		
+		<!--  汇总关系 更新  -->
+		<action path="/gznx/updateHZSD" type="com.fitech.gznx.action.UpdateHZSDAction"
+			name="updateBSFWForm" scope="request" validate="false">
+			<forward name="hzFormula" path="/gznx/hzformula.do"></forward>
+		</action>
+		<!--  上报关系更新  -->
+		<action path="/gznx/updateBSSD" type="com.fitech.gznx.action.UpdateBSSDAction"
+			name="updateBSFWForm" scope="request" validate="false">
+			<forward path="/gznx/reportmgr/bspl.jsp" name="setBSPL" />
+		</action>
+		
+		<action path="/gznx/editBSPL" type="com.fitech.gznx.action.EditAFActuRepAction"
+			name="mActuRepForm" scope="request" validate="false"
+			input="/gznx/reportmgr/modbspl.jsp">
+			<forward name="back" path="/template/viewTemplate.do" />
+		</action>
+		<action path="/gznx/updateMActuRept" type="com.fitech.gznx.action.UpdateAFActuRepAction"
+			name="mActuRepForm" scope="request" validate="false"
+			input="/gznx/reportmgr/modbspl.jsp">
+			<forward name="view" path="/template/viewMChildReport.do" />
+		</action>
+		<action path="/gznx/deleteBJGX" type="com.fitech.gznx.action.DeleteBJGXAction"
+			name="mCellForumForm" validate="false" scope="request" input="/gznx/editBJGXInit.do">
+			<forward name="view" path="/gznx/editBJGXInit.do" />
+		</action>
+
+		<!--下载附件 -->
+		<action path="/DownloadBlobAction" type="com.fitech.gznx.action.DownLoadBolbFileAction"
+			scope="request">
+			<forward name="view" path="/gznx/placard_mgr/placard_add.jsp" />
+		</action>
+
+		<!-- 报表下载 -->
+		<action path="/report/reportDownloadList" type="com.fitech.gznx.action.ReportDownloadListAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_data/templetLoadList.jsp" />
+		</action>
+
+		<!-- 报表上报 -->
+		<action path="/viewNXDataReport" type="com.fitech.gznx.action.ViewNXDataReportAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_data/viewNXDataReport.jsp" />
+		</action>
+
+		<!--离线上报 -->
+		<action path="/offLineNXReport" type="com.fitech.gznx.action.OffLineNXReportAction"
+			name="afReportForm" scope="request" input="/gznx/report_data/viewNXDataReport.jsp"
+			validate="false">
+			<forward name="viewOffLine" path="/gznx/report_data/upNXReport.jsp" />
+		</action>
+
+		<!-- 批量离线上报 -->
+		<action path="/report/uploadMoreFileNX" name="uploadFileForm"
+			type="com.fitech.gznx.action.UploadMoreFileNXAction" scope="request"
+			validate="false">
+			<forward name="view" path="/gznx/report_data/upMoreNXReport.jsp" />
+		</action>
+
+		<!-- 报表上传 -->
+		<action path="/report/uploadFileNX" name="uploadFileForm"
+			type="com.fitech.gznx.action.UploadFileNXAction" scope="request"
+			validate="false">
+			<forward name="view" path="/gznx/report_data/upNXReport.jsp" />
+		</action>
+
+		<!-- 报表查询 -->
+		<action path="/reportSearch/viewReportStatNX" type="com.fitech.gznx.action.ViewReportNXStatAction"
+			name="afReportForm" scope="request" validate="false" parameter="method">
+			<forward name="view" path="/gznx/reportmgr/search_rep_stat_nx.jsp" />
+		</action>
+
+		<!-- 校验选中 -->
+		<action path="/report/validateOnLineReportNX"
+			type="com.fitech.gznx.action.ValidateNXOnLineReportAction" name="afReportForm"
+			validate="false" scope="request">
+		</action>
+
+		<!-- 校验全部 -->
+		<action path="/report/validateAllReportNX" type="com.fitech.gznx.action.ValidateNXAllReportAction"
+			name="afReportForm" validate="false" scope="request">
+		</action>
+
+		<!-- 查看单张校验信息 -->
+		<action path="/report/viewValidateInfo" type="com.fitech.gznx.action.ViewValidateInfoAction"
+			scope="request">
+			<forward name="dd_view" path="/gznx/report_check/validate_detail.jsp" />
+			<forward name="qd_view" path="/gznx/report_check/validate_qd_detail.jsp" />
+		</action>
+
+		<!-- 查看多张校验信息 -->
+		<action path="/report/viewMoreValidateInfo"
+			type="com.fitech.gznx.action.ViewMoreValidateInfoAction" scope="request">
+			<forward name="dd_view" path="/gznx/report_check/more_validate_detail.jsp" />
+			<forward name="qd_view" path="/gznx/report_check/qd_jy_more_detail.jsp" />
+		</action>
+
+		<!-- 报表报送 -->
+		<action path="/upLoadOnLineNXReport"
+			type="com.fitech.gznx.action.UpLoadOnLineNXReportAction" name="afReportForm"
+			scope="request" validate="false">
+		</action>
+		<!-- 报表批量报送 -->
+		<action path="/upLoadNXReport"
+			type="com.fitech.gznx.action.UpLoadNXReportAction" name="afReportForm"
+			scope="request" validate="false">
+		</action>
+		<!-- 报表批量报送 -->
+		<action path="/upLoadReport"
+			type="com.fitech.gznx.action.UpLoadReportAction" name="reportInForm"
+			scope="request" validate="false">
+		</action>
+		
+		<!-- 报表批量补零-->
+		<action path="/bulingReport"
+			type="com.fitech.gznx.action.BuLingNXReportAction" name="afReportForm"
+			scope="request" validate="false">
+		</action>
+
+		<!--********************* 报表重报管理start ***********************-->
+		<!-- 重报查询 -->
+		<action path="/selReportAgainNX" type="com.fitech.gznx.action.SelectReportAgainNXAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_again/report_again_lst.jsp" />
+		</action>
+		<!-- 新增重报展示 -->
+		<action path="/report/repNXSearch" type="com.fitech.gznx.action.ViewReportAgainNXAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_again/rep_nx_search.jsp" />
+		</action>
+		<!-- 重报初始化 -->
+		<action path="/report/reportAgainInitNX" type="com.fitech.gznx.action.RepAgainInitNXAction"
+			name="afReportForm" scope="request">
+			<forward name="add" path="/gznx/report_again/repAgainNX.jsp" />
+			<forward name="search" path="/report/repNXSearch.do" />
+		</action>
+		<!-- 设置重报 -->
+		<action path="/report/reportAgainNX" type="com.fitech.gznx.action.ReportAgainNXAction"
+			name="afReportForm" scope="request" input="/gznx/report_again/repAgainNX.jsp"
+			validate="false">
+			<forward name="search" path="/report/repNXSearch.do" />
+		</action>
+		<!-- 批量设置重报 -->
+		<action path="/report/batchAgainNX" type="com.fitech.gznx.action.BatchAgainNXAction"
+			name="afReportForm" input="/gznx/report_again/reportAgainBatch.jsp"
+			scope="request">
+		</action>
+		<!--********************* 报表重报管理end ***********************-->
+
+		<!-- ******************** 报表汇总start ************************-->
+		<!-- 报表汇总展示 -->
+		<action path="/viewCollectNX" type="com.fitech.gznx.action.ViewCollectNXAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_collect/search_rep_collect.jsp" />
+		</action>
+		<!-- 机构报送情况查看 -->
+		<action path="/viewCollectOrgNX" type="com.fitech.gznx.action.ViewCollectOrgNXAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_collect/viewCollectOrgNX.jsp" />
+		</action>
+		<!-- 汇总数据 -->
+		<action path="/collectReportNX" type="com.fitech.gznx.action.CollectReportDataNXAction"
+			name="afReportForm" scope="request">
+			<forward name="view" path="/viewCollectNX.do" />
+		</action>
+		<!-- 汇总转上报数据 -->
+		<action path="/translationNXReport" type="com.fitech.gznx.action.TranslationNXReportAction"
+			scope="request" name="afReportForm">
+			<forward name="view" path="/viewCollectNX.do" />
+		</action>
+		<!-- ******************** 报表汇总end *************************-->
+
+		<!-- ******************** 报表采集start ***********************-->
+		<!-- 报表上报 -->
+		<action path="/viewGatherReport" type="com.fitech.gznx.action.ViewGatherReportAction"
+			name="afReportForm" scope="request" validate="false">
+			<forward name="view" path="/gznx/report_gather/viewGatherReport.jsp" />
+		</action>
+
+		<!--离线上报 -->
+		<action path="/offLineGatherReport" type="com.fitech.gznx.action.OffLineNXReportAction"
+			name="afReportForm" scope="request" input="/gznx/report_data/viewGatherReport.jsp"
+			validate="false">
+			<forward name="viewOffLine" path="/gznx/report_gather/upGatherReport.jsp" />
+		</action>
+
+		<!-- 报表上传 -->
+		<action path="/report/uploadGatherFile" name="uploadFileForm"
+			type="com.fitech.gznx.action.UploadFileGatherAction" scope="request"
+			validate="false">
+			<forward name="view" path="/gznx/report_gather/upGatherReport.jsp" />
+		</action>
+		<!-- ******************** 报表采集end *************************-->
+
+
+		<!-- 领导首页"manager_frontpage/general_view"(begin) -->
+		<action path="/manager_frontpage/general_view/ViewLeadingAction"
+			type="com.fitech.gznx.action.ViewLeadingAction" name="LendingQueryForm"
+			scope="session" validate="false">
+			<forward name="view_index.jsp"
+				path="/manager_frontpage/general_view/view_index.jsp" />
+			<forward name="view_query.jsp"
+				path="/manager_frontpage/general_view/view_query.jsp" />
+		</action>
+		<!-- 领导首页"manager_frontpage/general_view"(end) -->
+		
+		<!--=========== 汇率Action ===============-->
+		<action name="exchangeRateForm" parameter="method" 
+			path="/sysManage/exchangeRate/exchangeRateMgr" scope="request" 
+			type="com.fitech.gznx.action.ExchangeRateMgrAction">
+			<forward name="exchangeRateLst" path="/gznx/exchangeRate/viewExchangeRate.jsp"/>
+			<forward name="exchangeRateMgr_add" path="/gznx/exchangeRate/addExchangeRate.jsp"/>
+			<forward name="exchangeRateMgr_update" path="/gznx/exchangeRate/editExchangeRate.jsp"/>
+		</action>
+		<action path="/doexcuteSql" type="com.fitech.gznx.action.AddSqlExcuteAction"
+			name="sqlQueryForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/doquery/doquery.jsp" />
+		</action>
+
+		<!--=========== 大额汇率校验Action ===============-->
+		<action name="specialValForm" parameter="method" 
+			path="/sysManage/specialValMgr" scope="request" 
+			type="com.fitech.specval.action.SpecialValMgrAction">
+			<forward name="specValLst" path="/gznx/specVal/viewSpecVal.jsp"/>
+			<forward name="specValMgr_add" path="/gznx/specVal/addSpecVal.jsp"/>
+			<forward name="specValMgr_update" path="/gznx/specVal/editSpecVal.jsp"/>
+		</action>
+		
+		<!-- 大额授信校验 -->		
+		
+		<action path="/gznx/viewQDValidateList" type="com.fitech.gznx.action.ViewQDValidateListAction"
+			name="qdValidateForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/qdvalidate/validateFormulaList.jsp" />
+			<forward name="add" path="/gznx/qdvalidate/addValidateFormula.jsp" />
+		</action>
+		<!-- 公式追加-->
+		<action path="/gznx/addQDValidate" type="com.fitech.gznx.action.AddQDValidateAction"
+			name="qdValidateForm" scope="request" validate="false">
+			<forward name="index" path="/gznx/qdvalidate/viewValidateFormula.jsp" />
+			<forward name="add" path="/gznx/qdvalidate/addValidateFormula.jsp" />			
+		</action>
+		<!-- 公式修改-->
+		<action path="/gznx/editQDValidate" attribute="qdValidateForm"
+			type="com.fitech.gznx.action.EditQDValidateAction" name="qdValidateForm"
+			scope="request" validate="false">			
+			<forward name="index" path="/gznx/qdvalidate/validateFormulaList.jsp" />
+			<forward name="view" path="/gznx/qdvalidate/viewValidateFormula.jsp" />
+		</action>
+		<action path="/gznx/deleteQDValidate"  name="qdValidateForm"
+			type="com.fitech.gznx.action.DeleteQDValidateAction"
+			scope="request" validate="false">			
+			<forward name="index" path="/gznx/qdvalidate/validateFormulaList.jsp" />			
+		</action>
+		
+		<!-- 新增校验公式跳转Action -->
+		<action path="/gznx/ToValidateFormu"
+				type="com.fitech.gznx.action.ToValidateFormuAction"
+				scope="request">
+			<forward name="addValidateFormu" path="/gznx/report_supervise/addbjv.jsp"/>		
+		</action>
+		<!-- 新增校验公式Action -->
+		<action path="/gznx/AddValidateFormu"
+				name="reportCheckForm"
+				type="com.fitech.gznx.action.AddValidateFormuAction"
+				scope="request">
+		</action>
+		
+		<!-- 采集报表查询 -->
+		<action path="/reportSearch/viewReportGatherStat" type="com.fitech.gznx.action.ViewReportGatherStatAction"
+			name="afReportForm" scope="request" validate="false" parameter="request">
+			<forward name="view" path="/gznx/reportmgr/search_rep_stat_gather.jsp" />
+		</action>
+		
+		<!-- 增加数据痕迹 -->
+		<action path="/addAFDataTrace" type="com.cbrc.smis.action.AddAFDataTraceAction"
+			name="afDataTraceForm" scope="request" validate="false">
+		</action>
+		<!-- 查询数据痕迹 -->
+		<action path="/findAFDataTrace" type="com.cbrc.smis.action.FindAFDataTraceAction"
+			name="afDataTraceForm" scope="request">
+			<forward name="index" path="/tracedatalist.jsp"></forward>
+		</action>
+		<action path="/findOriDataAFDataTrace" type="com.cbrc.smis.action.FindOriAFDataTraceAction"
+			name="afDataTraceForm" scope="request">
+			<forward name="success" path="/oridata.jsp"></forward>
+		</action>
+		
+		<!-- 同步数据 -->
+		<action path="/synsDataAction" type="com.fitech.gznx.action.SynsDataAction"
+			attribute="afReportForm" name="afReportForm" scope="request"
+			validate="false">
+			<forward name="index" path="/synsresult.jsp" />
+		</action>
+		
+		<!-- 数据查询 主界面 初始化查询数据-->
+		<action path="/searchDataInitAction" type="com.fitech.gznx.action.SeachDataInitAction" attribute="searchDataForm" name="searchDataForm" scope="request">
+			<forward name="index" path="/gznx/customview/shujuchaxuntest.jsp" />
+		</action>
+		<!-- 数据查询 -->
+		<action path="/searchDataAction" type="com.fitech.gznx.action.SearchDataAction" attribute="searchDataForm" name="searchDataForm" scope="request">
+			<forward name="index" path="/gznx/customview/shujuchaxun_result.jsp" />
+		</action>
+		<!-- 数据查询结果，导出excel -->
+		<action path="/downLoadSearchDataAction" type="com.cbrc.smis.action.DownLoadSearchDataAction" scope="request">
+		</action>
+		
+		<action path="/findColAndRow" type="com.fitech.gznx.action.FindColAndRowNameAction" scope="request">
+			<forward name="index" path="/gznx/customview/colandrow.jsp"></forward>
+		</action>
+		
+		<!-- 更新数据痕迹 -->
+		<action path="/updateDataTraceAction" type="com.cbrc.smis.action.UpdateAFDataTraceAction" scope="request">
+			
+		</action>
+		<!-- 多条件检索数据痕迹 -->
+		<action path="/viewDataTraceAction" type="com.cbrc.smis.action.ViewAFDataTraceAction" attribute="afDataTraceForm" scope="request">
+			<forward name="index" path="/gznx/traceview/viewdata.jsp"></forward>
+		</action>
+		<!-- 将数据痕迹结果生成excel -->
+		<action path="/viewDataTraceToExcelAction" type="com.cbrc.smis.action.ViewAFDataTraceToExcelAction" attribute="afDataTraceForm" scope="request">
+		</action>
+		
+		<!-- 强制上报设定 -->
+		<action path="/addAFForceRepAction" type="com.cbrc.smis.action.AddAFForceRepAction" attribute="afForceRepForm" scope="request">
+		</action>
+		<!-- 取消强制上报设定 -->
+		<action path="/deleteAFForceRepAction" type="com.cbrc.smis.action.DeleteAFForceRepAction" attribute="afForceRepForm" scope="request">
+		</action>
+		 
+		<!-- 映射关系管理 ..............................开始 -->
+		<action path="/searchVorgRelInitAction" type="com.fitech.gznx.action.SearchVorgRelInitAction" name="vorgRelForm" scope="request">
+			<forward name="success" path="/gznx/org_manager/orgrelview.jsp"></forward>
+		</action>
+		<action path="/searchVorgRelAction" type="com.fitech.gznx.action.SearchVorgRelAction" name="vorgRelForm" scope="request">
+			<forward name="index" path="/gznx/org_manager/orgrel_setting.jsp"></forward>
+		</action>
+		<action path="/addVOrgRelAcion" type="com.fitech.gznx.action.AddVOrgRelAction" name="vorgRelForm" scope="request">
+			<forward name="success" path="/searchVorgRelInitAction.do"></forward>
+			<forward name="error" path="/searchVorgRelAction.do"></forward>
+		</action>
+		<action path="/updateVOrgRelAction" type="com.fitech.gznx.action.UpdateVOrgRelAction" name="vorgRelForm" scope="request">
+			<forward name="success" path="/searchVorgRelInitAction.do"></forward>
+		</action>
+		<action path="/deleteVorgRelAction" type="com.fitech.gznx.action.DeleteVOrgRelAction" name="vorgRelForm" scope="request">
+			<forward name="success" path="/searchVorgRelInitAction.do"></forward>
+		</action>
+		<!-- 映射关系管理  ..............................结束-->
+		
+		<!-- 查询补录模板统计信息开始 -->
+		<action path="/searchGatherReportAction" type="com.fitech.gznx.action.SearchGatherReportAction" name="afReportForm" scope="request">
+			<forward name="INDEX" path="/gznx/report_gather/searchGatherReport.jsp"></forward>	
+		</action>
+		<!-- 查询补录模板统计信息结束 -->
+		
+		<!--日报表查询-->
+		<action path="/dayTask" type="com.fitech.gznx.action.DayTaskAction" parameter="method"
+			name="dayTaskForm" scope="request" validate="false">
+			<forward name="view" path="/dayTask/dayTaskView.jsp" />
+		</action>
+		<!--日报表查询-->
+	</action-mappings>
+</struts-config>

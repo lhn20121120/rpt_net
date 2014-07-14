@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.MDataRgType" 
+    table="M_DATA_RG_TYPE"
+>
+
+    <id
+        name="dataRangeId"
+        type="java.lang.Integer"
+        column="DATA_RANGE_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">Seq_M_Data_RG_Type</param>
+		</generator>
+    </id>
+
+    <property
+        name="dataRgDesc"
+        type="java.lang.String"
+        column="DATA_RG_DESC"
+        length="20"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to MActuRep -->
+    <set
+        name="MActuReps"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="DATA_RANGE_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.MActuRep"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to ReportIn -->
+    <set
+        name="reportIns"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="DATA_RANGE_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ReportIn"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

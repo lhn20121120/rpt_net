@@ -1,0 +1,337 @@
+.globalTable {
+	width:1024;
+	border: 0 none;
+	text-align:center;
+	border-collapse: collapse;
+}
+td{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #003366;
+}
+.form{
+  font-family:宋体,Arial;
+  font-size: 9pt;
+  color: #003366;
+  border: 1px solid #6592A7;
+  padding-left: 1;
+  padding-right: 1;
+  padding-top: 3;
+  background-color: #E9F2F8;
+}
+.mainTable {
+	width:880px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #003366 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+}
+.mainTable3 {
+	width:650px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #003366 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	background-color: #FFFFFF;
+}
+.mainTable2 {
+	width:940px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #003366 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	background-color: #AED4F0;
+}
+.mainLikeTable {
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #003366 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+}
+
+.naviTableOn {
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	width:200px;
+	height:22px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #003366 1px;
+	background-color:#4791C5;
+	cursor: hand;
+	color: #FFFFFF;
+}
+.naviTableOff {
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	width:200px;
+	height:22px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #003366 1px;
+	cursor: hand;
+	color: 003366;
+}
+.tabCommon{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #FFFFFF;
+	background : url(../image/tab.bg.dln.gif);
+	height:48px;
+	text-align:center;
+}
+.formButton{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 18px;
+	background : url(../image/buttonBk.jpg);
+	border: 1 solid #336699;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: hand;
+	padding-top: 1px;
+	letter-spacing: 1px;
+}
+.formButtonOn{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 18px;
+	background-color: #E9F2F8;
+	border: 1 solid #336699;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: hand;
+	padding-top: 1px;
+	letter-spacing: 1px;
+}
+.tabButton{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #FFFFFF;
+	background : url(../image/button.jpg);
+	height:29px;
+	border: 1px #0D1E51;
+	width:100%;
+}
+.buttonOff{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: hand;
+	padding-top: 2px;
+	letter-spacing: 1px;
+	border: 1 solid #DBDBDB;
+	top: 1px; 
+	position: relative ;
+	}
+.buttonOn{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 20px;
+	border: 1 solid #629DC5;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: hand;
+	padding-top: 2px;
+	background-color: #CCDFEE;
+	letter-spacing: 1px;
+	top: 1px; 
+	position: relative ;
+}
+.buttonPlaceholder{
+	width: 8px;
+	background : url(../image/place.jpg);
+	height: 10px;
+}
+
+.tabOn{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #FFFFFF;
+	background : url(../image/tab.bg.on.gif);
+	height:48px;
+	text-align:center;
+}
+.tabOff{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #FFFFFF;
+	background : url(../image/tab.bg.off.gif);
+	height:48px;
+	text-align:center;
+}
+body {
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color: #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+	text-align : center;
+	margin : 0;
+	font-family:宋体,Arial;
+	background-color:#F6F8F7;
+	font-size: 9pt;
+}
+.common{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #003366;
+	height:48px;
+	text-align:center;
+	background-color: #336699;
+}
+.tdLine{
+	background-color: #003366;
+	height:1px;
+}
+.href{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #003366;
+	text-decoration:none;
+}
+.href:hover{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: red;
+	text-decoration:underline;
+}
+.buttonSearch{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonSearch.gif);
+	letter-spacing: 1px;
+	border: 1 solid #336699;
+	}
+.buttonView{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonView.gif);
+	letter-spacing: 1px;
+	border: 1 solid #336699;
+	}
+.buttonDel{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonDel.gif);
+	letter-spacing: 1px;
+	border: 1 solid #336699;
+	}
+.buttonAdd{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonAdd.gif);
+	letter-spacing: 1px;
+	border: 1 solid #336699;
+	}
+.buttonModify{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonModify.gif);
+	letter-spacing: 1px;
+	border: 1 solid #336699;
+	}
+.mainoption{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonModify.gif);
+	letter-spacing: 1px;
+	border: 1 solid #336699;
+	}
+.form2{
+  font-family: 宋体; 
+	font-size: 9pt; 
+	padding-top: 2px;
+	color: #003366;
+	background-color: #D6E7EF; 
+	border-left: 1 solid #AFC4D5; 
+	border-right: 1 solid #104A7B; 
+	border-top: 1 solid #AFC4D5; 
+	border-bottom: 1 solid #104A7B;
+}
+.theader{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #FFFFFF;
+	background : url(../image/bgcolor.gif);
+	height:24px;
+	border: 1px #0D1E51;
+	font-weight: bold;
+}
+a{
+  font-family:宋体,Arial;
+  font-size: 9pt;
+  color: #36647A;
+  text-decoration:none;
+  cursor:hand;
+}
+a:hover {
+  font-family:宋体,Arial;
+  color: #FF0000;
+}
+.td2{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #003366;
+	border-bottom: 2px solid #336699;
+}
+.td3{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #003366;
+	border-bottom: 1px solid #F0F0F0;
+}
+.td4{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #003366;
+	border-bottom: 1px solid #CCCCCC;
+}

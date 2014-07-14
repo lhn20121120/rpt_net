@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.OrgActuType" 
+    table="Org_Actu_Type"
+>
+
+    <id
+        name="OATId"
+        type="java.lang.Integer"
+        column="OAT_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">Seq_Org_Actu_Type</param>
+		</generator>
+    </id>
+
+    <property
+        name="OATName"
+        type="java.lang.String"
+        column="OAT_Name"
+        length="100"
+    />
+	
+	<property
+		name="OATMemo"
+		type="java.lang.String"
+		column="OAT_Memo"
+		length="500"
+	/>
+</class>
+</hibernate-mapping>

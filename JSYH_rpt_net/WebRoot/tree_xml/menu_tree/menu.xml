@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<tree id="0">
+  <item text="领导首页" id="1">
+    <item text="经营情况一览" id="11"/>
+  </item>
+  <item text="工作台" id="2">
+    <item text="待处理事物" id="12"/>
+    <item text="工作计划" id="13"/>
+    <item text="报送状态查询" id="14"/>
+    <item text="字典工具" id="15"/>
+  </item>
+  <item text="模板管理" id="3">
+    <item text="模板集维护" id="16"/>
+    <item text="模板集分类维护" id="1000"/>
+  </item>
+  <item text="统计处理" id="4">
+    <item text="报表查询" id="17"/>
+    <item text="报表汇总" id="18"/>
+    <item text="批量校验" id="19"/>
+    <item text="数据调平" id="21"/>
+    <item text="生成文件" id="22"/>
+    <item text="数据备份" id="23"/>
+    <item text="指标集手工补录" id="1001"/>
+  </item>
+  <item text="数据报送" id="5">
+    <item text="报表填报" id="24"/>
+    <item text="报送结果查看" id="25"/>
+  </item>
+  <item text="数据审核" id="6">
+    <item text="报表审核" id="27"/>
+    <item text="退回管理" id="28"/>
+  </item>
+  <item text="数据分析" id="7">
+    <item text="指标预警查看" id="29"/>
+    <item text="指标设定" id="30"/>
+    <item text="指标预警设定" id="31"/>
+    <item text="指标组维护" id="32"/>
+  </item>
+  <item text="统计管理" id="8">
+    <item text="历史镜像载入" id="33"/>
+    <item text="历史镜像查阅" id="34"/>
+    <item text="统计考核" id="35"/>
+  </item>
+  <item text="信息公告" id="9">
+    <item text="信息公告发布" id="36"/>
+    <item text="信息公告查看" id="37"/>
+  </item>
+  <item text="系统管理" id="10">
+    <item text="机构管理" id="38"/>
+    <item text="用户管理" id="39"/>
+    <item text="权限管理" id="40"/>
+    <item text="角色管理" id="41"/>
+    <item text="菜单维护" id="42"/>
+    <item text="用户改密" id="44"/>
+    <item text="日志管理" id="45"/>
+    <item text="批量管理" id="46"/>
+    <item text="系统备份" id="47"/>
+    <item text="用户分类" id="48"/>
+  </item>
+</tree>

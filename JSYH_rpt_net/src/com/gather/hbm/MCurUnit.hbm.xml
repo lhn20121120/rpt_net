@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.MCurUnit" 
+    table="M_CUR_UNIT"
+>
+
+    <id
+        name="curUnit"
+        type="java.lang.Integer"
+        column="CUR_UNIT"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="curUnitName"
+        type="java.lang.String"
+        column="CUR_UNIT_NAME"
+        length="20"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to MChildReport -->
+    <set
+        name="MChildReports"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CUR_UNIT" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MChildReport"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to MMainRep -->
+    <set
+        name="MMainReps"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CUR_UNIT" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MMainRep"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

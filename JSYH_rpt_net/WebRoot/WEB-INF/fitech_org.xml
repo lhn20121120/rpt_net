@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+   <form-beans >   
+	     <form-bean name="fitechorgForm" type="com.cbrc.org.form.MOrgForm"/>
+	     <form-bean name="targetDefineForm" type="com.cbrc.smis.form.TargetDefineForm"/>
+	     <form-bean name="targetPreForm" type="com.cbrc.smis.form.TargetPreForm"/>	   	
+   </form-beans>
+	
+   <global-exceptions />
+    <global-forwards/>
+	
+   <action-mappings>
+         <action path="/delete"
+	             name="fitechorgForm"
+	             scope="request"
+	             type="com.cbrc.fitech.org.deleteAction"  
+	             validate="false"> 
+	      <forward name="delete" path="/fitechorg.do"/>   
+	     </action> 	   
+	     <action path="/neworg"
+	             name="fitechorgForm"
+	             scope="request"
+	             type="com.cbrc.fitech.org.addorgAction"  
+	             validate="false"> 
+	      <forward name="add" path="/fitechorg.do"/>   
+	     </action> 
+	     <action path="/fitechorg"
+	            name="fitechorgForm"
+	            scope="request"
+	            type="com.cbrc.fitech.org.ViewFitechOrgAction"
+	            validate="false">
+	       <forward name="view" path="/FitechOrg/showorg.jsp" />
+	    </action>	
+	     <action path="/FitechOrgname"
+	             type="com.cbrc.fitech.org.Feny"
+	             scope="request"
+	             validate="false">
+	       <forward name="show" path="/FitechOrg/showorg.jsp"/>
+	     </action>
+	   
+	     <action  path="/Update"
+	              scope="request"
+	              type="com.cbrc.fitech.org.updateAction"
+	              validate="false">
+	      <forward name="update" path="/FitechOrg/updateorg.jsp"/>        
+	     </action>      
+	      <action  path="/edit"
+	               name="fitechorgForm"
+	               scope="request"
+	               type="com.cbrc.fitech.org.editAction"
+	               validate="false">
+	      <forward name="update" path="/FitechOrg/updateorg.jsp"/>        
+	     </action>    
+	     
+	     <action  path="/targetDefine"
+	               name="targetDefineForm"
+	               scope="request"
+	               type="com.cbrc.smis.action.TargetDefineAction"
+	               validate="false">
+	      <forward name="" path=""/>        
+	     </action>
+	     
+	     <action  path="/targetPre"
+	               name="targetPreForm"
+	               scope="request"
+	               type="com.cbrc.smis.action.TargetPreAction"
+	               validate="false">
+	      <forward name="" path=""/>        
+	     </action>
+	         
+	</action-mappings>
+
+</struts-config>

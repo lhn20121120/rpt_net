@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<tree id="0">
+  <item text="总行" id="331010000" open="1">
+    <item text="总行本级" id="3310XXXXX" checked="1"  open="1">
+      <item text="杭州涌金支行" id="331037000" />
+      <item text="总行清算中心" id="331010401" />
+      <item text="总行营业部" id="331010313" />
+    </item>
+  </item>
+</tree>

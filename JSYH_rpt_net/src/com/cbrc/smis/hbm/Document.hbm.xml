@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.Document" 
+    table="DOCUMENT"
+>
+
+    <id
+        name="docId"
+        type="java.lang.Integer"
+        column="DOC_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">seq_document</param>
+		</generator>
+    </id>
+
+    <property
+        name="docType"
+        type="java.lang.String"
+        column="DOC_TYPE"
+        length="40"
+    />
+    <property
+        name="docSize"
+        type="java.lang.Integer"
+        column="DOC_SIZE"
+        length="10"
+    />
+    <property
+        name="docDate"
+        type="java.sql.Date"
+        column="DOC_DATE"
+        length="10"
+    />
+    <property
+        name="docMemo"
+        type="java.lang.String"
+        column="DOC_MEMO"
+        length="250"
+    />
+    <property
+        name="writer"
+        type="java.lang.String"
+        column="WRITER"
+        length="20"
+    />
+    <property
+        name="checker"
+        type="java.lang.String"
+        column="CHECKER"
+        length="20"
+    />
+    <property
+        name="principal"
+        type="java.lang.String"
+        column="PRINCIPAL"
+        length="20"
+    />
+
+	<property
+		name="orgId"
+		type="java.lang.String"
+		column="ORG_ID"
+		length="20"
+	/>
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to MOrg -->
+	<!--
+    <many-to-one
+        name="MOrg"
+        class="com.cbrc.smis.hibernate.MOrg"
+        not-null="true"
+    >
+        <column name="ORG_ID" />
+    </many-to-one>
+	-->
+    <!-- bi-directional one-to-many association to DocumentDetail -->
+    <set
+        name="documentDetails"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="DOC_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.DocumentDetail"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

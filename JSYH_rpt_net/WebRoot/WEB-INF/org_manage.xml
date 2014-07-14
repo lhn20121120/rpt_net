@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+<data-sources />
+
+
+ <form-beans>
+  <form-bean name="addOrgForm" type="com.fitech.net.org1.form.AddOrgForm"/>
+
+  <form-bean name="OrgnetForm" type="com.fitech.net.org.form.OrgnetForm"/>
+  <form-bean name="functionForm" type="com.fitech.net.org1.form.FunctionsForm"/>
+   <form-bean name="functionToolForm" type="com.fitech.net.org1.form.FunctionsToolForm"/>
+</form-beans>
+
+ <global-exceptions />
+   <global-forwards />
+	
+   <action-mappings >
+   <!--公式规则查询-->
+	  <action path="/orgmanage/addorg"
+	   			type="com.fitech.net.org1.action.AddOrgAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/topic_view.jsp" name="view"/>
+	   		<forward path="/org_manage/topic_add.jsp"  name ="add"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/vieworg"
+	   			type="com.fitech.net.org1.action.ViewOrgAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/topic_view.jsp" name="view"/>
+	   		<forward path="/org_manage/topic_add.jsp"  name ="add"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/editorg"
+	   			type="com.fitech.net.org1.action.EditOrgAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/topic_view.jsp" name="view"/>
+	   		<forward path="/org_manage/topic_add.jsp"  name ="add"/>
+	   		<forward path="/org_manage/topic_edit.jsp"  name ="edit"/>
+ 	   	</action>
+ 	   		<action path="/orgmanage/deleteorg"
+	   			type="com.fitech.net.org1.action.DeleteOrgAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/topic_view.jsp" name="view"/>
+	   		<forward path="/org_manage/topic_add.jsp"  name ="add"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/updateeorg"
+	   			type="com.fitech.net.org1.action.UpdateOrgAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/topic_view.jsp" name="view"/>
+	   		<forward path="/org_manage/topic_add.jsp"  name ="add"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/view_topic_org"
+	   			type="com.fitech.net.org1.action.ViewOrgTopicAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/org_topic_add.jsp" name="add"/>
+	   		<forward path="/org_manage/org_topic_view.jsp"  name ="view"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/delete_topic_org"
+	   			type="com.fitech.net.org1.action.DeleteOrgTopicAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/org_topic_add.jsp" name="add"/>
+	   		<forward path="/org_manage/org_topic_view.jsp"  name ="view"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/add_topic_org"
+	   			type="com.fitech.net.org1.action.AddOrgTopicAction"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/org_topic_add.jsp" name="add"/>
+	   		<forward path="/org_manage/org_topic_view.jsp"  name ="view"/>
+ 	   	</action>
+ 	   	
+ 	   	<action path="/orgmanage/getallorg"
+	   			type="com.fitech.net.org1.action.GetAllRepOrg"
+	   			name="addOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/org_topic_add.jsp" name="add"/>
+	   		<forward path="/org_manage/org_topic_view.jsp"  name ="view"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/org_tool_add"
+	   			type="com.fitech.net.org1.action.ViewOrgToolAction"
+	   			name="functionForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/org_tool_add.jsp" name="add"/>
+	   		<forward path="/org_manage/org_tool_view.jsp"  name ="view"/>
+ 	   
+ 	   	</action>
+ 	   	<action path="/orgmanage/org_tool_view"
+	   			type="com.fitech.net.org1.action.View_OrgAction"
+	   			name="OrgnetForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/org_tool_add.jsp" name="add"/>
+	   		<forward path="/org_manage/org_tool_view.jsp"  name ="view"/>
+ 	   
+ 	   	</action>
+ 	   	<action path="/orgmanage/org_tool_update"
+	   			type="com.fitech.net.org1.action.UpdateOrgToolAction"
+	   			name="functionForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/org_tool_add.jsp" name="add"/>
+	   		<forward path="/org_manage/org_tool_view.jsp"  name ="view"/>
+ 	   
+ 	   	</action>
+ 	   	<action path="/orgmanage/addfunction"
+	   			type="com.fitech.net.org1.action.AddFunctionAction"
+	   			name="functionForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/function_view.jsp" name="view"/>
+	   		<forward path="/org_manage/function_add.jsp"  name ="add"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/deletefunction"
+	   			type="com.fitech.net.org1.action.DeleteFunctionAction"
+	   			name="functionForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/function_view.jsp" name="view"/>
+	   		<forward path="/org_manage/function_add.jsp"  name ="add"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/Editfunction"
+	   			type="com.fitech.net.org1.action.EditFunctionAction"
+	   			name="functionForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/function_view.jsp" name="view"/>
+	   		<forward path="/org_manage/function_add.jsp"  name ="add"/>
+	   		<forward path="/org_manage/function_edit.jsp"  name ="edit"/>
+ 	   	</action>
+ 	   	<action path="/orgmanage/viewfunction"
+	   			type="com.fitech.net.org1.action.ViewFunctionAction"
+	   			name="functionForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/function_view.jsp" name="view"/>
+	   		<forward path="/org_manage/function_add.jsp"  name ="add"/>
+ 	   	</action>
+ 	   		<action path="/orgmanage/updatefunction"
+	   			type="com.fitech.net.org1.action.UpdateFunction"
+	   			name="functionToolForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/org_manage/function_view.jsp" name="view"/>
+	   		<forward path="/org_manage/function_edit.jsp"  name ="edit"/>
+ 	   	</action>
+    </action-mappings>
+    
+</struts-config>

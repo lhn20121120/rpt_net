@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.Calendar" 
+    table="CALENDAR"
+>
+
+    <id
+        name="calId"
+        type="java.lang.Integer"
+        column="CAL_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="calName"
+        type="java.lang.String"
+        column="CAL_NAME"
+        length="20"
+    />
+	<!--
+    <property
+        name="calMethod"
+        type="java.lang.String"
+        column="CAL_METHOD"
+        length="18"
+    />
+	-->
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to CalendarDetail -->
+    <set
+        name="calendarDetails"
+        lazy="true"
+        inverse="false"
+		cascade="none"
+    >
+        <key>
+            <column name="CAL_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.CalendarDetail"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

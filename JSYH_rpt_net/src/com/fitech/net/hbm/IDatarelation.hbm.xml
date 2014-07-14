@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+    <class name="com.fitech.net.hibernate.IDataRelation" table="I_DATARELATION">
+        <id name="idrId" column="IDR_ID" type="java.lang.Integer">
+            <generator class="assigned"/>
+        </id>
+
+        <property name="idrRelative" column="IDR_RELATIVE" type="java.lang.String" />
+        <property name="idrFormula" column="IDR_FORMULA" type="java.lang.String" />
+        <property name="idrDefaultvalue" column="IDR_DEFAULTVALUE" type="java.lang.String" />
+        <property name="idrInitvalue" column="IDR_INITVALUE" type="java.lang.String" /> 
+        <property name="idrSql" column="IDR_SQL" type="java.lang.String" />     
+    
+    </class>
+    
+</hibernate-mapping>

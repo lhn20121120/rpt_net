@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="GB2312"?>
+<fitechGraph  nextPage="isNull" title="财务收支情况"> 
+  <graph id="shouruxi" type="2" title="收入项目结构">
+    <dataset>
+      <unit title="2"/>	<!--  1：表示元，2：表示万元 ，3：表示百万元 ， 4：表示亿元 -->
+      <item label="总收入" color="" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02001'"/>
+      <item label="利息收入" color="153,102,255" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02003'"/>
+	  <item label="金融往来利息收入" color="051,153,255" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02004'"/>
+	  <item label="中间业务手续费收入" color="102,255,051" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02014'"/>
+	  <item label="投资收益" color="0,102,051" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02015'"/>
+	  <item label="营业外收入" color="255,102,204" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02016'"/>
+	  <item label="以前年度损益调整" color="153,255,255" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02017'"/>
+	</dataset>
+	<style>
+	  <graphWidth value="780"/> <!-- 图片的宽度-->
+	  <graphHeight value="340"/>  <!-- 图片的高度-->
+   	  <bgColorRGB value="246,248,247" /><!-- 图片的背景色（R,G,B）-->
+	  <ttFont value="宋体" /><!-- 标题的字体-->
+	  <ttFontSize value="18" /><!-- 标题的字的大小-->
+	  <ttColorRGB value="0,0,0" /><!-- 标题的字的颜色（R,G,B）-->
+	  <pieBgColorRGB value="246,248,247" /><!-- 饼图的背景色(R,G,B)-->
+	  <pieLebleBgColorRGB value="255,255,198" /><!-- 饼图标签的背景色(R,G,B) -->
+	  <pieLebleLinkColorRGB value="0,0,0" /><!-- 饼图标签的连线的颜色(R,G,B) -->
+	  <pieLebleFont value="宋体" /><!--饼图的标签的字体-->
+	  <pieLebleFontSize value="12" /><!--饼图的标签字的大小-->
+      <pieLebleGenerator value="4" /><!--饼图的标签字的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值-->
+	  <pieLebleFontColorRGB value="0,0,0" /><!-- 饼图的标签字的颜色(R,G,B) -->
+	  <pieLebleShadowColorRGB value="255,255,255" /><!-- 饼图的标签阴影的颜色(R,G,B)-->
+	  <pieLegendLabelGenerator value="1" /><!-- 饼图的图标的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值 -->
+	  <pieRange value="20,20,20,20" /><!-- 饼图的边距 -->
+	  <is3DPie value="y"/>     <!--是否为3D图形 -->
+	  <isCircular value="n"/>   <!-- 是否为正圆-->
+	  <piedept value="0.2"/>    <!-- 3D饼图的厚度-->
+	  <pieForegroundAlpha value="0.7"/>   <!-- 3D饼图的透明度-->
+	  <pieStartAngle value="-60"/>   <!-- 起始的度数-->
+	  <pieOutlineColorRGB value = "0,0,0"/>
+   </style>
+	<url exists="n" url="" />
+  </graph>
+  <graph id="zhichuxi" type="2" title="支出项目结构">
+    <dataset>
+      <unit title="2"/>	<!--  1：表示元，2：表示万元 ，3：表示百万元 ， 4：表示亿元 -->
+      <item label="总支出" color="" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02018'"/>
+      <item label="利息支出" color="153,102,255" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02020'"/>
+	  <item label="金融往来利息支出" color="051,153,255" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02024'"/>
+	  <item label="手续费支出" color="102,255,051" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02037'"/>
+	  <item label="业务及管理费用" color="0,102,051" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02038'"/>
+	  <item label="其他业务成本" color="255,102,204" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02042'"/>
+	  <item label="资产减值损失" color="153,255,255" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02043'"/>
+	  <item label="营业税金及附加" color="192,0,0" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02044'"/>
+	  <item label="营业外支出" color="255,175,176" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02045'"/>
+	  <item label="所得税" color="255,0,0" tableType="1" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX001' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F02006'"/>
+	</dataset>
+	<style>
+	  <graphWidth value="780"/> <!-- 图片的宽度-->
+	  <graphHeight value="340"/>  <!-- 图片的高度-->
+   	  <bgColorRGB value="246,248,247" /><!-- 图片的背景色（R,G,B）-->
+	  <ttFont value="宋体" /><!-- 标题的字体-->
+	  <ttFontSize value="18" /><!-- 标题的字的大小-->
+	  <ttColorRGB value="0,0,0" /><!-- 标题的字的颜色（R,G,B）-->
+	  <pieBgColorRGB value="246,248,247" /><!-- 饼图的背景色(R,G,B)-->
+	  <pieLebleBgColorRGB value="255,255,198" /><!-- 饼图标签的背景色(R,G,B) -->
+	  <pieLebleLinkColorRGB value="0,0,0" /><!-- 饼图标签的连线的颜色(R,G,B) -->
+	  <pieLebleFont value="宋体" /><!--饼图的标签的字体-->
+	  <pieLebleFontSize value="12" /><!--饼图的标签字的大小-->
+      <pieLebleGenerator value="4" /><!--饼图的标签字的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值-->
+	  <pieLebleFontColorRGB value="0,0,0" /><!-- 饼图的标签字的颜色(R,G,B) -->
+	  <pieLebleShadowColorRGB value="255,255,255" /><!-- 饼图的标签阴影的颜色(R,G,B)-->
+	  <pieLegendLabelGenerator value="1" /><!-- 饼图的图标的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值 -->
+	  <pieRange value="20,20,20,20" /><!-- 饼图的边距 -->
+	  <is3DPie value="y"/>     <!--是否为3D图形 -->
+	  <isCircular value="n"/>   <!-- 是否为正圆-->
+	  <piedept value="0.2"/>    <!-- 3D饼图的厚度-->
+	  <pieForegroundAlpha value="0.7"/>   <!-- 3D饼图的透明度-->
+	  <pieStartAngle value="-60"/>   <!-- 起始的度数-->
+	  <pieOutlineColorRGB value = "0,0,0"/>
+   </style>
+	<url exists="n" url="" />
+  </graph>
+  
+</fitechGraph>

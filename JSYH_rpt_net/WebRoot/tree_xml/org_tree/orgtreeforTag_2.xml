@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<tree id="0">
+  <item text="浙商总行" id="331010000">
+    <item text="总行本级" id="3310XXXXX"/>
+    <item text="宁波分行" id="332021000"/>
+    <item text="温州分行" id="333022000"/>
+    <item text="义乌分行" id="338721000"/>
+    <item text="成都分行" id="651021000"/>
+    <item text="天津分行" id="110021000"/>
+  </item>
+</tree>

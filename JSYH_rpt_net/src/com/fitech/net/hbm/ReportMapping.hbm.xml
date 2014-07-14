@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+
+	<class name="com.fitech.net.collect.bean.ReportMapping" table="REPORT_MAPPING">
+		<id name="repMapId" type="java.lang.Long" column="REP_MAP_ID">
+		
+			<generator class="sequence">
+				<param name="sequence">SEQ_REPORT_MAPPING</param>				
+			</generator>
+		</id>
+		<property name="srcRepId" column="SRC_REP_ID" type="java.lang.String" />
+		<property name="tarRepId" column="TAR_REP_ID" type="java.lang.String" />
+		<property name="srcVersionId" column="SRC_VERSION_ID" type="java.lang.String" />
+		<property name="tarVersionId" column="TAR_VARSION_ID" type="java.lang.String" />
+		<set name="cellMappings" inverse="true" lazy="true">
+			<key>
+				<column name="REP_MAP_ID" />
+			</key>
+			<one-to-many class="com.fitech.net.collect.bean.CellMapping" />
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<!--闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹂柛鐘愁殜閹繝宕掑⿰鎰妤犵偛鐏濋崝姘繆椤愶綆娈欐い锝呮健濮婃椽鎳￠妶鍛咃繝鏌ｉ幒鐐电暤鐎规洘娲熼獮搴ㄦ嚍閵夈儰鎮ｉ梻浣筋嚃閸ㄥジ鎮樺☉銏″亜闁绘挸娴烽崝鎾⒑閸涘﹤濮�闁哄懏绻堝畷娆撴晸閿燂拷-->
+		<form-bean name="reportInForm"
+			type="com.cbrc.smis.form.ReportInForm" />
+
+		<form-bean name="rangeTempForm"
+			type="com.cbrc.smis.form.RangeTempForm" />
+		<!-- 闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹂柛鐘崇墵閹锋垿鎮㈤崗鑲╁帾婵犮垼顕栭崹鎵拷姘煎櫍閹箖鎸婃径鍡樻杸闂佸疇妫勫Λ妤呮倶閼碱剛纾奸弶鍫涘妽缁�鍐煛閸涱厾鍩ｉ柡浣规崌閺佹捇鏁撻敓锟�-->
+		<form-bean name="reportInInfoForm"
+			type="com.cbrc.smis.form.ReportInInfoForm" />
+
+		<!-- 闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊呭厴楠炲繘鎮滈挊澶岊槯婵犮垼娉涢敃銈夊煕婢舵劖鈷戠紓浣癸供濞堟瑦绻涢崨顔界缂侇喗宀稿畷锟犳倷閳哄倹鏉搁梻浣虹《閸撴繈鎮烽敃鍌氱疅闁跨噦鎷�-->
+		<form-bean name="saveReportInForm"
+			type="com.cbrc.smis.form.ReportInForm" />
+
+		<!--闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊勭箘閿熻姤纰嶅畝鎼佸蓟閵娾晛妫橀柛顭戝枓閹稿啴姊哄ú璇插箹濡ょ姵鐡曡ぐ渚�姊洪幖鐐插姷缂佽尪濮ら弲鍫曞箵閹规缍婇幃鈩冩償閵忕姵鐣婚柣搴㈩問閸犳牠鈥﹂柨瀣╃箚闁汇値鍨煎Σ鑲╃磽娴ｅ搫顎撻柟鍑ゆ嫹-->
+		<form-bean name="reportInParticularForm"
+			type="com.cbrc.smis.form.ReportInParticularForm" />
+
+		<!-- 闂傚倸鍊风粈渚�骞栭锔藉亱闊洦绋戠壕鍧楁煏閸繍妲归柛濠傜仛閵囧嫰寮介妸褉濮囨繛瀛樺殠閸婃繈寮婚敐澶婄睄闁稿被鍊楅崝鎼佹偠濮橆厼鍝烘慨濠傤煼瀹曟帒顫濋澶夋偅婵＄偑鍊栭崹闈浳涘▎鎾崇疄闁靛ň鏅涘洿闂佺硶鍓濋悷銏ゅ绩閹惰姤鈷戦柡鍌樺劜濞呭懘鏌涢悢鍙夋珖婵″弶鍔欏浠嬵敇閻斿搫骞愰梺璇茬箳閸嬬娀顢氳瀹曟繈濡堕崱娆戠槇闂佽法鍠嶇划娆撳极閹剧粯鏅搁柨鐕傛嫹-->
+		<form-bean name="jhbform" type="com.cbrc.smis.form.JhbOrgForm" />
+
+		<!-- 濠殿喚鎳撳ú锕傛晸閻ｅ瞼甯涢柡宀�鍠庨锝咁嚈瀹告悜mBean-->
+		<form-bean name="collectTypeForm"
+			type="com.fitech.net.form.CollectTypeForm" />			
+		<form-bean name="jobForm" type="com.fitech.net.form.JobForm"/>
+		<form-bean name="batchAgainForm" type="com.cbrc.smis.form.BatchAgainForm"/>
+		<form-bean name="orgNetForm" type="com.fitech.net.form.OrgNetForm"/>
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+
+	<action-mappings>
+		<!-- ==================闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹂柛鐘愁殜閹繝宕掑⿰鎰妤犵偛鐏濋崝姘繆椤愶綆娈欐い锝呮健濮婃椽鎳￠妶鍛咃繝鏌ｉ幒鐐电暤鐎规洘娲熼獮搴ㄦ嚍閵夈儰鎮ｉ梻浣筋嚃閸ㄥジ鎮樺☉銏″亜闁绘挸娴烽崝鎾⒑閸涘﹤濮�闁哄懏绻堝畷娆撴晸閿燂拷(Begin)==================-->
+		<!-- 闂傚倸鍊风粈渚�骞栭銈嗗仏妞ゆ劧绠戠壕鍧楁煕濞嗗浚妲洪柣婵婂煐閹便劌螖鐎ｎ偄顏舵俊銈囧Х閸嬫盯鏌婇敐鍡曠箚闁绘垼妫勬儫闂佹寧绻傜换鎴狅拷姘秺閺屻劑鎮ら崒娑橆伓-->
+		<action path="/dateQuary/searchReport"
+			type="com.cbrc.smis.action.ViewReportInAction" name="reportInForm"
+			scope="request" validate="false">
+			<forward name="view"
+				path="/report_mgr/report_again_setting/reReport-Sort.jsp" />
+		</action>
+		<!--===================闂傚倸鍊搁崐鐑芥倿閿曚降浜归柛鎰典簽閻捇鏌涢…鎴濅簼闁告瑥绻橀弻鏇㈠醇濠靛洤绐涙繛鎴炴尭缁夊綊寮婚妸銉㈡婵☆垯璀︽禒楣冩⒑缁嬪尅鍔熼柛瀣枛閺佹捇鎳為妷顔兼櫛闂侀潻缍嗛崹鍫曠嵁韫囨挾鏆嬮柟浣冩珪閺傦拷婵＄偑鍊栧濠氬煕閸儱纾挎繝濠傛噽绾惧ジ寮堕崼娑樺闁崇粯娲熼弻鈩冩媴閸濄儛銏ゆ煃鐟欏嫬鐏存鐐达耿瀹曞ジ寮撮悤鍌滆埞闂傚倸鍊烽悞锔撅拷绗涘懐鐭欓柟鐑樻⒐瀹曟煡鏌熼柇锕�鏋熸い顐ｆ礋閺岀喖骞嗛弶鍟冩捇鏌￠崪浣稿缂佺粯绻堝畷褰掝敃閿濆懏娈梻鍌氬�搁崑鍡涘垂閸洖钃熼柕濞垮劗濡插牊绻涢崱妯虹仼妞ゆ柨娲ㄧ槐鎾存媴娴犲鎽垫繝鐢靛仜閿曨亜顕ｉ銏╁悑闁告侗浜濋弬锟介梻浣筋潐閸庢娊鎮ラ悡骞盯鎮滈懞銉㈡嫼闂佸湱枪濞寸兘鍩婇弴鐘电＜缂備焦锚婵淇婇崣澶婂妤犵偛閰ｉ幊鐐哄Ψ閿旂晫褰ㄥ┑鐘垫暩婵挳鎮樺璺虹濡わ絽鍟埛鎺撱亜閺嶎偄浠﹂柣鎾卞劜缁绘盯骞嬮敐鍡欏涧闁诲孩鐔幏锟�-->
+		<!-- 闂傚倸鍊风粈渚�骞栭銈嗗仏妞ゆ劧绠戠壕鍧楁煙缂併垹娅橀柡浣割儐娣囧﹪濡堕崨顔兼闂佺粯鎸搁崐濠氭晸閽樺鐣柛搴″船铻炴俊銈呭閺嗚京绱撻崒姘拷鐑芥嚄閼搁潧鍨旈悗闈涙啞椤洟鏌￠崶銉ョ仼缂佺姵鐗犻弻銊╂偆閸屾稑顏�-->
+		<action path="/selForseReportAgain"
+			type="com.cbrc.smis.action.SelectForseReportAgainAction"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="view"
+				path="/report_mgr/report_again_mgr/report_again_mgr.jsp" />
+		</action>
+		<!--闂傚倸鍊风粈渚�骞栭锕�纾归柣鐔煎亰閻斿棙淇婇婵嗕汗缁惧彞绮欓弻銊╂偆閸屾稑顏�-->
+		<action path="/newForseReportAgain"
+			type="com.cbrc.smis.action.NewForseReportAgainAction"
+			name="reportInForm" scope="request"
+			input="/report_mgr/report_again_mgr/report_again_add.jsp"
+			validate="false">
+		</action>
+		<!--闂傚倸鍊搁崐鐑芥倿閿曚降浜归柛鎰典簽閻捇鏌涢…鎴濅簼闁告瑥绻橀弻鏇㈠醇濠靛洤绐涙繛鎴炴尭缁夊綊寮婚妸銉㈡婵☆垯璀︽禒楣冩⒑缁嬪尅鍔熼柛瀣ㄥ�濋獮鍐喆閸曨剙顎撻梺鑽ゅ枑濠㈡ɑ鎱ㄩ姀銈嗏拺濞村吋鐟х粔顔剧磼閻樺磭澧电�殿噮鍋勯濂稿川椤忓懏鏉搁梻浣筋潐閸庢娊鎮ラ悡骞盯鎮滈懞銉㈡嫼闂佸湱枪濞寸兘鍩婇弴鐘电＜閻犲洩灏欐晶锕傛煛娴ｈ宕岄柟绋匡攻瀵板嫬螣閻戔晜鐎奸梻浣筋嚙鐎涒晠鎮㈤鍕闁跨噦鎷�-->
+		<action path="/selReportAgainSetting"
+			type="com.cbrc.smis.action.SelectReportAgainSettingAction"
+			name="reportInForm" scope="request"
+			input="/report_mgr/report_again_setting/reReport-Sort.jsp"
+			validate="false">
+		</action>
+		<!--闂傚倸鍊搁崐鐑芥倿閿曚降浜归柛鎰典簽閻捇鏌涢…鎴濅簼闁告瑥绻橀弻鏇㈠醇濠靛洤绐涙繛鎴炴尭缁夊綊寮婚妸銉㈡婵☆垯璀︽禒楣冩⒑缁嬪尅鍔熼柛瀣ㄥ�濋獮鍐喆閸曨剙顎撻梺鑽ゅ枑濠㈡ɑ鎱ㄩ姀銈嗏拺濞村吋鐟х粔顔剧磼閻樺磭澧电�殿噮鍋勯濂稿川椤忓懏鏉搁梻浣筋潐閸庢娊鎮ラ悡骞盯鎮滈懞銉㈡嫼闂佸湱枪濞寸兘鍩婇弴鐘电＜閻犲洦褰冮顐ｄ繆閸欏濮嶆い銏℃瀹曘劑顢欓崜顬倝姊绘担鑺ョ《闁革綇绠撻獮蹇涙晸閿燂拷-->
+		<action path="/editReportAgainSetting"
+			type="com.cbrc.smis.action.EditReportAgainSettingAction"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="view"
+				path="/report_mgr/report_again_setting/report_again_settingadd.jsp" />
+		</action>
+		<!--闂傚倸鍊搁崐鐑芥倿閿曚降浜归柛鎰典簽閻捇鏌涢…鎴濅簼闁告瑥绻橀弻鏇㈠醇濠靛洤绐涙繛鎴炴尭缁夊綊寮婚妸銉㈡婵☆垯璀︽禒楣冩⒑缁嬪尅鍔熼柛瀣ㄥ�濋獮鍐喆閸曨剙顎撻梺鑽ゅ枑濠㈡ɑ鎱ㄩ姀銈嗏拺濞村吋鐟х粔顔剧磼閻樺磭澧电�殿噮鍋勯濂稿川椤忓懏鏉搁梻浣筋潐閸庢娊鎮ラ悡骞盯鎮滈懞銉㈡嫼闂佸湱枪濞寸兘鍩婇弴鐘电＜閻犲洦褰冮弳锝囷拷娈垮枤缁垳鎹㈠┑瀣＜闁靛牆鎳忛悾濂告⒒娴ｈ姤纭堕柛锝忕畵楠炲繘鏁撻敓锟�-->
+		<action path="/newReportAgainSetting"
+			type="com.cbrc.smis.action.NewReportAgainSettingAction"
+			name="reportInForm" scope="request"
+			input="/report_mgr/report_again_setting/report_again_settingadd.jsp"
+			validate="false">
+		</action>
+		<!--===================闂傚倸鍊搁崐鐑芥倿閿曚降浜归柛鎰典簽閻捇鏌涢…鎴濅簼闁告瑥绻橀弻鏇㈠醇濠靛洤绐涙繛鎴炴尭缁夊綊寮婚妸銉㈡婵☆垯璀︽禒楣冩⒑缁嬪尅鍔熼柛瀣枔濡叉劙骞樼�涙ê顎撻柣鐔哥懃鐎氼剟妫勫鍛斀闁绘劗顣介幏锟犳煕鐎ｎ亷韬�殿噮鍋勯濂稿川椤忓懏鏉搁梻浣筋潐閸庢娊鎮ラ悡骞盯鎮滈懞銉㈡嫼闂佸湱枪濞寸兘鍩婇弴鐘电＜缂備焦锚婵淇婇崣澶婂妤犵偛閰ｉ幊鐐哄Ψ閿旂晫褰ㄥ┑鐘垫暩婵挳鎮樺璺虹濡わ絽鍟埛鎺撱亜閺嶎偄浠﹂柣鎾卞劜缁绘盯骞嬮悙鍨櫘缂備胶濮垫竟鍡欐閹烘挻缍囬柕濞垮劗閺嬫瑩姊烘潪鎵槮缂佸鎸抽崺鐐哄箣閿曪拷缁犲鏌涢锝嗙闁挎稒顨婂缁樻媴閻熼偊鍤嬬紓浣割儐鐢偤骞戦姀銈呯疀妞ゆ梻鐡斿鐔兼⒑鐟欏嫬鍔跺┑顔哄�濆鏌ヮ敆娴ｈ櫣鐦堥梺鍓茬厛閸嬪懐浜搁悽鍛娾拻闁稿被鍊曢悘锕傛煛鐏炶濡奸柍钘夘槸閳诲酣骞嬮悪锟介崬鍓佺磽閸屾瑧鍔嶉柛鐐差煼楠炲繘鏁撻敓锟�-->
+
+
+
+		<!-- =====================闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊呭厴楠炲繘鎮滈挊澶岊槯婵犮垼娉涢敃銈夊煕婢舵劖鈷戠紓浣癸供濞堟棃鏌涢悢閿嬪仴妞ゃ垺宀搁弫鎰緞鐎ｎ偅顏熼梻浣稿悑娴滀粙宕曢弻銉ョ煑闊洦绋掗悡銉╂煟閺囩偛锟藉湱锟芥熬鎷�=========================-->
+		<!-- 闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊呭厴楠炲繘鎮滈挊澶岊槯婵犮垼娉涢敃銈夊煕婢舵劖鈷戠紓浣癸供濞堟洖鈹戦悙璇у伐妞ゆ洩绲剧换婵嗩潩椤戔斂鍔嶉妵鍕敇閻旈浠村┑鐐茬墳閹凤拷-->
+		<action path="/dateQuary/manualCheckRep"
+			type="com.cbrc.smis.action.ViewReportInAction" name="reportInForm"
+			scope="request" validate="false">
+			<forward name="viewCheck"
+				path="/report_mgr/report_check/manualCheck.jsp" />
+		</action>
+
+		<!-- 闁诲骸鍘滈崜婵嬫偋閹惰棄鍐�闁跨喓濮峰畷锝夋煛鐏炶鍔ユい鏇嫹 -->
+		<action path="/dateQuary/manualCheckRepSHJY"
+			type="com.cbrc.smis.action.ViewSHJYReportInAction"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="viewCheck"
+				path="/report_mgr/report_check/manualCheckSHJY.jsp" />
+		</action>
+
+		<!-- 闂佸綊娼х紞濠囧闯閾忕櫢鎷烽崗澶婂⒉闁绘濞婂浠嬫晸閻橀潧鐭楅梺纭呯堪閸庢挳濡撮敓锟� -->
+		<action path="/dateQuary/shjyManualCheckRep"
+			type="com.cbrc.smis.action.SHJYReportInAction" name="reportInForm"
+			scope="request" validate="false">
+			<forward name="shjyCheckRep"
+				path="/dateQuary/manualCheckRepSHJY.do" />
+		</action>
+
+		<!-- 闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊呭厴楠炲繘鎮滈挊澶岊槯婵犮垼娉涢敃銈夊煕婢舵劖鈷戠紓浣癸供濞堟瑦绻涢崨顔界缂侇喗宀稿畷锟犳倷閳哄倹鏉搁梻浣虹《閸撴繈鎮烽敃鍌氱疅闁跨噦鎷�-->
+		<action path="/dateQuary/saveCheckRep"
+			type="com.cbrc.smis.action.UpdateReportInAction"
+			name="saveReportInForm" scope="request" validate="false"
+			input="/report_mgr/report_check/manualCheck.jsp">
+			<forward name="saveCheck"
+				path="/dateQuary/manualCheckRep.do" />
+		</action>
+
+		<!-- 闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊呭厴楠炲繘鎮滈挊澶岊槯婵犮垼娉涢敃銈夊煕婢舵劖鈷戠紓浣癸供濞堟洖鈹戦悙璇ц含妤犵偛妫濆畷姗�顢欓懖鈺婃Ч婵＄偑鍊栧ú鏍箠鎼粹檧鏋旀繝濠傛噽绾句粙鏌涚仦鍓ф噮妞わ讣闄勬穱濠囶敃閿濆洦鍣伴梺璇″櫙缁绘繈寮澶婄妞ゆ帪鎷烽柣婵呭嵆濮婅櫣鎹勯妸銉︾彚闂佺懓鍤栭幏锟�-->
+		<action path="/dateQuary/viewCheckRep"
+			type="com.cbrc.smis.action.ViewReportInParticularAction"
+			name="reportInParticularForm" scope="request" validate="false">
+			<forward name="viewResult"
+				path="/report_mgr/report_search/report_info.jsp" />
+		</action>
+
+		<!--闂傚倷娴囧畷鐢稿磻閻愮數鐭欓煫鍥ㄧ☉缁�澶岋拷鐧告嫹闁告洦鍋夐崺鐐烘煟鎼淬劍娑ч柟璇х節瀹曟垵顫滈敓浠嬪蓟閺囩喓绠鹃柣鎰靛墯閻濇洟姊洪幐搴ｃ�掗柛鐘崇墵瀵鍨鹃幇浣告倯闂婎偄娲﹀ú婊堟儊閸儲鈷戠紓浣诡焽閳洟鏌ｉ悤鍌氼洭缂侇喗宀搁弻鍡楊吋閸涱垰濮堕梻浣告啞閸擃剟宕ㄩ锝喰氶梻鍌欐祰瀹曞灚鎱ㄩ弶鎳ㄥ綊宕熼璺ㄧ畾闂佹悶鍎弲娑㈠垂濠靛鍙撻柛銉ｅ妿閳藉鏌﹂崘顏勬灈闁哄本娲樼粩鐔碱敍濮橆剦浼�闂佷紮缍囬幏锟�-->
+		<action path="/report/report_check/viewJYDetail"
+			type="com.cbrc.smis.action.ViewJYDetail" scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_jy_detail.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_jy_detail.jsp" />
+		</action>
+
+		<!--闂備浇顕х�涒晠顢欓弽顓炵獥闁哄稁鍘肩壕褰掓煙闂傚鍔嶉柛瀣樀閺屾盯顢曢敐鍡欘槬闂佹椿鍘介〃鍡樼┍婵犲浂鏁嶆慨姗嗗幗閸庢挸顪冮妶鍡樿偁闁搞儯鍔屾禒顖炴⒑閹肩偛鍔氶柛銏＄叀閳ユ梻锟斤綆鍓涚壕鍏笺亜閺冨洤浜圭紒鐘哄吹閿熻姤顔栭崰鏍�﹂柨瀣╃箚闁汇値鍨煎Σ鑲╃磽娴ｅ搫顎撻柟鍑ゆ嫹-->
+		<action path="/report/report_check/viewYCBHDetail"
+			type="com.cbrc.smis.action.ViewYCBHDetail" scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_ycbh_detail.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_ycbh_detail.jsp" />
+		</action>
+		<!-- ======================闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊呭厴楠炲繘鎮滈挊澶岊槯婵犮垼娉涢敃銈夊煕婢舵劖鈷戠紓浣癸供濞堟梻鐥紒銏犲箻婵″弶鍔欓獮鎺懳旈敓鐣岀不婵犳碍鍊垫繛鎴烆仾椤忓牊鍎嶉柨鐕傛嫹================================-->
+
+		<!-- ======================闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹂柛鐘崇墵閹锋垿鎮㈤崗鑲╁帾婵犮垼顕栭崹鎵拷姘煎櫍閹偓绂掔�ｎ偄锟藉灚绻涢崼婵堜虎婵炲懏鐟╅弻鐔风暋閺夋寧些闂佸疇顫夐崹鍧椼�佸璺哄耿婵☆垯璀︽导锟�===============================-->
+		<!-- 闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹂柛鐘崇墵閹锋垿鎮㈤崗鑲╁帾婵犮垼鍩栫粙鎾绘偩鏉堛劊浜滈柕澶樺灡鐎氾拷-->
+		<action path="/reportSearch/searchRep"
+			type="com.cbrc.smis.action.ViewReportInInfoAction"
+			name="reportInInfoForm" scope="request" validate="false">
+			<forward name="viewSearch"
+				path="/report_mgr/report_search/search_content_view.jsp" />
+		</action>
+		<!-- 闂佸搫琚崕鍐诧耿閸涙潙绠ラ柨鐔剁矙瀵灚寰勬繝鍕啢闁荤偞绋戦張顒佹叏閵堝洦鍋橀柕濞垮劥鐎氭瑩鏌涘▎妯虹仧濞存粍甯為敓鐣屾暩閸樠囧吹椤撱垹鏋侀柣妤�鐗嗙粊锟�-->
+		<action path="/reportGer/viewSubOrgReport"
+			type="com.cbrc.smis.action.ViewSubOrgReportAction"
+			name="reportInInfoForm" scope="request" validate="false">
+			<forward name="view"
+				path="/report_mgr/report_search/search_subOrgReport_view.jsp" />
+		</action>
+		<!-- 闂佸搫琚崕鍐诧耿閸涘瓨鍤婃い蹇撳缁犳帡鏌ｉ妸銉ヮ仹缂佹鍊块獮搴ㄥΨ閿曪拷閸撲即鏌涢幇顕呮殰闁瑰嚖鎷�-->
+		<action path="/reportSearch/searchMyRep"
+			type="com.cbrc.smis.action.ViewReportMyInInfoAction"
+			name="reportInInfoForm" scope="request" validate="false">
+			<forward name="viewSearch"
+				path="/orgtogether_net/view/search_content_view.jsp" />
+		</action>
+		<!-- 闁硅翰鍎撮妴鍐蓟閵壯勭畽闁挎稑鐗呮穱濠囧箒椤栨稓鍙�閻犲浂婢佺槐锟�-->
+		<action path="/reportSearch/searchReport"
+			type="com.cbrc.smis.action.ViewSearchReportAction"
+			name="reportInInfoForm" scope="request" validate="false">
+			<forward name="viewSearch"
+				path="/report_mgr/report_search/search_view.jsp" />
+		</action>
+		<!--闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹀ù婊勭箘閿熻姤纰嶅畝鎼佸蓟閵娾晛妫橀柛顭戝枓閹稿啴姊哄ú璇插箹濡ょ姵鐡曡ぐ渚�姊洪幖鐐插姷缂佽尪濮ら弲鍫曞箵閹规缍婇幃鈩冩償閵忕姵鐣婚柣搴㈩問閸犳牠鈥﹂柨瀣╃箚闁汇値鍨煎Σ鑲╃磽娴ｅ搫顎撻柟鍑ゆ嫹-->
+		<action path="/reportSearch/viewReport"
+			type="com.cbrc.smis.action.ViewReportInParticularAction"
+			name="reportInParticularForm" scope="request" validate="false">
+			<forward name="viewResult"
+				path="/report_mgr/report_search/report_info.jsp" />
+		</action>
+		<!-- ======================闂傚倸鍊烽懗鍫曘�佹繝鍕濞村吋娼欑壕鍧楁煙缂併垹鏋涙潻婵嬫⒑閸涘﹤濮﹂柛鐘崇墵閹锋垿鎮㈤崗鑲╁帾婵犮垼顕栭崹鎵拷姘煎櫍閹箖鎮惧畝锟界壕浠嬫煕鐏炲墽鎳呴柛鏂跨Ч閺岀喎顫㈠畝濠傛濡炪値鍘煎ú顓㈠极閹剧粯鏅搁柨鐕傛嫹================================-->
+		<!-- 闂傚倸鍊风粈渚�骞栭銈嗗仏妞ゆ劧绠戠壕鍧楁煙缂併垹娅橀柡浣割儐娣囧﹪濡堕崟顓炲婵炲瓨鍤庨崐婵嬪蓟閿濆绫嶉柛灞诲�楅崝鎼佹偠濮橆厼鍝烘慨濠冩そ瀹曨偊宕熼锝嗩唲闂備胶绮悧婊堝储瑜戦悘瀣⒑鐠恒劌娅愰柟鍑ゆ嫹-->
+		<action path="/text" type="com.cbrc.smis.jhb.SelectReport_In"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="ceshi" path="/MyJsp.jsp" />
+		</action>
+		<!--闂傚倸鍊风粈渚�骞栭銈囩煋闁绘垼袙閿熻姤鐗犲畷姗�濡歌濞堝吋绻涙潏鍓ф偧闁硅櫕鎹囬、姘舵焼瀹ュ棛鍘藉┑鈽嗗灥椤曆呭緤閼姐倧鎷峰▓鍨灍濠电偛锕濠氭晲婢跺á鈺呮煏婢跺牆鍔村ù鐘冲劤閳规垿鎮╁▎蹇曅ｉ悗姘秺濮婄粯鎷呴崨濠冨創濡炪倖鍨甸幊鎰版晸閼恒儱鍤柛鎾跺枛閻涱噣宕橀鐓庡祮闂佺粯顭囬弫鎼佹偂鐎ｎ喗鈷戦柛婵嗗濡插綊鎮楃粭娑樻嫅閹峰嘲顫濋鐘插绩闂佸搫鐭夌换婵嗙暦濮楋拷婵℃瓕顦查柣鎾跺枎閳规垿鍩ラ崱妞惧闂佺懓鍤栭幏锟� -->
+		<action path="/Orgname" type="com.cbrc.smis.jhb.Selectorg"
+			name="jhbform" scope="request" validate="false">
+			<forward name="show" path="/C3file/showC3file.jsp" />
+		</action>
+		<action path="/Orgname1" type="com.cbrc.smis.jhb.Feny"
+			scope="request" validate="false">
+			<forward name="show" path="/C3file/showC3file.jsp" />
+		</action>
+
+		<action path="/insert_range"
+			type="com.cbrc.smis.action.InsertRangeAction" name="rangeTempForm"
+			scope="request" validate="false">
+			<forward name="viewRange" path="/rangeTemp/viewRange.jsp" />
+		</action>
+		
+		<!--机构报表报送情况统计-->
+		<action path="/reportStatistics"
+			type="com.cbrc.smis.action.ReportStatisticsAction" name="orgNetForm"
+			scope="request" validate="false">
+			<forward name="view"
+				path="/report_mgr/report_data_stat/orgReportStat.jsp" />
+		</action>
+		<action path="/searchDataStat"
+			type="com.cbrc.smis.action.DataStatAction" name="reportInForm"
+			scope="request" validate="false">
+			<forward name="view"
+				path="/report_mgr/report_data_stat/search_rep_stat.jsp" />
+		</action>
+		<action path="/fitechorg" name="fitechorgForm" scope="request"
+			type="com.cbrc.fitech.org.ViewFitechOrgAction" validate="false">
+			<forward name="view" path="/FitechOrg/showorg.jsp" />
+		</action>
+		<action path="/Orgname" type="com.cbrc.fitech.org.Feny"
+			scope="request" validate="false">
+			<forward name="show" path="/FitechOrg/showorg.jsp" />
+		</action>
+		<action path="/neworg" name="fitechorgForm" scope="request"
+			type="com.cbrc.fitech.org.addorgAction" validate="false">
+			<forward name="add" path="/FitechOrg/AddOrg.jsp" />
+		</action>
+		<action path="/Update" scope="request"
+			type="com.cbrc.fitech.org.updateAction" validate="false">
+			<forward name="update" path="/FitechOrg/updateorg.jsp" />
+		</action>
+		<action path="/edit" name="fitechorgForm" scope="request"
+			type="com.cbrc.fitech.org.editAction" validate="false">
+			<forward name="update" path="/FitechOrg/updateorg.jsp" />
+		</action>
+		<!--闂佽桨鑳舵晶妤�鐣垫担鎰熝囧炊椤帗瀚圭紓浣诡焽閵堝鎮峰▎娆愬-->
+		<action path="/viewCollectData"
+			type="com.cbrc.smis.action.ViewCollectAction" name="reportInForm"
+			scope="request" validate="false">
+			<forward name="view"
+				path="/collectReport/search_data_stat.jsp" />
+		</action>
+
+		<!--闂佽桨鑳舵晶妤�鐣垫担鎰熝囧炊椤帗瀚归悹浣哥－閻熸捇寮堕悙璺盒撶紒浣藉吹閹叉挳鏁撻敓锟�-->
+		<action path="/viewCollectDown"
+			type="com.cbrc.smis.action.ViewCollectDownAction" name="reportInForm"
+			scope="request" validate="false">
+			<forward name="view" path="/collectReport/downcollect.jsp" />
+		</action>
+		<!--濠电偞娼欑换妤咃綖瀹ュ绠柕澶嗘櫔閹烽攱鎷呯憴鍕毣闂佸搫顑呯�氼亝绌辨繝鍥х畳闁跨噦鎷�-->
+		<action path="/viewCollectOrgInfo"
+			type="com.fitech.net.action.ViewCollectOrgInfoAction">
+			<forward name="view"
+				path="/collectReport/viewCollectOrgInfo.jsp" />
+		</action>
+
+		<action path="/report/reportAgainInitSet"
+			type="com.cbrc.smis.action.RepAgainSetInitAction" 
+			name="reportInForm" scope="request">
+			<forward name="add"
+				path="/report_mgr/report_again_mgr/repAgainSet.jsp" />
+			<forward name="search" path="/report/repSearch.do" />
+		</action>
+
+		<action path="/report/repSearch"
+			type="com.cbrc.smis.action.ViewReportInAgainAction"
+			name="reportInForm" scope="request" parameter="REPAGAINSET"
+			validate="false">
+			<forward name="viewCheck"
+				path="/report_mgr/report_again_mgr/repSearch.jsp" />
+		</action>
+
+		<action path="/report/reportAgainSet"
+			type="com.cbrc.smis.action.NewReportAgainSettingAction"
+			name="reportInForm" scope="request"
+			input="/report_mgr/report_again_mgr/repAgainSet.jsp"
+			validate="false">
+			<forward name="search" path="/report/repSearch.do" />
+		</action>
+
+		<!-- 闂佽桨鑳舵晶妤�鐣垫笟锟藉顒勫炊閿旂瓔鍋ㄦ繛鎴炴尭椤戝牆霉閸ヮ剙绀嗘俊銈呭閿熸枻鎷�-->
+		<action path="/template/templateDownloadList"
+			type="com.cbrc.smis.action.TempletDownloadListAction"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="view"
+				path="/template/data_report/templetList.jsp" />
+		</action>
+
+		<!-- 闂佽桨鑳舵晶妤�鐣垫笟锟介獮搴ㄥΨ閳哄瀚归柨鐕傛嫹 -->
+		<action path="/viewDataReport"
+			type="com.fitech.net.action.ViewDataReportAction" name="reportInForm"
+			scope="request" validate="false">
+			<forward name="view"
+				path="/template/data_report/viewDataReport.jsp" />
+		</action>
+
+		<!--  闂佽桨鑳舵晶妤�鐣垫担鐚存嫹娴ｅ喚娼愰柣锔兼嫹  -->
+
+		<action path="/viewCheckReport"
+			type="com.fitech.net.action.ViewCheckReportAction"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="error"
+				path="/template/data_report/error.html" />
+			<forward name="show_checkReprot"
+				path="/template/data_report/checkReport.jsp" />
+		</action>
+
+
+
+
+		<!-- -->
+		<action path="/upDataReport"
+			type="com.cbrc.smis.action.UpInfoFilesAction" name="infoFilesForm"
+			scope="request" input="/template/data_report/viewDataReport.jsp"
+			validate="false">
+		</action>
+
+		<!--闂侀潻璐熼崝搴ㄥ吹鎼淬垻绠欐い鎰剁到琚� -->
+		<action path="/onLineReport"
+			type="com.fitech.net.action.OnLineReportAction" name="reportInForm"
+			scope="request" input="/template/data_report/viewDataReport.jsp"
+			validate="false">
+			 <forward name="viewOnLine"
+				path="/template/data_report/onLineReport.jsp" /> 
+				<!--  <forward name="viewOnLine"
+				path="/template/data_report/onLineProcess.jsp" />-->
+		</action>
+
+		<!--缂備礁鍊藉畷鐢稿吹鎼淬劌绠柕澶嗘櫔閹风兘鏁撻敓锟� -->
+		<action path="/offLineReport"
+			type="com.fitech.net.action.OffLineReportAction" name="reportInForm"
+			scope="request" input="/template/data_report/viewDataReport.jsp"
+			validate="false">
+			<forward name="viewOffLine"
+				path="/template/data_report/upReport.jsp" />
+		</action>
+
+		<!--闂侀潻璐熼崝搴ㄥ吹鎼淬垻鈹嶆い鏃囧Г閺嗭拷(闁诲骸鍘滈崜婵嬫偋閾忣偆鈻旂�广儱顧�閹峰嘲顫濆畷鍥╃暫闂佹眹鍔岀�氼厽鎱ㄩ妶鍥ㄥ仒闁靛ǹ鍊栭崣蹇涙煛閿熶粙鏁撻敓锟�-闂備緡鍋勯崐濠氬极閵堝瀚夐柨鐔诲Г缁嬪锟斤綆鍓熼悰鎾绘煛閸垹鍔嬮柣搴嫹) -->
+		<action path="/failedReportEdit"
+			type="com.fitech.net.action.CheckFailedReportAction"
+			name="reportInForm" scope="request">
+		<forward name="success"
+				path="/template/data_report/onLineReport.jsp" />
+				<!-- 	<forward name="success"
+				path="/template/data_report/onLineProcess.jsp" /> -->
+		</action>
+
+		<!--闂侀潻璐熼崝搴ㄥ吹鎼淬垻鈹嶆い鏃囧Г閺嗭拷(闁诲骸鍘滈崜婵嬫偋閾忣偆鈻旂�广儱顧�閹峰嘲顫濆畷鍥╃暫闂佹眹鍔岀�氼厽鎱ㄩ妶鍥ㄥ仒闁靛ǹ鍊栭崣蹇涙煛閿熶粙鏁撻敓锟�-闂備緡鍋勯崐濠氬极閵堝棛顩查幖娣灪缁犳帒鈽夐幘鎰佸剳濡ょ姴娲鐢告倻濡》鎷烽敓锟�) -->
+		<action path="/failedReportOnLineEdit"
+			type="com.fitech.net.action.CheckFailedOnLineAction"
+			name="reportInForm" scope="request">
+			<!--<forward name="success"
+				path="/template/data_report/onLineReport.jsp" />-->
+				<forward name="success"
+				path="/template/data_report/onLineRrocess.jsp" />
+		</action>
+
+		<!--闂佽桨鑳舵晶妤�鐣垫笟锟藉浠嬫晸閻橀潧鐭� -->
+		<action path="/report/dataJY"
+			type="com.fitech.net.action.DataJYAction" scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_jy_detail.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_jy_detail.jsp" />
+			<forward name="dd_more_view"
+				path="/report_mgr/report_check/dd_more_jy_detail.jsp" />
+		</action>
+
+		<!-- 闂佽桨鑳舵晶妤�鐣垫笟锟藉浠嬫晸閻橀潧鐭楅梺鑹伴哺閺屻劍鎱ㄩ敓锟�-->
+		<action path="/report/dataLDJY" name="reportInForm"
+			type="com.fitech.net.action.DataJYLDAction" scope="request"
+			validate="false">
+			<forward name="view"
+				path="/template/data_report/upLDReport.jsp" />
+		</action>
+
+		<!--闂侀潻璐熼崝搴ㄥ吹鎼淬劌绠柕澶嗘櫔閹烽攱鎷呴悜妯兼殸闂佽桨鑳舵晶妤�鐣垫笟锟藉浠嬫晸閻橀潧鐭� -->
+		<action path="/report/onLineDataJY"
+			type="com.fitech.net.action.OnLineDataJYAction" scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_jy_detail.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_jy_detail.jsp" />
+		</action>
+
+		<!--闂侀潻璐熼崝搴ㄥ吹鎼淬劌绠柕澶嗘櫔閹烽攱鎷呴悜妯兼殸闂佽桨鑳舵晶妤�鐣垫笟锟藉浠嬫晸閻橀潧鐭� -->
+		<action path="/report/viewDataJYInfo"
+			type="com.fitech.net.action.ViewDataJYInfoAction" scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_jy_detail.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_jy_detail.jsp" />
+		</action>
+	
+		<!--闂侀潻璐熼崝搴ㄥ吹鎼淬劌绠柕澶嗘櫔閹烽攱鎷呴悜妯兼殸闂佽桨鑳舵晶妤�鐣垫笟锟藉浠嬫晸閻橀潧鐭� -->
+		<action path="/report/viewMoreDataJYInfo"
+			type="com.fitech.net.action.ViewMoreDataJYInfoAction" scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_jy_more_detail.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_jy_more_detail.jsp" />
+		</action>
+		
+		<!--闂佸湱鐟抽崱鈺傛杸闂佽桨鑳舵晶妤�鐣垫笟锟藉浠嬫晸閻橀潧鐭� -->
+		<action path="/report/runDataJY"
+			type="com.fitech.net.action.RunJYAction" scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_jy_detail.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_jy_detail.jsp" />
+		</action>
+		<!-- 濠殿喚鎳撳ú锕傛晸閸婄噥鍞虹紒妤�鍊块獮搴ㄥΨ閿旇姤顔嶉梺鍦閹凤拷-->
+		<action path="/collectReport/collectReportData"
+			type="com.fitech.net.action.CollectReportDataAction" 
+			name="reportInForm"
+			scope="request">
+			<forward name="view" path="/viewCollectData.do" />
+		</action>
+
+		<!-- ETL闂佽桨鑳舵晶妤�鐣垫笟锟藉濠氬Ψ瑜庣粻锟�-->
+	    <action path="/etlReportFound"
+	   			type="com.fitech.net.action.ETLReportFoundAction"
+	   			name="ETLReportForm"
+	   			scope="request"
+				validate="false">
+			<forward name="found" path="/collectReport/ETLFound.jsp"/>
+		</action>
+	 
+		<!-- 濠殿喚鎳撳ú锕傛晸閼恒儲顫楁繛鏉戞缁嬪绻濋崘銊愭捇鏌℃担鍝勵暭鐎规搫鎷�-->
+		<action path="/collectReport/translationReport"
+			type="com.fitech.net.action.TranslationReportAction" 
+			scope="request"
+			name="reportInForm">
+			<forward name="view" path="/viewCollectData.do" />
+		</action>
+		<!-- ===================濠殿喚鎳撳ú锕傛晸閻ｅ瞼甯涢柡宀�鍠庨锝堢疀濮樼厧鏅柣搴ゎ潐閻℃敄art================== -->
+		<!--闂佸搫琚崕鍐诧耿閸涱厜褔宕堕…鎺撳缂備焦蓱閻撴瑧锟芥鍣幏锟� -->
+		<action path="/collectType/viewCollectType"
+			type="com.fitech.net.action.ViewCollectTypeAction"
+			name="collectTypeForm" scope="request">
+			<forward name="view"
+				path="/collectReport/collectType/collectTypeView.jsp" />
+		</action>
+		<!--闂佸搫鍊瑰姗�路閸愵喖绫嶉悹楦挎濞兼棃鏌ｅ⿰鍛暭闁活亜缍婇獮锟界紓浣股戦悡娆戯拷娈垮枛缁绘劘銇愰崣澶岊浄闁靛濡囧﹢浠嬫煙椤掑啫鍚规繛鍫熷灴瀵敻鎮滃Ο纭锋嫹椤栫偛鐭楀┑鐘插暙琚氶柣鐐村喕閹凤拷-->
+		<action path="/collectType/viewCollectTypeOrgReport"
+			type="com.fitech.net.action.ViewCollectTypeOrgReportAction"
+			name="collectTypeForm" scope="request">
+			<forward name="add"
+				path="/collectReport/collectType/collectTypeAdd.jsp" />
+		</action>
+		<!--闂佸搫鍊瑰姗�路閸愩剱褔宕堕…鎺撳缂備焦蓱閻撴瑧锟芥鍣幏锟� -->
+		<action path="/collectType/saveCollectType"
+			type="com.fitech.net.action.SaveCollectTypeAction"
+			name="collectTypeForm"
+			input="/collectReport/collectType/collectTypeAdd.jsp"
+			scope="request">
+			<forward name="view" path="/collectType/viewCollectType.do" />
+		</action>
+		<!--闂佸搫琚崕鍐诧耿閸涱垱濯奸柟顖嗗懏姣庡┑顔炬嚀濞诧箓鏁撻悾宀�甯涢柡宀�鍠庨锝堢疀閺冨倹鑿囬梺璇″墲椤曆囧吹椤撱垹绾ч柕澹嫮鏆犻梺纭呯堪閸庢挳濡撮敓锟�-->
+		<action path="/collectType/viewOtherCollect"
+			type="com.fitech.net.action.ViewOtherCollectAction"
+			name="reportInForm" scope="request" validate="false">
+			<forward name="view"
+				path="/collectReport/collectType/viewOtherCollect.jsp" />
+		</action>
+		<!--闂佸憡甯炴繛锟芥繛鍛鏁堥柛銉厜閹烽绱掑Ο鑽ゅ幍閻庢鍣幏锟�-->
+		<action path="/collectType/deleteCollectType"
+			type="com.fitech.net.action.DeleteCollectTypeAction"
+			name="collectTypeForm" scope="request" validate="false">
+			<forward name="view" path="/collectType/viewCollectType.do" />
+		</action>
+		<!--婵烇絽娴傞崰妤呭极閻撳巩褔宕堕…鎺撳缂備焦蓱閻撴瑧锟芥鍠栫换鎰版儓瀹ュ鍋濋柨鐕傛嫹-->
+		<action path="/collectType/editCollectType"
+			type="com.fitech.net.action.EditCollectTypeAction"
+			name="collectTypeForm" scope="request" validate="false">
+			<forward name="edit"
+				path="/collectReport/collectType/collectTypeEdit.jsp" />
+		</action>
+		<!--婵烇絽娴傞崰妤呭极閻撳巩褔宕堕…鎺撳缂備焦蓱閻撴瑧锟芥鍣幏锟�-->
+		<action path="/collectType/updateCollectType"
+			type="com.fitech.net.action.UpdateCollectTypeAction"
+			name="collectTypeForm" scope="request" validate="false">
+			<forward name="view" path="/collectType/viewCollectType.do" />
+		</action>
+		<!-- ===================濠殿喚鎳撳ú锕傛晸閻ｅ瞼甯涢柡宀�鍠庨锝堢疀濮樼厧鏅柣搴ゎ潐椤戞仒d================== -->
+		
+		<!-- ETL闂佺儵鏅滈崹鍓佹暜閿燂拷-->
+		<action path="/collectReport/jobLogMgr" type="com.fitech.net.action.JobLogMgrAction" parameter="method" name="jobForm" scope="request">
+			<forward name="jobMgr_to_find" path="/collectReport/monitorETL.jsp" />
+			<forward name="jobMgr_find_job" path="/collectReport/monitorETL.jsp"/>
+			<forward name="jobMgr_view_error" path="/collectReport/view_error.jsp"/>
+		</action>
+		<!-- 闁诲骸鍘滈崜婵嬫偋閹惰棄绠ラ柨鐔剁矙瀵灚寰勭�ｎ�捇鎮跺☉铏		-->
+		<action path="/dateQuary/saveAllCheckRep"
+			type="com.cbrc.smis.action.UpdateAllReportInAction"
+			name="saveReportInForm" scope="request" validate="false"
+			input="/report_mgr/report_check/manualCheck.jsp">
+			<forward name="saveAllCheck"
+				path="/dateQuary/manualCheckRep.do" />
+		</action>
+
+		<!--闂侀潻璐熼崝搴ㄥ吹鎼淬劌绠柕澶嗘櫔閹烽攱鎷呴悜妯兼殸闂佽桨鑳舵晶妤�鐣垫笟锟藉浠嬫晸閻橀潧鐭楁繛鎴炴尭缁夊綊鏁撻懞銉や孩缂佽鍟粚閬嶅焺閸愌呯 -->
+		<action path="/report/viewJYNotPassInfo"
+			type="com.fitech.net.action.ViewJYNotPassInfoAction"
+			scope="request">
+			<forward name="dd_view"
+				path="/report_mgr/report_check/dd_notPassCause.jsp" />
+			<forward name="qd_view"
+				path="/report_mgr/report_check/qd_notPassCause.jsp" />
+		</action>
+
+		<!-- 闂侀潻璐熼崝搴ㄥ吹鎼淬垻绠欐い鎰剁到琚氶梺纭呯堪閸庢挳濡撮崘鈺冣攳婵犻潧妫涢幗锟� @author Yao-->
+		<action path="/report/saveOnLineReport"
+			type="com.cbrc.smis.action.SaveOnLineReportAction"
+			name="reportInForm" validate="false" scope="request">
+		</action>
+	<!-- 闂佺厧顨庢禍婊勬叏閳哄倻绠欐い鎰堕檮缁侊拷-->
+		<action path="/report/autoFillZeroReport"
+			type="com.cbrc.smis.action.AutoFillZeroReportAction"
+			name="reportInForm" validate="false" scope="request">
+		</action>
+		<!-- 闂侀潻璐熼崝搴ㄥ吹鎼淬垻绠欐い鎰剁到琚氶梺纭呯堪閸庢挳濡撮崘顔煎唨闁跨喓濮峰畷锟� @author Yao-->
+		<action path="/report/validateOnLineReport"
+			type="com.cbrc.smis.action.ValidateOnLineReportAction"
+			name="reportInForm" validate="false" scope="request">
+		</action>
+
+<!-- 闂佸搫绋勭换婵嬫偘濞嗘挸绀傞柕濞炬櫅閸旓拷-->
+		<action path="/report/validateAllReport"
+			type="com.cbrc.smis.action.ValidateAllReportAction"
+			name="reportInForm" validate="false" scope="request">
+		</action>
+<!-- 闂佸綊娼х紞濠囧闯濞差亝鐓傜�广儱妫楄-->
+		<action path="/report_mgr/report_again_mgr/batchAgain" 
+		type="com.cbrc.smis.action.BatchAgainAction" 
+		scope="request">
+			<forward name="batch_toInsert" path="/report_mgr/report_again_mgr/batchAgain.jsp" />
+		</action>
+		<action input="/report_mgr/report_again_mgr/batchAgain.jsp" 
+		name="batchAgainForm" path="/report_mgr/report_again_mgr/doBatchAgain" 
+		type="com.cbrc.smis.action.DoBatchAgainAction" scope="request">
+			
+		</action>
+		<!-- 报送统计 -->
+		<action path="/reportSearch/viewReportStatAction"
+			type="com.fitech.net.action.ViewReportStatAction"
+			name="reportInInfoForm" scope="request" validate="false"
+			 parameter="method">
+			<forward name="view"
+				path="/report_mgr/report_search/search_rep_stat.jsp" />
+		</action>
+	</action-mappings>
+
+</struts-config>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+    <class 
+    	name="com.fitech.net.hibernate.OrgNet" 
+    	table="ORG"
+    >
+        <id name="orgId" 
+        	column="ORG_ID" 
+        	type="java.lang.String"
+        >
+            <generator class="assigned"/>
+        </id>
+ 
+        <property 
+        	name="orgName" 
+        	column="ORG_NAME" 
+        	type="java.lang.String" 
+        />
+        <property 
+        	name="preOrgId" 
+        	column="PRE_ORG_ID" 
+        	type="java.lang.String" 
+        />
+        
+        <property
+			name="setOrgId"
+			column="SET_ORG_ID"
+			type="java.lang.String"
+		/>
+ 
+        <many-to-one 
+        	name="region" 
+        	column="REGION_ID" 
+        	class="com.fitech.net.hibernate.MRegion" 
+        />
+ 
+        <many-to-one 
+        	name="orgType" 
+        	column="ORG_TYPE_ID" 
+        	class="com.fitech.net.hibernate.OrgType"
+         />
+    </class>
+    
+</hibernate-mapping>

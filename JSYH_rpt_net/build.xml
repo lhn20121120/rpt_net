@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- ====================================================================== 
+     2007-11-12                                                 
+
+     project：报表报送系统
+     description：生成WAR包用的Ant脚本                                                               
+     ====================================================================== -->
+
+<project name="rpt_net" default="default">
+    
+	<property name="RELEASE_DIR" value="D:\tempwar\" />
+	<property name="WEB_DIR" value="./WebRoot" />
+	<property name="TEMP_DIR" value="./temp" />
+	<property name="TEMP_WEB_INF" value="${TEMP_DIR}/WEB-INF" />
+	<property name="TEMP_APP_LIB" value="${TEMP_WEB_INF}/lib" />
+	<property name="ProductFile" value="productFile"/>
+	<property name="appName" value="rpt_net"/>
+	<property name="destEncoding" value="UTF-8" />
+	<property name="src" value="JavaSource"/>
+	<property name="classes" value="${WEB_DIR}/WEB-INF/classes" />
+	<!-- ================================= 
+          target: 默认任务 patchApp增量包任务  packApp全包任务  patchApp,clean
+         ================================= -->
+	<target name="default" depends="patchApp,clean" description="">
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: init 初始化
+         - - - - - - - - - - - - - - - - - -->
+	<target name="init">
+		<tstamp>
+			<format property="TODAY" pattern="yyyyMMdd" locale="cn" />
+		</tstamp>
+
+		<mkdir dir="${TEMP_DIR}" />
+
+		<!-- 复制所有文件到临时目录 -->
+		<copy todir="${TEMP_DIR}" overwrite="true">
+			<fileset dir="${WEB_DIR}">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+	</target>
+	
+<!-- 编译文件 -->
+	<target name="compile" depends="init">
+		<javac encoding="${destEncoding}" 
+			debug="on"
+			debuglevel="lines,source"
+			destdir="${classes}" 
+			classpathref="project.classpath">
+			<src path="${src}" />
+		</javac>
+	</target>
+	
+	<!-- 全量文件打包 -->
+	<target name="packApp" depends="init">
+		<war warfile="${RELEASE_DIR}/${appName}-${TODAY}.war" webxml="${TEMP_DIR}/WEB-INF/web.xml">
+		
+			<fileset dir="${TEMP_DIR}">
+				<include name="**/*.*"/>
+			</fileset>		
+		</war>
+		
+	</target>
+
+	<!-- 增量文件打包 -->
+	<target name="patchApp" depends="init">
+		<zip destfile="${RELEASE_DIR}/${appName}-patchApp-${TODAY}.war.zip">
+			<fileset dir="${TEMP_DIR}">
+				<includesfile name="patchApp.txt"/>
+				<exclude name="META-INF/**/*.*"/>
+			</fileset>
+		</zip>
+	</target>
+	
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: clean 清理
+         - - - - - - - - - - - - - - - - - -->
+	<target name="clean">
+		<delete dir="${TEMP_DIR}" />
+	</target>
+	<target name="rebuild" depends="clean,compile"/>
+	
+	
+	
+    <!-- 拷贝源文件打包 -->
+    <target name="exp">
+       <copy todir="${TEMP_DIR}" overwrite="true">
+			<fileset dir="${WEB_DIR}">
+			<includesfile name="patchApp.txt"/>
+			</fileset>
+		</copy>
+    </target>
+    
+    
+	
+</project>

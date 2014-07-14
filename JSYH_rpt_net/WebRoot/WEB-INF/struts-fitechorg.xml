@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+   <data-sources />
+   <form-beans >
+   		<!--机构类型表-->
+    	<form-bean name="mOrgClForm" type="com.cbrc.org.form.MOrgClForm" />
+    	
+   </form-beans>
+
+   <global-exceptions />
+	
+   <global-forwards>
+	 <!-- 系统错误页 -->
+	 <forward name="sysErrPage" path="/error.jsp"/>   
+   </global-forwards>
+		   
+   <action-mappings >  
+	   	<!---机构类型-->
+	    <action
+	      path="/orgcls/orgCls"
+	      attribute="mOrgClForm"
+	      name="mOrgClForm"
+	      scope="request"
+	      type="com.cbrc.fitech.org.ViewOrgClsZxkAction"
+	      validate="false">
+	      <forward name="success" path="/orgcls/org_cls.jsp" />
+	    </action>	
+	    
+	     <action
+	   	  path="/orgcls/insertorgCls"
+	      attribute="mOrgClForm"
+	      name="mOrgClForm"
+	      validate="false"
+	      scope="request"
+	      type="com.cbrc.fitech.org.InsertOrgClsZxkAction">
+	      <forward name="orgcls_add" path="/orgcls/orgcls_add.jsp" />
+	   </action>
+	   
+	   <action
+	   	  path="/orgcls/deleteorgCls"
+	      attribute="mOrgClForm"	      
+	      name="mOrgClForm"
+	      validate="false"
+	      scope="request"
+	      type="com.cbrc.fitech.org.DeleteOrgClsZxkAction">
+	      <forward name="org_cls" path="/orgcls/org_cls.jsp" />
+	   </action>
+	    
+	    <action
+	      path="/orgcls/orgCls_update"
+	      attribute="mOrgClForm"
+	      name="mOrgClForm"
+	      scope="request"
+	      type="com.cbrc.fitech.org.UpdateOrgClsZxkAction"
+	      validate="false">
+	      <forward name="update" path="/orgcls/orgcls_update.jsp" />	       
+	    </action>
+	    
+   </action-mappings>
+	
+   <!--表单位验证设置-->
+   <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+     <set-property property="pathnames" value="/WEB-INF/validator-rules.xml"/>
+   </plug-in>
+</struts-config>
+

@@ -1,0 +1,2 @@
+--导出1104报表时，不能区分报表所属机构，需要给报表名称加上机构的拼音信息 
+src\com\cbrc\smis\servlet\CreateSubOrgReportServlet.java

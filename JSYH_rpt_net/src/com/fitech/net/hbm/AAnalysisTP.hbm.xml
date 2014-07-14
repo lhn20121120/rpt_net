@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+	<!-- 
+		Created by the Middlegen Hibernate plugin 2.1
+		
+		http://boss.bekk.no/boss/middlegen/
+		http://www.hibernate.org/
+	-->
+
+	<class name="com.fitech.net.hibernate.AAnalysisTP" table="A_Analysis_TP">
+		
+		 <id name="ATiD" column="AT_ID" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+
+		<property name="ATName" type="java.lang.String"
+			column="AT_NAME" length="200" />
+		<property name="AnalyTypeID" type="java.lang.Integer"
+			column="Analy_Type_ID"  />
+
+		<!-- Associations -->
+	</class>
+</hibernate-mapping>

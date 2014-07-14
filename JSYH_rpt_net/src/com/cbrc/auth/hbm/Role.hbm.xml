@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.Role" 
+    table="ROLE"
+>
+
+    <id
+        name="roleId"
+        type="java.lang.Long"
+        column="ROLE_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">Seq_Role</param>
+		</generator>
+    </id>
+
+    <property
+        name="roleName"
+        type="java.lang.String"
+        column="ROLE_NAME"
+        length="50"
+    />
+
+	<property
+        name="setOrgId"
+        type="java.lang.String"
+        column="SET_ORG_ID"
+        length="17"
+    />
+    
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to RoleTool -->
+    <set
+        name="roleTools"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="ROLE_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.RoleTool"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to UserRole -->
+    <set
+        name="userRoles"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="ROLE_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.UserRole"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

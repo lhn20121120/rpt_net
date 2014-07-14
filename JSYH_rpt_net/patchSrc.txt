@@ -1,0 +1,10 @@
+--人行多频度调整--
+src\com\cbrc\smis\adapter\StrutsMRepFreqDelegate.java
+src\com\fitech\gznx\action\ExportPbocAFReportAction.java
+src\com\fitech\gznx\common\Config.java
+src\com\fitech\gznx\common\DateUtil.java
+src\com\fitech\gznx\service\AFReportAgainDelegate.java
+src\com\fitech\gznx\service\AFReportProductDelegate.java
+src\com\fitech\gznx\service\AFReportDelegate.java
+WebRoot\gznx\reportsearch\exportAFReport.jsp
+WebRoot\gznx\reportsearch\exportPbocText.jsp

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.ProductUser" 
+    table="PRODUCT_USER"
+>
+
+    <id
+        name="productUserId"
+        type="java.lang.Long"
+        column="PRODUCT_USER_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">Seq_Product_User</param>
+		</generator>
+    </id>
+
+    <property
+        name="productUserName"
+        type="java.lang.String"
+        column="PRODUCT_USER_NAME"
+        length="200"
+    />
+	
+	<property
+		name="flag"
+		type="java.lang.String"
+		column="Flag"
+		length="1"
+	/>
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to Department -->
+    <set
+        name="departments"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="PRODUCT_USER_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.Department"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

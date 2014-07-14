@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+    <class name="com.fitech.net.hibernate.ActuTargetResult" table="ACTU_TARGET_RESULT">
+        <id name="id" column="ID" type="java.lang.Integer">
+           <generator class="sequence">
+            	<param name="sequence">Seq_Actu_Target_Result</param>
+            </generator>
+        </id>
+ 
+    <property
+        name="year"
+        type="java.lang.Integer"
+        column="YEAR"
+        length="4"
+    />
+      <property
+        name="month"
+        type="java.lang.Integer"
+        column="MONTH"
+        length="4"
+    />   
+    <property
+		name="orgId"
+		type="java.lang.String"
+		column="ORG_ID"
+		length="17"
+	/>
+	
+     <many-to-one 
+                 name="targetDefine" 
+                 column="TARGET_DEFINE_ID" 
+                 class="com.fitech.net.hibernate.TargetDefine"
+                  />
+        
+    <property
+        name="regionId"
+        type="java.lang.Integer"
+        column="REGION"
+        length="4"
+    />  
+    <property
+        name="curUnitId"
+        type="java.lang.Integer"
+        column="CUR_UNIT"
+        length="4"
+    />  
+    <property
+        name="repFreId"
+        type="java.lang.Integer"
+        column="REP_FREQ_ID"
+        length="4"
+    />  
+    <property
+        name="dataRangeId"
+        type="java.lang.Integer"
+        column="DATA_RANGE_ID"
+        length="4"
+    />
+    <property
+		name="targetResult"
+		type="java.lang.String"
+		column="TARGET_RESULT"
+		
+	/>
+    <property
+		name="temp1"
+		type="java.lang.String"
+		column="TEMP1"
+		length="50"
+	/>
+	<property
+		name="temp2"
+		type="java.lang.String"
+		column="TEMP2"
+		length="50"
+	/>
+    
+    </class>
+    
+</hibernate-mapping>

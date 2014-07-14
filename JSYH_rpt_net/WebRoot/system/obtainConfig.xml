@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root> 
+  <templates> 
+    <!--
+         template:模板信息
+             id:模版ID version:版本
+             mode:取数模式 excel,txt
+             uri:该模板的相对于folder的路径
+         datasource ：数据源信息
+             id:数据源编号
+             sheetName：对应sheet名称
+             xlsName：数据源Excel文件名称
+             state:temp临时状态 saved持久状态
+             流程，通过childRepID,versionID从数据库获得Excel模板名，
+             配置好的模板文件存放在文件系统 (命名规则childRepID_versionID.xls)
+             取数完毕后生成的对应机构文件命名规则(childRepID_versionID_orgCode.xls)
+       -->  
+    <template repID="0001" version="0512" mode="txt" uri="excel"> 
+      <datasource sheetName="targetSheet0" xlsName="G11.xls" state="temp" uri="aa"/>  
+      <datasource sheetName="targetSheet1" xlsName="G13.xls" state="temp" uri=""/>  
+      <datasource sheetName="targetSheet2" xlsName="G14.xls" state="saved" uri="aa"/>  
+      
+    </template> 
+  </templates> 
+</root>

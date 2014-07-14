@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.Client" 
+    table="CLIENT"
+>
+
+    <id
+        name="id"
+        type="java.lang.String"
+        column="ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="clientVersion"
+        type="java.lang.String"
+        column="CLIENT_VERSION"
+        length="50"
+    />
+    <property
+        name="clientSize"
+        type="java.lang.Integer"
+        column="CLIENT_SIZE"
+        length="22"
+    />
+    <property
+        name="note"
+        type="java.lang.String"
+        column="NOTE"
+        length="100"
+    />
+    <property
+        name="clientEntity"
+        type="java.lang.String"
+        column="CLIENT_ENTITY"
+        length="20"
+    />
+    <property
+        name="downTime"
+        type="java.util.Date"
+        column="DOWN_TIME"
+        length="7"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

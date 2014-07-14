@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+    <class 
+    	name="com.fitech.net.hibernate.TargetRange" 
+    	table="TARGET_RANGE"
+    >
+        <id name="id" 
+        	column="ID" 
+        	type="java.lang.Integer"
+      	>
+            <generator class="sequence">
+            	<param name="sequence">Seq_target_range</param>
+            </generator>
+        </id>
+  
+    <property
+		name="orgId"
+		type="java.lang.String"
+		column="ORG_ID"
+		length="17"
+	/>
+	<property
+        name="targetDefineId"
+        type="java.lang.Integer"
+        column="TARGET_DEFINE_ID"
+        length="4"
+    />    
+    </class>
+    
+</hibernate-mapping>

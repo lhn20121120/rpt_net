@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.AbnormityChange" 
+    table="ABNORMITY_CHANGE"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.AbnormityChangePK">
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="cellId" 
+            column="CELL_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+    </composite-id>    
+
+    <property
+        name="prevRiseStandard"
+        type="java.lang.Float"
+        column="PREV_RISE_STANDARD"
+        length="10"
+    />
+    <property 
+            name="orgId" 
+            column="ORG_ID" 
+            type="java.lang.String"
+            length="20"
+        />
+    <property
+        name="prevFallStandard"
+        type="java.lang.Float"
+        column="PREV_FALL_STANDARD"
+        length="10"
+    />
+    <property
+        name="sameRiseStandard"
+        type="java.lang.Float"
+        column="SAME_RISE_STANDARD"
+        length="10"
+    />
+    <property
+        name="sameFallStandard"
+        type="java.lang.Float"
+        column="SAME_FALL_STANDARD"
+        length="10"
+    />
+	<property
+		name="orgClsId"
+		type="java.lang.String"
+		column="Org_Cls_Id"
+		length="10"
+	/>
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to MOrg -->
+	<!--
+    <many-to-one
+        name="MOrg"
+	    class="com.cbrc.smis.hibernate.MOrg"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="ORG_ID" />
+	</many-to-one>
+	-->
+	
+    <!-- bi-directional many-to-one association to MCell -->
+    <many-to-one
+        name="MCell"
+	    class="com.cbrc.smis.hibernate.MCell"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CELL_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to MChildReport -->
+    <many-to-one
+        name="MChildReport"
+	    class="com.cbrc.smis.hibernate.MChildReport"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CHILD_REP_ID" />
+    	<column name="VERSION_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

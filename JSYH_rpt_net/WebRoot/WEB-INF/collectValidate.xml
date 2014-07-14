@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+   <form-beans>
+   		<form-bean name="collectValidateRelationForm" type="com.fitech.gznx.form.CollectValidateRelationForm"></form-bean>
+	</form-beans>
+	
+   <global-exceptions />
+   <global-forwards />
+	
+   <action-mappings >
+   		<!-- 总分校验 -->
+   		<action path="/collectValidate" type="com.fitech.gznx.action.CollectValidateAction"
+   		  scope="request" validate="false" name="afReportForm" >
+   		</action>
+   		<!-- 总分校验关系修改前 -->
+   		<action path="/system_mgr/collect/collectValidateRelation" 
+   		type="com.fitech.gznx.action.CollectValidateRelationAction"
+   		  scope="request" validate="false" name="collectValidateRelationForm" 
+   		  attribute="collectRelationForm" parameter="beforeEdit">
+   			<forward name="detail" path="/gznx/org_manager/collectValidateDetail.jsp" />
+			<forward name="update" path="/gznx/org_manager/collectValidateUpdate.jsp" />
+			<forward name="failed" path="/system_mgr/OrgInfo/view.do" />
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+   		</action>
+   		<!-- 总分校验关系修改操作 -->
+   		<action path="/system_mgr/collect/collectValidateRelationEdit" 
+   		type="com.fitech.gznx.action.CollectValidateRelationAction"
+   		  scope="request" validate="false" name="collectValidateRelationForm" 
+   		  attribute="collectRelationForm" parameter="edit">
+			<forward name="failed" path="/system_mgr/OrgInfo/view.do" />
+			<forward name="success" path="/system_mgr/OrgInfo/view.do" />
+   		</action>
+   		<!-- 校验不通过，查询所有错误信息 -->
+   		<action path="/report/viewOrgValidateInfo"
+			type="com.fitech.gznx.action.ViewOrgValidateInfoAction" scope="request">
+			<forward name="success" path="/gznx/report_check/org_validate_detail.jsp" /> 
+		</action>
+   </action-mappings>  
+
+</struts-config>

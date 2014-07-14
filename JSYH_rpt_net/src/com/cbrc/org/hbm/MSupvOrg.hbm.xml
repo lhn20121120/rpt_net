@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.org.hibernate.MSupvOrg" 
+    table="M_SUPVORG"
+>
+
+    <id
+        name="orgId"
+        type="java.lang.String"
+        column="ORGID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="supvOrgName"
+        type="java.lang.String"
+        column="SUPVORGNAME"
+        length="100"
+    />
+    <property
+        name="priorOrgId"
+        type="java.lang.String"
+        column="PRIORORGID"
+        length="20"
+    />
+    <property
+        name="orgCode"
+        type="java.lang.String"
+        column="ORGCODE"
+        length="30"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

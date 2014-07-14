@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<tree id="0">
+  <item text="XXX报表" id="331010000" open="1">
+    <item text="XXX报表" id="333022000" checked="1" open="1">
+      <item text="XXX报表" id="333002000" checked="1" open="1"/>
+      <item text="XXX报表" id="333022307" checked="1" open="1"/>
+    </item>
+    <item text="XXX报表" id="331031000" checked="1" open="1"/>
+    <item text="XXX报表" id="331032000" checked="1" open="1"/>
+    <item text="XXX报表" id="331033000" checked="1" open="1"/>
+    <item text="XXX报表" id="332021000" checked="1" open="1">
+      <item text="XXX报表" id="332041000" checked="1" open="1"/>
+      <item text="XXX报表" id="332002000" checked="1" open="1"/>
+      <item text="XXX报表" id="332002001" checked="1" open="1"/>
+      <item text="XXX报表" id="332002012"/>
+    </item>
+    <item text="XXX报表" id="3313310100000" checked="1" open="1"/>
+    <item text="XXX报表" id="331010313" checked="1" open="1"/>
+    <item text="XXX报表" id="334023000" checked="1" open="1">
+      <item text="XXX报表" id="334002000" checked="1" open="1"/>
+      <item text="XXX报表" id="334002001" checked="1" open="1"/>
+    </item>
+    <item text="XXX报表" id="331010209" checked="1" open="1"/>
+    <item text="XXX报表" id="331034000" checked="1" open="1"/>
+  </item>
+</tree>

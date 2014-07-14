@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.MRepRange" 
+    table="M_REP_RANGE"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.MRepRangePK">
+        <key-property 
+            name="orgId" 
+            column="ORG_ID" 
+            type="java.lang.String"
+            length="20"
+        />
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+    </composite-id>    
+	
+	<property
+		name="orgClsId"
+		type="java.lang.String"
+		column="Org_Cls_Id"
+		length="10"
+	/>
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to MOrg -->
+	<!--
+    <many-to-one
+        name="MOrg"
+	    class="com.cbrc.smis.hibernate.MOrg"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="ORG_ID" />
+	</many-to-one>
+	-->
+    <!-- bi-directional many-to-one association to MChildReport -->
+    <many-to-one
+        name="MChildReport"
+	    class="com.cbrc.smis.hibernate.MChildReport"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CHILD_REP_ID" />
+    	<column name="VERSION_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+    <!-- bi-directional one-to-many association to ReportIn -->
+    <set
+        name="reportIns"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="ORG_ID" />
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ReportIn"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

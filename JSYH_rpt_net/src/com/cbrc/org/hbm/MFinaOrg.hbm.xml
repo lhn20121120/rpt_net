@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.org.hibernate.MFinaOrg" 
+    table="MFINAORG"
+>
+
+    <id
+        name="finaOrgCode"
+        type="java.lang.String"
+        column="FINAORGCODE"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="finaOrgNm"
+        type="java.lang.String"
+        column="FINAORGNM"
+        length="200"
+    />
+    <property
+        name="licence"
+        type="java.lang.String"
+        column="LICENCE"
+        length="30"
+    />
+    <property
+        name="address"
+        type="java.lang.String"
+        column="ADDRESS"
+        length="300"
+    />
+    <property
+        name="orgId"
+        type="java.lang.String"
+        column="ORGID"
+        length="20"
+    />
+    <property
+        name="corpAddress"
+        type="java.lang.String"
+        column="CORPADDRESS"
+        length="20"
+    />
+    <property
+        name="openDate"
+        type="java.lang.String"
+        column="OPENDATE"
+        length="20"
+    />
+    <property
+        name="bankStyle"
+        type="java.lang.String"
+        column="BANKSTYLE"
+        length="20"
+    />
+    <property
+        name="corpName"
+        type="java.lang.String"
+        column="CORPNAME"
+        length="20"
+    />
+    
+    <property
+        name="regionId"
+        type="java.lang.String"
+        column="REGIONID"
+        length="20"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

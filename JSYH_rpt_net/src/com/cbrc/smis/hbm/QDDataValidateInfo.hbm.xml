@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.QDDataValidateInfo" 
+    table="QD_Data_Validate_Info"
+>
+	<composite-id class="com.cbrc.smis.hibernate.QDDataValidateInfoPK"
+		name="comp_id">
+		<key-property 
+			name="repInId"
+			column="REP_IN_ID"
+			type="java.lang.Integer"
+			length="10"/>
+		<key-property 
+			name="validateTypeID"
+			column="VALIDATE_TYPE_ID"
+			type="java.lang.Integer"
+			length="10"/>
+		<key-property 
+			name="cellFormuId"
+			column="CELL_FORMU_ID"
+			type="java.lang.Integer"
+			length="10"/>
+	</composite-id>
+	
+	<property 
+		name="result"
+		column="RESULT"
+		type="java.lang.Integer"
+		length="10"/>
+	
+	<property
+		name="cause"
+		column="CAUSE"
+		type="java.lang.String"
+		length="500"	
+	/>
+	
+        <property name="sourceValue" type="java.lang.String">
+            <column name="SOURCE_VALUE" />
+        </property>
+        <property name="targetValue" type="java.lang.String">
+            <column name="TARGET_VALUE" />
+        </property>
+        
+	<many-to-one
+        name="MCellFormu"
+	    class="com.cbrc.smis.hibernate.MCellFormu"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CELL_FORMU_ID" />
+	</many-to-one>
+	
+	<many-to-one
+        name="validateType"
+	    class="com.cbrc.smis.hibernate.ValidateType"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="VALIDATE_TYPE_ID" />
+	</many-to-one>
+</class>
+</hibernate-mapping>

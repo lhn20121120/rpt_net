@@ -1,0 +1,17 @@
+--设定补录模板为模板类型4，否则点击其他功能再点击补录模板进行查看时，后台报错
+WEB-INF\classes\com\fitech\gznx\action\EditRaqAction.class
+WEB-INF\classes\com\fitech\gznx\action\ExportPbocAFReportAction.class
+WEB-INF\classes\com\fitech\gznx\action\SynsDataAction.class
+WEB-INF\classes\com\fitech\gznx\action\UploadFileGatherAction.class
+WEB-INF\classes\com\fitech\gznx\action\UploadFileNXAction.class
+WEB-INF\classes\com\fitech\gznx\excel\NXReportExcelHandler.class
+WEB-INF\classes\com\fitech\gznx\service\AFReportProductDelegate.class
+WEB-INF\classes\com\fitech\gznx\service\DayRaqDataDelegate.class
+navimenu.jsp
+--优化日报表自自动跑批功能，尽量避免数据库连接泄露
+WEB-INF\classes\com\fitech\gznx\service\DayReportDelegate.class
+--校验公式完整展示，便于查看校验结果
+gznx\report_check\more_validate_detail.jsp
+gznx\report_check\validate_detail.jsp
+report_mgr\report_check\dd_jy_detail.jsp
+report_mgr\report_check\dd_jy_more_detail.jsp

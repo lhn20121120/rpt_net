@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+<data-sources />
+
+
+ <form-beans>
+  <form-bean name="addFormulaForm" type="com.fitech.net.obtain.text.AddFormulaForm"/>
+</form-beans>
+
+ <global-exceptions />
+   <global-forwards />
+	
+   <action-mappings >
+   <!--公式规则查询-->
+	   <action path="/obtain/text/viewformula"
+	   			type="com.fitech.net.obtain.text.searchformulaAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/setformula.jsp" name="setformula"/>
+	   		<forward path="/obtain/text/getdata.jsp"  name ="getdata"/>
+ 	   	</action>
+	<action path="/obtain/text/viewformula2"
+	   			type="com.fitech.net.obtain.text.searchSetAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/setformula.jsp" name="setformula"/>
+	   		<forward path="/obtain/text/getdata.jsp"  name ="getdata"/>
+ 	   	</action>
+ 	   	
+	   	<action path="/obtain/text/addformula"
+	   			type="com.fitech.net.obtain.text.AddFormulaAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/addformula_new.jsp" name="addformula"/>
+	   	
+	   	</action>
+	   	<action path="/obtain/text/clearexcel"
+	   			type="com.fitech.net.obtain.text.ClearExcelAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/setformula.jsp" name="setformula"/>
+	   		<forward path="/obtain/text/getdata.jsp"  name ="getdata"/>
+	   	</action>
+	   	<action path="/obtain/text/deleteformula"
+	   			type="com.fitech.net.obtain.text.DeleteFormulaAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/setformula.jsp" name="setformula"/>
+	   	</action>
+	   	<action path="/obtain/text/editformula"
+	   			type="com.fitech.net.obtain.text.EditFormulaAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/editFormula_new.jsp" name="editformula"/>
+	   	</action>
+	   	<action path="/obtain/text/updateformula"
+	   			type="com.fitech.net.obtain.text.UpdateFormulaAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/editFormula_new.jsp" name="editformula"/>
+	   	</action>
+	   	<action path="/obtain/text/getdataformula"
+	   			type="com.fitech.net.obtain.text.GetDataAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/setformula.jsp" name="setformula"/>
+	   	</action>
+	   	<action path="/obtain/text/getalldataformula"
+	   			type="com.fitech.net.obtain.text.GetDataAllAction"
+	   			name="addFormulaForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/obtain/text/setformula.jsp" name="setformula"/>
+	   	</action>
+    </action-mappings>
+    
+</struts-config>

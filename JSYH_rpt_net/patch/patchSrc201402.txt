@@ -1,0 +1,8 @@
+--bug修改：1104灵活查询时，不能展示多个版本的报表内容
+src\com\cbrc\smis\adapter\StrutsMChildReportDelegate.java
+WebRoot\gznx\customview\shujuchaxuntest.jsp
+--bug修改：人行报表汇总时的bug修复
+src\com\fitech\gznx\service\AFDataDelegate.java
+WebRoot\gznx\report_collect\search_rep_collect.jsp
+--bug修改：人行报表上报时，翻页展示有问题
+src\com\fitech\gznx\service\AFReportDelegate.java

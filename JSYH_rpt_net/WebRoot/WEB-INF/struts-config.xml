@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<!---用户表-->
+		<form-bean name="operatorForm"
+			type="com.cbrc.auth.form.OperatorForm" />
+	</form-beans>
+
+	<global-exceptions />
+
+	<global-forwards>
+		<!-- 系统错误页 -->
+		<forward name="sysErrPage" path="/error.jsp" />
+	</global-forwards>
+
+	<action-mappings>
+
+		<!---用户登录-->
+		<action path="/userLogin" attribute="operatorForm"
+			name="operatorForm" scope="request"
+			type="com.cbrc.auth.action.UserLoginAction" validate="false">
+			<forward name="index" path="/index.jsp" />
+			<forward name="login" path="/preUserLogin.do" />
+			<forward name="ssoLogin" path="/ssoLogin.jsp" />
+		</action>
+		<action path="/bulletin/bulletinNormal" scope="request"
+			type="com.cbrc.smis.action.BulletinNormalAction"
+			parameter="method">
+			<forward name="view_bulletin"
+				path="/bulletin/BulletinNormal.jsp" />
+		</action>
+		
+		<action path="/preUserLogin" attribute="operatorForm"
+			name="operatorForm" scope="request"
+			type="com.cbrc.auth.action.PreUserLoginAction" validate="false">
+		</action>
+		
+		<action path="/utilAction" attribute="operatorForm"
+			name="operatorForm" scope="request"
+			type="com.cbrc.smis.action.UtilAction" validate="false">
+		</action>
+	</action-mappings>
+
+	<message-resources
+		factory="com.cbrc.smis.resources.CustomMessageResourcesFactory"
+		parameter="com.cbrc.smis.resources.ApplicationResources,
+		com.cbrc.smis.resources.ConfigResources,
+		com.cbrc.smis.resources.InfoFilesResources,
+		com.cbrc.smis.resources.NetResources,
+		com.cbrc.smis.resources.PopedomMgrResources,
+		com.cbrc.smis.resources.ReportResources,
+		com.cbrc.smis.resources.SysMgrResources,
+		com.cbrc.smis.resources.SystemResources,
+		com.cbrc.smis.resources.TemplateResources,
+		com.cbrc.smis.resources.DataAnalysisResources,
+		com.cbrc.smis.resources.DataCheckResources,
+		com.cbrc.smis.resources.DataSendResources,
+		com.cbrc.smis.resources.manageOrgResources,
+		com.cbrc.smis.resources.ManagerFrontPageResources,
+		com.cbrc.smis.resources.PlacardMgrResources,
+		com.cbrc.smis.resources.ReportFillManageResources,
+		com.cbrc.smis.resources.StatisticalDisposalResources,
+		com.cbrc.smis.resources.StatisticalMgrResources,
+		com.cbrc.smis.resources.SystemMgrResources,
+		com.cbrc.smis.resources.TemplateMgrResources,
+		com.cbrc.smis.resources.WorkBenchResources,
+		com.cbrc.smis.resources.SystemManagerResources" />
+
+	<!--表单位验证设置-->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml" />
+	</plug-in>
+</struts-config>
+

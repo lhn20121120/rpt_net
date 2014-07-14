@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="GB2312"?>
+<fitechGraph nextPage="isNull" title="流动性情况">
+	<graph id="liudongxingbiandong" type="3" title="流动性变动情况" ><!--  序列图  -->
+	<alabel title="时间" /> <!--  横坐标节点 title:横坐标名称 unit:单位 -->
+    <vlabel title="0" /> <!-- 0：表示比例， 1：表示元，2：表示万元 ，3：表示百万元 ， 4：表示亿元 -->
+    <dataset>  <!-- 数据源节点 sql:取数的sql语句 -->
+      <item  label="存贷比" sql="select  a.da,round(a.val/b.val,2)  from (select  ar.da,ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID,fun_getdate(YEAR,TERM) as da from AF_REPORT where TEMPLATE_ID='FX001' and TIMES=1 and ((YEAR=substr(@ReptDate@,1,4) and TERM between 1 and substr(@ReptDate@,5,2)) or (YEAR=substr(@ReptDate@,1,4)-1 and TERM between substr(@ReptDate@,5,2) and 12)) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,CELL_ID,REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F03001' order by ar.da) a left join (select  ar.da,ROUND(STRTOFLOAT(afo.CELL_DATA),2) as val from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID,fun_getdate(YEAR,TERM) as da from AF_REPORT where TEMPLATE_ID='FX001' and TIMES=1 and ((YEAR=substr(@ReptDate@,1,4) and TERM between 1 and substr(@ReptDate@,5,2)) or (YEAR=substr(@ReptDate@,1,4)-1 and TERM between substr(@ReptDate@,5,2) and 12)) and ORG_ID=@OrgID@) ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,CELL_ID,REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX001' and AF.CELL_PID='F03025' order by ar.da) b  on a.da=b.da "/>
+	</dataset>
+	<style>
+		<graphWidth value="780"/> <!-- 图片的宽度-->
+	  	<graphHeight value="350"/>  <!-- 图片的高度-->
+	  	<bgColorRGB value="246,248,247" /><!-- 图片的背景色（R,G,B）-->
+		<ttFont value="宋体" /><!-- 标题的字体-->
+		<ttFontSize value="18" /><!-- 标题的字的大小-->
+		<ttColorRGB value="0,0,0" /><!-- 标题的字的颜色（R,G,B）-->
+		<blBgColorRGB value="246,248,247"/>   <!-- 时序图的背景色（RGB）-->
+		<blInsets value="15,5,5,5"/>      <!-- 时序图的边距 -->
+		<blDomainGridlineColorRGB value="0,0,0"/>  <!--  横向网格的颜色 -->
+		<blRangeGridlineColorRGB value="0,0,0"/>   <!-- 纵向网格的颜色-->
+		<blDomainTickBandColorRGB value="255,255,255"/>	<!-- 横向间隔的颜色-->
+		<blRangeTickBandColorRGB value=""/>	<!-- 纵向间隔的颜色-->
+		<isBaseShapesVisible value="y"/>     <!-- 折点是否可见-->
+		<isItemLabelsVisible value="y"/>
+		<blDomainAxisColor value="0,0,0"/>   <!-- 横轴的颜色-->
+		<blDomainAxisLabelFont value="宋体"/>   <!-- 横轴Label的字体-->
+		<blDomainAxisLabelFontSize value="12"/>   <!-- 横轴Label的字的大小-->
+		<blDomainAxisLabelFontColor value="0,0,0"/>   <!-- 横轴Leble的字的颜色-->
+		
+		<blDomainAxisTickLabelFont value="宋体"/>   <!-- 横轴TickLabel的字的字体-->
+		<blDomainAxisTickLabelFontSize value="12"/>  <!-- 横轴TickLabel的字的大小 -->
+		<blDomainAxisTickLabelFontColor value="0,0,0"/>   <!-- 横轴TickLabel的字的颜色-->
+		
+		<blRangeAxisColor value="0,0,0"/>   <!-- 纵轴的颜色-->
+		<blRangeAxisLabelFont value="宋体"/>   <!--纵轴Label的字体 -->
+		<blRangeAxisLabelFontSize value="12"/>   <!-- 纵轴Label字的大小-->
+		<blRangeAxisLabelFontColor value="0,0,0"/>   <!-- 纵轴Label字的颜色-->
+		
+		<blRangeAxisTickLabelFont value="宋体"/>   <!-- 纵轴的TickLabel的字体 -->
+		<blRangeAxisTickLabelFontSize value="12"/>   <!--纵轴的TickLabel的字的大小 -->
+		<blRangeAxisTickLabelFontColor value="0,0,0"/>   <!--纵轴的TickLabel的字的颜色 -->
+	</style>
+	<url exists="n" url="" /><!-- 链接节点 exists:是否存在链接 url:链接对应的url -->
+  </graph>
+  <graph type="0">
+  </graph>
+</fitechGraph>

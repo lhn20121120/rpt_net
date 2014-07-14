@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.MActuRep" 
+    table="M_ACTU_REP"
+>
+
+    <composite-id name="comp_id" class="com.gather.hibernate.MActuRepPK">
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="4"
+        />
+        <key-property 
+            name="repFreqId" 
+            column="REP_FREQ_ID" 
+            type="java.lang.Integer"
+            length="22"
+        />
+        <key-property 
+            name="dataRangeId" 
+            column="DATA_RANGE_ID" 
+            type="java.lang.Integer"
+            length="22"
+        />
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="5"
+        />
+		<key-property 
+            name="orgType" 
+            column="ORG_TYPE" 
+            type="java.lang.Integer"
+            length="2"
+        />
+    </composite-id>    
+
+    <property
+        name="delayTime"
+        type="java.lang.Integer"
+        column="DELAY_TIME"
+        length="22"
+    />
+    <property
+        name="normalTime"
+        type="java.lang.Integer"
+        column="NORMAL_TIME"
+        length="22"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to MDataRgType -->
+    <many-to-one
+        name="MDataRgType"
+	    class="com.gather.hibernate.MDataRgType"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="DATA_RANGE_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to MRepFreq -->
+    <many-to-one
+        name="MRepFreq"
+	    class="com.gather.hibernate.MRepFreq"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="REP_FREQ_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to MChildReport -->
+    <many-to-one
+        name="MChildReport"
+	    class="com.gather.hibernate.MChildReport"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CHILD_REP_ID" />
+    	<column name="VERSION_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

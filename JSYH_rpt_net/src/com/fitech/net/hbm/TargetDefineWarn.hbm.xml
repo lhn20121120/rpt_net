@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+    <class 
+    	name="com.fitech.net.hibernate.TargetDefineWarn" 
+    	table="TARGET_DEFINE_WARN"
+    >
+        <id name="id" 
+        	column="ID" 
+        	type="java.lang.Integer"
+      	>
+            <generator class="sequence">
+            	<param name="sequence">Seq_target_define_warn</param>
+            </generator>
+        </id>
+  
+         <many-to-one name="targetDefine" 
+           column="TARGET_DEFINE_ID" 
+             class="com.fitech.net.hibernate.TargetDefine"
+           />
+           
+           
+         <property 
+        	name="type" 
+        	column="TYPE" 
+        	type="java.lang.String" 
+        />
+         <property 
+        	name="leval" 
+        	column="LEVAL" 
+        	type="java.lang.String" 
+        />
+        <property 
+        	name="upLimit" 
+        	column="UP_LIMIT" 
+        	type="java.lang.Float" 
+        />
+        <property 
+        	name="downLimit" 
+        	column="DOWN_LIMIT" 
+        	type="java.lang.Float" 
+        />
+        <property 
+        	name="color" 
+        	column="COLOR" 
+        	type="java.lang.String" 
+        />
+         
+    </class>
+    
+</hibernate-mapping>

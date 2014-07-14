@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="GB2312"?>
+<fitechGraph  nextPage="isNull" title="资产负债总体情况"> 
+   <graph id="zichanzongti" type="2" title="资产总体情况">
+    <dataset>
+      <unit title="2"/>	<!--  1：表示元，2：表示万元 ，3：表示百万元 ， 4：表示亿元 -->
+      <item label="总资产" color="" tableType="1" sql="select report_value from report_in_info where cell_id='57269'"/>
+      <item label="各项贷款" color="153,102,255" tableType="1" sql="select report_value from report_in_info where cell_id='57268'"/>
+	  <item label="有价证券及投资" color="255,0,0" tableType="1" sql="select report_value from report_in_info where cell_id='57267'"/>
+	  <item label="在人行准备金存款" color="153,255,255" tableType="1" sql="select report_value from report_in_info where cell_id='57266'"/>
+	  <item label="在人行准备金存款temp" color="" tableType="1" sql="select report_value from report_in_info where cell_id='57264'"/>
+	  <item label="买入返售证券" color="102,255,051" tableType="1" sql="select report_value from report_in_info where cell_id='57270'"/>
+	  <item label="存放同业" color="051,153,255" tableType="1" sql="select report_value from report_in_info where cell_id='57271'"/>
+	  <item label="拆放同业" color="0,153,0" tableType="1" sql="select report_value from report_in_info where cell_id='57272'"/>
+	  <item label="委托贷款" color="255,255,0" tableType="1" sql="select report_value from report_in_info where cell_id='57273'"/>
+	  <item label="库存现金" color="51,51,255" tableType="1" sql="select report_value from report_in_info where cell_id='57274'"/>
+	  <item label="其他资产" color="255,102,204" tableType="1" sql="select report_value from report_in_info where cell_id='57275'"/>
+	</dataset>
+	<style>
+	  <graphWidth value="780"/> <!-- 图片的宽度-->
+	  <graphHeight value="340"/>  <!-- 图片的高度-->
+   	  <bgColorRGB value="246,248,247" /><!-- 图片的背景色（R,G,B）-->
+	  <ttFont value="宋体" /><!-- 标题的字体-->
+	  <ttFontSize value="18" /><!-- 标题的字的大小-->
+	  <ttColorRGB value="0,0,0" /><!-- 标题的字的颜色（R,G,B）-->
+	  <pieBgColorRGB value="246,248,247" /><!-- 饼图的背景色(R,G,B)-->
+	  <pieLebleBgColorRGB value="255,255,198" /><!-- 饼图标签的背景色(R,G,B) -->
+	  <pieLebleLinkColorRGB value="0,0,0" /><!-- 饼图标签的连线的颜色(R,G,B) -->
+	  <pieLebleFont value="宋体" /><!--饼图的标签的字体-->
+	  <pieLebleFontSize value="12" /><!--饼图的标签字的大小-->
+      <pieLebleGenerator value="4" /><!--饼图的标签字的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值-->
+	  <pieLebleFontColorRGB value="0,0,0" /><!-- 饼图的标签字的颜色(R,G,B) -->
+	  <pieLebleShadowColorRGB value="255,255,255" /><!-- 饼图的标签阴影的颜色(R,G,B)-->
+	  <pieLegendLabelGenerator value="1" /><!-- 饼图的图标的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值 -->
+	  <pieRange value="20,20,20,20" /><!-- 饼图的边距 -->
+	  <is3DPie value="y"/>     <!--是否为3D图形 -->
+	  <isCircular value="n"/>   <!-- 是否为正圆-->
+	  <piedept value="0.2"/>    <!-- 3D饼图的厚度-->
+	  <pieForegroundAlpha value="0.8"/>   <!-- 3D饼图的透明度-->
+	  <pieStartAngle value="-60"/>   <!-- 起始的度数-->
+	  <pieOutlineColorRGB value = "0,0,0"/>
+   </style>
+	<url exists="n" url="" />
+  </graph>
+  <graph id="fuzhaijisuoyouzhe" type="2" title="负债及所有者权益情况">
+    <dataset>
+      <unit title="2"/>	<!--  1：表示元，2：表示万元 ，3：表示百万元 ， 4：表示亿元 -->
+      <item label="总负债" color="" tableType="1" sql="select report_value from report_in_info where cell_id='57276'"/>
+      <item label="各项存款" color="153,102,255" tableType="1" sql="select report_value from report_in_info where cell_id='57277'"/>
+	  <item label="向中央银行借款" color="153,255,255" tableType="1" sql="select report_value from report_in_info where cell_id='57278'"/>
+	  <item label="卖出回购证券" color="102,255,051" tableType="1" sql="select report_value from report_in_info where cell_id='57279'"/>
+	  <item label="同业存放" color="051,153,255" tableType="1" sql="select report_value from report_in_info where cell_id='57280'"/>
+	  <item label="同业拆借" color="0,153,0" tableType="1" sql="select report_value from report_in_info where cell_id='57283'"/>
+	  <item label="委托存款" color="255,255,0" tableType="1" sql="select report_value from report_in_info where cell_id='57284'"/>
+	  <item label="所有者权益" color="255,0,0" tableType="1" sql="select report_value from report_in_info where cell_id='57285'"/>
+	  <item label="其他负债" color="255,102,204" tableType="1" sql="select report_value from report_in_info where cell_id='57286'"/>
+	</dataset>
+	<style>
+	  <graphWidth value="780"/> <!-- 图片的宽度-->
+	  <graphHeight value="340"/>  <!-- 图片的高度-->
+   	  <bgColorRGB value="246,248,247" /><!-- 图片的背景色（R,G,B）-->
+	  <ttFont value="宋体" /><!-- 标题的字体-->
+	  <ttFontSize value="18" /><!-- 标题的字的大小-->
+	  <ttColorRGB value="0,0,0" /><!-- 标题的字的颜色（R,G,B）-->
+	  <pieBgColorRGB value="246,248,247" /><!-- 饼图的背景色(R,G,B)-->
+	  <pieLebleBgColorRGB value="255,255,198" /><!-- 饼图标签的背景色(R,G,B) -->
+	  <pieLebleLinkColorRGB value="0,0,0" /><!-- 饼图标签的连线的颜色(R,G,B) -->
+	  <pieLebleFont value="宋体" /><!--饼图的标签的字体-->
+	  <pieLebleFontSize value="12" /><!--饼图的标签字的大小-->
+      <pieLebleGenerator value="4" /><!--饼图的标签字的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值-->
+	  <pieLebleFontColorRGB value="0,0,0" /><!-- 饼图的标签字的颜色(R,G,B) -->
+	  <pieLebleShadowColorRGB value="255,255,255" /><!-- 饼图的标签阴影的颜色(R,G,B)-->
+	  <pieLegendLabelGenerator value="1" /><!-- 饼图的图标的显示模式  0:显示名称，1：显示名称+数值，2:显示名称+百分比，3：显示名称+数值+百分比 ，4:显示百份比 ，5：显示数值 -->
+	  <pieRange value="20,20,20,20" /><!-- 饼图的边距 -->
+	  <is3DPie value="y"/>     <!--是否为3D图形 -->
+	  <isCircular value="n"/>   <!-- 是否为正圆-->
+	  <piedept value="0.2"/>    <!-- 3D饼图的厚度-->
+	  <pieForegroundAlpha value="0.8"/>   <!-- 3D饼图的透明度-->
+	  <pieStartAngle value="-60"/>   <!-- 起始的度数-->
+	  <pieOutlineColorRGB value = "0,0,0"/>
+   </style>
+	<url exists="n" url="" />
+  </graph>
+  <graph type="0">
+  </graph>
+</fitechGraph>

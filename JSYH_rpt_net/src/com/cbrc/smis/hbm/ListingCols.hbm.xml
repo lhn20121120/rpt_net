@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+	<class 
+		name="com.cbrc.smis.hibernate.ListingCols" 
+		table="Listing_Cols"
+	>
+		<composite-id name="comp_id"
+			class="com.cbrc.smis.hibernate.ListingColsPK">
+			<key-property 
+				name="childRepId"
+				type="java.lang.String"
+				column="CHILD_REP_ID"
+				length="10"/>
+			<key-property
+				name="versionId"
+				type="java.lang.String"
+				column="VERSION_ID"
+				length="10"/>
+			<key-property
+				name="pdfColName"
+				type="java.lang.String"
+				column="PDF_COL_NAME"
+				length="20"/>
+		</composite-id>
+		
+		<property
+			name="dbColName"
+			type="java.lang.String"
+			column="DB_COL_NAME"
+			length="20"/>
+	</class>
+</hibernate-mapping>

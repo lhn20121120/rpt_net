@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.MCellFormu" 
+    table="M_CELL_FORMU"
+>
+
+    <id
+        name="cellFormuId"
+        type="java.lang.Integer"
+        column="CELL_FORMU_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">seq_m_cell_formu</param>
+		</generator>
+    </id>
+
+    <property
+        name="cellFormu"
+        type="java.lang.String"
+        column="CELL_FORMU"
+        length="950"
+    />
+    <property
+        name="formuType"
+        type="java.lang.Integer"
+        column="FORMU_TYPE"
+        length="10"
+    />
+	<property
+		name="cellFormuView"
+		type="java.lang.String"
+		column="CELL_FORMU_VIEW"
+		length="3000"
+	/>
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to ColToFormu -->
+	<!--
+    <set
+        name="colToFormus"
+        lazy="true"
+        inverse="false"
+		cascade="none"
+    >
+        <key>
+            <column name="CELL_FORMU_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ColToFormu"
+        />
+    </set>
+		-->
+    <!-- bi-directional one-to-many association to MCellToFormu -->
+
+    <set
+        name="MCellToFormus"
+        lazy="true"
+        inverse="false"
+		cascade="none"
+    >
+        <key>
+            <column name="CELL_FORMU_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.MCellToFormu"
+        />
+    </set>
+
+    <!-- bi-directional one-to-many association to DataValidateInfo -->
+	<!--
+    <set
+        name="dataValidateInfos"
+        lazy="true"
+        inverse="false"
+		cascade="none"
+    >
+        <key>
+            <column name="CELL_FORMU_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.DataValidateInfo"
+        />
+    </set>
+	-->
+</class>
+</hibernate-mapping>

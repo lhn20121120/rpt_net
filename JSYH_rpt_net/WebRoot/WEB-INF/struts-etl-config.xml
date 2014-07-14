@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+<data-sources />
+
+
+ <form-beans>
+  <form-bean name="exChangeRateForm" type="com.cbrc.smis.form.EExChangeRateForm"/>
+</form-beans>
+
+ <global-exceptions />
+   <global-forwards />
+	
+   <action-mappings >
+   <!--汇率查询-->
+	  <action path="/exchangerate/Find"
+	   			type="com.cbrc.smis.action.FindExChangeRateAction"
+	   			name="exChangeRateForm"
+	   			scope="request"
+	   			validate="false">
+	   			<forward path="/exchangerate/EXQuery.jsp" name="view"/>
+ 	   	</action>
+ 	 <!--汇率修改-->
+ 	 <action path="/exchangerate/edit"
+	   			type="com.cbrc.smis.action.EditExChangeRateAction"
+	   			name="exChangeRateForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/exchangerate/EXModify.jsp" name="view"/>
+ 	   	</action>
+	 	  
+	  <action path="/exchangerate/update"
+	   			type="com.cbrc.smis.action.UpdateExChangeRateAction"
+	   			name="exChangeRateForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/exchangerate/Find.do" name="view"/>
+ 	   	</action>
+ 	   	
+    </action-mappings>
+    
+</struts-config>

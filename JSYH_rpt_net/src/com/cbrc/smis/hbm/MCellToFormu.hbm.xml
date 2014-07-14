@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class name="com.cbrc.smis.hibernate.MCellToFormu" 
+	table="M_CELL_TO_FORMU">
+	
+	<id name="cellToFormuId" 
+		type="java.lang.Integer" 
+		column="CELL_TO_FORMU_ID">
+		<generator class="sequence">
+			<param name="sequence">seq_m_cell_to_formu</param>
+		</generator>
+	</id>
+	
+	<property
+		name="cellFormuId"
+		column="CELL_FORMU_ID"
+		type="java.lang.Integer"	
+	/>
+	
+	<property 
+		name="childRepId" 
+		column="Child_Rep_ID" 
+		type="java.lang.String"
+		length="10"
+	/>
+	
+	<property 
+		name="versionId" 
+		column="Version_ID" 
+		type="java.lang.String"
+		length="10"
+	/>
+
+	<!--
+	<property
+	name="startDate"
+	type="java.lang.String"
+	column="START_DATE"
+	length="10"
+	/>
+	<property
+	name="endDate"
+	type="java.lang.String"
+	column="END_DATE"
+	length="10"
+	/>
+	-->
+	<!-- Associations -->
+	<!-- derived association(s) for compound key -->
+	<!-- bi-directional many-to-one association to MCell -->
+	<!--
+	<many-to-one
+	name="MCell"
+	class="com.cbrc.smis.hibernate.MCell"
+	update="false"
+	insert="false"
+	>
+	<column name="CELL_ID" />
+	</many-to-one>
+	-->
+	<!-- bi-directional many-to-one association to MCellFormu -->
+
+	<many-to-one
+		name="MCellFormu"
+		class="com.cbrc.smis.hibernate.MCellFormu"
+		update="false"
+		insert="false"
+	>
+		<column name="CELL_FORMU_ID"/>
+	</many-to-one>
+
+	<!-- end of derived association(s) -->	
+</class>
+</hibernate-mapping>

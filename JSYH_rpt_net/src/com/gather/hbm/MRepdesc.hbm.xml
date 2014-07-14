@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.MRepdesc" 
+    table="M_REPDESC"
+>
+
+    <composite-id name="comp_id" class="com.gather.hibernate.MRepdescPK">
+        <key-property 
+            name="reportdate" 
+            column="REPORTDATE" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="datarangeid" 
+            column="DATARANGEID" 
+            type="java.lang.Integer"
+            length="22"
+        />
+        <key-property 
+            name="repid" 
+            column="REPID" 
+            type="java.lang.Integer"
+            length="22"
+        />
+        <key-property 
+            name="orgid" 
+            column="ORGID" 
+            type="java.lang.Integer"
+            length="22"
+        />
+    </composite-id>    
+
+    <property
+        name="term"
+        type="java.lang.Integer"
+        column="TERM"
+        length="22"
+    />
+    <property
+        name="torepdate"
+        type="java.lang.String"
+        column="TOREPDATE"
+        length="10"
+    />
+    <property
+        name="mkreppers"
+        type="java.lang.String"
+        column="MKREPPERS"
+        length="20"
+    />
+    <property
+        name="ckreppers"
+        type="java.lang.String"
+        column="CKREPPERS"
+        length="20"
+    />
+    <property
+        name="cgreppers"
+        type="java.lang.String"
+        column="CGREPPERS"
+        length="20"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to MDataRgType -->
+    <many-to-one
+        name="MDataRgType"
+	    class="com.gather.hibernate.MDataRgType"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="DATARANGEID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to MMainRep -->
+    <many-to-one
+        name="MMainRep"
+	    class="com.gather.hibernate.MMainRep"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="REPID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

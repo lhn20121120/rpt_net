@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.MCell" 
+    table="M_CELL"
+>
+
+    <id
+        name="cellId"
+        type="java.lang.Integer"
+        column="CELL_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">seq_m_cell</param>
+		</generator>
+    </id>
+
+    <property
+        name="cellName"
+        type="java.lang.String"
+        column="CELL_NAME"
+        length="20"
+    />
+    <property
+        name="dataType"
+        type="java.lang.Integer"
+        column="DATA_TYPE"
+        length="10"
+    />
+    <property
+        name="rowId"
+        type="java.lang.Integer"
+        column="ROW_ID"
+        length="10"
+    />
+    <property
+        name="colId"
+        type="java.lang.String"
+        column="COL_ID"
+        length="20"
+    />
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to ReportInInfo -->
+    <set
+        name="reportInInfos"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CELL_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ReportInInfo"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to MCellToFormu -->
+    <set
+        name="MCellToFormus"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CELL_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.MCellToFormu"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to AbnormityChange -->
+    <set
+        name="abnormityChanges"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CELL_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.AbnormityChange"
+        />
+    </set>
+    <!-- bi-directional many-to-one association to MChildReport -->
+    <many-to-one
+        name="MChildReport"
+        class="com.cbrc.smis.hibernate.MChildReport"
+        not-null="true"
+    >
+        <column name="CHILD_REP_ID" />
+        <column name="VERSION_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

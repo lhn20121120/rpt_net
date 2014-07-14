@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curIds>
+	<childRepId id="G3301" repName="G33利率重新定价风险情况表-第Ⅰ部分：交易账户">		
+		<curr id="01">人民币</curr>
+		<curr id="02">美元</curr>
+		<curr id="04">港币</curr>
+	</childRepId>
+	<childRepId id="G3302" repName="G33利率重新定价风险情况表-第Ⅱ部分：银行账户">
+		<curr id="01">人民币</curr>
+		<curr id="02">美元</curr>
+		<curr id="04">港币</curr>	
+	</childRepId>
+</curIds>
+

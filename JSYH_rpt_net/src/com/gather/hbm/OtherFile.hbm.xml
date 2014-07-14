@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.OtherFile" 
+    table="OTHER_FILE"
+>
+
+    <id
+        name="otherFileId"
+        type="java.lang.Integer"
+        column="OTHER_FILE_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="orgId"
+        type="java.lang.String"
+        column="ORG_ID"
+        length="17"
+    />
+    <property
+        name="upReportDate"
+        type="java.util.Date"
+        column="UP_REPORT_DATE"
+        length="7"
+    />
+    <property
+        name="fileName"
+        type="java.lang.String"
+        column="FILE_NAME"
+        length="80"
+    />
+    <property
+        name="operator"
+        type="java.lang.String"
+        column="OPERATOR"
+        length="20"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.Operator" 
+    table="OPERATOR"
+>
+
+    <id
+        name="userId"
+        type="java.lang.Long"
+        column="USER_ID"
+    >
+        <generator class="sequence">
+			<param name="sequence">Seq_Operator</param>
+		</generator>
+    </id>
+
+    <property
+        name="password"
+        type="java.lang.String"
+        column="PASSWORD"
+        length="40"
+    />
+    <property
+        name="userName"
+        type="java.lang.String"
+        column="USER_NAME"
+        length="20"
+    />
+    <property
+        name="firstName"
+        type="java.lang.String"
+        column="FIRST_NAME"
+        length="20"
+    />
+    <property
+        name="lastName"
+        type="java.lang.String"
+        column="LAST_NAME"
+        length="20"
+    />
+    <property
+        name="mail"
+        type="java.lang.String"
+        column="MAIL"
+        length="50"
+    />
+    <property
+        name="identificationNumber"
+        type="java.lang.String"
+        column="IDENTIFICATION_NUMBER"
+        length="18"
+    />
+    <property
+        name="employeeNumber"
+        type="java.lang.String"
+        column="EMPLOYEE_NUMBER"
+        length="20"
+    />
+    <property
+        name="title"
+        type="java.lang.String"
+        column="TITLE"
+        length="20"
+    />
+    <property
+        name="employeeType"
+        type="java.lang.String"
+        column="EMPLOYEE_TYPE"
+        length="20"
+    />
+    <property
+        name="branch"
+        type="java.lang.String"
+        column="BRANCH"
+        length="20"
+    />
+    <property
+        name="address"
+        type="java.lang.String"
+        column="ADDRESS"
+        length="100"
+    />
+    <property
+        name="postalAddress"
+        type="java.lang.String"
+        column="POSTAL_ADDRESS"
+        length="50"
+    />
+    <property
+        name="postalCode"
+        type="java.lang.String"
+        column="POSTAL_CODE"
+        length="20"
+    />
+    <property
+        name="fax"
+        type="java.lang.String"
+        column="FAX"
+        length="20"
+    />
+    <property
+        name="telephoneNumber"
+        type="java.lang.String"
+        column="TELEPHONE_NUMBER"
+        length="20"
+    />
+    <property
+        name="manager"
+        type="java.lang.String"
+        column="MANAGER"
+        length="20"
+    />
+    <property
+        name="sex"
+        type="java.lang.String"
+        column="SEX"
+        length="4"
+    />
+    <property
+        name="age"
+        type="java.lang.String"
+        column="AGE"
+        length="4"
+    />
+    <property
+        name="groupNumber"
+        type="java.lang.String"
+        column="GROUP_NUMBER"
+        length="10"
+    />
+    <property
+        name="updateTime"
+        type="java.sql.Date"
+        column="UPDATE_TIME"
+        length="10"
+    />
+    
+    <property
+        name="superManager"
+        type="java.lang.String"
+        column="SUPER_MANAGER"
+        length="1"
+    />
+    
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to UserRole -->
+    <set
+        name="userRoles"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="USER_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.UserRole"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to MUserToGrp -->
+    <set
+        name="MUserToGrps"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="USER_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.MUserToGrp"
+        />
+    </set>
+    <!-- bi-directional many-to-one association to Department -->
+    <many-to-one
+        name="department"
+        class="com.cbrc.auth.hibernate.Department"
+        not-null="true"
+    >
+        <column name="DEPARTMENT_ID" />
+    </many-to-one>
+
+	<many-to-one
+        name="setOrg"
+        class="com.fitech.net.hibernate.OrgNet"
+        not-null="true"
+    >
+        <column name="SET_ORG_ID" />
+    </many-to-one>
+    
+    <many-to-one
+        name="org"
+        class="com.fitech.net.hibernate.OrgNet"
+        not-null="true"
+    >
+        <column name="ORG_ID" />
+    </many-to-one>
+</class>
+</hibernate-mapping>

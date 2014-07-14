@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.Org" 
+    table="ORG">
+
+    <id
+        name="orgId"
+        type="java.lang.String"
+        column="ORGID"
+    >
+      <generator class="assigned" />
+		
+    </id>
+
+    <property
+        name="orgName"
+        type="java.lang.String"
+        column="ORGNAME"
+        length="200"
+    />
+    <property
+        name="orgType"
+        type="java.lang.String"
+        column="ORGTYPE"
+        length="6"
+    />
+    <property
+        name="isCorp"
+        type="java.lang.String"
+        column="ISCORP"
+        length="1"
+    />
+    <property
+        name="orgClsId"
+        type="java.lang.String"
+        column="ORGCLSID"
+        length="10"
+    />
+	<property
+		name="orgClsName"
+		type="java.lang.String"
+		column="orgClsName"
+		length="200"
+	/>
+    <property
+        name="orgCode"
+        type="java.lang.String"
+        column="ORGCODE"
+        length="30"
+    />
+	<!--
+	<property
+		name="OATId"
+		type="java.lang.Integer"
+		column="OAT_ID"
+		length="10"
+	/>
+	-->
+	<many-to-one 
+		name="orgActuType"
+		class="com.cbrc.smis.hibernate.OrgActuType"
+		not-null="true">
+		<column name="OAT_ID"/>
+	</many-to-one>
+    <!-- Associations -->
+</class>
+</hibernate-mapping>

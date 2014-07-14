@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.ResourceType" 
+    table="RESOURCE_TYPE"
+>
+
+    <id
+        name="resourceTypeId"
+        type="java.lang.Integer"
+        column="RESOURCE_TYPE_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="typeName"
+        type="java.lang.String"
+        column="TYPE_NAME"
+        length="20"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to DownloadResource -->
+    <set
+        name="downloadResources"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="RESOURCE_TYPE_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.DownloadResource"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

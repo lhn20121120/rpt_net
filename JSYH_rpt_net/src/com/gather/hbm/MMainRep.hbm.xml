@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.MMainRep" 
+    table="M_MAIN_REP"
+>
+
+    <id
+        name="repId"
+        type="java.lang.Integer"
+        column="REP_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="repCnName"
+        type="java.lang.String"
+        column="REP_CN_NAME"
+        length="50"
+    />
+    <property
+        name="repEnName"
+        type="java.lang.String"
+        column="REP_EN_NAME"
+        length="50"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to MCurUnit -->
+    <many-to-one
+        name="MCurUnit"
+        class="com.gather.hibernate.MCurUnit"
+        not-null="true"
+    >
+        <column name="CUR_UNIT" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to MRepType -->
+    <many-to-one
+        name="MRepType"
+        class="com.gather.hibernate.MRepType"
+        not-null="true"
+    >
+        <column name="REP_TYPE_ID" />
+    </many-to-one>
+    <!-- bi-directional one-to-many association to MChildReport -->
+    <set
+        name="MChildReports"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="REP_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MChildReport"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to MRepdesc -->
+    <set
+        name="MRepdescs"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="REPID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MRepdesc"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

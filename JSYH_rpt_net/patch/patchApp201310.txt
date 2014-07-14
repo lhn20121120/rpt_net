@@ -1,0 +1,2 @@
+----报表采集功能中新增币种信息列
+gznx\reportdel\reportproductList.jsp

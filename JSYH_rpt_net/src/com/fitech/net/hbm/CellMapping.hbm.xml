@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+	<!-- 
+		Created by the Middlegen Hibernate plugin 2.1
+		
+		http://boss.bekk.no/boss/middlegen/
+		http://www.hibernate.org/
+	-->
+
+	<class name="com.fitech.net.collect.bean.CellMapping" table="CELL_MAPPING">
+
+		<id name="cellMapId" type="java.lang.Long" column="CELL_MAP_ID">
+			<generator class="sequence">
+				<param name="sequence">SEQ_CELL_MAPPING</param>
+			</generator>
+		</id>
+		<property name="srcCellName" type="java.lang.String" column="SRC_CELL_NAME" />
+		<property name="tarCellName" type="java.lang.String" column="TAR_CELL_NAME" />
+		<property name="srcRowId" type="java.lang.Integer" column="SRC_ROW_ID"/>
+		<property name="srcColId" type="java.lang.Integer" column="SRC_COL_ID"/>
+		<property name="tarRowId" type="java.lang.Integer" column="TAR_ROW_ID"/>
+		<property name="tarColId" type="java.lang.Integer" column="TAR_COL_ID" />
+
+		<!-- Associations -->
+
+		<!-- bi-directional many-to-one association to LogType -->
+		<many-to-one name="reportMapping" class="com.fitech.net.collect.bean.ReportMapping">
+			<column name="REP_MAP_ID" />
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

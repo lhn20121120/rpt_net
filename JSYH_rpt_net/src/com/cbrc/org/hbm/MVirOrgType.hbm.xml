@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.org.hibernate.MVirOrgType" 
+    table="M_VIRORGTYPE"
+>
+
+    <id
+        name="virtuTypeId"
+        type="java.lang.String"
+        column="VIRTUTYPEID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="virtuTypeNm"
+        type="java.lang.String"
+        column="VIRTUTYPENM"
+        length="200"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

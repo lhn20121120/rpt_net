@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <templates package="com.fitech.net.collect.specialCollect">            
+       
+	  <!-- G类表表-->
+	  <template id="0001" reportID="G0100" versionID="0514" class="G0100_0512_Collect" /> 
+	  <template id="0002" reportID="G0101" versionID="0514" class="G0101_0512_Collect" />	  	  
+	  <template id="0003" reportID="G0102" versionID="0514" class="G0102_0512_Collect" /> 
+	  <template id="0004" reportID="G0103" versionID="0514" class="G0103_0512_Collect" /> 
+	  <template id="0005" reportID="G0104" versionID="0514" class="G0104_0512_Collect" /> 
+	  <template id="0006" reportID="G0105" versionID="0514" class="G0105_0512_Collect" /> 
+	  <template id="0007" reportID="G0106" versionID="0514" class="G0106_0512_Collect" /> 
+	  <template id="0008" reportID="G0107" versionID="0514" class="G0107_0512_Collect" />	  	  
+	  <template id="0009" reportID="G0108" versionID="0514" class="G0108_0512_Collect" /> 
+	  <template id="0010" reportID="G0109" versionID="0514" class="G0109_0512_Collect" /> 
+	  <template id="0011" reportID="G0110" versionID="0514" class="G0110_0512_Collect" /> 
+	  
+	  <template id="0012" reportID="G0200" versionID="0514" class="G0200_0512_Collect" /> 
+ 	  <template id="0013" reportID="G0300" versionID="0514" class="G0300_0512_Collect" />
+	  <template id="0014" reportID="G0400" versionID="0514" class="G0400_0512_Collect" /> 
+      <template id="0015" reportID="G0500" versionID="0514" class="G0500_0512_Collect" /> 
+	  
+	  <template id="0016" reportID="G1101" versionID="0514" class="G1101_0512_Collect" /> 
+      <template id="0017" reportID="G1102" versionID="0514" class="G1102_0512_Collect" /> 
+      <template id="0018" reportID="G1103" versionID="0514" class="G1103_0512_Collect" /> 
+	  
+	  <template id="0019" reportID="G1200" versionID="0514" class="G1200_0512_Collect" />
+	  <template id="0020" reportID="G1301" versionID="0514" class="G1301_0512_Collect" />      
+	  <template id="0021" reportID="G1302" versionID="0514" class="G1301_0512_Collect" />
+      <template id="0022" reportID="G1303" versionID="0514" class="G1301_0512_Collect" />
+      <template id="0023" reportID="G1304" versionID="0514" class="G1301_0512_Collect" /> 
+      <template id="0024" reportID="G1401" versionID="0514" class="G1401_0512_Collect" /> 
+      <template id="0025" reportID="G1402" versionID="0514" class="G1401_0512_Collect" /> 
+      <template id="0026" reportID="G1500" versionID="0514" class="G1500_0512_Collect" />
+      <template id="0027" reportID="G1600" versionID="0514" class="G1600_0512_Collect" /> 
+      
+      <template id="0028" reportID="G2100" versionID="0514" class="G2100_0512_Collect" /> 
+      <template id="0029" reportID="G2200" versionID="0514" class="G2200_0512_Collect" /> 
+      <template id="0030" reportID="G2300" versionID="0514" class="G2300_0512_Collect" />
+      <template id="0031" reportID="G2400" versionID="0514" class="G2400_0512_Collect" /> 
+      
+	  <template id="0032" reportID="G3100" versionID="0514" class="G3100_0512_Collect" /> 
+      <template id="0033" reportID="G3200" versionID="0514" class="G3200_0512_Collect" /> 
+	  <template id="0034" reportID="G3301" versionID="0514" class="G3301_0512_Collect" /> 
+	  <template id="0077" reportID="G3302" versionID="0514" class="G3302_0512_Collect" /> 
+	  
+	  <template id="0078" reportID="G4100" versionID="0514" class="G4100_0512_Collect" /> 
+	  <template id="0035" reportID="G4200" versionID="0514" class="G4200_0512_Collect" /> 
+	  <template id="0036" reportID="G4300" versionID="0514" class="G4300_0512_Collect" /> 
+	  <template id="0037" reportID="S4400" versionID="0514" class="S4400_0512_Collect" />    
+	  
+	  <template id="0038" reportID="G5100" versionID="0514" class="G5100_0512_Collect" />
+	  <template id="0039" reportID="G5200" versionID="0514" class="G5200_0512_Collect" />
+	  <template id="0040" reportID="G5301" versionID="0514" class="G5301_0512_Collect" /> 
+	  <template id="0041" reportID="G5302" versionID="0514" class="G5302_0512_Collect" /> 
+	  <template id="0042" reportID="G5303" versionID="0514" class="G5303_0512_Collect" /> 
+	  <template id="0043" reportID="G5304" versionID="0514" class="G5304_0512_Collect" /> 
+	  
+	  
+	  
+	  <template id="0001" reportID="G0100" versionID="0690" class="G0100_0690_Collect" /> 
+	  <template id="0002" reportID="G0101" versionID="0690" class="G0101_0690_Collect" />	  	  
+	  <template id="0003" reportID="G0102" versionID="0690" class="G0102_0690_Collect" /> 
+	  <template id="0004" reportID="G0103" versionID="0690" class="G0103_0690_Collect" /> 
+	  <template id="0005" reportID="G0104" versionID="0690" class="G0104_0690_Collect" /> 
+	  <template id="0006" reportID="G0105" versionID="0690" class="G0105_0690_Collect" /> 
+	  <template id="0007" reportID="G0106" versionID="0690" class="G0106_0690_Collect" /> 
+	  <template id="0008" reportID="G0107" versionID="0690" class="G0107_0690_Collect" />	  	  
+	  <template id="0009" reportID="G0108" versionID="0690" class="G0108_0690_Collect" /> 
+	  <template id="0010" reportID="G0109" versionID="0690" class="G0109_0690_Collect" /> 
+	  <template id="0011" reportID="G0110" versionID="0690" class="G0110_0690_Collect" /> 
+	  
+	  <template id="0012" reportID="G0200" versionID="0690" class="G0200_0690_Collect" /> 
+ 	  <template id="0013" reportID="G0300" versionID="0690" class="G0300_0690_Collect" />
+	  <template id="0014" reportID="G0400" versionID="0690" class="G0400_0690_Collect" /> 
+      <template id="0015" reportID="G0500" versionID="0690" class="G0500_0690_Collect" /> 
+	  
+	  <template id="0016" reportID="G1101" versionID="0690" class="G1101_0690_Collect" /> 
+      <template id="0017" reportID="G1102" versionID="0690" class="G1102_0690_Collect" /> 
+      <template id="0018" reportID="G1103" versionID="0690" class="G1103_0690_Collect" /> 
+	  
+	  <template id="0019" reportID="G1200" versionID="0690" class="G1200_0690_Collect" />
+	  <template id="0020" reportID="G1301" versionID="0690" class="G1301_0690_Collect" />      
+	  <template id="0021" reportID="G1302" versionID="0690" class="G1301_0690_Collect" />
+      <template id="0022" reportID="G1303" versionID="0690" class="G1301_0690_Collect" />
+      <template id="0023" reportID="G1304" versionID="0690" class="G1301_0690_Collect" /> 
+      <template id="0024" reportID="G1401" versionID="0690" class="G1401_0690_Collect" /> 
+      <template id="0025" reportID="G1402" versionID="0690" class="G1401_0690_Collect" />
+      <template id="0081" reportID="G1403" versionID="0690" class="G1403_0690_Collect" />  
+      <template id="0026" reportID="G1500" versionID="0690" class="G1500_0690_Collect" />
+      <template id="0027" reportID="G1600" versionID="0690" class="G1600_0690_Collect" />
+      <template id="0080" reportID="G1700" versionID="0690" class="G1700_0690_Collect" />  
+      
+      <template id="0028" reportID="G2100" versionID="0690" class="G2100_0690_Collect" /> 
+      <template id="0029" reportID="G2200" versionID="0690" class="G2200_0690_Collect" /> 
+      <template id="0030" reportID="G2300" versionID="0690" class="G2300_0690_Collect" />
+      <template id="0031" reportID="G2400" versionID="0690" class="G2400_0690_Collect" /> 
+      
+	  <template id="0032" reportID="G3100" versionID="0690" class="G3100_0690_Collect" /> 
+      <template id="0033" reportID="G3200" versionID="0690" class="G3200_0690_Collect" /> 
+	  <template id="0034" reportID="G3301" versionID="0690" class="G3301_0690_Collect" /> 
+	  <template id="0077" reportID="G3302" versionID="0690" class="G3302_0690_Collect" /> 
+	  
+	  <template id="0078" reportID="G4100" versionID="0690" class="G4100_0690_Collect" /> 
+	  <template id="0035" reportID="G4200" versionID="0690" class="G4200_0690_Collect" /> 
+	  <template id="0036" reportID="G4300" versionID="0690" class="G4300_0690_Collect" /> 
+	  <template id="0037" reportID="S4400" versionID="0690" class="S4400_0690_Collect" />    
+	  
+	  <template id="0038" reportID="G5100" versionID="0690" class="G5100_0690_Collect" />
+	  <template id="0039" reportID="G5200" versionID="0690" class="G5200_0690_Collect" />
+	  <template id="0040" reportID="G5301" versionID="0690" class="G5301_0690_Collect" /> 
+	  <template id="0041" reportID="G5302" versionID="0690" class="G5302_0690_Collect" /> 
+	  <template id="0042" reportID="G5303" versionID="0690" class="G5303_0690_Collect" /> 
+	  <template id="0043" reportID="G5304" versionID="0690" class="G5304_0690_Collect" /> 
+	  <!-- S类表表-->
+	  
+	  
+	  <template id="0044" reportID="S0100" versionID="0514" class="S0100_0512_Collect" />
+	  <template id="0045" reportID="S0200" versionID="0514" class="S0200_0512_Collect" /> 
+	  
+      <template id="0046" reportID="S1100" versionID="0514" class="S1100_0512_Collect" />
+      <template id="0047" reportID="S1200" versionID="0514" class="S1200_0512_Collect" />
+      
+      <template id="0048" reportID="S2100" versionID="0514" class="S2100_0512_Collect" />
+      <template id="0049" reportID="S2200" versionID="0514" class="S2200_0512_Collect" />
+      <template id="0050" reportID="S2300" versionID="0514" class="S2300_0512_Collect" />
+      
+      <template id="0051" reportID="S3100" versionID="0514" class="S3100_0512_Collect" />
+      <template id="0052" reportID="S3201" versionID="0514" class="S3201_0512_Collect" />
+      <template id="0053" reportID="S3202" versionID="0514" class="S3202_0512_Collect" />
+      <template id="0054" reportID="S3203" versionID="0514" class="S3203_0512_Collect" />
+      <template id="0055" reportID="S3204" versionID="0514" class="S3204_0512_Collect" />
+      <template id="0056" reportID="S3205" versionID="0514" class="S3205_0512_Collect" />
+      <template id="0057" reportID="S3206" versionID="0514" class="S3206_0512_Collect" />
+      <template id="0058" reportID="S3207" versionID="0514" class="S3207_0512_Collect" />
+      <template id="0059" reportID="S3208" versionID="0514" class="S3208_0512_Collect" />
+      <template id="0060" reportID="S3209" versionID="0514" class="S3209_0512_Collect" />
+      
+      <template id="0061" reportID="S3300" versionID="0514" class="S3300_0512_Collect" />      
+      <template id="0062" reportID="S3401" versionID="0514" class="S3401_0512_Collect" />
+      <template id="0063" reportID="S3402" versionID="0514" class="S3402_0512_Collect" />
+      <template id="0064" reportID="S3403" versionID="0514" class="S3403_0512_Collect" />
+      
+      <template id="0073" reportID="S3500" versionID="0514" class="S3500_0512_Collect" />
+      <template id="0074" reportID="S3600" versionID="0514" class="S3600_0512_Collect" />
+      <template id="0075" reportID="S3700" versionID="0514" class="S3700_0512_Collect" />
+      <template id="0076" reportID="S3800" versionID="0514" class="S3800_0512_Collect" />
+
+      <template id="0065" reportID="S4100" versionID="0514" class="S4100_0512_Collect" />
+      <template id="0066" reportID="S4200" versionID="0514" class="S4200_0512_Collect" />
+      <template id="0067" reportID="S4300" versionID="0514" class="S4300_0512_Collect" />
+      <template id="0068" reportID="S4500" versionID="0514" class="S4500_0512_Collect" />
+      <template id="0069" reportID="S4600" versionID="0514" class="S4600_0512_Collect" />
+            
+      <template id="0070" reportID="S5100" versionID="0514" class="S5100_0512_Collect" />
+      <template id="0071" reportID="S5200" versionID="0514" class="S5200_0512_Collect" />
+      <template id="0072" reportID="S5400" versionID="0514" class="S5400_0512_Collect" />
+      
+      
+      <template id="0044" reportID="S0100" versionID="0690" class="S0100_0690_Collect" />
+	  <template id="0045" reportID="S0200" versionID="0690" class="S0200_0690_Collect" /> 
+	  
+      <template id="0046" reportID="S1100" versionID="0690" class="S1100_0690_Collect" />
+      <template id="0047" reportID="S1200" versionID="0690" class="S1200_0690_Collect" />
+      
+      <template id="0048" reportID="S2100" versionID="0690" class="S2100_0690_Collect" />
+      <template id="0049" reportID="S2200" versionID="0690" class="S2200_0690_Collect" />
+      <template id="0050" reportID="S2300" versionID="0690" class="S2300_0690_Collect" />
+      
+      <template id="0051" reportID="S3100" versionID="0690" class="S3100_0690_Collect" />
+      <template id="0052" reportID="S3201" versionID="0690" class="S3201_0690_Collect" />
+      <template id="0053" reportID="S3202" versionID="0690" class="S3202_0690_Collect" />
+      <template id="0054" reportID="S3203" versionID="0690" class="S3203_0690_Collect" />
+      <template id="0055" reportID="S3204" versionID="0690" class="S3204_0690_Collect" />
+      <template id="0056" reportID="S3205" versionID="0690" class="S3205_0690_Collect" />
+      <template id="0057" reportID="S3206" versionID="0690" class="S3206_0690_Collect" />
+      <template id="0058" reportID="S3207" versionID="0690" class="S3207_0690_Collect" />
+      <template id="0059" reportID="S3208" versionID="0690" class="S3208_0690_Collect" />
+      <template id="0060" reportID="S3209" versionID="0690" class="S3209_0690_Collect" />
+      
+      <template id="0061" reportID="S3300" versionID="0690" class="S3300_0690_Collect" />      
+      <template id="0062" reportID="S3401" versionID="0690" class="S3401_0690_Collect" />
+      <template id="0063" reportID="S3402" versionID="0690" class="S3402_0690_Collect" />
+      <template id="0064" reportID="S3403" versionID="0690" class="S3403_0690_Collect" />
+      
+      <template id="0073" reportID="S3500" versionID="0690" class="S3500_0690_Collect" />
+      <template id="0074" reportID="S3600" versionID="0690" class="S3600_0690_Collect" />
+      <template id="0075" reportID="S3700" versionID="0690" class="S3700_0690_Collect" />
+      <template id="0076" reportID="S3800" versionID="0690" class="S3800_0690_Collect" />
+
+      <template id="0065" reportID="S4100" versionID="0690" class="S4100_0690_Collect" />
+      <template id="0066" reportID="S4200" versionID="0690" class="S4200_0690_Collect" />
+      <template id="0067" reportID="S4300" versionID="0690" class="S4300_0690_Collect" />
+      <template id="0068" reportID="S4500" versionID="0690" class="S4500_0690_Collect" />
+      <template id="0069" reportID="S4600" versionID="0690" class="S4600_0690_Collect" />
+
+      <template id="0070" reportID="S5100" versionID="0690" class="S5100_0690_Collect" />
+      <template id="0071" reportID="S5200" versionID="0690" class="S5200_0690_Collect" />
+      <template id="0072" reportID="S5400" versionID="0690" class="S5400_0690_Collect" />  
+      
+		<!--  自定义模板    -->
+	  <template id="0074" reportID="F0002" versionID="0690" class="F0002_0690_Collect" />  
+   </templates>
+</root> 

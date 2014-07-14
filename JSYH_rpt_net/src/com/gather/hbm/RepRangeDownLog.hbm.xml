@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.RepRangeDownLog" 
+    table="REP_RANGE_DOWN_LOG"
+>
+
+    <composite-id name="comp_id" class="com.gather.hibernate.RepRangeDownLogPK">
+        <key-property 
+            name="orgId" 
+            column="ORG_ID" 
+            type="java.lang.String"
+            length="17"
+        />
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="5"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="4"
+        />
+    </composite-id>    
+
+    
+    <property
+        name="state"
+        type="java.lang.Integer"
+        column="STATE"
+        length="22"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to MOrg -->
+    <many-to-one
+        name="MOrg"
+	    class="com.gather.hibernate.MOrg"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="ORG_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+    <!-- bi-directional many-to-one association to MChildReport -->
+    <many-to-one
+        name="MChildReport"
+        class="com.gather.hibernate.MChildReport"
+        not-null="true"
+        update="false"
+	    insert="false"
+    >
+        <column name="CHILD_REP_ID" />
+        <column name="VERSION_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

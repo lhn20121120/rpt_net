@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title>选择金融机构</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<link href="../css/common.css" rel="stylesheet" type="text/css">
+			<script id="clientEventHandlersJS" language="javascript">
+<!--
+
+function OK0_onclick() {
+	window.Checkbox1.checked=true;
+	window.Checkbox8.checked=true;
+	window.Checkbox14.checked=true;
+}
+
+function OK1_onclick() {
+	window.Checkbox1.checked=false;;
+	window.Checkbox8.checked=false;
+	window.Checkbox14.checked=false;
+}
+
+function OK_onclick() {
+	if ((window.Checkbox1.checked==true)&&(window.Checkbox8.checked==true)&&(window.Checkbox14.checked==true)) {
+		window.parent.contents.location.assign('main.content.moban.bsgx.base.all.htm');}
+	else {
+	if ((window.Checkbox1.checked==false)&&(window.Checkbox8.checked==false)&&(window.Checkbox14.checked==false)) {
+		window.parent.contents.location.assign('main.content.moban.bsgx.base.clear.htm');}
+	else {
+		window.parent.contents.location.assign('main.content.moban.bsgx.base.htm');
+	}
+	}
+	
+}
+
+//-->
+			</script>
+	</head>
+	<body>
+		<table height="100%" border="0" align="left" cellpadding="0" cellspacing="0" 
+			id="table1">
+			<tr>
+				<td valign="top" id="operation" width="100%">
+					<div align="center">
+					<table width="100%" border="0" cellpadding="0" cellspacing="0" id="table2">
+						<tr>
+							<td valign="top" height="19">
+							</td>
+						</tr>
+						<tr>
+							<td valign="top"><fieldset id="fieldset">
+									<legend>
+										<strong>&nbsp;选择金融机构&nbsp;</strong>
+									</legend>
+									<TABLE width="780" border="0" align="center" cellpadding="2" cellspacing="2" height="239"
+										id="table3">
+										<TBODY>
+											<TR>
+												<TD align="center" height="100%" background="../image/total_other.gif">
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<INPUT id="Checkbox1" type="checkbox" CHECKED name="Checkbox1" value="ON"> 中国
+														进出口银行&nbsp;&nbsp;&nbsp;
+													</P>
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														　</P>
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														　</P>
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<INPUT id="Checkbox8" type="checkbox" name="Checkbox8" CHECKED value="ON"> 中国
+														农业发展银行</P>
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														　</P>
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														</P>
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<INPUT id="Checkbox14" type="checkbox" name="Checkbox14" CHECKED value="ON"> 中国****银行&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </P>
+												</TD>
+											</TR>
+										</TBODY>
+									</TABLE>
+									<p align="center">
+										<input name="OK0" type="submit" class="input-button" id="OK0" value=" 全 选 " onclick="return OK0_onclick()">
+										<input name="OK1" type="submit" class="input-button" id="OK1" value=" 清 除 " onclick="return OK1_onclick()">
+										<input name="OK" type="submit" class="input-button" id="OK" value=" 确 定 " onclick="return OK_onclick()">
+										<input class="input-button" id="OK2" onclick="window.history.back()" type="submit" value=" 返 回 " name="OK2">
+									</p>
+								</fieldset>
+							</td>
+						</tr>
+					</table>
+					</div>
+					<p>
+					</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

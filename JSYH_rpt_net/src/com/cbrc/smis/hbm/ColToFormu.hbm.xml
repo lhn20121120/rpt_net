@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.ColToFormu" 
+    table="COL_TO_FORMU"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.ColToFormuPK">
+        <key-property 
+            name="cellFormuId" 
+            column="CELL_FORMU_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.Integer"
+            length="5"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="4"
+        />
+        <key-property 
+            name="colName" 
+            column="COL_NAME" 
+            type="java.lang.String"
+            length="20"
+        />
+    </composite-id>    
+
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to MCellFormu -->
+    <many-to-one
+        name="MCellFormu"
+	    class="com.cbrc.smis.hibernate.MCellFormu"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CELL_FORMU_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to MChildReport -->
+    <many-to-one
+        name="MChildReport"
+	    class="com.cbrc.smis.hibernate.MChildReport"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CHILD_REP_ID" />
+    	<column name="VERSION_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>
