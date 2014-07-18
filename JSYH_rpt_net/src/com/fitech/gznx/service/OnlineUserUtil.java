@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.servlet.http.HttpSession;
+
+import com.cbrc.smis.common.Config;
 import com.cbrc.smis.security.Operator;
 import com.fitech.gznx.util.OnlineUser;
 
@@ -15,13 +18,14 @@ import com.fitech.gznx.util.OnlineUser;
 
 public class OnlineUserUtil {
 	/**
-	 * µ±Ç°ÔÚÏßÓÃ»§ÁĞ±í
+	 * ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ğ±ï¿½
 	 */
 	private static Map onlineUserMap = new HashMap();
 	private static Map users=new HashMap();
+    private static Map sessionMap = new HashMap();
 
 	/**
-	 * Ôö¼ÓÔÚÏßÓÃ»§
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * 
 	 * @param operator
 	 */
@@ -49,7 +53,7 @@ public class OnlineUserUtil {
 	}
 
 	/**
-	 * É¾³ıÔÚÏßÓÃ»§
+	 * É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * 
 	 * @param operator
 	 */
@@ -105,7 +109,7 @@ public class OnlineUserUtil {
 		}
 	}
 	/**
-	 * »ñµÃÔÚÏßÓÃ»§µÄÁĞ±í
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ğ±ï¿½
 	 * 
 	 * @return
 	 */
@@ -125,7 +129,7 @@ public class OnlineUserUtil {
 	}
 	
 	/**
-	 * »ñµÃµ±Ç°ÔÚÏßÓÃ»§ÊıÁ¿
+	 * ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	public static int getOnlineUserCount()
@@ -133,7 +137,7 @@ public class OnlineUserUtil {
 		return onlineUserMap.size();
 	}
 	/**
-	 * ÅĞ¶Ï¸ÃÓÃ»§ÊÇ²»ÊÇÒÑ¾­µÇÂ¼
+	 * ï¿½Ğ¶Ï¸ï¿½ï¿½Ã»ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½Â¼
 	 * @param username
 	 * @return
 	 */
@@ -147,4 +151,32 @@ public class OnlineUserUtil {
 	public static void removeUserName(String userName) {
 		users.remove(userName);		
 	}
+	
+	 /**
+     * åˆ¤æ–­è¯¥ç”¨æˆ·å·¥å·æ˜¯ä¸æ˜¯å·²ç»ç™»å½•
+     * @param employeeId
+     * @return
+     */
+    public static boolean viewOnlineEmployeeId(String employeeId)
+    {
+        boolean existUser=false;
+        existUser = users.containsKey(employeeId);
+        return existUser;
+    }
+    
+    /**
+     * æä¾›æ ¹æ®ç”¨æˆ·è¿œç¨‹åˆ é™¤ç”¨æˆ·
+     * @param userName
+     */
+    public static void removeOnlineUserByRemote(String userName){
+        HttpSession session = (HttpSession)sessionMap.get(userName);
+        if(session==null)
+            return;
+        Operator operator = (Operator)session.getAttribute(Config.OPERATOR_SESSION_ATTRIBUTE_NAME);
+        removeOnlineUser(operator);
+        session.removeAttribute(Config.OPERATOR_SESSION_ATTRIBUTE_NAME);
+        sessionMap.remove(userName);
+        if(session.isNew())
+            session.invalidate();
+    }
 }

@@ -1,7 +1,9 @@
 package com.fitech.net.adapter;
 
+import com.fitech.gznx.form.OrgInfoForm;
 import com.fitech.net.form.ActuTargetResultForm;
 import com.fitech.net.form.IDataRelationForm;
+import com.fitech.net.form.OrgNetForm;
 import com.fitech.net.form.TargetDefineForm;
 import com.fitech.net.form.TargetDefineWarnForm;
 import com.fitech.net.form.VParameterForm;
@@ -14,6 +16,7 @@ import com.fitech.net.hibernate.OrgNet;
 import com.fitech.net.hibernate.TargetDefine;
 import com.fitech.net.hibernate.TargetDefineWarn;
 import com.fitech.net.hibernate.VParameter;
+import com.fitech.papp.webservice.pojo.WebSysOrg;
 
 
 
@@ -382,7 +385,57 @@ public class TranslatorUtil {
     	vParamForm.setPre_vpId(vParamPersistence.getPre_vpId());
     }
 
-	
+    public static void copyProperties(OrgInfoForm orgNetForm, WebSysOrg org ) {
 
+		if (orgNetForm == null)
+			orgNetForm = new OrgInfoForm();
 
+		orgNetForm.setOrgId(org.getOrgId());
+		orgNetForm.setOrgName(org.getOrgName());
+
+//		if (org.getIsCollect() != null)
+//			orgInfoForm.setIsCollect(org.getIsCollect().intValue());
+//		if (org.getOrgAttr() != null)
+//			orgInfoForm.setOrgAttr(org.getOrgAttr());
+		if (org.getOrgLevel() != null)
+			orgNetForm.setOrgLevel(new Integer(org.getOrgLevel()));
+//		if (org.getViewOrgId() != null)
+//			orgNetForm.(org.getViewOrgId());
+		if (org.getOrgAreaId() != null)
+			orgNetForm.setOrgRegion(org.getOrgAreaId());
+		if (org.getOrgType() != null)
+			orgNetForm.setOrgType(org.getOrgType());
+		if (org.getHigherOrgId() != null)
+			orgNetForm.setParentOrgId(org.getHigherOrgId());
+		if (org.getStartDate() != null)
+			orgNetForm.setBeginDate(org.getStartDate());
+
+	}
+	public static void copyProperties(OrgNetForm orgNetForm, WebSysOrg org ) {
+
+		if (orgNetForm == null)
+			orgNetForm = new OrgNetForm();
+
+		orgNetForm.setOrg_id(org.getOrgId());
+		orgNetForm.setOrg_name(org.getOrgName());
+
+//		if (org.getIsCollect() != null)
+//			orgInfoForm.setIsCollect(org.getIsCollect().intValue());
+//		if (org.getOrgAttr() != null)
+//			orgInfoForm.setOrgAttr(org.getOrgAttr());
+//		if (org.getOrgLevel() != null)
+////			orgNetForm.(new Integer(org.getOrgLevel()));
+//		if (org.getViewOrgId() != null)
+//			orgNetForm.(org.getViewOrgId());
+		if (org.getOrgAreaId() != null)
+			orgNetForm.setRegion_id(org.getOrgAreaId());
+		if (org.getOrgLevel() != null)
+			orgNetForm.setOrg_type_id(new Integer(org.getOrgLevel()));
+		if (org.getHigherOrgId() != null)
+			orgNetForm.setPre_org_id(org.getHigherOrgId());
+		if (org.getStartDate() != null)
+			orgNetForm.setStartDate(org.getStartDate());
+
+	}
+    
 }

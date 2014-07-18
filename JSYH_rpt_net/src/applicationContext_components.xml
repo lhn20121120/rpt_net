@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+
+	<!-- 这个一定要有 -->
+	<bean id="applicationContext"
+		class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder"></bean>
+
+	<bean id="userWebService" class="com.fitech.papp.webservice.service.impl.UserServiceImpl">
+		<property name="operaService">
+			<ref bean="userWebManagerService" />
+		</property>
+	</bean>
+	
+	<bean id="orgWebService" class="com.fitech.papp.webservice.service.impl.OrgServiceImpl">
+		
+	</bean>
+	
+	<bean id="authWebService"
+		class="com.fitech.papp.webservice.service.impl.AuthServiceImpl">
+	</bean>
+
+
+</beans>
+

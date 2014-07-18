@@ -20,7 +20,6 @@ import com.cbrc.smis.security.Operator;
 import com.cbrc.smis.service.IAFDataTraceService;
 import com.cbrc.smis.service.impl.AFDataTraceServiceImpl;
 import com.cbrc.smis.util.FitechLog;
-import com.sun.org.apache.commons.beanutils.BeanUtils;
 
 public class AddAFDataTraceAction extends Action{
 
@@ -30,20 +29,20 @@ public class AddAFDataTraceAction extends Action{
 			throws Exception {
 		// TODO Auto-generated method stub
 		//String[] list = request.getParameterValues("dataList");
-		//µ¥Ôª¸ñÃû³Æ
+		//å•å…ƒæ ¼åç§°
 		String[] cellNames = request.getParameterValues("cellName");
 		//Ô­Ê¼Öµ
 		String[] originalDatas = request.getParameterValues("originalData");
-		//ĞŞ¸ÄÖµ
+		//ä¿®æ”¹å€¼
 		String[] changeDatas = request.getParameterValues("changeData");
-		//×îÖÕÖµ
+		//ç»ˆå€¼
 		String[] finalDatas = request.getParameterValues("finalData");
 		String reportFlg = "0";
 		HttpSession session = request.getSession();
 		if (session.getAttribute(Config.REPORT_SESSION_FLG) != null){
 			reportFlg = (String) session.getAttribute(Config.REPORT_SESSION_FLG);
 		}
-		//±¸×¢
+		//å¤‡æ³¨
 		String[] descs = request.getParameterValues("desc");
 		String repInId = request.getParameter("repInId");
 		
@@ -78,11 +77,11 @@ public class AddAFDataTraceAction extends Action{
 				af.setStatus(0);
 				try {
 					traceService.addAFDataTrace(af);
-					//µÚÒ»¸ö²ÎÊı1ÎªÔö¼ÓÊı¾İºÛ¼£¼ÇÂ¼ÈÕÖ¾
+					//ç¬¬ä¸€ä¸ªå‚æ•°1ä¸ºå¢åŠ æ•°æ®ç—•è¿¹è®°å½•æ—¥å¿—
 					FitechLog.writeTraceLog(1, request, af, true ,reportFlg);
 				} catch (Exception e) {
 					e.printStackTrace();
-					//µÚÒ»¸ö²ÎÊı1ÎªÔö¼ÓÊı¾İºÛ¼£¼ÇÂ¼ÈÕÖ¾
+					//ä¸€ä¸ªå‚æ•°1ä¸ºå¢åŠ æ•°æ®ç—•è¿¹è®°å½•æ—¥å¿—
 					FitechLog.writeTraceLog(1, request, af, false , reportFlg);
 				}
 			}

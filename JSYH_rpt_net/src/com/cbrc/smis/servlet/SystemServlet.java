@@ -27,7 +27,7 @@ import com.cbrc.smis.util.FitechException;
  * @author rds
  * @date 2005-11-22
  * 
- * ϵͳ���еĳ�ʼ��������
+ * 系统锟斤拷锟叫的筹拷始锟斤拷锟斤拷锟斤拷锟斤拷
  */
 public class SystemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,7 +40,7 @@ public class SystemServlet extends HttpServlet {
 	private ServletContext context = null;
 
 	/**
-	 * ϵͳ����
+	 * 系统锟斤拷锟斤拷
 	 * 
 	 * @param request
 	 *            HttpServletRequest
@@ -55,7 +55,7 @@ public class SystemServlet extends HttpServlet {
 		context = config.getServletContext();
 
 		
-		//���Ӧ�õ���ʵ·��(���war�����޷����Ӧ����ʵ·��������)
+		//锟斤拷锟接︼拷玫锟斤拷锟绞德凤拷锟�锟斤拷锟絯ar锟斤拷锟斤拷锟睫凤拷锟斤拷锟接︼拷锟斤拷锟绞德凤拷锟斤拷锟斤拷锟斤拷锟�
 		String appsRealPath = "";
 		
 		if(context.getRealPath("/")!=null && !context.getRealPath("/").trim().equals("")
@@ -87,21 +87,21 @@ public class SystemServlet extends HttpServlet {
 			}			
 		}
 		
-		// ����ϵͳӦ�õĸ�·��
+		// 锟斤拷锟斤拷系统应锟矫的革拷路锟斤拷
 		//Config.WEBROOTPATH = context.getRealPath("/") + File.separator;
 		Config.WEBROOTPATH = appsRealPath.endsWith(Config.FILESEPARATOR) ? appsRealPath : appsRealPath + Config.FILESEPARATOR;
 		Config.RAQ_TEMPLATE_PATH= appsRealPath.endsWith(Config.FILESEPARATOR) ? appsRealPath : appsRealPath + Config.FILESEPARATOR;
-		// ������ʱ�ļ���ŵ�λ��
+		// 锟斤拷锟斤拷锟斤拷时锟侥硷拷锟斤拷诺锟轿伙拷锟�
 		Config.TEMP_DIR = Config.WEBROOTPATH + "tmp" + Config.FILESEPARATOR;
-		//���ݲ�ѯģ��ģ��excel�ļ���ʹ�����ݲ�ѯģ�������excel�ļ������ô�ģ��xls�ļ�
+		//锟斤拷莶锟窖ｏ拷锟侥ｏ拷锟絜xcel锟侥硷拷锟斤拷使锟斤拷锟斤拷莶锟窖ｏ拷锟斤拷锟斤拷锟絜xcel锟侥硷拷锟斤拷锟斤拷锟矫达拷模锟斤拷xls锟侥硷拷
 		Config.XLSFILEPATH = Config.WEBROOTPATH + "temp" + Config.FILESEPARATOR + "result.xls";
-		//�ۼ���ѯģ��excel�ļ���ʹ�úۼ���ѯģ������excel�ļ������ô�ģ��xls�ļ�
+		//锟桔硷拷锟斤拷询模锟斤拷excel锟侥硷拷锟斤拷使锟矫痕硷拷锟斤拷询模锟斤拷锟斤拷锟絜xcel锟侥硷拷锟斤拷锟斤拷锟矫达拷模锟斤拷xls锟侥硷拷
 		Config.TRACEFILEPATH = Config.WEBROOTPATH + "temp" + Config.FILESEPARATOR + "trace_data_list.xls";
-		// PDF����ģ���ļ���ŵ�����·��
+		// PDF锟斤拷锟斤拷模锟斤拷锟侥硷拷锟斤拷诺锟斤拷锟斤拷锟铰凤拷锟�
 		Config.PDF_TEMPLATE_PATH = Config.WEBROOTPATH + "template"
 				+ Config.FILESEPARATOR + "pdf" + Config.FILESEPARATOR;
 
-		// ���������ʵ����������ļ�������·�����г�ʼ��
+		// 锟斤拷锟斤拷锟斤拷锟斤拷实锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷募锟斤拷锟斤拷锟斤拷锟铰凤拷锟斤拷锟斤拷谐锟绞硷拷锟�
 		Config.CONFIGBYIMPLPATH = Config.WEBROOTPATH + "WEB-INF"
 				+ Config.FILESEPARATOR + "classes" + Config.FILESEPARATOR
 				+ "com" + Config.FILESEPARATOR + "cbrc" + Config.FILESEPARATOR
@@ -109,7 +109,7 @@ public class SystemServlet extends HttpServlet {
 				+ Config.FILESEPARATOR + "cb" + Config.FILESEPARATOR
 				+ "configInputDataImpl.properties";
 
-		// ���������ʱ���������ļ�������·�����г�ʼ��
+		// 锟斤拷锟斤拷锟斤拷锟斤拷时锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷路锟斤拷锟斤拷锟叫筹拷始锟斤拷
 		Config.INPUTDATATIMEPREPADDR = Config.WEBROOTPATH + "WEB-INF"
 				+ Config.FILESEPARATOR + "classes" + Config.FILESEPARATOR
 				+ "com" + Config.FILESEPARATOR + "cbrc" + Config.FILESEPARATOR
@@ -117,31 +117,31 @@ public class SystemServlet extends HttpServlet {
 				+ Config.FILESEPARATOR + "cb" + Config.FILESEPARATOR
 				+ "InputDataTimeConfig.properties";
 
-		// ���ô�������ñ�������ZIP�ļ��Ĵ��λ��
+		// 锟斤拷锟矫达拷锟斤拷锟斤拷锟矫憋拷锟斤拷锟斤拷锟絑IP锟侥硷拷锟侥达拷锟轿伙拷锟�
 		Config.ADDRESSZIP = config.getInitParameter("ReportDataPath");
-		// ���ô�������������ļ���ŵ�λ��
+		// 锟斤拷锟矫达拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷诺锟轿伙拷锟�
 
-		// �������ɲֿ�ӿ�XML�ļ���ŵ�λ��
+		// 锟斤拷锟斤拷锟斤拷刹挚锟接匡拷XML锟侥硷拷锟斤拷诺锟轿伙拷锟�
 		Config.XMLData_PATH = config.getInitParameter("XMLPath");
 
-		// ��Ϣ�����ļ����ݵ�Ŀ¼
+		// 锟斤拷息锟斤拷锟斤拷锟侥硷拷锟斤拷锟捷碉拷目录
 		Config.BAK_INFO_FILES_OUTPATH = config
 				.getInitParameter("BAK_INFO_FILES_OUTPATH");
 
-		// ��Ϣ�ϴ��ļ����ݵ�Ŀ¼
+		// 锟斤拷息锟较达拷锟侥硷拷锟斤拷锟捷碉拷目录
 		Config.BAK_INFO_FILES_UPPATH = config
 				.getInitParameter("BAK_INFO_FILES_UPPATH");
 
-		// ��ʼ��CA�����IP��ַ
+		// 锟斤拷始锟斤拷CA锟斤拷锟斤拷锟絀P锟斤拷址
 		Config.CAIP = config.getInitParameter("CAIP");
 
-		// ��ʼ��CA����Ķ˿ں�
+		// 锟斤拷始锟斤拷CA锟斤拷锟斤拷亩丝诤锟�
 		String caportByString = config.getInitParameter("CAPORT");
 		
-		// ��ʼ�������ļ��ķ�ʽ
+		// 锟斤拷始锟斤拷锟斤拷锟斤拷募锟斤拷姆锟绞�
 		Config.DATATYPE = config.getInitParameter("DATATYPE");
 		
-		/**��ʼ����ʿ����*/
+		/**锟斤拷始锟斤拷锟斤拷士锟斤拷锟斤拷*/
 		File file = new File(Config.WEBROOTPATH+"remindTips.txt");
 		
 		if(!config.getInitParameter("RAQ_TEMPLATE_PATH").trim().equals("")){
@@ -192,6 +192,17 @@ public class SystemServlet extends HttpServlet {
 			ReportDDImpl.needReplaceStr=prop.getProperty("need.replace.str");
 			Config.ISADDFITOSA = new Boolean(prop.getProperty("is.add.fitosa"));
 			Config.ISADDDESC = new Boolean(prop.getProperty("is.add.desc"));
+			
+			  //add by hu
+            context.setAttribute("IS_INTEGRATE_PORTAL", Boolean.valueOf(prop.getProperty("new_portal")));
+            context.setAttribute("INTEGRATE_PORTAL_DESC",prop.getProperty("integrate.portal.desc"));
+            Config.IS_INTEGRATE_PORTAL = Boolean.valueOf(prop.getProperty("new_portal"));
+            Config.NEW_PORTAL_URL = prop.getProperty("new_portal_url");
+            try{
+                Config.PORATLSYNAIMPL = prop.getProperty("portal_syna_impl");
+            }catch(Exception e){
+                Config.PORATLSYNAIMPL = "com.cbrc.auth.adapter";
+            }
 //			try{
 //				Config.ADD_OLD_COLLECT = new Integer((prop.getProperty("add_old_collect")));
 //			}catch(Exception e){
@@ -204,23 +215,23 @@ public class SystemServlet extends HttpServlet {
 //				Config.RH_DESC_CONTE = "outerId,orgName";
 //				Config.RH_FORMAT_END = "d";
 //			}
-			Config.CODE_LIB = prop.getProperty("code.lib");//���л�����Ϣ����
-			//�Ƿ����������ɱ���ʱ�������ݺۼ��޸�
+			Config.CODE_LIB = prop.getProperty("code.lib");//锟斤拷锟叫伙拷锟斤拷息锟斤拷锟斤拷
+			//锟角凤拷锟斤拷锟斤拷锟斤拷锟斤拷杀锟斤拷锟绞憋拷锟斤拷锟斤拷锟捷痕硷拷锟睫革拷
 			Config.ISADDTRACE = new Boolean(prop.getProperty("is_add_trace"));
 			Config.ISHAVEDELETE = new Boolean(prop.getProperty("is_have_delete"));
-			//�Ƿ���Ա���У�� ǿ���ϱ�
+			//锟角凤拷锟斤拷员锟斤拷校锟斤拷 强锟斤拷锟较憋拷
 			Config.ISFORCEREP = new Boolean(prop.getProperty("is_force_rep"));
-			//���б��ĵ������ݾ���
+			//锟斤拷锟叫憋拷锟侥碉拷锟斤拷锟斤拷菥锟斤拷锟�
 			Config.DOUBLEPERCISION = prop.getProperty("double.precision");
 			/***
-			 * �Ƿ���ʾ���ݺۼ���ҳ��
-			 * �µ����ݺۼ�ҳ�治֧�ֶ��и���ճ��
+			 * 锟角凤拷锟斤拷示锟斤拷莺奂锟斤拷锟揭筹拷锟�
+			 * 锟铰碉拷锟斤拷莺奂锟揭筹拷娌恢э拷侄锟斤拷懈锟斤拷锟秸筹拷锟�
 			 */
 			Config.ISOLDHENJI = new Boolean(prop.getProperty("is_old_henji"));
 			com.fitech.gznx.common.Config.HEAD_ORG_ID = prop.getProperty("head.org.id");
 			
 		}catch(Exception e){
-			throw new IllegalArgumentException("��CLASSPATH��δ�ҵ������ļ�applicaion.properties");
+			throw new IllegalArgumentException("锟斤拷CLASSPATH锟斤拷未锟揭碉拷锟斤拷锟斤拷锟侥硷拷applicaion.properties");
 		}
 
 		try {
@@ -229,7 +240,7 @@ public class SystemServlet extends HttpServlet {
 			Config.CAPORT = 9000;
 		}
 		
-		// �õ�ϵͳ����������Ϣ
+		// 锟矫碉拷系统锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷息
 		try{
 			Integer relultBL=StrutsSysSetDelegate.loadSysParameter("BN_VALIDATE");
 			if(relultBL!=null )
@@ -250,15 +261,15 @@ public class SystemServlet extends HttpServlet {
 			if(ENCRYPT!=null )
 				Config.ENCRYPT = ENCRYPT;
 		}catch(Exception e){
-			throw new IllegalArgumentException("��CLASSPATH��δ�ҵ������ļ�applicaion.properties");
+			throw new IllegalArgumentException("锟斤拷CLASSPATH锟斤拷未锟揭碉拷锟斤拷锟斤拷锟侥硷拷applicaion.properties");
 		}
 		initLogType();
-		//�����ձ�����������
-		new Timer().schedule(new com.cbrc.smis.util.DayReportTask(), 1000, 5*60*1000);//�������ʼ�����1���տ�ʼִ������ÿ5������ѯһ��
+		//锟斤拷锟斤拷锟秸憋拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+		new Timer().schedule(new com.cbrc.smis.util.DayReportTask(), 1000, 5*60*1000);//锟斤拷锟斤拷锟斤拷锟绞硷拷锟斤拷锟斤拷1锟斤拷锟秸匡拷始执锟斤拷锟斤拷锟斤拷每5锟斤拷锟斤拷锟斤拷询一锟斤拷
 	}
 
 	/**
-	 * ϵͳ������ֹ
+	 * 系统锟斤拷锟斤拷锟斤拷止
 	 * 
 	 * @return void
 	 */
@@ -267,7 +278,7 @@ public class SystemServlet extends HttpServlet {
 	}
 
 	/**
-	 * ��ʼ����־���ͳ���
+	 * 锟斤拷始锟斤拷锟斤拷志锟斤拷锟酵筹拷锟斤拷
 	 * 
 	 * @reuturn void
 	 */
@@ -315,7 +326,7 @@ public class SystemServlet extends HttpServlet {
 				 * Config.LOG_SYSTEM_CREATESTORAGEXML);
 				 */
 			} else {
-				log.println("��ʼ����־���ͳ���ʧ��!");
+				log.println("锟斤拷始锟斤拷锟斤拷志锟斤拷锟酵筹拷锟斤拷失锟斤拷!");
 			}
 		} catch (Exception e) {
 			log.printStackTrace(e);

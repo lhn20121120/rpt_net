@@ -6,7 +6,7 @@ import java.util.Map;
 import com.cbrc.auth.hibernate.RemindTips;
 
 /**
- * ÏµÍ³¹«ÓÃµÄ¡¢³£Á¿µÄÐÅÏ¢ÉèÖÃÀàÎÄ¼þ
+ * ÏµÍ³ï¿½ï¿½ï¿½ÃµÄ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
  * 
  * @author rds
  * @date 2005-11-22
@@ -14,254 +14,254 @@ import com.cbrc.auth.hibernate.RemindTips;
 public class Config {
 	public static boolean ISOLDHENJI = false;
 	/**
-	 * ÈËÐÐ±¨ÎÄµ¼³öÊý¾Ý¾«¶È
+	 * ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ï¿½ï¿½
 	 */
 	public static String DOUBLEPERCISION = "";
 	/***
-	 * ÊÇ·ñºöÂÔ±í¼äÐ£Ñé Ç¿ÖÆÉÏ±¨
+	 * ï¿½Ç·ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Ð£ï¿½ï¿½ Ç¿ï¿½ï¿½ï¿½Ï±ï¿½
 	 */
 	public static boolean ISFORCEREP = false;
 	/***
-	 * ºÛ¼£²éÑ¯Ä£°åexcelÎÄ¼þ
-	 * °´ÕÕ´ËÄ£°åÎÄ¼þÂ·¾¶Éú³É·ûºÏ¹æÔòµÄexcelÎÄ¼þ
+	 * ï¿½Û¼ï¿½ï¿½ï¿½Ñ¯Ä£ï¿½ï¿½excelï¿½Ä¼ï¿½
+	 * ï¿½ï¿½ï¿½Õ´ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½Â·ï¿½ï¿½ï¿½ï¿½É·ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½excelï¿½Ä¼ï¿½
 	 */
 	public static String TRACEFILEPATH = "";
 	/***
-	 * Êý¾Ý²éÑ¯Ä£°åexcelÎÄ¼þ
-	 * °´ÕÕ´ËÄ£°åÎÄ¼þÂ·¾¶Éú³É·ûºÏ¹æÔòµÄexcelÎÄ¼þ
+	 * ï¿½ï¿½Ý²ï¿½Ñ¯Ä£ï¿½ï¿½excelï¿½Ä¼ï¿½
+	 * ï¿½ï¿½ï¿½Õ´ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½Â·ï¿½ï¿½ï¿½ï¿½É·ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½excelï¿½Ä¼ï¿½
 	 */
 	public static String XLSFILEPATH = "";
 	/***
-	 * ÊÇ·ñÌí¼ÓÊý¾ÝºÛ¼£µÄÉ¾³ý¹¦ÄÜ
+	 * ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝºÛ¼ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static boolean ISHAVEDELETE = false;
 	
 	/**
-	 * ÔÚÉú³É±¨ÎÄÊ±£¬txtËµÃ÷ÎÄ¼þÖÐÏÔÊ¾µÄ¸ñÊ½
+	 * ï¿½ï¿½ï¿½ï¿½É±ï¿½ï¿½ï¿½Ê±ï¿½ï¿½txtËµï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ä¸ï¿½Ê½
 	 */
 	public static String RH_DESC_CONTE ="outerId,orgName";
 	
 	/**
-	 * ÔÚ±¨ÎÄÉú³ÉÊ±£¬Éú³ÉµÄÎÄ¼þ±àºÅÉèÖÃ×îºóÒ»Î»µÄ¸ñÊ½
+	 * ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Éµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Î»ï¿½Ä¸ï¿½Ê½
 	 */
 	public static String RH_FORMAT_END ="d";
 	
 	/***
-	 * ÊÇ·ñÔÚÊý¾ÝÖØÐÂÉú³ÉÊ±±£ÁôÊý¾ÝºÛ¼£µÄµ÷Õû
+	 * ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝºÛ¼ï¿½ï¿½Äµï¿½ï¿½ï¿½
 	 */
 	public static boolean ISADDTRACE = false;
 	/***
-	 * ÊÇ·ñÌí¼ÓÅäÖÃÐÅÏ¢¿Ø¼þ
+	 * ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ø¼ï¿½
 	 */
 	public static  boolean ISADDDESC = false;
 	/**
-	 * ¾É°æÈËÐÐ»ã×Ü°´Å¥ÊÇ·ñ´æÔÚ0:²»´æÔÚ 1:´æÔÚ
+	 * ï¿½É°ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½Ü°ï¿½Å¥ï¿½Ç·ï¿½ï¿½ï¿½ï¿½0:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1:ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static Integer ADD_OLD_COLLECT  = 1;
 	/**
-	 * ±í´ïÊ½µÄÔËËã·û
+	 * ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String[] OPERATOR_SYMBOL = { "+", "-", "*", "/", "%",
 			"(", ")", ">=", "<=", ">", "<" };
 	/**
-	 * ÏµÍ³µÄfile.separator
+	 * ÏµÍ³ï¿½ï¿½file.separator
 	 */
 	public static final String FILESEPARATOR = System.getProperty("file.separator");
 
 	/**
-	 * ÏµÍ³´íÎóÒ³µÄForward
+	 * ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Forward
 	 */
 	public static final String FORWARD_SYS_ERROR_PAGE = "sysErrPage";
 
 	/**
-	 * ÏµÍ³WEBÓ¦ÓÃµÄÎïÀíÂ·¾¶
+	 * ÏµÍ³WEBÓ¦ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String WEBROOTPATH = "";
 
 	/**
-	 * ÏµÍ³WEBÓ¦ÓÃµÄURLÂ·¾¶
+	 * ÏµÍ³WEBÓ¦ï¿½Ãµï¿½URLÂ·ï¿½ï¿½
 	 */
 	public static String WEBROOTULR = "";
 	
 	/***
-	 * ÊÇ·ñÌí¼Ó·ÖÎöÏµÍ³
+	 * ï¿½Ç·ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½ÏµÍ³
 	 */
 	public static boolean ISADDFITOSA = false;
 	/**
-	 * ·ÖÒ³¶ÔÏóµÄ´æ·ÅÔÚRequestÖÐµÄÃû³Æ
+	 * ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½Requestï¿½Ðµï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String APART_PAGE_OBJECT = "ApartPage";
 
 	/**
-	 * µ±Ç°Ò³Âë´æ·ÅÔÚRequestÖÐµÄÃû³Æ
+	 * ï¿½ï¿½Ç°Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Requestï¿½Ðµï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String CUR_PAGE_OBJECT = "CurPage";
 
 	/**
-	 * ·ÖÒ³ÏÔÊ¾¼ÇÂ¼Ê±£¬Ã¿Ò³ÏÔÊ¾µÄ¼ÇÂ¼Êý
+	 * ï¿½ï¿½Ò³ï¿½ï¿½Ê¾ï¿½ï¿½Â¼Ê±ï¿½ï¿½Ã¿Ò³ï¿½ï¿½Ê¾ï¿½Ä¼ï¿½Â¼ï¿½ï¿½
 	 */
 	public static final int PER_PAGE_ROWS = 10;
 
 	/**
-	 * ÏµÍ³²Ù×÷ÓÃ»§´æ·ÅÔÚSESSIONÖÐµÄÃû³Æ
+	 * ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SESSIONï¿½Ðµï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String OPERATOR_SESSION_NAME = "Operator";
 
 	/**
-	 * ·µ»Ø²éÑ¯¼ÇÂ¼¼¯µÄÃû³Æ
+	 * ï¿½ï¿½ï¿½Ø²ï¿½Ñ¯ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String RECORDS = "Records";
 
 	/**
-	 * ·µ»ØÐÅÏ¢µÄÃû³Æ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String MESSAGES = "Message";
 
 	/**
-	 * ÉÏ´«ÎÄ¼þµÄ×î´ó´óÐ¡
+	 * ï¿½Ï´ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡
 	 */
 	public static final int FILE_MAX_SIZE = 1024 * 1024 * 4;
 
 	/**
-	 * ¹«Ê½ÀàÐÍ:±íÄÚÐ£Ñé
+	 * ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½
 	 */
 	public static final Integer CELL_CHECK_INNER = new Integer(1);
 
 	/**
-	 * ¹«Ê½ÀàÐÍ:±í¼äÐ£Ñé
+	 * ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½Ð£ï¿½ï¿½
 	 */
 	public static final Integer CELL_CHECK_BETWEEN = new Integer(2);
 
 	/**
-	 *ÏµÍ³ÈÕÖ¾-¿çÆµ¶ÈÐ£Ñé
+	 *ÏµÍ³ï¿½ï¿½Ö¾-ï¿½ï¿½Æµï¿½ï¿½Ð£ï¿½ï¿½
 	 */
 	public static Integer LOG_SYSTEM_CHECKOUTKPDEREPORTS = null;
 
 	/**
-	 * ¹«Ê½ÀàÐÍ:¿çÆµ¶ÈÐ£Ñé
+	 * ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½Æµï¿½ï¿½Ð£ï¿½ï¿½
 	 */
 	public static final Integer CELL_CHECK_FREQ=new Integer(3);
 	
 	/**
-	 * µã¶ÔµãÊ½±¨±í
+	 * ï¿½ï¿½Ôµï¿½Ê½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final Integer REPORT_STYLE_DD = CELL_CHECK_INNER;
 
 	/**
-	 * Çåµ¥Ê½±¨±í
+	 * ï¿½åµ¥Ê½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final Integer REPORT_STYLE_QD = CELL_CHECK_BETWEEN;
 
 	/***************************************************************************
-	 * ÎÄ¼þºó×º³£Á¿¶¨Òå
+	 * ï¿½Ä¼ï¿½ï¿½ï¿½×ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 **************************************************************************/
 	/**
-	 * PDF±¨±íÄ£°åÎÄ¼þºó×º
+	 * PDFï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×º
 	 */
 	public static final String EXT_PDF = "pdf";
 	
 	/**
-	 * excel±¨±íÄ£°åÎÄ¼þºó×º
+	 * excelï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×º
 	 */
 	public static final String EXT_EXCEL = "xls";
 	
 	/**
-	 * ÈóÇ¬±¨±íÄ£°åÎÄ¼þºó×º
+	 * ï¿½ï¿½Ç¬ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×º
 	 */
 	public static final String EXT_RAQ = "raq";
 	
 	/**
-	 * Í³¼Æ·ÖÎö±¨±íÄ£°åÎÄ¼þºó×º
+	 * Í³ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×º
 	 */
 	public static final String analysis_REPORT = "cpt";
 
 	/**
-	 * ZIP°üÎÄ¼þºó×º
+	 * ZIPï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×º
 	 */
 	public static final String EXT_ZIP = "zip";
 	/**
-	 * PDF±¨±íÄ£°åÎÄ¼þÀàÐÍ
+	 * PDFï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String FILE_CONTENT_TYPE_PDF = "application/pdf";
 	/**
-	 * EXCEL±¨±íÄ£°åÎÄ¼þÀàÐÍ
+	 * EXCELï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String FILE_CONTENT_TYPE_EXCEL = "application/ms-excel";
 	
 	/**
-	 * Excel±¨±íÄ£°åÎÄ¼þÀàÐÍ£¨jcm£©
+	 * Excelï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Í£ï¿½jcmï¿½ï¿½
 	 */
 	public static final String FILE_CONTENTTYPE_EXCEL = "application/vnd.ms-excel";
 	
 	/**
-	 * RAQ±¨±íÄ£°åÎÄ¼þÀàÐÍ£¨jcm£©
+	 * RAQï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Í£ï¿½jcmï¿½ï¿½
 	 */
 	public static final String FILE_CONTENTTYPE_RAQ = "application/octet-stream";
 	
 	/**
-	 * ZIP°ü±¨±íÎÄ¼þÀàÐÍ
+	 * ZIPï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String FILE_CONTENTTYPE_ZIP = "application/x-zip-compressed";
 	
 	/**
-	 * TXT¹ØÏµ±í´ïÊ½¶¨ÒåÎÄ¼þºó×º
+	 * TXTï¿½ï¿½Ïµï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½×º
 	 */
 	public static final String EXT_TXT = "txt";
 
 	/**
-	 * TXT¹ØÏµ±í´ïÊ½¶¨ÒåÎÄ¼þÀàÐÍ
+	 * TXTï¿½ï¿½Ïµï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String FILE_CONTENT_TYPE_TXT = "text/plain";
 
 	/**
-	 * XMLÎÄ¼þÃûºó×º
+	 * XMLï¿½Ä¼ï¿½ï¿½ï¿½ï¿½×º
 	 */
 	public static final String EXT_XML = "xml";
 
 	/***************************************************************************
-	 * ÈÕÖ¾ÀàÐÍ³£Á¿¶¨Òå
+	 * ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 **************************************************************************/
 	/**
-	 * ²Ù×÷ÈÕÖ¾
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static Integer LOG_OPERATION = null;
 
 	/**
-	 * Ó¦ÓÃÈÕÖ¾
+	 * Ó¦ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static Integer LOG_APPLICATION = null;
 
 	/**
-	 * ±¨¾¯ÈÕÖ¾
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static Integer LOG_ALARM = null;
 
 	/**
-	 * ÏµÍ³ÈÕÖ¾-´ÓÍâÍøÈ¡ÎÄ¼þ
+	 * ÏµÍ³ï¿½ï¿½Ö¾-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ä¼ï¿½
 	 */
 	public static Integer LOG_SYSTEM_GETFILES = null;
 
 	/**
-	 * ÏµÍ³ÈÕÖ¾-±¨±íÊý¾ÝÈë¿â
+	 * ÏµÍ³ï¿½ï¿½Ö¾-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static Integer LOG_SYSTEM_SAVEDATA = null;
 
 	/**
-	 * ÏµÍ³ÈÕÖ¾-±í¼äÐ£Ñé
+	 * ÏµÍ³ï¿½ï¿½Ö¾-ï¿½ï¿½ï¿½Ð£ï¿½ï¿½
 	 */
 	public static Integer LOG_SYSTEM_CHECKOUTINSIDEREPORTS = null;
 
 	/**
-	 * ÏµÍ³ÈÕÖ¾-Éú³ÉÊý¾Ý²Ö¿âÎÄ¼þ
+	 * ÏµÍ³ï¿½ï¿½Ö¾-ï¿½ï¿½ï¿½ï¿½ï¿½Ý²Ö¿ï¿½ï¿½Ä¼ï¿½
 	 */
 	public static Integer LOG_SYSTEM_CREATESTORAGEXML = null;
 	
 	/**
-	 * ÏµÍ³ÈÕÖ¾-Ä£°åÖØÐÂ·¢²¼
+	 * ÏµÍ³ï¿½ï¿½Ö¾-Ä£ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½
 	 */
 	public static Integer LOG_SYSTEM_TEMPLATEPUT = null;
     /**
-     * ÏµÍ³²Ù×÷
+     * ÏµÍ³ï¿½ï¿½ï¿½ï¿½
      */
     public static String SYSTEM_OPERATOR = "SYSTEM";
    
@@ -269,296 +269,296 @@ public class Config {
 	/** ********************************************************************* */
 
 	/***************************************************************************
-	 * ·Ö¸ô·û³£Á¿¶¨Òå
+	 * ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 **************************************************************************/
 	/**
-	 * ¶ººÅ·Ö¸ô·û
+	 * ï¿½ï¿½ï¿½Å·Ö¸ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_COMMA = ",";
 
 	/**
-	 * ÌØÊâ·Ö¸ô·û
+	 * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_ESP = "&";
 
 	/**
-	 * µÈºÅ·Ö¸ô·û
+	 * ï¿½ÈºÅ·Ö¸ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_EQUAL = "=";
 
 	/**
-	 * ×ó±ß´óÀ¨ºÅ
+	 * ï¿½ï¿½ß´ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_LEFT_BIG_KUOHU = "{";
 
 	/**
-	 * ÓÒ±ß´óÀ¨ºÅ
+	 * ï¿½Ò±ß´ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_RIGHT_BIG_HUOHU = "}";
 
 	/**
-	 * ×ó±ßÖÐÀ¨ºÅ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_LEFT_MID_KUOHU = "[";
 
 	/**
-	 * ÓÒ±ßÖÐÀ¨ºÅ
+	 * ï¿½Ò±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_RIGHT_MID_HUOHU = "]";
 	
 	/**
-	 * ÓÒ±ßÖÐÀ¨ºÅ
+	 * ï¿½Ò±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_RIGHT_SMALL_HUOHU = ")";
 	
 	
 
 	/**
-	 * ÏÂ»®Ïß
+	 * ï¿½Â»ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_OUTLINE = "_";
 	/**
-	 * ¹ÜµÀ·û
+	 * ï¿½Üµï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_PIPE = "|";
 
 	/**
-	 * µ¥ÒýºÅ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_SIGNLE_QUOTES = "'";
 	
 	/**
-	 * ÌØÊâ·Ö¸î·ûºÏ
+	 * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_SPECIAL = "##";
 	
 	/**
-	 * if·û
+	 * ifï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_IF = "if";
 	/**
-	 * ifµ±Ç°ÔÂ·Ý
+	 * ifï¿½ï¿½Ç°ï¿½Â·ï¿½
 	 */
 	public static String SPLIT_SYMBOL_CURRMONTH = "@month";
 	/**
-	 * ¿ÆÄ¿Æ½ºâÐ£Ñé·û
+	 * ï¿½ï¿½Ä¿Æ½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_ACCOUNTING = "acct";
 	/**
-	 * µã·Ö¸ô·û
+	 * ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½
 	 */
 	public static String SPLIT_SYMBOL_DIAN = ".";
 
 	/** ********************************************************************** */
 	/**
-	 * Ä£°åÔÙ´Î·¢²¼±êÖ¾
+	 * Ä£ï¿½ï¿½ï¿½Ù´Î·ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static HashMap TEMPLATE_PUT=new HashMap();
 	/**
-	 * ¶¨Òå´íÎóÐÅÏ¢
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	 */
-	public static final String GETORGERROR = "ÄÃ»ú¹¹¼ÇÂ¼ÊÇÊ§°Ü";
+	public static final String GETORGERROR = "ï¿½Ã»ï¿½ï¿½Â¼ï¿½ï¿½Ê§ï¿½ï¿½";
 
 	/**
-	 * ÒÑ¾­Éè¶¨
+	 * ï¿½Ñ¾ï¿½ï¿½è¶¨
 	 */
 	public static final Integer SET_FLAG = Integer.valueOf("1");
 
 	/**
-	 * Î´Éè¶¨
+	 * Î´ï¿½è¶¨
 	 */
 	public static final Integer UNSET_FLAG = Integer.valueOf("0");
 
 	/**
-	 * ±¨±íÎ´·¢²¼±êÖ¾
+	 * ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer NOT_PUBLIC = Integer.valueOf("0");
 
 	/**
-	 * ±¨±íÒÑ·¢²¼±êÖ¾
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ñ·ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer IS_PUBLIC = Integer.valueOf("1");
 
 	/**
-	 * ÉóºË±êÖ¾
+	 * ï¿½ï¿½Ë±ï¿½Ö¾
 	 */
 	public static final Short AUDITING_FLAG = Short.valueOf("1");
 
 	/**
-	 * ´í±¨±êÖ¾
+	 * ï¿½?ï¿½ï¿½Ö¾
 	 */
 	public static final Integer REP_RANGE_FLAG = Integer.valueOf("1");
 
 	/**
-	 * Â©±¨±êÖ¾
+	 * Â©ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer NOT_REPORT_FLAG = Integer.valueOf("1");
 	
 	/**
-	 * ÉóºËÍ¨¹ý±êÖ¾
+	 * ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer CHECK_FLAG_OK=Integer.valueOf("1");
 	/**
-	 * ÉóºËÎ´Í¨¹ý±êÖ¾
+	 * ï¿½ï¿½ï¿½Î´Í¨ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer CHECK_FLAG_NO=Integer.valueOf("-1");
 	/**
-	 * Î´ÉóºËÍ¨¹ý±êÖ¾
+	 * Î´ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer CHECK_FLAG_UN=Integer.valueOf("0");
 	
 	/**
-	 * Òì³£±êÖ¾
+	 * ï¿½ì³£ï¿½ï¿½Ö¾
 	 */
 	public static final Integer ABMORMITY_FLAG = Integer.valueOf("1");
 	/**
-	 * Òì³£±ä»¯Õý³£±êÖ¾
+	 * ï¿½ì³£ï¿½ä»¯ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer ABMORMITY_FLAG_OK = Integer.valueOf("1");
 	/**
-	 * Òì³£±ä»¯Òì³£±êÖ¾
+	 * ï¿½ì³£ï¿½ä»¯ï¿½ì³£ï¿½ï¿½Ö¾
 	 */
 	public static final Integer ABMORMITY_FLAG_NO = Integer.valueOf("-1");
 	
 	/**
-	 * ±íÄÚÐ£Ñé±êÖ¾
+	 * ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer TBL_INNER_VALIDATE_FLAG = Integer.valueOf("1");
 
 	/**
-	 * ±í¼äÐ£Ñé±êÖ¾
+	 * ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer TBL_OUTER_VALIDATE_FLAG = Integer.valueOf("1");
 	
 	/**
-	 * ±íÄÚÐ£ÑéÉóºË²»Í¨¹ý
+	 * ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Ë²ï¿½Í¨ï¿½ï¿½
 	 */
 	public static final Integer TBL_INNER_VALIDATE_NO_FLAG=Integer.valueOf("-1");
 
 	public static final Integer PUBLICED = Integer.valueOf("1");
 
 	/**
-	 * ±¨±íÎ´·¢²¼±êÖ¾
+	 * ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 	 */
 	public static final Integer UNPUBLICED = new Integer(0);
 	
 	/**
-	 * ±íÄÚÐ£Ñé¹ý±¨ËÍ¹ØÏµ 
+	 * ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Í¹ï¿½Ïµ 
 	 */
 	public static Integer SYS_BN_VALIDATE= new Integer(0);
 	/**
-	 * ±í¼äÐ£Ñé¹ý±¨ËÍ¹ØÏµ 
+	 * ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Í¹ï¿½Ïµ 
 	 */
 	public static Integer SYS_BJ_VALIDATE= new Integer(0);
 	/**
-	 * ±¨ËÍÊ±µã»÷Ð£Ñé°´Å¥ ÊÇ·ñ½øÐÐ±íÄÚÐ£Ñé
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ð£ï¿½é°´Å¥ ï¿½Ç·ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ð£ï¿½ï¿½
 	 */
 	public static Integer UP_VALIDATE_BN= new Integer(0);
 	/**
-	 * ±¨ËÍÊ±µã»÷Ð£Ñé°´Å¥ ÊÇ·ñ½øÐÐ±í¼äÐ£Ñé 
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ð£ï¿½é°´Å¥ ï¿½Ç·ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ð£ï¿½ï¿½ 
 	 */
 	public static Integer UP_VALIDATE_BJ= new Integer(0);
 	
 	/**
-	 * ÉÏ±¨Êý¾ÝÊ±µÄÅúÁ¿Ð£ÑéÊÇ·ñÍ¬Ê±½øÐÐ±í¼äÐ£Ñé
+	 * ï¿½Ï±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ç·ï¿½Í¬Ê±ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ð£ï¿½ï¿½
 	 */
 	public static Integer UP_BATCH_VALIDATE= new Integer(0);
 	/**
-	 * »ã×ÜÊÇ·ñÐèÒªÍ¨¹ýÉóºË0:²»ÐèÒª 1:ÐèÒª
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ÒªÍ¨ï¿½ï¿½ï¿½ï¿½ï¿½0:ï¿½ï¿½ï¿½ï¿½Òª 1:ï¿½ï¿½Òª
 	 */
 	public static Integer IS_NEED_CHECK = new Integer(0);
 	
 	/**
-	 * ÊÇ·ñ¶Ôµ¼³öÎÄ¼þ½øÐÐ¼ÓÃÜ
+	 * ï¿½Ç·ï¿½Ôµï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½
 	 */
 	public static Integer ENCRYPT= new Integer(0);
 	/**
-	 * excel ÃÜÂë
+	 * excel ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String  EXCEL_PASSWORD="FitDRS/N";
 	
-	//±íÄÚÐ£Ñé²»Í¨¹ý£¬²»ÄÜÉÏ±¨¸Ã±¨±í£¡";
-	public static String BN_VALIDATE_NOTPASS = "±íÄÚÐ£Ñé²»Í¨¹ý£¬²»ÄÜÉÏ±¨¸Ã±¨±í£¡";
-	//±í¼äÐ£Ñé²»Í¨¹ý£¬²»ÄÜÉÏ±¨¸Ã±¨±í
-	public static String BJ_VALIDATE_NOTPASS = "±í¼äÐ£Ñé²»Í¨¹ý£¬²»ÄÜÉÏ±¨¸Ã±¨±í!";
+	//ï¿½ï¿½ï¿½ï¿½Ð£ï¿½é²»Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½Ã±ï¿½ï¿½?";
+	public static String BN_VALIDATE_NOTPASS = "ï¿½ï¿½ï¿½ï¿½Ð£ï¿½é²»Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½Ã±ï¿½ï¿½?";
+	//ï¿½ï¿½ï¿½Ð£ï¿½é²»Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½Ã±ï¿½ï¿½ï¿½
+	public static String BJ_VALIDATE_NOTPASS = "ï¿½ï¿½ï¿½Ð£ï¿½é²»Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½Ã±ï¿½ï¿½ï¿½!";
 	
 	
     /**************************************
-     * *************Éú³ÉXMLÎÄ¼þ***********     
+     * *************ï¿½ï¿½ï¿½XMLï¿½Ä¼ï¿½***********     
      ****************************************/
 	/**
-	 * Éú³ÉxmlÎÄ¼þ´æ·ÅÂ·¾¶
+	 * ï¿½ï¿½ï¿½xmlï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String XMLData_PATH = "";
 	/**
-     *  Éú³ÉxmlÎÄ¼þ³É¹¦ 
+     *  ï¿½ï¿½ï¿½xmlï¿½Ä¼ï¿½ï¿½É¹ï¿½ 
 	 */
     public static int DataToXML_SUCCESS = 1;
     /**
-     * Éú³ÉxmlÎÄ¼þÊ§°Ü
+     * ï¿½ï¿½ï¿½xmlï¿½Ä¼ï¿½Ê§ï¿½ï¿½
      */
     public static int DataToXML_FAILED = -1;
     /**
-     * Ã»ÓÐÐèÒªÉú³ÉxmlÎÄ¼þµÄ¼ÇÂ¼
+     * Ã»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½xmlï¿½Ä¼ï¿½ï¿½Ä¼ï¿½Â¼
      */
     public static int NO_DataToXML = 0;
     /**
-     * ÒÑ±¨Êý¾Ý²Ö¿â±êÊ¶
+     * ï¿½Ñ±ï¿½ï¿½ï¿½Ý²Ö¿ï¿½ï¿½Ê¶
      */
     public static int Reported_Data_Warehouse=1;
     /**
-     * ÒÑ±¨Êý¾Ý²Ö¿â±êÊ¶
+     * ï¿½Ñ±ï¿½ï¿½ï¿½Ý²Ö¿ï¿½ï¿½Ê¶
      */
     public static int Not_Report_Data_Warehouse=0;
     
     /**
-	 * Ç¿ÖÆÖØ±¨±êÖ¾ ÖØ±¨
+	 * Ç¿ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Ö¾ ï¿½Ø±ï¿½
 	 */
 	public static Short FORSE_REPORT_AGAIN_FLAG_1 = Short.valueOf("1");
 
 	/**
-	 * Ç¿ÖÆÖØ±¨±êÖ¾ Î´ÖØ±¨
+	 * Ç¿ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Ö¾ Î´ï¿½Ø±ï¿½
 	 */
 	public static Short FORSE_REPORT_AGAIN_FLAG_0 = Short.valueOf("0");
 
 	/**
-	 * ÉÆÎ´ÉóºËµÄÎÄ±¾
+	 * ï¿½ï¿½Î´ï¿½ï¿½Ëµï¿½ï¿½Ä±ï¿½
 	 */
-	public static String CIRCLE_FLAG = "ÉóºË²»Í¨¹ý";
+	public static String CIRCLE_FLAG = "ï¿½ï¿½Ë²ï¿½Í¨ï¿½ï¿½";
 
 	/**
-	 * Í¨¹ýÉóºËµÄÎÄ±¾
+	 * Í¨ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä±ï¿½
 	 */
-	public static String HOCK_FLAG = "Í¨¹ýÉóºË";
+	public static String HOCK_FLAG = "Í¨ï¿½ï¿½ï¿½ï¿½ï¿½";
 
 	/**
-	 * Î´Í¨¹ýÉóºËµÄÎÄ±¾
+	 * Î´Í¨ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ä±ï¿½
 	 */
-	public static String FORK_FLAG = "Î´¹ýÉóºË";
+	public static String FORK_FLAG = "Î´ï¿½ï¿½ï¿½ï¿½ï¿½";
 
 	/**
-	 * ÐÅÏ¢·¢²¼ÎÄ¼þ´æ·ÅµÄÄ¿Â¼
+	 * ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Åµï¿½Ä¿Â¼
 	 */
 
 	public static String INFO_FILES_PATH = "";
 
 	/**
-	 * PDF±¨±íÄ£°åÎÄ¼þ´æ·ÅµÄÎïÀíÂ·¾¶
+	 * PDFï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String PDF_TEMPLATE_PATH = "";
 	
 	/**
-	 * RAQ±¨±íÄ£°åÎÄ¼þ´æ·ÅµÄÎïÀíÂ·¾¶
+	 * RAQï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String RAQ_TEMPLATE_PATH = "";
 	
 	/**
-	 * ³õÊ¼»¯Ä£°åÂ·¾¶(¸ÃÂ·¾¶ÏÂ´æ·ÅÃ»ÓÐ×ö¹ýÈÎºÎÐÞ¸ÄµÄÔ­Ê¼Ä£°å)
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½Ä£ï¿½ï¿½Â·ï¿½ï¿½(ï¿½ï¿½Â·ï¿½ï¿½ï¿½Â´ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½Þ¸Äµï¿½Ô­Ê¼Ä£ï¿½ï¿½)
 	 */
 	public static String RAQ_INIT_TEMP_PATH = "";
 
 	/**
-	 * PDF±¨±íÄ£°åÎÄ¼þURLÎ»ÖÃ
+	 * PDFï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½URLÎ»ï¿½ï¿½
 	 */
 	public static String PDF_TEMPLATE_URL = "";
 
@@ -567,308 +567,308 @@ public class Config {
 	/** ********************************************************************* */
 
 	/***************************************************************************
-	 * ºóÌ¨±¨±íÊý¾ÝÈë¿âµÄÒ»Ð©³£Á¿¶¨Òå
+	 * ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 **************************************************************************/
 	/**
-	 * ÁÙÊ±ÊÂ¼þ´æ·ÅµÄÄ¿Â¼
+	 * ï¿½ï¿½Ê±ï¿½Â¼ï¿½ï¿½ï¿½Åµï¿½Ä¿Â¼
 	 */
 	public static String TEMP_DIR = "";
 	/**
-	 * ÁÙÊ±ÎÄ¼þweb´æ·ÅÂ·¾¶
+	 * ï¿½ï¿½Ê±ï¿½Ä¼ï¿½webï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String TEMP_DIR_WEB_PATH="";
 
 	/**
-	 * ´æ·ÅZIPÎÄ¼þµÄÂ·¾¶
+	 * ï¿½ï¿½ï¿½ZIPï¿½Ä¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 
 	public static String ADDRESSZIP = "";
 
 	/**
-	 * Õë¶ÔÃ¿Ò»¸÷ÖÖ²»Í¬µÄÇåµ¥Ê½±¨±í¶ÔÓ¦²»Í¬ÊµÏÖÀàµÄÊôÐÔÅäÖÃÎÄ¼þµÄÂ·¾¶
+	 * ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½Ö²ï¿½Í¬ï¿½ï¿½ï¿½åµ¥Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Í¬Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String CONFIGBYIMPLPATH = "";
 
 	/**
-	 * ÊäÈëÊý¾Ý¼ä¸ôÊ±¼äµÄÊôÐÔÎÄ¼þÅäÖÃÎÄ¼þµÄµØÖ·
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Äµï¿½Ö·
 	 */
 	public static String INPUTDATATIMEPREPADDR = "";
 
 	/**
-	 * ÐÅÏ¢·¢²¼ÎÄ¼þ´æ·ÅµÄÄ¿Â¼
+	 * ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Åµï¿½Ä¿Â¼
 	 */
 	public static String INFO_FILES_OUTPATH = WEBROOTPATH + "file"
 			+ FILESEPARATOR + "out";
 
 	/**
-	 * ÐÅÏ¢ÉÏ´«ÎÄ¼þ´æ·ÅµÄÄ¿Â¼
+	 * ï¿½ï¿½Ï¢ï¿½Ï´ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Åµï¿½Ä¿Â¼
 	 */
 	public static String INFO_FILES_UPPATH = WEBROOTPATH + "file"
 			+ FILESEPARATOR + "up";
     /**
-     * ÐÅÏ¢·¢²¼ÎÄ¼þ±¸·ÝµÄÄ¿Â¼
+     * ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ýµï¿½Ä¿Â¼
      */
     public static String BAK_INFO_FILES_OUTPATH = "";
     /**
-     * ÐÅÏ¢ÉÏ´«ÎÄ¼þ±¸·ÝµÄÄ¿Â¼
+     * ï¿½ï¿½Ï¢ï¿½Ï´ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ýµï¿½Ä¿Â¼
      */
     public static String BAK_INFO_FILES_UPPATH = "";
     
 	/**
-	 * ÓÃ»§µÇÂ¼ºó,±£´æµ½SessionÖÐµÄÃû³Æ
+	 * ï¿½Ã»ï¿½ï¿½ï¿½Â¼ï¿½ï¿½,ï¿½ï¿½ï¿½æµ½Sessionï¿½Ðµï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String OPERATOR_SESSION_ATTRIBUTE_NAME = "Operator";
 	
 	
 	/**
-	 * ÓÃ»§µÇÂ¼ºó,¼ÇÂ¼ÓÃ»§Ãû³Æ,ÓÃÓÚÈÕÖ¾´¦Àí
+	 * ï¿½Ã»ï¿½ï¿½ï¿½Â¼ï¿½ï¿½,ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static  String LOG_OPERATOR__NAME = "";
 	
 	/**
-	 * ÓÃ»§Ñ¡Ôñ±¨±íÀàÐÍ
+	 * ï¿½Ã»ï¿½Ñ¡ï¿½ñ±¨±ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static final String REPORT_SESSION_FLG = "Reportflg";
 	
 	/**
-	 * ÎÄ¼þÀàÐÍ£ºÉÏ´«ÎÄ¼þ
+	 * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ï´ï¿½ï¿½Ä¼ï¿½
 	 */
 	public static final String INFO_FILES_STYLE_UP = "A";
 
 	/**
-	 * ÎÄ¼þÀàÐÍ£º·¢²¼ÎÄ¼þ
+	 * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 	 */
 	public static final String INFO_FILES_STYLE_OUT = "B";
 
     /**
-	 * CA·þÎñµÄIPµØÖ·
+	 * CAï¿½ï¿½ï¿½ï¿½ï¿½IPï¿½ï¿½Ö·
 	 */
 	public static String  CAIP = ""; 
 	
 	/**
-	 * CA·þÎñµÄ¶Ë¿ÚºÅ
+	 * CAï¿½ï¿½ï¿½ï¿½Ä¶Ë¿Úºï¿½
 	 */
 	public static int CAPORT = 0;
 	
 	/**
-	 * ±¨±íµÄÉÏ±¨Ê±¼ä
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ê±ï¿½ï¿½
 	 */
 	public static String SUBMITDATE ="submitDate";
 	
 	/**
-	 * Éú³ÉÊý¾ÝÎÄ¼þµÄ·½Ê½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä·ï¿½Ê½
 	 */
 	public static String DATATYPE = "";
 	
 	/**
-	 * Ä£°å´æ·ÅÂ·¾¶
+	 * Ä£ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String DATA ="data";
 	
 	/**
-	 * DATAÏÂPDFÄ£°å´æ·ÅÂ·¾¶
+	 * DATAï¿½ï¿½PDFÄ£ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	 */
 	public static String DATA_PDF ="pdf";
 	
 	/**
-	 * Éú³ÉÉÏ±¨ÎÄ¼þµÄÀàÐÍ£¨excel£©
+	 * ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½excelï¿½ï¿½
 	 */
 	public static String EXCEL = "excel";
 
 	/**
-	 * Éú³ÉÉÏ±¨ÎÄ¼þµÄÀàÐÍ(xml)
+	 * ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(xml)
 	 */
 	public static String XML = "xml";
 	
 	
-	//	-----------------ETLÓ³Éä¹ØÏµ³£Á¿Start---------------------
+	//	-----------------ETLÓ³ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Start---------------------
 	
-	/**²ÎÊý±íÎ¬»¤±íÖÐÊÂÊµ±íÖµ**/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Öµ**/
 	public static final String FACTTABLE = "1";
 	
-	/**²ÎÊý±íÎ¬»¤±íÖÐÎ¬¶È±íÖµ**/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½È±ï¿½Öµ**/
 	public static final String WEIDUTABLE = "2";
 	
-	/**²ÎÊý±íÎ¬»¤±íÖÐÖ¸±ê±íÖµ**/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Öµ**/
 	public static final String TARGETTABLE = "3";
 	
-	/**Î¬¶È±í×Ö¶ÎÀàÐÍ£¨×Ö·ûÐÍ£©**/
+	/**Î¬ï¿½È±ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ö·ï¿½ï¿½Í£ï¿½**/
 	public static final Integer WDCOLUMNTYPECHAR = new Integer(1);
 	
-	/**Î¬¶È±í×Ö¶ÎÀàÐÍ£¨Êý×ÖÐÍ£©**/
+	/**Î¬ï¿½È±ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½**/
 	public static final Integer WDCOLUMNTYPENUMBER = new Integer(0);
 	
-	/**¹ØÁª·½Ê½--ÒµÎñÏµÍ³Éú³É**/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½--Òµï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½**/
 	public static final String RELATIIONYWXTSC = "1";
 	
-	/**¹ØÁª·½Ê½--ÊÖ¹¤Î¬»¤**/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½--ï¿½Ö¹ï¿½Î¬ï¿½ï¿½**/
 	public static final String RELATIONSGWH = "2";
 	
-	/**¹ØÁª·½Ê½--¼ÆËãÏî**/
+	/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½**/
 	public static final String RELATONJSX = "3";	
-	//	-----------------ETLÓ³Éä¹ØÏµ³£Á¿End---------------------
+	//	-----------------ETLÓ³ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½End---------------------
 	
 	
-	//	-----------------»ú¹¹È¨ÏÞ³£Á¿Start---------------------
+	//	-----------------ï¿½ï¿½È¨ï¿½Þ³ï¿½ï¿½ï¿½Start---------------------
 	
-	/**ÓÃ»§×éÈ¨ÏÞ·ÖÅä--ÉóÇ©È¨ÏÞ**/
+	/**ï¿½Ã»ï¿½ï¿½ï¿½È¨ï¿½Þ·ï¿½ï¿½ï¿½--ï¿½ï¿½Ç©È¨ï¿½ï¿½**/
 	public static final Integer POWERTYPECHECK = new Integer(1);
 	
-	/**ÓÃ»§×éÈ¨ÏÞ·ÖÅä--²é¿´È¨ÏÞ**/
+	/**ï¿½Ã»ï¿½ï¿½ï¿½È¨ï¿½Þ·ï¿½ï¿½ï¿½--ï¿½é¿´È¨ï¿½ï¿½**/
 	public static final Integer POWERTYPESEARCH = new Integer(2);
 	
-	/**ÓÃ»§×éÈ¨ÏÞ·ÖÅä--±¨ËÍÈ¨ÏÞ**/
+	/**ï¿½Ã»ï¿½ï¿½ï¿½È¨ï¿½Þ·ï¿½ï¿½ï¿½--ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½**/
 	public static final Integer POWERTYPEREPORT = new Integer(3);
 	
-	/**ÓÃ»§×éÈ¨ÏÞ·ÖÅä--¸´ºËÈ¨ÏÞ**/
+	/**ï¿½Ã»ï¿½ï¿½ï¿½È¨ï¿½Þ·ï¿½ï¿½ï¿½--ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½**/
 	public static final Integer POWERTYPEVERIFY = new Integer(4);
-	//	-----------------»ú¹¹È¨ÏÞ³£Á¿End---------------------
+	//	-----------------ï¿½ï¿½È¨ï¿½Þ³ï¿½ï¿½ï¿½End---------------------
 	
-	//web·þÎñÆ÷ÀàÐÍ 1 ±íÊ¾Ðèweblogic websphere 0 ±íÊ¾(tomcate)
+	//webï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1 ï¿½ï¿½Ê¾ï¿½ï¿½weblogic websphere 0 ï¿½ï¿½Ê¾(tomcate)
 	public static int WEB_SERVER_TYPE=0;
 	
-	//----------ExcelÎÄ¼þ½âÎö£­£­£­£­£­£­£­£­£­£­£­£­
+	//----------Excelï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	/*ÊýÖµÀàÐÍµ¥Ôª¸ñ±³¾°É«*/
+	/*ï¿½ï¿½Öµï¿½ï¿½ï¿½Íµï¿½Ôªï¿½ñ±³¾ï¿½É«*/
 	public static Integer NUMBER_CELL_BGCOLOR=new Integer(43);
 	
-	/*¹«Ê½µ¥Ôª¸ñ±³¾°É«£­ÊýÖµÐÍ*/
+	/*ï¿½ï¿½Ê½ï¿½ï¿½Ôªï¿½ñ±³¾ï¿½É«ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½*/
 	public static Integer FORMUAL_CELL_BGCOLOR=new Integer(44);
 	
-	/*×Ö·ûÀàÐÍµ¥Ôª¸ñ±³¾°É«*/
+	/*ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Íµï¿½Ôªï¿½ñ±³¾ï¿½É«*/
 	public static Integer STRING_CELL_BGCOLOR=new Integer(42);
 	
-	/*ÊýÖµÀàÐÍ*/
+	/*ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½*/
 	public static Integer NUMBER_CELL_TYPE = new Integer(2);
 	
-	/*×Ö·ûÀàÐÍ*/
+	/*ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½*/
 	public static Integer STRING_CELL_TYPE = new Integer(3);
 	
-	/*¹«Ê½ÀàÐÍ*/
+	/*ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½*/
 	public static Integer FORMUAL_CELL_TYPE = new Integer(4);
 	
     
-    //-------------------µ¥Ôª¸ñÖµ±í(M_CELL) »ã×ÜÀàÐÍ³£Á¿Öµ--------------------
+    //-------------------ï¿½ï¿½Ôªï¿½ï¿½Öµï¿½ï¿½(M_CELL) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½Öµ--------------------
     
-    /**²»ÁÐÈë»ã×ÜÀàÐÍ*/
+    /**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static final Integer COLLECT_TYPE_NO_COLLECT = new Integer("0");
     
-    /**ÊýÖµÏà¼Ó»ã×ÜÀàÐÍ*/
+    /**ï¿½ï¿½Öµï¿½ï¿½Ó»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static final Integer COLLECT_TYPE_SUM = new Integer("1");
     
-    /**Æ½¾ùÖµ»ã×ÜÀàÐÍ*/
+    /**Æ½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static final Integer COLLECT_TYPE_AVG = new Integer("2");
     
-    /**×î´óÖµ»ã×ÜÀàÐÍ*/
+    /**ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static final Integer COLLECT_TYPE_MAX = new Integer("3");
     
-    /**×îÐ¡Öµ»ã×ÜÀàÐÍ*/
+    /**ï¿½ï¿½Ð¡Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static final Integer COLLECT_TYPE_MIN = new Integer("4");
     
-    /**Êý¾Ý¿âÀàÐÍ*/
+    /**ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static String DB_SERVER_TYPE="";
-    /**ÒøÐÐÃû³Æ*/
+    /**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static String BANK_NAME="";
     
-    /**ÏÂÀ­ÁÐ±íÄ¬ÈÏÖµ£¨È«²¿£©*/
+    /**ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½Ä¬ï¿½ï¿½Öµï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½*/
     public static final String DEFAULT_VALUE = "-999";
     
-    /**ÎÂÜ°ÌùÊ¿ÌáÐÑ*/
+    /**ï¿½ï¿½Ü°ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½*/
     public static RemindTips REMINDTIPS = null;
     
-	/*ÏîÄ¿Ãû³Æµ¥Ôª¸ñ±³¾°É«*/
+	/*ï¿½ï¿½Ä¿ï¿½ï¿½Æµï¿½Ôªï¿½ñ±³¾ï¿½É«*/
 	public static int PITEM_CELL_BGCOLOR=-256;
 	
-	/*¹«Ê½µ¥Ôª¸ñ±³¾°É«£­ÊýÖµÐÍ*/
+	/*ï¿½ï¿½Ê½ï¿½ï¿½Ôªï¿½ñ±³¾ï¿½É«ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½*/
 	public static int PID_CELL_BGCOLOR=-65536;
 	
-	/*ÏîÄ¿ÁÐµ¥Ôª¸ñ±³¾°É«*/
+	/*ï¿½ï¿½Ä¿ï¿½Ðµï¿½Ôªï¿½ñ±³¾ï¿½É«*/
 	public static int PCOL_CELL_BGCOLOR=-16776961;
 	
-	/*ÏîÄ¿ÁÐµ¥Ôª¸ñ±³¾°É«*/
+	/*ï¿½ï¿½Ä¿ï¿½Ðµï¿½Ôªï¿½ñ±³¾ï¿½É«*/
 	public static int FORMULA_BGCOLOR=-6697729;
 	
-	/**µ­»ÒÉ«µ¥Ôª¸ñ±³¾°É«RGB(192,192,192)*/
+	/**ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Ôªï¿½ñ±³¾ï¿½É«RGB(192,192,192)*/
 	public static int LGRAY_BGCOLOR=-4144960;
-	/**»ÒÉ«µ¥Ôª¸ñ±³¾°É«RGB(150,150,150)*/
+	/**ï¿½ï¿½É«ï¿½ï¿½Ôªï¿½ñ±³¾ï¿½É«RGB(150,150,150)*/
 	public static int GRAY_BGCOLOR=-6908266;
-	/**Éî»ÒÉ«µ¥Ôª¸ñ±³¾°É«RGB(128,128,128)*/
+	/**ï¿½ï¿½ï¿½É«ï¿½ï¿½Ôªï¿½ñ±³¾ï¿½É«RGB(128,128,128)*/
 	public static int DGRAY_BGCOLOR=-8355712;
 	
 	
-	/**±¨±í×´Ì¬*/
-	/** ÉóÇ©Í¨¹ý */
-	public static final Short CHECK_FLAG_PASS = new Short(new String("1"));  //ÉóÇ©Í¨¹ý
-	/** ÉóÇ©²»Í¨¹ý */
-	public static final Short CHECK_FLAG_FAILED = new Short(new String("-1"));  //ÉóÇ©²»Í¨¹ý
-	/** Î´¸´ºË */
-	public static final Short CHECK_FLAG_UNCHECK =new Short(new String("0"));  //Î´¸´ºË
-	/** ÒÑÐ£Ñé */
-	public static final Short CHECK_FLAG_AFTERJY = new Short(new String("2")); // ÒÑÐ£Ñé	
-	/** Î´±¨ËÍ */
-	public static final Short CHECK_FLAG_UNREPORT = new Short(new String("3"));   //Î´±¨ËÍ
-	/** ÒÑÌî±¨ */
-	public static final Short CHECK_FLAG_AFTERSAVE = new Short(new String("4"));   //ÒÑÌî±¨
-	/** ÒÑ¸´ºË */
-	//public static final Short CHECK_FLAG_AFTERRECHECK = new Short(new String("5"));   //Î´ÉóÇ©
-	/** ¸´ºË²»Í¨¹ý */
-	//public static final Short CHECK_FLAG_RECHECKFAILED = new Short(new String("-5"));   //¸´ºËÎ´Í¨¹ý
-	/** ÒÑÉú³É */
-	public static final Short CHECK_FLAG_PRODUCT = new Short(new String("-2"));   //ÒÑÉú³É
+	/**ï¿½ï¿½ï¿½ï¿½×´Ì¬*/
+	/** ï¿½ï¿½Ç©Í¨ï¿½ï¿½ */
+	public static final Short CHECK_FLAG_PASS = new Short(new String("1"));  //ï¿½ï¿½Ç©Í¨ï¿½ï¿½
+	/** ï¿½ï¿½Ç©ï¿½ï¿½Í¨ï¿½ï¿½ */
+	public static final Short CHECK_FLAG_FAILED = new Short(new String("-1"));  //ï¿½ï¿½Ç©ï¿½ï¿½Í¨ï¿½ï¿½
+	/** Î´ï¿½ï¿½ï¿½ï¿½ */
+	public static final Short CHECK_FLAG_UNCHECK =new Short(new String("0"));  //Î´ï¿½ï¿½ï¿½ï¿½
+	/** ï¿½ï¿½Ð£ï¿½ï¿½ */
+	public static final Short CHECK_FLAG_AFTERJY = new Short(new String("2")); // ï¿½ï¿½Ð£ï¿½ï¿½	
+	/** Î´ï¿½ï¿½ï¿½ï¿½ */
+	public static final Short CHECK_FLAG_UNREPORT = new Short(new String("3"));   //Î´ï¿½ï¿½ï¿½ï¿½
+	/** ï¿½ï¿½ï¿½î±¨ */
+	public static final Short CHECK_FLAG_AFTERSAVE = new Short(new String("4"));   //ï¿½ï¿½ï¿½î±¨
+	/** ï¿½Ñ¸ï¿½ï¿½ï¿½ */
+	//public static final Short CHECK_FLAG_AFTERRECHECK = new Short(new String("5"));   //Î´ï¿½ï¿½Ç©
+	/** ï¿½ï¿½ï¿½Ë²ï¿½Í¨ï¿½ï¿½ */
+	//public static final Short CHECK_FLAG_RECHECKFAILED = new Short(new String("-5"));   //ï¿½ï¿½ï¿½ï¿½Î´Í¨ï¿½ï¿½
+	/** ï¿½ï¿½ï¿½ï¿½ï¿½ */
+	public static final Short CHECK_FLAG_PRODUCT = new Short(new String("-2"));   //ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	/**
-	 * È«²¿¼ÇÂ¼
+	 * È«ï¿½ï¿½ï¿½ï¿½Â¼
 	 */
 	public static Integer FLAG_ALL = new Integer("9999");
 	
 	/**
-	 * ²éÑ¯Ìõ¼þ×Ö´®
+	 * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½
 	 */
 	public static final String QUERY_TERM = "QueryTerm";
 	
 	/**
-	 * ¹«¸æ¸½¼þ
+	 * ï¿½ï¿½ï¿½æ¸½ï¿½ï¿½
 	 */
 	public static Integer FILE_TYPE_PLACARD_FILE = new Integer(5);
 	
 	/**
-	 * ÈÎÎñÀàÐÍÊ±¼ä¶Î¶ÔÕÕ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Î¶ï¿½ï¿½ï¿½
 	 */
 	public static Map TAKEDATA_TIME_INTERVAL = null;
 	
 	public static String RHTEMPLATE_TYPE = "141";
 	public static String QTTEMPLATE_TYPE = "142";
 	/**
-	 * Êý¾ÝÊôÐÔ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String DATATYPE_TYPE = "172";
 	/**
-	 * ÊýÖµÀàÐÍ
+	 * ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String PSUZITYPE_TYPE = "173";
 	/**
-	 * µ¥Î»±àÂë
+	 * ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String DANWEIID_TYPE = "174";
 	/**
-	 * ±ÒÖÖ
+	 * ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String CURID_TYPE = "175";
 	/**
-	 * µÇÂ¼ÈÕÆÚ
+	 * ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static String USER_LOGIN_DATE = "userLoginDate";
 	
     /**
-     * raqÊ¹ÓÃÂ·¾¶
+     * raqÊ¹ï¿½ï¿½Â·ï¿½ï¿½
      */
     public static String SHARE_DATA_PATH = RAQ_TEMPLATE_PATH;
     /**
-     * ±í¼ä×´Ì¬Î»
+     * ï¿½ï¿½ï¿½×´Ì¬Î»
      */
     public static String BJ_VALIDATE = "BJ_VALIDATE";
 	/**
-	 * ·ÖÎöÏµÍ³Â·¾¶
+	 * ï¿½ï¿½ï¿½ï¿½ÏµÍ³Â·ï¿½ï¿½
 	 */
     public static String FITOSA_URL = "";
 	
@@ -877,29 +877,29 @@ public class Config {
     
     /***
      *  
-			 * »ñµÃÊý¾Ý×Öµä£¨×ÜÐÐÈËÐÐ±àÂë¼°×ÜÐÐËùÔÚµØÇø£©
-			 * ¾É£ºÊý¾Ý×ÖµäÀàÐÍ±àºÅ183£¬¹²11Î»£¬
-			 * 1-4Î»ÈËÐÐ±àÂë£¬5-11ËùÔÚµØÇøÂë
-			 * Àý£º54011310001
-			 * ÐÂ£ºÊý¾Ý×ÖµäÀàÐÍ±àºÅ185£¬¹²13Î»£¬
-			 * 1Î»Ò»¼¶Âë£¬2Î»¶þ¼¶Âë£¬3-6Î»3¼¶Âë£¨ÈËÐÐ±àÂë£©£¬7-13ËùÔÚµØÇøÂë
-			 * Àý£ºC154011310001
+			 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµä£¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ë¼°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½
+			 * ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½183ï¿½ï¿½ï¿½ï¿½11Î»ï¿½ï¿½
+			 * 1-4Î»ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ë£¬5-11ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
+			 * ï¿½ï¿½54011310001
+			 * ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½185ï¿½ï¿½ï¿½ï¿½13Î»ï¿½ï¿½
+			 * 1Î»Ò»ï¿½ï¿½ï¿½ë£¬2Î»ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬3-6Î»3ï¿½ï¿½ï¿½ë£¨ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ë£©ï¿½ï¿½7-13ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
+			 * ï¿½ï¿½C154011310001
      */
     public static String CODE_LIB = "";
     /**
-     * »ã×ÜÀàÐÍ-Ôþ²î»ã×Ü
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     public static final int HZLX_GCHZ = 1;
     /**
-     * »ã×Ü¹«Ê½¶¨ÒåÖÐµÄÍ¬¼¶ÐÐ
+     * ï¿½ï¿½ï¿½Ü¹ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Í¬ï¿½ï¿½ï¿½ï¿½
      */
     public static final String HZGS_TJH = "HZTJH";
     /**
-     * »ã×Ü¹«Ê½¶¨ÒåÖÐµÄ×Ô¶¨Òå»ú¹¹
+     * ï¿½ï¿½ï¿½Ü¹ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½
      */
     public static final String HZGS_ZDY = "CUSTOM_ORG";
     /**
-     * »ã×Ü¹«Ê½ÁÐ±íÑ¡Ïî
+     * ï¿½ï¿½ï¿½Ü¹ï¿½Ê½ï¿½Ð±ï¿½Ñ¡ï¿½ï¿½
      */
     public static Map HZGS_LIST ;
     
@@ -907,7 +907,13 @@ public class Config {
     
     static{
     	HZGS_LIST = new HashMap();
-    	HZGS_LIST.put(HZGS_TJH, "Í¬¼¶ÐÐ");
-    	HZGS_LIST.put(HZGS_ZDY, "×Ô¶¨Òå");
+    	HZGS_LIST.put(HZGS_TJH, "Í¬ï¿½ï¿½ï¿½ï¿½");
+    	HZGS_LIST.put(HZGS_ZDY, "ï¿½Ô¶ï¿½ï¿½ï¿½");
     }
+    
+    /** æ˜¯å¦ä¸Žå¹³å°æ•´åˆ */
+    public static boolean IS_INTEGRATE_PORTAL = false;
+    public static String NEW_PORTAL_URL = "";
+    public static boolean PORTAL = false;
+    public static String PORATLSYNAIMPL = "";//åŒæ­¥é—¨æˆ·å®žçŽ°ç±»
 }

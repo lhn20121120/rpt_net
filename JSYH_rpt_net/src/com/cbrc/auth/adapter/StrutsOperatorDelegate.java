@@ -1,5 +1,6 @@
 package com.cbrc.auth.adapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -12,6 +13,9 @@ import com.cbrc.auth.form.OperatorForm;
 import com.cbrc.auth.hibernate.Department;
 import com.cbrc.auth.hibernate.Operator;
 import com.cbrc.auth.util.Encoder;
+import com.cbrc.auth.util.IStrutsUserDelegate;
+import com.cbrc.org.entity.SysUser;
+import com.cbrc.smis.common.Config;
 import com.cbrc.smis.dao.DBConn;
 import com.cbrc.smis.util.FitechException;
 import com.fitech.net.hibernate.OrgNet;
@@ -28,10 +32,10 @@ public class StrutsOperatorDelegate {
 			StrutsOperatorDelegate.class);
 
 	/**
-	 * ����һ���û���¼
+	 * 插入一条用户记录
 	 * 
 	 * @param departmentForm
-	 *            ����Ҫ����Ĳ�������
+	 *            包含要插入的部门名称
 	 * @exception Exception
 	 *                If the new com.cbrc.auth.form.DepartmentForm object cannot
 	 *                be created or persisted.
@@ -78,10 +82,10 @@ public class StrutsOperatorDelegate {
 		}
 		return user_id;
 	}
-	
+
 	/***
-	 * ��ʹ��hibernate ���Ը� 2011-12-28
-	 * Ӱ�����Operator
+	 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator
+	 * 
 	 * @param operatorForm
 	 * @return
 	 * @throws Exception
@@ -96,7 +100,7 @@ public class StrutsOperatorDelegate {
 				conn = new DBConn();
 				session = conn.beginTransaction();
 				Operator operator = new Operator();
-				//ע�͵��������
+				// 注锟酵碉拷锟斤拷锟斤拷锟斤拷锟�
 				TranslatorUtil.copyVoToPersistence(operator, operatorForm);
 
 				session.save(operator);
@@ -143,14 +147,12 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ʹ��hibernate ���Ը� 2011-12-23
-	 * Ӱ�����Operator
-	 * �޸Ĳ�����Ϣ
+	 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-23 影锟斤拷锟斤拷锟絆perator 锟睫改诧拷锟斤拷锟斤拷息
 	 * 
-	 * @author Ҧ��
+	 * @author 姚锟斤拷
 	 * @param departmentForm
-	 *            DepartmentForm ������Ҫ���µĲ���id�͸��µĲ�������
-	 * @return boolean �޸��Ƿ�ɹ�
+	 *            DepartmentForm 锟斤拷锟斤拷要锟斤拷锟铰的诧拷锟斤拷id锟酵革拷锟铰的诧拷锟斤拷锟斤拷锟�
+	 * @return boolean 锟睫革拷锟角凤拷晒锟�
 	 * @exception Exception
 	 */
 	public static boolean update(OperatorForm operatorForm) throws Exception {
@@ -163,8 +165,9 @@ public class StrutsOperatorDelegate {
 				if (operatorForm != null) {
 					conn = new DBConn();
 					session = conn.beginTransaction();
-					/**��ʹ��hibernate ���Ը� 2011-12-23
-					 * Ӱ�����Operator*/
+					/**
+					 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-23 影锟斤拷锟斤拷锟絆perator
+					 */
 					Operator operator = (Operator) session.load(Operator.class,
 							operatorForm.getUserId());
 					// TranslatorUtil.copyVoToPersistence(operator,operatorForm);
@@ -180,8 +183,7 @@ public class StrutsOperatorDelegate {
 					operator.setMail(operatorForm.getMail());
 					operator.setIdentificationNumber(operatorForm
 							.getIdentificationNumber());
-					operator
-							.setEmployeeNumber(operatorForm.getEmployeeNumber());
+					operator.setEmployeeNumber(operatorForm.getEmployeeNumber());
 					operator.setTitle(operatorForm.getTitle());
 					operator.setEmployeeType(operatorForm.getEmployeeType());
 					operator.setBranch(operatorForm.getBranch());
@@ -208,7 +210,7 @@ public class StrutsOperatorDelegate {
 						dept.setDepartmentId(operatorForm.getDepartmentId());
 						operator.setDepartment(dept);
 					}
-					/**hibernate ���Ը� 2011-12-28*/
+					/** hibernate 锟斤拷锟皆革拷 2011-12-28 */
 					session.update(operator);
 					session.flush();
 					result = true;
@@ -225,14 +227,13 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ʹ��Hibernate ���Ը� 2011-12-28
-	 * Ӱ�����UserRole MUserToGrp Operator
-	 * ɾ���û���Ϣ
+	 * 锟斤拷使锟斤拷Hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟経serRole MUserToGrp Operator
+	 * 删锟斤拷锟矫伙拷锟斤拷息
 	 * 
-	 * @author Ҧ��
+	 * @author 姚锟斤拷
 	 * @param departmentForm
-	 *            DepartmentForm ����Ҫɾ�����û��ı��
-	 * @return boolean ɾ���Ƿ�ɹ�
+	 *            DepartmentForm 锟斤拷要删锟斤拷锟斤拷没锟斤拷谋锟斤拷
+	 * @return boolean 删锟斤拷锟角凤拷晒锟�
 	 * @exception Exception
 	 *                If the com.cbrc.auth.form.DepartmentForm object cannot be
 	 *                removed.
@@ -247,20 +248,23 @@ public class StrutsOperatorDelegate {
 				conn = new DBConn();
 				Long userId = operatorForm.getUserId();
 
-				/** ɾ���û���ɫ���ձ� */
-				/**��ʹ��hibernate ���Ը� 2011-12-28
-				 * Ӱ�����UserRole*/
+				/** 删锟斤拷锟矫伙拷锟斤拷色锟斤拷锟秸憋拷 */
+				/**
+				 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟経serRole
+				 */
 				StrutsUserRoleDelegate.deleteUserSetRole(userId);
-				/** ɾ���û��û�����ձ� */
-				/**��ʹ��Hibernate ���Ը� 2011-12-28
-				 * Ӱ�����MUserToGrp*/
+				/** 删锟斤拷锟矫伙拷锟矫伙拷锟斤拷锟斤拷毡锟� */
+				/**
+				 * 锟斤拷使锟斤拷Hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟組UserToGrp
+				 */
 				StrutsMUserToGrpDelegate.deleteUserSetUserGrp(userId);
 
 				session = conn.beginTransaction();
 
-				/** ɾ��������Ϣ */
-				/**ʹ����hibernate ���Ը� 2011-12-28
-				 * Ӱ�����Operator*/
+				/** 删锟斤拷锟斤拷锟较� */
+				/**
+				 * 使锟斤拷锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator
+				 */
 				Operator operator = (Operator) session.load(Operator.class,
 						operatorForm.getUserId());
 
@@ -280,46 +284,44 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ʹ��Hibernate ���Ը� 2011-12-28
-	 * Ӱ�����Operator
-	 * ��ҳ��ʾ��¼
+	 * 锟斤拷使锟斤拷Hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator 锟斤拷页锟斤拷示锟斤拷录
 	 * 
-	 * @author Ҧ��
+	 * @author 姚锟斤拷
 	 * @param subOrgIds
 	 * @param offset
-	 *            int ƫ����
+	 *            int 偏锟斤拷锟斤拷
 	 * @param limit
-	 *            int ȡ����¼��
+	 *            int 取锟斤拷锟斤拷录锟斤拷
 	 * @param isSuperManager
-	 * @return List ��¼����
+	 * @return List 锟斤拷录锟斤拷锟斤拷
 	 * @throws Exception
 	 */
 	public static List selectOP(String subOrgIds, int offset, int limit,
-			boolean isSuperManager, String userName,String orgName) throws Exception {
+			boolean isSuperManager, String userName, String orgName)
+			throws Exception {
 		List result = null;
 		DBConn conn = null;
 		Session session = null;
 		if (userName == null) {
 			userName = "'%'";
 		} else {
-			if(userName.trim().equals("")){
+			if (userName.trim().equals("")) {
 				userName = "'%'";
-			}else{
+			} else {
 				userName = "'%" + userName.trim() + "%'";
 			}
 		}
-		
+
 		if (orgName == null) {
 			orgName = "'%'";
 		} else {
-			if(orgName.trim().equals("")){
+			if (orgName.trim().equals("")) {
 				orgName = "'%'";
-			}else{
+			} else {
 				orgName = "'%" + orgName.trim() + "%'";
 			}
 		}
-		
-		
+
 		try {
 			conn = new DBConn();
 			session = conn.openSession();
@@ -327,13 +329,26 @@ public class StrutsOperatorDelegate {
 			String hql = "";
 			if (isSuperManager == true)
 				hql = " from com.cbrc.auth.hibernate.Operator op where (op.userName like "
-						+ userName+ " or op.firstName like "+ userName+ " or op.lastName like " + userName
-						+") and op.superManager is null and op.org.orgName like " + orgName + "order by op.userName";
+						+ userName
+						+ " or op.firstName like "
+						+ userName
+						+ " or op.lastName like "
+						+ userName
+						+ ") and op.superManager is null and op.org.orgName like "
+						+ orgName + "order by op.userName";
 
 			else
-				hql = " from com.cbrc.auth.hibernate.Operator op where op.org.orgId in ("+ subOrgIds+ ") "
-						+ "and (op.userName like "+ userName+ " or op.firstName like "+ userName+ " or op.lastName like "+ userName
-						+ ") and op.superManager is null and op.org.orgName like " + orgName + "order by op.userName";
+				hql = " from com.cbrc.auth.hibernate.Operator op where op.org.orgId in ("
+						+ subOrgIds
+						+ ") "
+						+ "and (op.userName like "
+						+ userName
+						+ " or op.firstName like "
+						+ userName
+						+ " or op.lastName like "
+						+ userName
+						+ ") and op.superManager is null and op.org.orgName like "
+						+ orgName + "order by op.userName";
 
 			Query query = session.createQuery(hql);
 			query.setFirstResult(offset);
@@ -362,16 +377,16 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ҳ��ʾ��¼
+	 * 锟斤拷页锟斤拷示锟斤拷录
 	 * 
-	 * @author Ҧ��
+	 * @author 姚锟斤拷
 	 * @param subOrgIds
 	 * @param offset
-	 *            int ƫ����
+	 *            int 偏锟斤拷锟斤拷
 	 * @param limit
-	 *            int ȡ����¼��
+	 *            int 取锟斤拷锟斤拷录锟斤拷
 	 * @param isSuperManager
-	 * @return List ��¼����
+	 * @return List 锟斤拷录锟斤拷锟斤拷
 	 * @throws Exception
 	 */
 	public static List select(String subOrgIds, int offset, int limit,
@@ -417,12 +432,12 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ȡ�����ݿ��еļ�¼����
+	 * 取锟斤拷锟斤拷菘锟斤拷械募锟铰硷拷锟斤拷锟�
 	 * 
 	 * @param subOrgIds
-	 *            �ӻ���id�ִ�
+	 *            锟接伙拷id锟街达拷
 	 * @param isSuperManager
-	 * @return int ��¼��
+	 * @return int 锟斤拷录锟斤拷
 	 * @throws Exception
 	 */
 	public static int getRecordCount(String subOrgIds, boolean isSuperManager)
@@ -459,41 +474,41 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ʹ��hibernate ���Ը� 2011-12-28
-	 * Ӱ�����Operator
-	 * ȡ�����ݿ��еļ�¼����
+	 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator
+	 * 取锟斤拷锟斤拷菘锟斤拷械募锟铰硷拷锟斤拷锟�
 	 * 
 	 * @param subOrgIds
-	 *            �ӻ���id�ִ�
+	 *            锟接伙拷id锟街达拷
 	 * @param isSuperManager
-	 * @return int ��¼��
+	 * @return int 锟斤拷录锟斤拷
 	 * @throws Exception
 	 */
 	public static int getRecordCountOP(String subOrgIds,
-			boolean isSuperManager, String userName,String orgName) throws Exception {
+			boolean isSuperManager, String userName, String orgName)
+			throws Exception {
 		int result = 0;
 		DBConn conn = null;
 		Session session = null;
 		if (userName == null) {
 			userName = "'%'";
 		} else {
-			if(userName.trim().equals("")){
+			if (userName.trim().equals("")) {
 				userName = "'%'";
-			}else{
+			} else {
 				userName = "'%" + userName.trim() + "%'";
 			}
 		}
-		
+
 		if (orgName == null) {
 			orgName = "'%'";
 		} else {
-			if(orgName.trim().equals("")){
+			if (orgName.trim().equals("")) {
 				orgName = "'%'";
-			}else{
+			} else {
 				orgName = "'%" + orgName.trim() + "%'";
 			}
 		}
-		
+
 		try {
 			conn = new DBConn();
 			session = conn.openSession();
@@ -501,16 +516,27 @@ public class StrutsOperatorDelegate {
 			String hql = "";
 			if (isSuperManager == true)
 				hql = "select count(*) from com.cbrc.auth.hibernate.Operator op where (op.userName like "
-						+ userName + " or op.firstName like "
-						+ userName + " or op.lastName like " + userName+") and op.superManager is null"
+						+ userName
+						+ " or op.firstName like "
+						+ userName
+						+ " or op.lastName like "
+						+ userName
+						+ ") and op.superManager is null"
 						+ " and op.org.orgName like " + orgName;
 
 			else
 				hql = "select count(*) from com.cbrc.auth.hibernate.Operator op where op.org.orgId in ("
-						+ subOrgIds + ") and (op.userName like "
-						+ userName + " or op.firstName like " + userName
-						+ " or op.lastName like " + userName + ")"+" and op.superManager is null"
-						+ " and op.org.orgName like " + orgName;;
+						+ subOrgIds
+						+ ") and (op.userName like "
+						+ userName
+						+ " or op.firstName like "
+						+ userName
+						+ " or op.lastName like "
+						+ userName
+						+ ")"
+						+ " and op.superManager is null"
+						+ " and op.org.orgName like " + orgName;
+			;
 
 			Query query = session.createQuery(hql);
 			List list = query.list();
@@ -530,14 +556,13 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ʹ��Hibernate ���Ը� 2011-12-28
-	 * Ӱ�����Operator
-	 * ȡ���ж����û�������������ŵ�
+	 * 锟斤拷使锟斤拷Hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator
+	 * 取锟斤拷锟叫讹拷锟斤拷锟矫伙拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷诺锟�
 	 * 
-	 * @author Ҧ��
+	 * @author 姚锟斤拷
 	 * @param deptId
-	 *            Long ����id
-	 * @return ���ڸò��ŵ��û�����
+	 *            Long 锟斤拷锟斤拷id
+	 * @return 锟斤拷锟节该诧拷锟脚碉拷锟矫伙拷锟斤拷锟斤拷
 	 */
 	public static int getUserNumFromDeptId(Long deptId) {
 		int result = 0;
@@ -565,13 +590,12 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ʹ��hibernate ���Ը� 2011-12-28
-	 * Ӱ�����Operator
-	 * ����Ƿ��Ѿ��и��û�
+	 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator
+	 * 锟斤拷锟斤拷欠锟斤拷丫锟斤拷懈锟斤拷没锟�
 	 * 
 	 * @param userName
-	 *            �û���
-	 * @return ���û��Ƿ����
+	 *            锟矫伙拷锟斤拷
+	 * @return 锟斤拷锟矫伙拷锟角凤拷锟斤拷锟�
 	 */
 	public static boolean isUserNameExist(String userName) {
 		boolean result = true;
@@ -603,13 +627,11 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ��ʹ��hibernate ���Ը� 2011-12-28
-	 * Ӱ�����Operator
-	 * ȡ���û���ϸ��Ϣ
+	 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator 取锟斤拷锟矫伙拷锟斤拷细锟斤拷息
 	 * 
 	 * @param userId
-	 *            Long �û�id
-	 * @return �û���ϸ��Ϣ
+	 *            Long 锟矫伙拷id
+	 * @return 锟矫伙拷锟斤拷细锟斤拷息
 	 */
 	public static OperatorForm getUserDetail(Long userId) {
 		OperatorForm operatorForm = null;
@@ -646,13 +668,11 @@ public class StrutsOperatorDelegate {
 
 	/**
 	 * 
-	 * ��ʹ��hibernate ���Ը� 2011-12-21
-	 * Ӱ�����Operator
-	 * �û���¼��֤
+	 * 锟斤拷使锟斤拷hibernate 锟斤拷锟皆革拷 2011-12-21 影锟斤拷锟斤拷锟絆perator 锟矫伙拷锟斤拷录锟斤拷证
 	 * 
 	 * @param userId
-	 *            Long �û�id
-	 * @return �����֤ͨ���򷵻�����form�����򷵻�null
+	 *            Long 锟矫伙拷id
+	 * @return 锟斤拷锟斤拷锟街ね拷锟斤拷蚍祷锟斤拷锟斤拷form锟斤拷锟斤拷锟津返伙拷null
 	 */
 	public static OperatorForm userLoginValidate(OperatorForm operatorForm) {
 		OperatorForm result = null;
@@ -669,9 +689,9 @@ public class StrutsOperatorDelegate {
 					session = conn.openSession();
 
 					String hql = "from Operator op where op.userName='"
-							+ userName + "' and op.password='" 
-							+ Encoder.getMD5_Base64(password) + "'"; //12��20���ϴ�Դ�뵱��Ϊ�˱��ڲ�����ʱ���μ���
-						//	+password + "'";
+							+ userName + "' and op.password='"
+							+ Encoder.getMD5_Base64(password) + "'"; // 12锟斤拷20锟斤拷锟较达拷源锟诫当锟斤拷为锟剿憋拷锟节诧拷锟斤拷锟斤拷时锟斤拷锟轿硷拷锟斤拷
+					// +password + "'";
 					Query query = session.createQuery(hql);
 
 					List list = query.list();
@@ -694,11 +714,11 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * �û���¼��֤
+	 * 锟矫伙拷锟斤拷录锟斤拷证
 	 * 
 	 * @param userId
-	 *            Long �û�id
-	 * @return �����֤ͨ���򷵻�����form�����򷵻�null
+	 *            Long 锟矫伙拷id
+	 * @return 锟斤拷锟斤拷锟街ね拷锟斤拷蚍祷锟斤拷锟斤拷form锟斤拷锟斤拷锟津返伙拷null
 	 */
 	public static OperatorForm userNewLoginValidate(OperatorForm operatorForm) {
 		OperatorForm result = null;
@@ -739,11 +759,11 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * �û���¼��֤
+	 * 锟矫伙拷锟斤拷录锟斤拷证
 	 * 
 	 * @param userId
-	 *            Long �û�id
-	 * @return �����֤ͨ���򷵻�����form�����򷵻�null
+	 *            Long 锟矫伙拷id
+	 * @return 锟斤拷锟斤拷锟街ね拷锟斤拷蚍祷锟斤拷锟斤拷form锟斤拷锟斤拷锟津返伙拷null
 	 */
 	public static OperatorForm select(OperatorForm operatorForm) {
 		OperatorForm result = null;
@@ -781,7 +801,7 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ���ݻ���ID�ҵ��û���Ϣ
+	 * 锟斤拷莼锟絀D锟揭碉拷锟矫伙拷锟斤拷息
 	 * 
 	 * @param orgId
 	 * @return
@@ -824,7 +844,7 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ���ݻ���ID��ѯ�û���
+	 * 锟斤拷莼锟絀D锟斤拷询锟矫伙拷锟斤拷
 	 * 
 	 * @param orgId
 	 * @return
@@ -858,7 +878,7 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ���ݻ���ID�ҳ��û����������û�ID
+	 * 锟斤拷莼锟絀D锟揭筹拷锟矫伙拷锟斤拷锟斤拷锟斤拷没锟絀D
 	 * 
 	 * @param orgId
 	 * @param bool
@@ -899,10 +919,10 @@ public class StrutsOperatorDelegate {
 	}
 
 	/**
-	 * ���ݻ���ID�鿴�û���Ϣ
+	 * 锟斤拷莼锟絀D锟介看锟矫伙拷锟斤拷息
 	 * 
-	 * @author Ҧ��
-	 * @return List ��¼����
+	 * @author 姚锟斤拷
+	 * @return List 锟斤拷录锟斤拷锟斤拷
 	 * @exception Exception
 	 */
 	public static List select(String orgId) throws Exception {
@@ -939,17 +959,16 @@ public class StrutsOperatorDelegate {
 		}
 		return result;
 	}
+
 	/**
-	 * ��ʹ��Hibernate ���Ը� 2011-12-28
-	 * Ӱ�����Operator
-	 * ȡ���û���ϸ��Ϣ
+	 * 锟斤拷使锟斤拷Hibernate 锟斤拷锟皆革拷 2011-12-28 影锟斤拷锟斤拷锟絆perator 取锟斤拷锟矫伙拷锟斤拷细锟斤拷息
 	 * 
 	 * @param userId
-	 *            Long �û�id
-	 * @return �û���ϸ��Ϣ
+	 *            Long 锟矫伙拷id
+	 * @return 锟矫伙拷锟斤拷细锟斤拷息
 	 */
 	public static String getUserName(Long userId) {
-		String  userName = null;
+		String userName = null;
 
 		DBConn conn = null;
 		Session session = null;
@@ -964,12 +983,12 @@ public class StrutsOperatorDelegate {
 
 				List list = query.list();
 				if (list != null && list.size() != 0) {
-					 userName = (String) list.get(0);
-					
+					userName = (String) list.get(0);
+
 				}
 			}
 		} catch (Exception e) {
-			
+
 			log.printStackTrace(e);
 		} finally {
 			if (conn != null)
@@ -977,5 +996,183 @@ public class StrutsOperatorDelegate {
 		}
 		return userName;
 
+	}
+
+	/**
+	 *
+	 * 宸蹭娇鐢╤ibernate 鍗炰互鍒�2011-12-21 褰卞搷瀵硅薄锛歄perator 鐢ㄦ埛鐧诲綍楠岃瘉
+	 *
+	 * @param userId
+	 *            Long 鐢ㄦ埛id
+	 * @return 濡傛灉楠岃瘉閫氳繃鍒欒繑鍥炰粬鐨刦orm锛屽惁鍒欒繑鍥瀗ull
+	 */
+	public static OperatorForm userLoginValidate(OperatorForm operatorForm,
+			String name) {
+		OperatorForm result = null;
+
+		DBConn conn = null;
+		Session session = null;
+		try {
+			if (operatorForm != null) {
+				String userName = operatorForm.getUserName();
+				String password = operatorForm.getPassword();
+				boolean isPass = false;
+				if (name != null) {
+					isPass = true;
+				}
+				if (userName != null && !userName.equals("")
+						&& password != null && !password.equals("") || isPass) {
+					conn = new DBConn();
+					session = conn.openSession();
+					String hql = "";
+					if (name != null) {
+						hql = "from Operator op where op.userName='" + userName
+								+ "'";
+					} else {
+						hql = "from Operator op where op.userName='" + userName
+								+ "' and op.password='"
+								+ Encoder.getMD5_Base64(password) + "'"; // 12鏈�0鏃ヤ笂浼犳簮鐮佸綋澶╀负浜嗕究浜庢祴璇曟殏鏃跺睆钄藉姞瀵�
+						// +password + "'";
+					}
+					Query query = session.createQuery(hql);
+
+					List list = query.list();
+					if (list != null && list.size() != 0) {
+						result = new OperatorForm();
+						Operator operatorPersistence = (Operator) list.get(0);
+						TranslatorUtil.copyPersistenceToVo(operatorPersistence,
+								result);
+					}
+				}
+			}
+		} catch (Exception e) {
+			operatorForm = null;
+			log.printStackTrace(e);
+		} finally {
+			if (conn != null)
+				conn.closeSession();
+		}
+		return result;
+	}
+
+	/**
+	 * 宸蹭娇鐢℉ibernate 鍗炰互鍒�2011-12-28 褰卞搷瀵硅薄锛歎serRole MUserToGrp Operator
+	 * 鍒犻櫎鐢ㄦ埛淇℃伅
+	 *
+	 * @author 濮氭嵎
+	 * @param departmentForm
+	 *            DepartmentForm 鍖呭惈瑕佸垹闄ょ殑鐢ㄦ埛鐨勭紪鍙�
+	 * @return boolean 鍒犻櫎鏄惁鎴愬姛
+	 * @exception Exception
+	 *                If the com.cbrc.auth.form.DepartmentForm object cannot be
+	 *                removed.
+	 */
+	public static boolean remove(OperatorForm operatorForm, boolean isSynPortal)
+			throws Exception {
+		boolean result = false;
+		IStrutsUserDelegate user = (IStrutsUserDelegate) Class.forName(
+				Config.PORATLSYNAIMPL).newInstance();
+		DBConn conn = null;
+		Session session = null;
+		if (operatorForm != null) {
+			try {
+				conn = new DBConn();
+				Long userId = operatorForm.getUserId();
+
+				/** 鍒犻櫎鐢ㄦ埛瑙掕壊瀵圭収琛� */
+				/**
+				 * 宸蹭娇鐢╤ibernate 鍗炰互鍒�2011-12-28 褰卞搷瀵硅薄锛歎serRole
+				 */
+				StrutsUserRoleDelegate.deleteUserSetRole(userId);
+				/** 鍒犻櫎鐢ㄦ埛鐢ㄦ埛缁勫鐓ц〃 */
+				/**
+				 * 宸蹭娇鐢℉ibernate 鍗炰互鍒�2011-12-28 褰卞搷瀵硅薄锛歁UserToGrp
+				 */
+				StrutsMUserToGrpDelegate.deleteUserSetUserGrp(userId);
+
+				session = conn.beginTransaction();
+
+				/** 鍒犻櫎鏈〃淇℃伅 */
+				/**
+				 * 浣跨敤浜唄ibernate 鍗炰互鍒�2011-12-28 褰卞搷瀵硅薄锛歄perator
+				 */
+				Operator operator = (Operator) session.load(Operator.class,
+						operatorForm.getUserId());
+				if (isSynPortal) {
+					result = user.deleteUser(operator.getUserName());
+				}
+				session.delete(operator);
+				session.flush();
+				result = true;
+			} catch (Exception e) {
+				log.printStackTrace(e);
+				result = false;
+			} finally {
+				if (conn != null)
+					conn.endTransaction(result);
+			}
+		}
+
+		return result;
+	}
+
+	/***
+	 * 宸蹭娇鐢╤ibernate 鍗炰互鍒�2011-12-28 褰卞搷瀵硅薄锛歄perator
+	 * 
+	 * @param operatorForm
+	 * @return
+	 * @throws Exception
+	 */
+	public static boolean create(OperatorForm operatorForm, boolean isSynPortal)
+			throws Exception {
+		// 鍒ゆ柇闂ㄦ埛褰撲腑鏄惁宸茬粡鏈夎繖涓敤鎴蜂簡
+		boolean result = false;
+		DBConn conn = null;
+		Session session = null;
+		if (operatorForm != null) {
+			try {
+				conn = new DBConn();
+				session = conn.beginTransaction();
+				Operator operator = new Operator();
+				// 娉ㄩ噴鎺夊瘑鐮佸姞瀵�
+				TranslatorUtil.copyVoToPersistence(operator, operatorForm);
+				// 澧炲姞鐢ㄦ埛鍚屾椂涔熺粰闂ㄦ埛澧炲姞鐢ㄦ埛
+				if (isSynPortal) {
+					IStrutsUserDelegate user = (IStrutsUserDelegate) Class
+							.forName(Config.PORATLSYNAIMPL).newInstance();
+					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+					SysUser sysuser = new SysUser();
+					sysuser.setAddress(operator.getAddress());
+					sysuser.setDeparTment(operator.getDepartment()
+							.getDepartmentId().toString());
+					sysuser.setEmail(operator.getMail());
+					sysuser.setIsSuper(operator.getSuperManager() == null ? "false"
+							: "true");
+					sysuser.setOrgId(operator.getOrg().getOrgId());
+					sysuser.setPassWord(operator.getPassword());
+					sysuser.setPostCode(operator.getPostalCode());
+					sysuser.setRealName(operator.getFirstName()
+							+ operator.getLastName());
+					sysuser.setTelphoneNumber(operator.getTelephoneNumber());
+					sysuser.setUpdateDate(format.format(operator
+							.getUpdateTime()));
+					sysuser.setUserName(operator.getUserName());
+					List list = user.getUserList(operatorForm.getUserName());
+					if (list.size() == 0)
+						result = user.insertUser(sysuser);
+					result = user.insertAssociation(operator.getUserName());
+				}
+				session.save(operator);
+				session.flush();
+				result = true;
+			} catch (Exception e) {
+				log.printStackTrace(e);
+				result = false;
+			} finally {
+				if (conn != null)
+					conn.endTransaction(result);
+			}
+		}
+		return result;
 	}
 }

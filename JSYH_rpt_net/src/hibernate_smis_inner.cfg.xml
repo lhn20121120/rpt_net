@@ -35,9 +35,9 @@
 		-->
 		<!-- oracle -->
 		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+		<property name="connection.url">jdbc:oracle:thin:@192.168.0.212:1521:orcl</property>
 		<property name="connection.username">kerong</property>
-		<property name="connection.password">aaa</property>
+		<property name="connection.password">kerong</property>
 		
 		
 		<property name="user_outer_join">true</property>

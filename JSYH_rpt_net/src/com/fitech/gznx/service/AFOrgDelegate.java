@@ -29,6 +29,7 @@ import com.fitech.gznx.treexml.OrgTreeInterface;
 import com.fitech.gznx.util.TranslatorUtil;
 import com.fitech.net.form.OrgNetForm;
 import com.fitech.net.hibernate.OrgNet;
+import com.fitech.papp.webservice.pojo.WebSysOrg;
 
 public class AFOrgDelegate {
 
@@ -36,9 +37,9 @@ public class AFOrgDelegate {
 			AFOrgDelegate.class);
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg
-	 * µÃµ½Ò»¸ö»ú¹¹¶ÔÏó
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg
+	 * ï¿½Ãµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param orgId
 	 * @return
@@ -77,31 +78,31 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ¸üÐÂ»ú¹¹ÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @author Nick
 	 * @param orgInfoForm
-	 *            OrgInfoForm¶ÔÏó
-	 * @return boolean ¸üÐÂ»ú¹¹ÊÇ·ñ³É¹¦
+	 *            OrgInfoFormï¿½ï¿½ï¿½ï¿½
+	 * @return boolean ï¿½ï¿½ï¿½Â»ï¿½ï¿½Ç·ï¿½É¹ï¿½
 	 */
 	public static boolean setFirstNode(OrgInfoForm orgInfoForm) {
 		boolean result = false;
-		// Á¬½Ó¶ÔÏóºÍ»á»°¶ÔÏó³õÊ¼»¯
+		// ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Í»á»°ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 		DBConn conn = null;
 		Session session = null;
 
 		try {
-			// conn¶ÔÏóµÄÊµÀý»¯
+			// connï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 			conn = new DBConn();
-			// ´ò¿ªÁ¬½Ó¿ªÊ¼»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½á»°
 			session = conn.beginTransaction();
 
 			AfOrg orgInfo = (AfOrg) session.get(AfOrg.class, orgInfoForm
 					.getOrgId());
-			// Ö»Òª¸üÐÂ¸Ã»ú¹¹µÄpreOrgIdÊôÐÔ
+			// Ö»Òªï¿½ï¿½ï¿½Â¸Ã»ï¿½ï¿½preOrgIdï¿½ï¿½ï¿½ï¿½
 			orgInfo.setPreOrgId(Config.COLLECT_ORG_PARENT_ID);
-			// ¸üÐÂ»ú¹¹ÐÅÏ¢
+			// ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½Ï¢
 			session.update(orgInfo);
 
 			session.flush();
@@ -109,7 +110,7 @@ public class AFOrgDelegate {
 		} catch (Exception e) {
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.endTransaction(result);
 		}
@@ -117,8 +118,8 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * »ñµÃËùÓÐ»ú¹¹µÄÐÅÏ¢µÄIDÁÐ±í
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½IDï¿½Ð±ï¿½
 	 * 
 	 * @return
 	 */
@@ -151,8 +152,8 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ¸ù¾ÝÓÃ»§ÃûÈ¡µÃ¸ÃÓÃ»§µÄ»ú¹¹È¨ÏÞÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½Ã¸ï¿½ï¿½Ã»ï¿½ï¿½Ä»ï¿½È¨ï¿½ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @param userId
 	 * @return
@@ -196,8 +197,8 @@ public class AFOrgDelegate {
 		return result;
 	}
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ¸ù¾ÝÓÃ»§ÃûÈ¡µÃ¸ÃÓÃ»§µÄ»ú¹¹È¨ÏÞÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½È¡ï¿½Ã¸ï¿½ï¿½Ã»ï¿½ï¿½Ä»ï¿½È¨ï¿½ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @param userId
 	 * @return
@@ -242,11 +243,11 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * title:¸Ã·½·¨ÓÃÓÚ¸ù¾ÝorgId·µ»ØÆäÏÂÊô»ú¹¹ÁÐ±íÁÐ±í author:chenbing date:2008-2-19
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * title:ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½orgIdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ð±ï¿½ author:chenbing date:2008-2-19
 	 * 
 	 * @param orgId
-	 * @return List:LableValueBean:»ú¹¹ID,»ú¹¹Ãû³Æ
+	 * @return List:LableValueBean:ï¿½ï¿½ID,ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static List getChildListByOrgId(String orgId) {
 
@@ -383,8 +384,8 @@ public class AFOrgDelegate {
 		return result;
 	}
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * title:¸Ã·½·¨ÓÃÓÚ·µ»ØËùÓÐµÄ¶¥²ã»ú¹¹ author:chenbing date:2008-2-19
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * title:ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶ï¿½ï¿½ï¿½ï¿½ author:chenbing date:2008-2-19
 	 * 
 	 * @return
 	 */
@@ -437,7 +438,7 @@ public class AFOrgDelegate {
 
 				result.add(strs);
 			}
-			//²éÑ¯³öËùÓÐ¶¥²ãÐéÄâ»ú¹¹£¨ÔÚAfCollectRelation±íÖÐ²éÑ¯ËùÓÐÃ»ÓÐColletId £¬»òÕßcolletidÎªÊµÌå»ú¹¹µÄÐéÄâ»ú¹¹£©
+			//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AfCollectRelationï¿½ï¿½ï¿½Ð²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ColletId ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½colletidÎªÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			hsql = "select oi.orgId,oi.orgName,oi.isCollect ,oi.preOrgId from AfOrg oi " +
 					"where oi.orgId  not in " +
 						"(select a.id.orgId from AfCollectRelation a where a.id.collectId not in " +
@@ -497,8 +498,8 @@ public class AFOrgDelegate {
 	
 	
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * title:¸Ã·½·¨ÓÃÓÚ·µ»ØËùÓÐµÄ¶¥²ã»ú¹¹ author:chenbing date:2008-2-19
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * title:ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¶ï¿½ï¿½ï¿½ï¿½ author:chenbing date:2008-2-19
 	 * 
 	 * @return
 	 */
@@ -569,7 +570,7 @@ public class AFOrgDelegate {
 	}
 	
 	/***
-	 * Éú³É»ú¹¹¹ØÏµµÄµÚÒ»²ãÎªSYS_FLAGµÄÖµ
+	 * ï¿½ï¿½É»ï¿½ï¿½Ïµï¿½Äµï¿½Ò»ï¿½ï¿½ÎªSYS_FLAGï¿½ï¿½Öµ
 	 * @return
 	 */
 	public static List getAllFirstVorgRel() {
@@ -631,7 +632,7 @@ public class AFOrgDelegate {
 	}
 	
 	/***
-	 * Éú³É»ú¹¹¹ØÏµµÄµÚ¶þ²ãÎªPRE_ORGIDÎªnull »òÕßÎª¿ÕµÄ
+	 * ï¿½ï¿½É»ï¿½ï¿½Ïµï¿½ÄµÚ¶ï¿½ï¿½ï¿½ÎªPRE_ORGIDÎªnull ï¿½ï¿½ï¿½ï¿½Îªï¿½Õµï¿½
 	 * @return
 	 */
 	public static List getAllSecondVorgRel(String sysFlag) {
@@ -643,7 +644,7 @@ public class AFOrgDelegate {
 		Query query = null;
 
 		List result = null;
-		//»ú¹¹Éú³É¹ØÏµÊ÷¹¹Ôì
+		//ï¿½ï¿½ï¿½ï¿½É¹ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		//String hsql = "select oi.id.orgId,oi.orgNm from vOrgRel oi where oi.id.sysFlag='"+sysFlag+"'";
 		String hsql = "select oi.id.orgId,oi.orgNm from vOrgRel oi where oi.id.sysFlag='"+sysFlag+"' and (oi.preOrgid is null or oi.preOrgid='' or oi.preOrgid=0)";
 		try {
@@ -692,9 +693,9 @@ public class AFOrgDelegate {
 	}
 	
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg
-	 * ²éÑ¯×Ó»ú¹¹ÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg
+	 * ï¿½ï¿½Ñ¯ï¿½Ó»ï¿½ï¿½ï¿½Ï¢
 	 * @param orgId
 	 * @param session
 	 * @return
@@ -729,7 +730,7 @@ public class AFOrgDelegate {
 					orgNet.setSetOrgId(aforg.getSetOrgId());
 					if(Map!=null){						
 						if(Map.containsKey(orgNet.getOrgId())){
-							orgNet.setPreOrgId("true");//¹ÃÇÒÓÃpre org±êÖ¾ÊÇ·ñÑ¡ÖÐ							
+							orgNet.setPreOrgId("true");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pre orgï¿½ï¿½Ö¾ï¿½Ç·ï¿½Ñ¡ï¿½ï¿½							
 						}
 					}
 					orgNetList.add(orgNet);
@@ -740,7 +741,7 @@ public class AFOrgDelegate {
 		}catch(Exception e){
 			log.printStackTrace(e);
 		}finally{
-			//Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(conn != null) conn.closeSession();
 		}
 		return orgNetList;
@@ -775,7 +776,7 @@ public class AFOrgDelegate {
 					orgNet.setSetOrgId(aforg.getSetOrgId());*/
 					if(Map!=null){						
 						if(Map.containsKey(aforg.getOrgId())){
-							aforg.setPreOrgId("true");//¹ÃÇÒÓÃpre org±êÖ¾ÊÇ·ñÑ¡ÖÐ							
+							aforg.setPreOrgId("true");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pre orgï¿½ï¿½Ö¾ï¿½Ç·ï¿½Ñ¡ï¿½ï¿½							
 						}
 					}
 					orgNetList.add(aforg);
@@ -786,32 +787,32 @@ public class AFOrgDelegate {
 		}catch(Exception e){
 			log.printStackTrace(e);
 		}finally{
-			//Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(conn != null) conn.closeSession();
 		}
 		return orgNetList;
 	}
 	
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ÅÐ¶ÏÊÇ·ñÓÐÏàÍ¬µÄ»ú¹¹´úÂë
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½Ä»ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @author Nick
 	 * @param orgInfoForm
-	 *            OrgInfoForm¶ÔÏó
-	 * @return boolean ÊÇ·ñ´æÔÚ
+	 *            OrgInfoFormï¿½ï¿½ï¿½ï¿½
+	 * @return boolean ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static boolean isExistSameOrgId(OrgInfoForm orgInfoForm) {
 		boolean result = false;
 		List list = null;
-		// Á¬½Ó¶ÔÏóºÍ»á»°¶ÔÏó³õÊ¼»¯
+		// ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Í»á»°ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 		DBConn conn = null;
 		Session session = null;
 
 		try {
-			// conn¶ÔÏóµÄÊµÀý»¯
+			// connï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 			conn = new DBConn();
-			// ´ò¿ªÁ¬½Ó¿ªÊ¼»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½á»°
 			session = conn.openSession();
 			Query query = session.createQuery("from AfOrg oi where oi.orgId=?");
 			query.setString(0, orgInfoForm.getOrgId());
@@ -822,7 +823,7 @@ public class AFOrgDelegate {
 		} catch (Exception e) {
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -830,25 +831,25 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ÅÐ¶ÏÊÇ·ñÓÐÏàÍ¬µÄ»ú¹¹Ãû³Æ
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½Ä»ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @author Nick
 	 * @param orgInfoForm
-	 *            OrgInfoForm¶ÔÏó
-	 * @return boolean ÊÇ·ñ´æÔÚ
+	 *            OrgInfoFormï¿½ï¿½ï¿½ï¿½
+	 * @return boolean ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static boolean isExistSameOrgName(OrgInfoForm orgInfoForm) {
 		boolean result = false;
 		List list = null;
-		// Á¬½Ó¶ÔÏóºÍ»á»°¶ÔÏó³õÊ¼»¯
+		// ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Í»á»°ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 		DBConn conn = null;
 		Session session = null;
 
 		try {
-			// conn¶ÔÏóµÄÊµÀý»¯
+			// connï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 			conn = new DBConn();
-			// ´ò¿ªÁ¬½Ó¿ªÊ¼»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½á»°
 			session = conn.openSession();
 			Query query = session
 					.createQuery("from AfOrg oi where oi.orgName=?");
@@ -860,7 +861,7 @@ public class AFOrgDelegate {
 		} catch (Exception e) {
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -868,32 +869,32 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * Ôö¼Ó»ú¹¹ÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½Ó»ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @author Nick
 	 * @param orgInfoForm
-	 *            OrgInfoForm¶ÔÏó
+	 *            OrgInfoFormï¿½ï¿½ï¿½ï¿½
 	 * @param userId
-	 *            String Ôö¼Ó»ú¹¹µÄÓÃ»§ID
-	 * @return boolean ÊÇ·ñÔö¼Ó³É¹¦
+	 *            String ï¿½ï¿½ï¿½Ó»ï¿½ï¿½ï¿½Ã»ï¿½ID
+	 * @return boolean ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ó³É¹ï¿½
 	 */
 	public static boolean add(OrgInfoForm orgInfoForm, String userId) {
 		boolean result = false;
 		List list = null;
-		// Á¬½Ó¶ÔÏóºÍ»á»°¶ÔÏó³õÊ¼»¯
+		// ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Í»á»°ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 		DBConn conn = null;
 		Session session = null;
 
-		// ²éÑ¯Ìõ¼þHQLµÄÉú³É
+		// ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½HQLï¿½ï¿½ï¿½ï¿½ï¿½
 		try {
-			// conn¶ÔÏóµÄÊµÀý»¯
+			// connï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 			conn = new DBConn();
-			// ´ò¿ªÁ¬½Ó¿ªÊ¼»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½á»°
 			session = conn.beginTransaction();
 
-			/** 1 Ôö¼Ó»ú¹¹ÐÅÏ¢ */
-			// µÃµ½¸¸½ÚµãµÄÏêÏ¸ÐÅÏ¢
+			/** 1 ï¿½ï¿½ï¿½Ó»ï¿½ï¿½ï¿½Ï¢ */
+			// ï¿½Ãµï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢
 			AfOrg parentOrgInfo = AFOrgDelegate.getOrgInfo(orgInfoForm.getParentOrgId());
 
 			AfOrg orgInfo = new AfOrg();
@@ -923,7 +924,7 @@ public class AFOrgDelegate {
 			} else {
 				orgInfo.setPreOrgId(Config.COLLECT_ORG_PARENT_ID);
 			}
-			//ÅÐ¶ÏÐéÄâ»ú¹¹ÊÇ·ñÐèÒª»ã×Ü
+			//ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
 			if (!orgInfoForm.getOrgType().equals(Config.COLLECT_ORG_PARENT_ID) && !orgInfoForm.getOrgType().equals(Config.COLLECT_ORG_PARENT_QT_ID)) {
 				orgInfo.setIsCollect(Long.valueOf(Config.NOT_IS_COLLECT));
 			} else {
@@ -932,7 +933,7 @@ public class AFOrgDelegate {
 
 			session.save(orgInfo);
 
-			// /** 2 Ôö¼Ó»ú¹¹µÄÓÃ»§¾ßÓÐ¸Ã»ú¹¹µÄ»ú¹¹È¨ÏÞ */
+			// /** 2 ï¿½ï¿½ï¿½Ó»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ð¸Ã»ï¿½Ä»ï¿½È¨ï¿½ï¿½ */
 			// UserOrgPurview uop = new UserOrgPurview();
 			// UserOrgPurviewId id = new UserOrgPurviewId();
 			//
@@ -942,10 +943,10 @@ public class AFOrgDelegate {
 			// uop.setId(id);
 			// session.save(uop);
 			//
-			// /** 3Èç¹ûÔö¼ÓµÄÊÇÕæÊµ»ú¹¹£¬ÐèÒªÔö¼ÓÖ¸±ê¼¯¶ÔÏó¹ØÏµ */
+			// /** 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ê¼¯ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ */
 			// if (orgInfo.getIsCollect().equals(
 			// new Integer(Config.NOT_IS_COLLECT))) {
-			// // Ôö¼ÓÖ¸±ê¼¯¶ÔÏó¹ØÏµ
+			// // ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ê¼¯ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ
 			// List lstMA = StrutsMeasureAttributeDelegate
 			// .selectMAList(orgInfo);
 			// MeasureOrgMapping mom = null;
@@ -973,7 +974,7 @@ public class AFOrgDelegate {
 			log.printStackTrace(e);
 			result = false;
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.endTransaction(result);
 		}
@@ -981,24 +982,24 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ¸üÐÂ»ú¹¹ÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @author Nick
 	 * @param orgInfoForm
-	 *            OrgInfoForm¶ÔÏó
-	 * @return boolean ¸üÐÂ»ú¹¹ÊÇ·ñ³É¹¦
+	 *            OrgInfoFormï¿½ï¿½ï¿½ï¿½
+	 * @return boolean ï¿½ï¿½ï¿½Â»ï¿½ï¿½Ç·ï¿½É¹ï¿½
 	 */
 	public static boolean updateOrgInfo(OrgInfoForm orgInfoForm) {
 		boolean result = false;
-		// Á¬½Ó¶ÔÏóºÍ»á»°¶ÔÏó³õÊ¼»¯
+		// ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Í»á»°ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 		DBConn conn = null;
 		Session session = null;
 
 		try {
-			// conn¶ÔÏóµÄÊµÀý»¯
+			// connï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 			conn = new DBConn();
-			// ´ò¿ªÁ¬½Ó¿ªÊ¼»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½á»°
 			session = conn.beginTransaction();
 
 			AfOrg orgInfo = (AfOrg) session.get(AfOrg.class, orgInfoForm
@@ -1015,7 +1016,7 @@ public class AFOrgDelegate {
 			if (orgInfoForm.getOrgRegion() != null)
 				orgInfo.setRegionId(orgInfoForm.getOrgRegion());
 			
-			// ¸üÐÂ»ú¹¹ÐÅÏ¢
+			// ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½Ï¢
 			session.update(orgInfo);
 
 			session.flush();
@@ -1023,7 +1024,7 @@ public class AFOrgDelegate {
 		} catch (Exception e) {
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.endTransaction(result);
 		}
@@ -1031,26 +1032,26 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * É¾³ý»ú¹¹ÐÅÏ¢[Èç¹ûÊÇÐéÄâ»ú¹¹£¬ÔòÒªÏÈÉ¾³ý»ã×Ü¹ØÏµ]
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * É¾ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ü¹ï¿½Ïµ]
 	 * 
 	 * @author Nick
 	 * @param orgInfoForm
-	 *            OrgInfoForm¶ÔÏó
-	 * @return boolean É¾³ý»ú¹¹ÊÇ·ñ³É¹¦
+	 *            OrgInfoFormï¿½ï¿½ï¿½ï¿½
+	 * @return boolean É¾ï¿½ï¿½ï¿½ï¿½Ç·ï¿½É¹ï¿½
 	 */
 	public static boolean delete(OrgInfoForm orgInfoForm) {
 		boolean result = true;
-		// Á¬½Ó¶ÔÏóºÍ»á»°¶ÔÏó³õÊ¼»¯
+		// ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Í»á»°ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 		DBConn conn = null;
 		Session session = null;
 
 		List lst = null;
 
 		try {
-			// conn¶ÔÏóµÄÊµÀý»¯
+			// connï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 			conn = new DBConn();
-			// ´ò¿ªÁ¬½Ó¿ªÊ¼»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½á»°
 			session = conn.beginTransaction();
 
 			AfOrg orgInfo = (AfOrg) session.get(AfOrg.class, orgInfoForm
@@ -1059,13 +1060,13 @@ public class AFOrgDelegate {
 			if (orgInfo == null) {
 				return false;
 			}
-			// Èç¹ûÊÇÐéÄâ»ú¹¹£¬ÔòÉ¾³ýCollectIdÎªµ±Ç°»ú¹¹IDµÄ¼ÇÂ¼
-			// Èç¹ûÊÇÕæÊµ»ú¹¹£¬ÔòÉ¾³ýOrgIdÎªµ±Ç°»ú¹¹IDµÄ¼ÇÂ¼
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½CollectIdÎªï¿½ï¿½Ç°ï¿½ï¿½IDï¿½Ä¼ï¿½Â¼
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½OrgIdÎªï¿½ï¿½Ç°ï¿½ï¿½IDï¿½Ä¼ï¿½Â¼
 //			if (orgInfo.getIsCollect().equals(Long.valueOf(Config.IS_COLLECT))) {
-				// ÐéÄâ»ú¹¹
-				String hql = "from AfCollectRelation cr where cr.id.collectId=? or cr.id.orgId=?";//2013-12-10:LuYueFeiÉ¾³ýËùÓÐ°üº¬´Ë»ú¹¹IDµÄ¼ÇÂ¼
+				// ï¿½ï¿½ï¿½ï¿½ï¿½
+				String hql = "from AfCollectRelation cr where cr.id.collectId=? or cr.id.orgId=?";//2013-12-10:LuYueFeiÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½Ë»ï¿½IDï¿½Ä¼ï¿½Â¼
 				Query query = session.createQuery(hql);
-				query.setString(0, orgInfo.getOrgId());query.setString(1, orgInfo.getOrgId());//2013-12-10:LuYueFeiÉ¾³ýËùÓÐ°üº¬´Ë»ú¹¹IDµÄ¼ÇÂ¼
+				query.setString(0, orgInfo.getOrgId());query.setString(1, orgInfo.getOrgId());//2013-12-10:LuYueFeiÉ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½Ë»ï¿½IDï¿½Ä¼ï¿½Â¼
 				List crLst = query.list();
 
 				if (crLst != null && crLst.size() > 0) {
@@ -1075,7 +1076,7 @@ public class AFOrgDelegate {
 					}
 				}
 /**			} else {
-				// ÕæÊµ»ú¹¹
+				// ï¿½ï¿½Êµï¿½ï¿½
 				String hql = "from AfCollectRelation cr where cr.id.orgId=?";
 				Query query = session.createQuery(hql);
 				query.setString(0, orgInfo.getOrgId());
@@ -1088,7 +1089,7 @@ public class AFOrgDelegate {
 					}
 				}
 
-				// // ×Ô¶¯É¾³ý»ú¹¹ºÍÖ¸±ê¼¯¶ÔÓ¦¹ØÏµ
+				// // ï¿½Ô¶ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ê¼¯ï¿½ï¿½Ó¦ï¿½ï¿½Ïµ
 				// hql = "from MeasureOrgMapping mom where mom.id.orgId=?";
 				// lst = session.createQuery(hql).setString(0,
 				// orgInfo.getOrgId())
@@ -1098,7 +1099,7 @@ public class AFOrgDelegate {
 				// }
 			}*/
 
-			// // ×Ô¶¯É¾³ý¸Ã»ú¹¹µÄËùÓÐ»ú¹¹È¨ÏÞ¼ÇÂ¼
+			// // ï¿½Ô¶ï¿½É¾ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½È¨ï¿½Þ¼ï¿½Â¼
 			// String hql = "from UserOrgPurview uop where uop.id.orgId=?";
 			// lst = session.createQuery(hql).setString(0, orgInfo.getOrgId())
 			// .list();
@@ -1107,7 +1108,7 @@ public class AFOrgDelegate {
 			// }
 
 
-			//É¾³ý»ú¹¹Ê±£¬É¾³ý¶ÔÓ¦µÄMPurOrgÖÐµÄ¼ÇÂ¼
+			//É¾ï¿½ï¿½ï¿½Ê±ï¿½ï¿½É¾ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½MPurOrgï¿½ÐµÄ¼ï¿½Â¼
 			String mpohql = "from MPurOrg mpo where mpo.comp_id.org.orgId=?";
 			Query mpoquery = session.createQuery(mpohql);
 			mpoquery.setString(0, orgInfo.getOrgId());
@@ -1120,7 +1121,7 @@ public class AFOrgDelegate {
 				}
 			}		
 			
-			//É¾³ý»ú¹¹Ê±£¬É¾³ý¶ÔÓ¦µÄAfTemplateOrgRelationÖÐµÄ¼ÇÂ¼
+			//É¾ï¿½ï¿½ï¿½Ê±ï¿½ï¿½É¾ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½AfTemplateOrgRelationï¿½ÐµÄ¼ï¿½Â¼
 			String sql1 = "from AfTemplateOrgRelation ator where ator.id.orgId=?";
 			
 			Query atorquery = session.createQuery(sql1);
@@ -1159,7 +1160,7 @@ public class AFOrgDelegate {
 			log.printStackTrace(e);
 			result = false;
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.endTransaction(result);
 		}
@@ -1167,8 +1168,8 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ¸ù¾ÝIDºÍ»ú¹¹È¨ÏÞÕÒ³öÒ»¼Ò»ú¹¹µÄ×Ó»ú¹¹
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½IDï¿½Í»ï¿½È¨ï¿½ï¿½ï¿½Ò³ï¿½Ò»ï¿½Ò»ï¿½ï¿½ï¿½Ó»ï¿½
 	 * 
 	 * @param orgId
 	 * @param orgTemp
@@ -1216,13 +1217,13 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * ¸ù¾Ý»ú¹¹IDµÃµ½ËùÓÐµÄÏÂÊôÓÃ»§
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½Ý»ï¿½IDï¿½Ãµï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * 
 	 * @param orgId
 	 *            String
 	 * 
-	 * @return boolean ÊÇ·ñ´æÔÚÏÂÊôÓÃ»§
+	 * @return boolean ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 */
 	public static boolean hasUsers(String orgId) {
 		DBConn conn = null;
@@ -1248,18 +1249,18 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 *ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-22
-	 * Éú³É»ú¹¹Ê÷µÄXMLÎÄ¼þ
+	 *ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-22
+	 * ï¿½ï¿½É»ï¿½ï¿½ï¿½ï¿½ï¿½XMLï¿½Ä¼ï¿½
 	 * 
 	 * @author Nick
-	 * @return boolean Éú³É»ú¹¹Ê÷ÊÇ·ñ³É¹¦
+	 * @return boolean ï¿½ï¿½É»ï¿½ï¿½ï¿½ï¿½Ç·ï¿½É¹ï¿½
 	 */
 	public static boolean makeOrgTree() {
 
 		boolean result = false;
-		/** Éú³ÉXML */
+		/** ï¿½ï¿½ï¿½XML */
 		OrgTreeInterface orgTree = new BaseOrgTreeIterator();
-		/**ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-22**/
+		/**ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-22**/
 		if (orgTree.createTreeForTagXml() && orgTree.createTreeForVorgRelXml()) {
 			result = true;
 		}
@@ -1267,18 +1268,18 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
 	 * <p>
-	 * ÃèÊö:²éÑ¯×Ó»ú¹¹ÊýÁ¿
+	 * ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½Ñ¯ï¿½Ó»ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * </p>
 	 * <p>
-	 * ²ÎÊý:
+	 * ï¿½ï¿½ï¿½ï¿½:
 	 * </p>
 	 * <p>
-	 * ÈÕÆÚ£º2008-1-3
+	 * ï¿½ï¿½ï¿½Ú£ï¿½2008-1-3
 	 * </p>
 	 * <p>
-	 * ×÷Õß£º²Ü·¢¸ù
+	 * ï¿½ï¿½ï¿½ß£ï¿½ï¿½Ü·ï¿½ï¿½ï¿½
 	 * </p>
 	 */
 	public static int selectSubOrgCount(OrgInfoForm orgInfoForm) {
@@ -1294,7 +1295,7 @@ public class AFOrgDelegate {
 							+ orgInfoForm.getParentOrgId() + "'");
 			StringBuffer where = new StringBuffer();
 
-			// ¼ÓÈë»ú¹¹Ãû³Æ²éÑ¯Ìõ¼þ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
 			if (orgInfoForm.getOrgName() != null
 					&& !orgInfoForm.getOrgName().equals(""))
 				where.append("and ont.orgName like '%"
@@ -1317,7 +1318,7 @@ public class AFOrgDelegate {
 			e.printStackTrace();
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1325,8 +1326,8 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * »ñµÃÏÂ¼¶»ú¹¹ÁÐ±íÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @param orgNetForm
 	 * @param offset
@@ -1343,13 +1344,13 @@ public class AFOrgDelegate {
 		Session session = null;
 
 		try {
-			// ²éÑ¯Ìõ¼þHQLµÄÉú³É
+			// ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½HQLï¿½ï¿½ï¿½ï¿½ï¿½
 			StringBuffer hql = new StringBuffer(
 					"from AfOrg ont where ont.preOrgId='"
 							+ orgInfoForm.getParentOrgId() + "'");
 			StringBuffer where = new StringBuffer();
 
-			// ¼ÓÈë»ú¹¹Ãû³Æ²éÑ¯Ìõ¼þ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
 			if (orgInfoForm.getOrgName() != null
 					&& !orgInfoForm.getOrgName().equals(""))
 				where.append("and ont.orgName like '%"
@@ -1386,7 +1387,7 @@ public class AFOrgDelegate {
 			e.printStackTrace();
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1394,11 +1395,11 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
 	 * <p>
-	 * ÃèÊö:²éÑ¯×Ó»ú¹¹ÊýÁ¿
+	 * ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½Ñ¯ï¿½Ó»ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * <p>
-	 * ×÷Õß£º²Ü·¢¸ù
+	 * ï¿½ï¿½ï¿½ß£ï¿½ï¿½Ü·ï¿½ï¿½ï¿½
 	 * </p>
 	 */
 	public static int selectSubOrgCount(OrgInfoForm orgInfoForm, Operator operator ,Integer templateType) {
@@ -1419,7 +1420,7 @@ public class AFOrgDelegate {
 			
 			StringBuffer where = new StringBuffer();
 
-			// ¼ÓÈë»ú¹¹Ãû³Æ²éÑ¯Ìõ¼þ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
 			if (orgInfoForm.getOrgName() != null
 					&& !orgInfoForm.getOrgName().equals(""))
 				where.append("and oi.orgName like '%"
@@ -1442,7 +1443,7 @@ public class AFOrgDelegate {
 			e.printStackTrace();
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1450,8 +1451,8 @@ public class AFOrgDelegate {
 	}
 	
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * »ñµÃÏÂ¼¶»ú¹¹ÁÐ±íÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @param orgNetForm
 	 * @param offset
@@ -1468,7 +1469,7 @@ public class AFOrgDelegate {
 		Session session = null;
 
 		try {
-			// ²éÑ¯Ìõ¼þHQLµÄÉú³É
+			// ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½HQLï¿½ï¿½ï¿½ï¿½ï¿½
 			StringBuffer hql = new StringBuffer(
 					"from AfOrg ont where ont.orgId in ("
 					+ operator.getChildRepSearchPopedom().replace("orgRepId", "orgId") 
@@ -1477,7 +1478,7 @@ public class AFOrgDelegate {
 			
 			StringBuffer where = new StringBuffer();
 
-			// ¼ÓÈë»ú¹¹Ãû³Æ²éÑ¯Ìõ¼þ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
 			if (orgInfoForm.getOrgName() != null
 					&& !orgInfoForm.getOrgName().equals(""))
 				where.append("and ont.orgName like '%"
@@ -1515,7 +1516,7 @@ public class AFOrgDelegate {
 			e.printStackTrace();
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1523,11 +1524,11 @@ public class AFOrgDelegate {
 	}
 	
 	/**
-	 * ÒÑÊ¹ÓÃhibernate  ±åÒÔ¸Õ 2011-12-21
-	 * »ñÈ¡·ÖÖ§»ú¹¹ÁÐ±í
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate  ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½È¡ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Ð±ï¿½
 	 * 
 	 * @param preOrgId
-	 *            ÉÏ¼¶»ú¹¹ID
+	 *            ï¿½Ï¼ï¿½ï¿½ï¿½ID
 	 * @return List
 	 */
 	public static List selectSubOrgList(String preOrgId) {
@@ -1566,7 +1567,7 @@ public class AFOrgDelegate {
 		} catch (Exception e) {
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1574,12 +1575,12 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg
-	 * ¸ù¾Ý»ú¹¹id²éÑ¯»ú¹¹ÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg
+	 * ï¿½ï¿½Ý»ï¿½idï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @param orgId
-	 *            »ú¹¹id
+	 *            ï¿½ï¿½id
 	 * @return AfOrg
 	 */
 	public static AfOrg selectOne(String orgId) {
@@ -1604,7 +1605,7 @@ public class AFOrgDelegate {
 			orgNetResult = null;
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1612,14 +1613,14 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg MPurOrg
-	 * ¸ù¾ÝÓÃ»§×éIDÈ¡µÃ¸ÃÓÃ»§×éÒÑ¾­ÉèÖÃ¹ýµÄ»ú¹¹
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg MPurOrg
+	 * ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½IDÈ¡ï¿½Ã¸ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ã¹ï¿½Ä»ï¿½
 	 * 
 	 * @param userGrpId
-	 *            ÓÃ»§×éID
+	 *            ï¿½Ã»ï¿½ï¿½ï¿½ID
 	 * @param powType
-	 *            È¨ÏÞÀàÐÍ
+	 *            È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	public static List getUserGrpOrgPopedom(Long userGrpId, Integer powType) {
@@ -1659,9 +1660,9 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg
-	 * È¡µÃµ±Ç°»ú¹¹µÄÏÂ¼¶»ú¹¹(Ìí¼ÓÖ§³ÖÐéÄâ»ú¹¹)
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg
+	 * È¡ï¿½Ãµï¿½Ç°ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	 * 
 	 * @param orgId
 	 * @return
@@ -1696,7 +1697,7 @@ public class AFOrgDelegate {
 			lowerOrgIds = null;
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1704,9 +1705,9 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg
-	 * ¸ù¾Ý»ú¹¹id£¬²éÑ¯¸Ã»ú¹¹ÏÂËùÓÐ×Ó»ú¹¹
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg
+	 * ï¿½ï¿½Ý»ï¿½idï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó»ï¿½
 	 * 
 	 * @param orgId
 	 * @return
@@ -1761,7 +1762,7 @@ public class AFOrgDelegate {
 			lowerOrgIds = null;
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1769,11 +1770,11 @@ public class AFOrgDelegate {
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * ¸ù¾Ý»ú¹¹IDÈ¡µÃÏàÓ¦»ú¹¹ÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½Ý»ï¿½IDÈ¡ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @param orgIds
-	 * @return List »ú¹¹ÁÐ±í
+	 * @return List ï¿½ï¿½ï¿½Ð±ï¿½
 	 */
 	public static List selectOrgByIds(String orgIds,String reportflg) {
 		List result = null;
@@ -1802,19 +1803,19 @@ public class AFOrgDelegate {
 			result = null;
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
 		return result;
 	}
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg
-	 * ¸ù¾Ý»ú¹¹IDÈ¡µÃÏàÓ¦»ú¹¹ÐÅÏ¢
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg
+	 * ï¿½ï¿½Ý»ï¿½IDÈ¡ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ï¢
 	 * 
 	 * @param orgIds
-	 * @return List »ú¹¹ÁÐ±í
+	 * @return List ï¿½ï¿½ï¿½Ð±ï¿½
 	 */
 	public static List selectOrgByIds(String orgIds) {
 		List result = null;
@@ -1841,7 +1842,7 @@ public class AFOrgDelegate {
 			result = null;
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (conn != null)
 				conn.closeSession();
 		}
@@ -1849,8 +1850,8 @@ public class AFOrgDelegate {
 	}
 	
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * ¸ù¾Ý»ú¹¹id£¬²éÑ¯¸Ã»ú¹¹ÏÂËùÓÐ×Ó»ú¹¹
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½ï¿½Ý»ï¿½idï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó»ï¿½
 	 * @param orgId
 	 * @return
 	 */
@@ -1880,20 +1881,20 @@ public class AFOrgDelegate {
 			lowerOrgIds = null ;
 			log.printStackTrace(e);
 		}finally{
-			//Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°£¬·µ»Ø
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(conn != null) conn.closeSession();
 		}
 		return regionId;
 	}
 
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * µÃµ½Ó¦±¨»ú¹¹ÁÐ±íµÄÊýÁ¿
-	 * @param templateId Ä£°åid 
-	 * @param versionId °æ±¾ºÅ
-	 * @param orgId ¸Ã±¨±í±¨ËÍ»ú¹¹
-	 * @param childOrgIds ÓÃ»§»ú¹¹È¨ÏÞ
-	 * @param type »ã×ÜÀàÐÍ
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½Ãµï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @param templateId Ä£ï¿½ï¿½id 
+	 * @param versionId ï¿½æ±¾ï¿½ï¿½
+	 * @param orgId ï¿½Ã±ï¿½ï¿½?ï¿½Í»ï¿½
+	 * @param childOrgIds ï¿½Ã»ï¿½ï¿½ï¿½È¨ï¿½ï¿½
+	 * @param type ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @return int
 	 */
 	public int getMustOrgCount(String templateId, String versionId, String childOrgIds,
@@ -1911,7 +1912,7 @@ public class AFOrgDelegate {
 			conn=new DBConn();
 			session=conn.openSession();
 			String sql = "";
-			//×ÜÐÐ»ãÐéÄâ»ú¹¹
+			//ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (type.equals(Integer.valueOf(1)) || type.equals(Integer.valueOf(4))){
 				sql = "select count(org.orgId) from AfOrg org where org.orgId in " +
 					"(select distinct M.id.orgId from AfViewReport M where " +
@@ -1925,7 +1926,7 @@ public class AFOrgDelegate {
 						sql += ") and org.isCollect=1 and org.orgType='"+com.fitech.gznx.common.Config.COLLECT_ORG_PARENT_QT_ID+"'";
 					
 			}
-			//ÐéÄâ»ú¹¹»ã·ÖÐÐ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			else if(type.equals(Integer.valueOf(2))){
 				sql = "select count(org.orgId) from AfOrg org where org.orgId in " +
 				"(select distinct M.id.orgId from AfViewReport M,AfCollectRelation afc" +
@@ -1935,13 +1936,13 @@ public class AFOrgDelegate {
 				"' and M.id.versionId='" + versionId + "'" +
 				" and afc.id.collectId='"+ orgId +"')";
 			
-			}else if(type.equals(Integer.valueOf(8))){//Ôþ²î»ã×Ü
+			}else if(type.equals(Integer.valueOf(8))){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				String formula = com.fitech.gznx.service.AFTemplateCollRuleDelegate.getCollFormulaName(orgId, templateId, versionId);
 				if(formula!=null&&formula.length()>0){
 					return com.fitech.gznx.service.AFTemplateCollRuleDelegate.getNeedReportNUM(formula,orgId);
 				}
 			}
-			//·ÖÐÐ»ãÖ§ÐÐ
+			//ï¿½ï¿½ï¿½Ð»ï¿½Ö§ï¿½ï¿½
 			else{
 /*				sql = "select count(org.orgId) from AfOrg org where org.orgId in " +
 				"(select distinct M.id.orgId from AfViewReport M where M.id.orgId in " +
@@ -1971,9 +1972,9 @@ public class AFOrgDelegate {
 	}
 	
 	/**
-	 * ÒÑÊ¹ÓÃhibernate ±åÒÔ¸Õ 2011-12-21
-	 * Ó°Ïì¶ÔÏó£ºAfOrg AfViewReport AfCollectRelation
-	 * µÃµ½Ó¦±¨»ú¹¹ÁÐ±í
+	 * ï¿½ï¿½Ê¹ï¿½ï¿½hibernate ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * Ó°ï¿½ï¿½ï¿½ï¿½ï¿½AfOrg AfViewReport AfCollectRelation
+	 * ï¿½Ãµï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 	 * @param childRepId
 	 * @param versionId
 	 * @param childOrgIds
@@ -1996,7 +1997,7 @@ public class AFOrgDelegate {
 			
 			String sql = "";
 
-			//×ÜÐÐ»ãÐéÄâ»ú¹¹
+			//ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (type.equals(Integer.valueOf(1)) || type.equals(Integer.valueOf(4))){
 				sql = "select org from AfOrg org where org.orgId in " +
 				"(select distinct M.comp_id.orgId from AfViewReport M where " 
@@ -2010,7 +2011,7 @@ public class AFOrgDelegate {
 					sql += ") and org.isCollect=1 and org.orgType='"+com.fitech.gznx.common.Config.COLLECT_ORG_PARENT_QT_ID+"'";
 			
 			}
-			//ÐéÄâ»ú¹¹»ã·ÖÐÐ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			else if(type.equals(Integer.valueOf(2)) || type.equals(Integer.valueOf(5))){
 				sql = "select org from AfOrg org where org.orgId in " +
 				"(select distinct M.id.orgId from AfViewReport M,AfCollectRelation afc" +
@@ -2021,7 +2022,7 @@ public class AFOrgDelegate {
 				" and afc.id.collectId='"+ orgId +"')";
 			
 			}
-			//·ÖÐÐ»ãÖ§ÐÐ
+			//ï¿½ï¿½ï¿½Ð»ï¿½Ö§ï¿½ï¿½
 			else{
 				sql = "select org from AfOrg org where org.orgId in " +
 				"(select distinct M.id.orgId from AfViewReport M where M.id.orgId in " +
@@ -2052,8 +2053,8 @@ public class AFOrgDelegate {
 		return result;
 	}
 	/**
-	 * jdbc¼¼Êõ ÐèÒªÐÞ¸Ä ±åÒÔ¸Õ 2011-12-21
-	 * ÐÞ¸ÄËùÓÐ±íµÄ»ú¹¹ÐÅÏ¢
+	 * jdbcï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Òªï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½Ô¸ï¿½ 2011-12-21
+	 * ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½Ä»ï¿½ï¿½ï¿½Ï¢
 	 * @param orgInfoForm
 	 * @return
 	 */
@@ -2175,7 +2176,7 @@ public class AFOrgDelegate {
 	}
 	
 	/**
-	 * ²éÑ¯×ÜÐÐ»ú¹¹
+	 * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ð»ï¿½
 	 * @return
 	 */
 	public static String findTopOrg(){
@@ -2206,21 +2207,21 @@ public class AFOrgDelegate {
 		return (String)resultList.get(0);
 	}
 	/**
-	 * ²éÑ¯ÏÂ¼¶ÐÐÊÇ·ñ´æÔÚÐéÄâ»ú¹¹
+	 * ï¿½ï¿½Ñ¯ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param orgId
 	 * @return
 	 */
 	public static boolean isExistAttrOrgId(String orgId) {
 		boolean result = false;
 		List list = null;
-		// Á¬½Ó¶ÔÏóºÍ»á»°¶ÔÏó³õÊ¼»¯
+		// ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½Í»á»°ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 		DBConn conn = null;
 		Session session = null;
 
 		try {
-			// conn¶ÔÏóµÄÊµÀý»¯
+			// connï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 			conn = new DBConn();
-			// ´ò¿ªÁ¬½Ó¿ªÊ¼»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½á»°
 			session = conn.openSession();
 			String hsql = "from AfCollectRelation af where af.id.collectId='" + orgId + "' and af.id.orgId in(select org.orgId from AfOrg org where org.isCollect=1)";
 			Query query = session.createQuery(hsql);
@@ -2231,10 +2232,297 @@ public class AFOrgDelegate {
 		} catch (Exception e) {
 			log.printStackTrace(e);
 		} finally {
-			// Èç¹ûÁ¬½Ó´æÔÚ£¬Ôò¶Ï¿ª£¬½áÊø»á»°
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á»°
 			if (conn != null)
 				conn.closeSession();
 		}
 		return result;
 	}
+	
+    public static boolean isExistSameOrgId(String  orgId) {
+        boolean result = false;
+        List list = null;
+        // è¿žæŽ¥å¯¹è±¡å’Œä¼šè¯å¯¹è±¡åˆå§‹åŒ–
+        DBConn conn = null;
+        Session session = null;
+
+        try {
+            // connå¯¹è±¡çš„å®žä¾‹åŒ–
+            conn = new DBConn();
+            // æ‰“å¼€è¿žæŽ¥å¼€å§‹ä¼šè¯
+            session = conn.openSession();
+            Query query = session.createQuery("from AfOrg oi where oi.orgId=?");
+            query.setString(0, orgId);
+            list = query.list();
+            if (list != null && list.size() > 0) {
+                result = true;
+            }
+        } catch (Exception e) {
+            log.printStackTrace(e);
+        } finally {
+            // å¦‚æžœè¿žæŽ¥å­˜åœ¨ï¼Œåˆ™æ–­å¼€ï¼Œç»“æŸä¼šè¯
+            if (conn != null)
+                conn.closeSession();
+        }
+        return result;
+    }
+
+    public static boolean isExistSameOrgName(String  orgName) {
+        boolean result = false;
+        List list = null;
+        // è¿žæŽ¥å¯¹è±¡å’Œä¼šè¯å¯¹è±¡åˆå§‹åŒ–
+        DBConn conn = null;
+        Session session = null;
+
+        try {
+            // connå¯¹è±¡çš„å®žä¾‹åŒ–
+            conn = new DBConn();
+            // æ‰“å¼€è¿žæŽ¥å¼€å§‹ä¼šè¯
+            session = conn.openSession();
+            Query query = session
+                    .createQuery("from AfOrg oi where oi.orgName=?");
+            query.setString(0, orgName);
+            list = query.list();
+            if (list != null && list.size() > 0) {
+                result = true;
+            }
+        } catch (Exception e) {
+            log.printStackTrace(e);
+        } finally {
+            // å¦‚æžœè¿žæŽ¥å­˜åœ¨ï¼Œåˆ™æ–­å¼€ï¼Œç»“æŸä¼šè¯
+            if (conn != null)
+                conn.closeSession();
+        }
+        return result;
+    }
+    
+    public static boolean add(WebSysOrg orgInfoForm) {
+        boolean result = false;
+        List list = null;
+        // è¿žæŽ¥å¯¹è±¡å’Œä¼šè¯å¯¹è±¡åˆå§‹åŒ–
+        DBConn conn = null;
+        Session session = null;
+
+        // æŸ¥è¯¢æ¡ä»¶HQLçš„ç”Ÿæˆ
+        try {
+            // connå¯¹è±¡çš„å®žä¾‹åŒ–
+            conn = new DBConn();
+            // æ‰“å¼€è¿žæŽ¥å¼€å§‹ä¼šè¯
+            session = conn.beginTransaction();
+
+            /** 1 å¢žåŠ æœºæž„ä¿¡æ¯ */
+            // å¾—åˆ°çˆ¶èŠ‚ç‚¹çš„è¯¦ç»†ä¿¡æ¯
+            AfOrg parentOrgInfo = AFOrgDelegate.getOrgInfo(orgInfoForm.getHigherOrgId());
+
+            AfOrg orgInfo = new AfOrg();
+            orgInfo.setOrgId(orgInfoForm.getOrgId());
+            orgInfo.setOrgName(orgInfoForm.getOrgName());
+            orgInfo.setBeginDate(orgInfoForm.getStartDate());
+            //orgInfo.setOrgType(orgInfoForm.getOrgLevel());
+//			if (orgInfoForm.getOrgLevel() != null)
+//				orgInfo.setOrgLevel(Long.valueOf(orgInfoForm.getOrgType()));
+
+            if (orgInfoForm.getOrgLevel() != null){
+                orgInfo.setOrgType(orgInfoForm.getOrgLevel());
+                orgInfo.setOrgLevel(Long.valueOf(orgInfoForm.getOrgLevel()));
+            }
+
+            if (orgInfoForm.getOrgAreaId() != null)
+                orgInfo.setRegionId(orgInfoForm.getOrgAreaId());
+
+//			if (orgInfoForm.getSetOrgId() != null)
+//				orgInfo.setSetOrgId(orgInfoForm.getSetOrgId());
+
+            orgInfo.setOrgOuterId(orgInfoForm.getViewOrgId());
+
+            if (orgInfoForm.getHigherOrgId() != null
+                    && !orgInfoForm.getHigherOrgId().equals("")) {
+                orgInfo.setPreOrgId(orgInfoForm.getHigherOrgId());
+            } else {
+                orgInfo.setPreOrgId(Config.VIRTUAL_TOPBANK);
+            }
+            //åˆ¤æ–­è™šæ‹Ÿæœºæž„æ˜¯å¦éœ€è¦æ±‡æ€»
+            if (orgInfoForm.getOrgType()!=null&&!orgInfoForm.getOrgType().equals(Config.COLLECT_ORG_PARENT_ID) && !orgInfoForm.getOrgType().equals(Config.COLLECT_ORG_PARENT_QT_ID)) {
+                orgInfo.setIsCollect(Long.valueOf(Config.NOT_IS_COLLECT));
+            } else {
+                orgInfo.setIsCollect(Long.valueOf(Config.IS_COLLECT));
+            }
+
+            session.save(orgInfo);
+
+            // /** 2 å¢žåŠ æœºæž„çš„ç”¨æˆ·å…·æœ‰è¯¥æœºæž„çš„æœºæž„æƒé™ */
+            // UserOrgPurview uop = new UserOrgPurview();
+            // UserOrgPurviewId id = new UserOrgPurviewId();
+            //
+            // id.setOrgId(orgInfoForm.getOrgId());
+            // UserInfo ui = StrutsUserInfoDelegate.selectOne(userId);
+            // id.setUserInfo(ui);
+            // uop.setId(id);
+            // session.save(uop);
+            //
+            // /** 3å¦‚æžœå¢žåŠ çš„æ˜¯çœŸå®žæœºæž„ï¼Œéœ€è¦å¢žåŠ æŒ‡æ ‡é›†å¯¹è±¡å…³ç³» */
+            // if (orgInfo.getIsCollect().equals(
+            // new Integer(Config.NOT_IS_COLLECT))) {
+            // // å¢žåŠ æŒ‡æ ‡é›†å¯¹è±¡å…³ç³»
+            // List lstMA = StrutsMeasureAttributeDelegate
+            // .selectMAList(orgInfo);
+            // MeasureOrgMapping mom = null;
+            // MeasureOrgMappingId momId = null;
+            // if (lstMA != null && lstMA.size() > 0) {
+            // for (int i = 0; i < lstMA.size(); i++) {
+            // MeasureAttribute ma = (MeasureAttribute) lstMA.get(i);
+            //
+            // mom = new MeasureOrgMapping();
+            // momId = new MeasureOrgMappingId();
+            //
+            // momId.setMeasureAttribute(ma);
+            // momId.setOrgId(orgInfo.getOrgId());
+            //
+            // mom.setId(momId);
+            // session.save(mom);
+            // }
+            // }
+            //
+            // }
+
+            session.flush();
+            result = true;
+        } catch (Exception e) {
+            log.printStackTrace(e);
+            result = false;
+        } finally {
+            // å¦‚æžœè¿žæŽ¥å­˜åœ¨ï¼Œåˆ™æ–­å¼€ï¼Œç»“æŸä¼šè¯ï¼Œè¿”å›ž
+            if (conn != null)
+                conn.endTransaction(result);
+        }
+        return result;
+        
+    }
+    
+    public static boolean delete(String orgId) {
+        boolean result = true;
+        // è¿žæŽ¥å¯¹è±¡å’Œä¼šè¯å¯¹è±¡åˆå§‹åŒ–
+        DBConn conn = null;
+        Session session = null;
+
+        List lst = null;
+
+        try {
+            // connå¯¹è±¡çš„å®žä¾‹åŒ–
+            conn = new DBConn();
+            // æ‰“å¼€è¿žæŽ¥å¼€å§‹ä¼šè¯
+            session = conn.beginTransaction();
+
+            AfOrg orgInfo = (AfOrg) session.get(AfOrg.class,orgId);
+
+            if (orgInfo == null) {
+                return false;
+            }
+            // å¦‚æžœæ˜¯è™šæ‹Ÿæœºæž„ï¼Œåˆ™åˆ é™¤CollectIdä¸ºå½“å‰æœºæž„IDçš„è®°å½•
+            // å¦‚æžœæ˜¯çœŸå®žæœºæž„ï¼Œåˆ™åˆ é™¤OrgIdä¸ºå½“å‰æœºæž„IDçš„è®°å½•
+            if (orgInfo.getIsCollect().equals(Long.valueOf(Config.IS_COLLECT))) {
+                // è™šæ‹Ÿæœºæž„
+                String hql = "from AfCollectRelation cr where cr.id.collectId=?";
+                Query query = session.createQuery(hql);
+                query.setString(0, orgInfo.getOrgId());
+                List crLst = query.list();
+
+                if (crLst != null && crLst.size() > 0) {
+                    for (int i = 0; i < crLst.size(); i++) {
+                        AfCollectRelation cr = (AfCollectRelation) crLst.get(i);
+                        session.delete(cr);
+                    }
+                }
+            } else {
+                // çœŸå®žæœºæž„
+                String hql = "from AfCollectRelation cr where cr.id.orgId=?";
+                Query query = session.createQuery(hql);
+                query.setString(0, orgInfo.getOrgId());
+                List crLst = query.list();
+
+                if (crLst != null && crLst.size() > 0) {
+                    for (int i = 0; i < crLst.size(); i++) {
+                        AfCollectRelation cr = (AfCollectRelation) crLst.get(i);
+                        session.delete(cr);
+                    }
+                }
+
+                // // è‡ªåŠ¨åˆ é™¤æœºæž„å’ŒæŒ‡æ ‡é›†å¯¹åº”å…³ç³»
+                // hql = "from MeasureOrgMapping mom where mom.id.orgId=?";
+                // lst = session.createQuery(hql).setString(0,
+                // orgInfo.getOrgId())
+                // .list();
+                // for (int i = 0; i < lst.size(); i++) {
+                // session.delete(lst.get(i));
+                // }
+            }
+
+            // // è‡ªåŠ¨åˆ é™¤è¯¥æœºæž„çš„æ‰€æœ‰æœºæž„æƒé™è®°å½•
+            // String hql = "from UserOrgPurview uop where uop.id.orgId=?";
+            // lst = session.createQuery(hql).setString(0, orgInfo.getOrgId())
+            // .list();
+            // for (int i = 0; i < lst.size(); i++) {
+            // session.delete(lst.get(i));
+            // }
+
+
+            //åˆ é™¤æœºæž„æ—¶ï¼Œåˆ é™¤å¯¹åº”çš„MPurOrgä¸­çš„è®°å½•
+            String mpohql = "from MPurOrg mpo where mpo.comp_id.org.orgId=?";
+            Query mpoquery = session.createQuery(mpohql);
+            mpoquery.setString(0, orgInfo.getOrgId());
+            List mpoLst = mpoquery.list();
+
+            if (mpoLst != null && mpoLst.size() > 0) {
+                for (int i = 0; i < mpoLst.size(); i++) {
+                    MPurOrg mpo = (MPurOrg) mpoLst.get(i);
+                    session.delete(mpo);
+                }
+            }
+
+            //åˆ é™¤æœºæž„æ—¶ï¼Œåˆ é™¤å¯¹åº”çš„AfTemplateOrgRelationä¸­çš„è®°å½•
+            String sql1 = "from AfTemplateOrgRelation ator where ator.id.orgId=?";
+
+            Query atorquery = session.createQuery(sql1);
+            atorquery.setString(0, orgInfo.getOrgId());
+            List atorLst = atorquery.list();
+
+            if (atorLst != null && atorLst.size() > 0) {
+                for (int i = 0; i < atorLst.size(); i++) {
+                    AfTemplateOrgRelation ator = (AfTemplateOrgRelation) atorLst.get(i);
+                    session.delete(ator);
+                }
+            }
+            String sql2 = "from AfTemplateCollRep ator where ator.id.orgId=?";
+            Query atorquery2 = session.createQuery(sql2);
+            atorquery2.setString(0, orgInfo.getOrgId());
+            atorLst = atorquery2.list();
+            if (atorLst != null && atorLst.size() > 0) {
+                for (int i = 0; i < atorLst.size(); i++) {
+                    AfTemplateCollRep ator = (AfTemplateCollRep) atorLst.get(i);
+                    session.delete(ator);
+                }
+            }
+            String sql3 = "from AfTemplateOuterRep ator where ator.id.orgId=?";
+            Query atorquery3 = session.createQuery(sql3);
+            atorquery3.setString(0, orgInfo.getOrgId());
+            atorLst = atorquery3.list();
+            if (atorLst != null && atorLst.size() > 0) {
+                for (int i = 0; i < atorLst.size(); i++) {
+                    AfTemplateOuterRep ator = (AfTemplateOuterRep) atorLst.get(i);
+                    session.delete(ator);
+                }
+            }
+            session.delete(orgInfo);
+//			session.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.printStackTrace(e);
+            result = false;
+        } finally {
+            // å¦‚æžœè¿žæŽ¥å­˜åœ¨ï¼Œåˆ™æ–­å¼€ï¼Œç»“æŸä¼šè¯ï¼Œè¿”å›ž
+            if (conn != null)
+                conn.endTransaction(result);
+        }
+        return result;
+    }
 }
