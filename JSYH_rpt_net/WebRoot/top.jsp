@@ -68,7 +68,7 @@ function MM_swapImage() { //v3.0
 			</script>
 	</head>
 	<body >
-		<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+	<%-- 	<table cellSpacing="0" cellPadding="0" width="100%" border="0">
 			<tr>
 				<td width="800" height="70" background="image/tiao.gif"><img src="image/top_font.jpg"/></td>
 				<td vAlign="bottom" align="right" width="224" background="image/tiao.gif">
@@ -103,6 +103,6 @@ function MM_swapImage() { //v3.0
 					</table>
 				</td>
 			</tr>
-		</table>
+		</table> --%>
 	</body>
 </html:html>

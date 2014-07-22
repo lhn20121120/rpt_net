@@ -4,7 +4,8 @@
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
 <%@ page import="java.util.List,com.cbrc.smis.security.Operator" %>
-<%@ page import="com.cbrc.smis.common.Config" %> 
+<%@ page import="com.cbrc.smis.common.Config" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="fitechUtil" scope="page" class="com.cbrc.smis.util.FitechUtil"/>
 <%
 	String today=fitechUtil.getToday(fitechUtil.CHINESEDATE) + "&nbsp;" + fitechUtil.getDay();
@@ -34,206 +35,199 @@
 %>
 
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Cache-Control" content="no-cache">
-		<meta http-equiv="Expires" content="0">
-		<link href="style/globalStyle.css" rel="stylesheet" type="text/css">
-		<script src="script/globalScript.js" type="text/javascript" language="javascript"></script>
-		<script language="javascript">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="style/globalStyle.css" rel="stylesheet" type="text/css">
+    <script src="script/globalScript.js" type="text/javascript" language="javascript"></script>
+    <script language="javascript">
 
-			var strColumns_Current = "215,*";
-			
-			function movenext()
-			  {
-			  top.deeptree.movenext();
-			  }
-			
-			function moveprevious()
-			  {
-			  top.deeptree.moveprevious();
-			  }
-			
-			function showtop()
-			  {
-				window.top.superFrame.rows="74,*";
-			  }
-			
-			function hidetop()
-			  {
-				window.top.superFrame.rows="0,*";
-			  }
-			  
-			function showall()
-			  {
-			  
-				window.top.superFrame.rows="74,*";
-				window.top.firstFrame.cols="170,*";
-			  }
-			
-			function hideall()
-			  {
-				window.top.superFrame.rows="0,*";
-				window.top.firstFrame.cols="0,*";
-			  }
-			
-			function showleft()
-			  {
-				window.top.firstFrame.cols="170,*";
-			  }
-			
-			function hideleft()
-			  {
-				window.top.firstFrame.cols="0,*";
-			  }
-			    
-			function synctoc()
-			{
-				parent.parent.mainFrame.location.reload();
-				parent.parent.mainFrame.contents.location.reload();
-				parent.parent.naviFrame.location.reload();
-			}
-			
-			function displaybutton()
-			  {
-			  document.all.showtoc.style.display = "block";
-			  }
-			
-			function mouseover(item)
-			  {
-			  switch (item)
-			    {
-			    case "moveall" :
-			      window.status = "隐藏框架";
-			      document.all.imgMoveAll.src = "image/moveall2.gif";
-			      break;
-			
-			    case "moveself" :
-			      window.status = "显示框架";
-			      document.all.imgMoveSelf.src = "image/moveself2.gif";
-			      break;
-			   
-			    case "moveprevious" :
-			      window.status = "隐藏上框架";
-			      document.all.imgMovePrevious.src = "image/moveprevious2.gif";
-			      break;
-			
-			    case "movenext" :
-			      window.status = "显示下框架";
-			      document.all.imgMoveNext.src = "image/movenext2.gif";
-			      break;
-			      
-			    case "moveleft" :
-			      window.status = "隐藏左框架";
-			      document.all.imgMoveLeft.src = "image/moveleft2.gif";
-			      break;
-			
-			    case "moveright" :
-			      window.status = "显示左框架";
-			      document.all.imgMoveRight.src = "image/moveright2.gif";
-			      break;
-			
-			    case "synctoc" :
-			      window.status = "同步当前页";
-			      document.all.imgSyncToc.src = "image/synctoc2.gif"
-			      break;
-			    }
-			
-			  }
-			
-			function mouseout(item)
-			  {
-			  switch (item)
-			    {
-			    case "moveall" :
-			      window.status = "";
-			      document.all.imgMoveAll.src = "image/moveall1.gif";
-			      break;
-			      
-			     case "moveself" :
-			      window.status = "";
-			      document.all.imgMoveSelf.src = "image/moveself1.gif";
-			      break;
-			      
-			    case "moveprevious" :
-			      window.status = "";
-			      document.all.imgMovePrevious.src = "image/moveprevious1.gif";
-			      break;
-			
-			    case "movenext" :
-			      window.status = "";
-			      document.all.imgMoveNext.src = "image/movenext1.gif";
-			      break;
-			      
-			    case "moveleft" :
-			      window.status = "";
-			      document.all.imgMoveLeft.src = "image/moveleft1.gif";
-			      break;
-			
-			    case "moveright" :
-			      window.status = "";
-			      document.all.imgMoveRight.src = "image/moveright1.gif";
-			      break;
-			
-			    case "synctoc" :
-			      window.status = "";
-			      document.all.imgSyncToc.src = "image/synctoc1.gif"
-			      break;
-			    }
-			  }
-			
-			</script>
-	</head>
-	<body >
-		<table cellspacing="0" cellpadding="0" border="0" background="image/main_top.jpg">
-			<tr>
-				<%
-					String orgName = operator.getOrgName();
-					String deptName = operator.getDeptName();
-					String operatorName = operator.getOperatorName();
-					if(orgName==null)
-						orgName = "";
-					if(deptName==null)
-						deptName ="";
-					if(operatorName==null)
-						operatorName = "";
-				%>
-				<td align="left" height="25" width="100%">
-					&nbsp;&nbsp;&nbsp;欢迎您 [ <%=orgName%> ]&nbsp;<%=operatorName%>&nbsp;|&nbsp;今天是<%=today%>&nbsp;&nbsp;&nbsp;&nbsp;
-				</td>
-				<td width="4">
-					<img id="imgMoveAll" style="cursor:hand" onmouseover="mouseover('moveall');"
-						onmouseout="mouseout('moveall')" onclick="hideall();" title="隐藏框架" src="image/moveall1.gif"
-						border="0" alt="隐藏框架" />
-				</td>
-				<td width="4">
-					<img id="imgMoveSelf" style="cursor:hand" onmouseover="mouseover('moveself');" onmouseout="mouseout('moveself')"
-						onclick="showall();" title="显示框架" src="image/moveself1.gif" border="0" alt="显示框架" />
-				</td>
-				<td width="4">
-					<img id="imgMoveLeft" style="cursor:hand" onmouseover="mouseover('moveleft');"
-						onmouseout="mouseout('moveleft')" onclick="hideleft();" title="隐藏左框架" src="image/moveleft1.gif"
-						border="0" alt="隐藏左框架" />
-				</td>
-				<td width="4">
-					<img id="imgMoveRight" style="cursor:hand" onmouseover="mouseover('moveright');" onmouseout="mouseout('moveright')"
-						onclick="showleft();" title="显示左框架" src="image/moveright1.gif" border="0" alt="显示左框架" />
-				</td>
-				<td width="4">
-					<img id="imgMovePrevious" style="cursor:hand" onmouseover="mouseover('moveprevious');"
-						onmouseout="mouseout('moveprevious')" onclick="hidetop();" title="隐藏上框架" src="image/moveprevious1.gif"
-						border="0" alt="隐藏上框架" />
-				</td>
-				<td width="4">
-					<img id="imgMoveNext" style="cursor:hand" onmouseover="mouseover('movenext');" onmouseout="mouseout('movenext')"
-						onclick="showtop();" title="显示上框架" src="image/movenext1.gif" border="0" alt="显示上框架" />
-				</td>
-				<td width="4">
-				&nbsp;&nbsp;&nbsp;
-				</td>
+        var strColumns_Current = "215,*";
 
-			</tr>
-		</table>
-	</body>
+        function movenext() {
+            top.deeptree.movenext();
+        }
+
+        function moveprevious() {
+            top.deeptree.moveprevious();
+        }
+
+        function showtop() {
+            <c:if test="${applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.superFrame.rows = "90,*";
+            </c:if>
+            <c:if test="${!applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.superFrame.rows = "70,26,*,20";
+            </c:if>
+        }
+
+        function hidetop() {
+            <c:if test="${applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.superFrame.rows = "0,*";
+            </c:if>
+            <c:if test="${!applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.superFrame.rows = "0,26,*,20";
+            </c:if>
+        }
+
+        function showall() {
+
+            window.top.superFrame.rows = "74,*";
+            window.top.firstFrame.cols = "170,*";
+        }
+
+        function hideall() {
+            window.top.superFrame.rows = "0,*";
+            window.top.firstFrame.cols = "0,*";
+        }
+
+        function showleft() {
+            <c:if test="${applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.frames[1].firstFrame.cols = "170,*";
+            </c:if>
+            <c:if test="${!applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.firstFrame.cols = "170,*";
+            </c:if>
+        }
+
+        function hideleft() {
+            <c:if test="${applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.frames[1].firstFrame.cols = "0,*";
+            </c:if>
+            <c:if test="${!applicationScope.IS_INTEGRATE_PORTAL}" >
+            window.top.firstFrame.cols = "0,*";
+            </c:if>
+        }
+
+        function synctoc() {
+            parent.parent.mainFrame.location.reload();
+            parent.parent.mainFrame.contents.location.reload();
+            parent.parent.naviFrame.location.reload();
+        }
+
+        function displaybutton() {
+            document.all.showtoc.style.display = "block";
+        }
+
+        function mouseover(item) {
+            switch (item) {
+                case "moveall" :
+                    window.status = "隐藏框架";
+                    document.all.imgMoveAll.src = "image/moveall2.gif";
+                    break;
+
+                case "moveself" :
+                    window.status = "显示框架";
+                    document.all.imgMoveSelf.src = "image/moveself2.gif";
+                    break;
+
+                case "moveprevious" :
+                    window.status = "隐藏上框架";
+                    document.all.imgMovePrevious.src = "image/moveprevious2.gif";
+                    break;
+
+                case "movenext" :
+                    window.status = "显示下框架";
+                    document.all.imgMoveNext.src = "image/movenext2.gif";
+                    break;
+
+                case "moveleft" :
+                    window.status = "隐藏左框架";
+                    document.all.imgMoveLeft.src = "image/moveleft2.gif";
+                    break;
+
+                case "moveright" :
+                    window.status = "显示左框架";
+                    document.all.imgMoveRight.src = "image/moveright2.gif";
+                    break;
+
+                case "synctoc" :
+                    window.status = "同步当前页";
+                    document.all.imgSyncToc.src = "image/synctoc2.gif"
+                    break;
+            }
+
+        }
+
+        function mouseout(item) {
+            switch (item) {
+                case "moveall" :
+                    window.status = "";
+                    document.all.imgMoveAll.src = "image/moveall1.gif";
+                    break;
+
+                case "moveself" :
+                    window.status = "";
+                    document.all.imgMoveSelf.src = "image/moveself1.gif";
+                    break;
+
+                case "moveprevious" :
+                    window.status = "";
+                    document.all.imgMovePrevious.src = "image/moveprevious1.gif";
+                    break;
+
+                case "movenext" :
+                    window.status = "";
+                    document.all.imgMoveNext.src = "image/movenext1.gif";
+                    break;
+
+                case "moveleft" :
+                    window.status = "";
+                    document.all.imgMoveLeft.src = "image/moveleft1.gif";
+                    break;
+
+                case "moveright" :
+                    window.status = "";
+                    document.all.imgMoveRight.src = "image/moveright1.gif";
+                    break;
+
+                case "synctoc" :
+                    window.status = "";
+                    document.all.imgSyncToc.src = "image/synctoc1.gif"
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" background="${pageContext.request.contextPath}/image/main_top.jpg" width="100%">
+    <tr>
+        <%
+            String orgName = operator.getOrgName();
+            String deptName = operator.getDeptName();
+            String operatorName = operator.getOperatorName();
+            if (orgName == null)
+                orgName = "";
+            if (deptName == null)
+                deptName = "";
+            if (operatorName == null)
+                operatorName = "";
+        %>
+        <td align="left" width="80%">
+            <span style="margin-left: 170px;"></span>
+            &nbsp;&nbsp;&nbsp;欢迎您 [ <%=orgName%> ]&nbsp;<%=operatorName%>&nbsp;|&nbsp;今天是<%=today%>&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </td>
+        <td align="right" width="20%">
+            <img id="imgMoveLeft" style="cursor:hand" onmouseover="mouseover('moveleft');"
+                 onmouseout="mouseout('moveleft')" onclick="hideleft();" title="隐藏左框架" src="image/moveleft1.gif"
+                 border="0" alt="隐藏左框架"/>
+            <img id="imgMoveRight" style="cursor:hand" onmouseover="mouseover('moveright');"
+                 onmouseout="mouseout('moveright')"
+                 onclick="showleft();" title="显示左框架" src="image/moveright1.gif" border="0" alt="显示左框架"/>
+            <img id="imgMovePrevious" style="cursor:hand" onmouseover="mouseover('moveprevious');"
+                 onmouseout="mouseout('moveprevious')" onclick="hidetop();" title="隐藏上框架" src="image/moveprevious1.gif"
+                 border="0" alt="隐藏上框架"/>
+            <img id="imgMoveNext" style="cursor:hand" onmouseover="mouseover('movenext');"
+                 onmouseout="mouseout('movenext')"
+                 onclick="showtop();" title="显示上框架" src="image/movenext1.gif" border="0" alt="显示上框架"/>
+
+            <div style="width: 10px;">&nbsp;</div>
+        </td>
+    </tr>
+</table>
+</body>
 </html>

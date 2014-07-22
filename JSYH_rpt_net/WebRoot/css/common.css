@@ -25,7 +25,17 @@ body {
 	margin:0;
 
 }
-/*------------------- divÕÚ¸Ç²ãµÄÑùÊ½---------------*/
+
+
+/**  add by hu ****/
+.systemTree {
+    width: 600px;
+    height: 500px;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+/*------------------- divé®ç›–å±‚çš„æ ·å¼---------------*/
 .black_overlay {  
 position: absolute;  
 top: 0%;
@@ -38,7 +48,7 @@ z-index:1;
 opacity:.80;  
 filter: alpha(opacity=80);  
 }
-/*------------------- ÊäÈë¿òµÄÑùÊ½---------------*/
+/*------------------- è¾“å…¥æ¡†çš„æ ·å¼---------------*/
 .input-text {
 
 	
@@ -46,7 +56,7 @@ filter: alpha(opacity=80);
 	padding-left:4;
 
 }
-/*------------------- ÊäÈë¿òµÄÑùÊ½---------------*/
+/*------------------- è¾“å…¥æ¡†çš„æ ·å¼---------------------*/
 .locked-text {
 
 	padding-top:4px;
@@ -54,15 +64,13 @@ filter: alpha(opacity=80);
 	background-color: #DCDCDC;
 
 }
-/* ----------- °´Å¥µÄÑùÊ½--------------*/
+/* ----------- æŒ‰é’®çš„æ ·å¼--------------*/
 .input-button {
-	background: #ffffff;
- 	color:000000;
-	height: 22px;
-	border: 1px solid #D0D0D0;
-	filter:progid:DXImageTransform.Microsoft.Gradient(gradienttype=0, startcolorstr=#D7DADD, endcolorstr=#F1F4F9);
-
-	}
+	border: #d9b525 1px solid;
+	color:#7b6613;
+	background:#ffdc51;
+	width:auto;
+}
 	.input-button1 {
 	background: #efefef;
 	color:3A4F6C;
@@ -71,7 +79,7 @@ filter: alpha(opacity=80);
 
 }
 
-/* ----------------- µ±Ç°Î»ÖÃµÄÑùÊ½----------------*/
+/* ----------------- å½“å‰ä½ç½®çš„æ ·å¼----------------*/
 #location{
 		align:center ;			
 		height:25;
@@ -81,8 +89,16 @@ filter: alpha(opacity=80);
 		border-bottom:3 solid #AAC6F7;	
 		border-top:0 solid #E0E0E0; 
 		}
-
-/*-----²Ù×÷°´Å¥ÇøÓòÑùÊ½--------*/
+.location{
+    align:center ;
+    height:25;
+    padding-left:12;
+    padding-top:4;
+    padding-bottom:0;
+    border-bottom:3 solid #AAC6F7;
+    border-top:0 solid #E0E0E0;
+}
+/*-----æ“ä½œæŒ‰é’®åŒºåŸŸæ ·å¼--------*/
 #operation{
 		 width:100% ;
 		 height:32;
@@ -92,7 +108,7 @@ filter: alpha(opacity=80);
 		 border-top:0 dotted #FEF8F2; 
 		 border-bottom:0 solid #C1D2E9;
 		 }
-/*-----µ¯³ö´°¿ÚÑùÊ½--------*/
+/*-----å¼¹å‡ºçª—å£æ ·å¼--------*/
 #popbody{
 		 width:100% ;
 		 background:F8F8F8;
@@ -103,7 +119,7 @@ filter: alpha(opacity=80);
 		 }
 
 
-/*-----scrolldiv¹ö¶¯divÑùÊ½--------*/
+/*-----scrolldivæ»šåŠ¨divæ ·å¼--------*/
 #scrolldiv{ 
 		background:#ffffff;
 		border-top:1 solid #DEDEDE;
@@ -131,7 +147,7 @@ filter: alpha(opacity=80);
 	padding-left:2;
 }
 
-/*------------±íµ¥¿é--------*/
+/*------------è¡¨å•å—--------*/
 
 #fieldset {
 	padding-top: 0px;
@@ -139,9 +155,9 @@ filter: alpha(opacity=80);
         border:1 solid #C6C7C8;
 }
 
-/*-----------·ÖÒ³ÑùÊ½---------*/
+/*-----------åˆ†é¡µæ ·å¼---------*/
 #page{width:100% ;padding-top:6;padding-bottom:6; }
-/*--------------Êı¾İÁĞ±íÑùÊ½---------*/
+/*--------------æ•°æ®åˆ—è¡¨æ ·å¼---------*/
 #list{align:center ;} 
  
 #list table{
@@ -167,13 +183,13 @@ filter: alpha(opacity=80);
 	border-bottom:1 solid #eeeeee;
 	border-right:1 solid #eeeeee;
 }
-/*--------------Êı¾İÁĞ±íÑùÊ½2,ÊÊÓÃÓÚ¶şÎ»±í¸ñ£¬¸´ÔÓ±í¸ñ---------*/
+/*--------------æ•°æ®åˆ—è¡¨æ ·å¼2,é€‚ç”¨äºäºŒä½è¡¨æ ¼ï¼Œå¤æ‚è¡¨æ ¼---------*/
 .tbcolor{background:#cccccc}
-.tbcolor th{filter:progid:DXImageTransform.Microsoft.Gradient(gradienttype=0, startcolorstr=#D9E4F4, endcolorstr=#95B4ED);}
+.tbcolor th{background: #5f9fca;}
 .tbcolor1 th{filter:progid:DXImageTransform.Microsoft.Gradient(gradienttype=0, startcolorstr=#D1D3D6, endcolorstr=#FFFFFF);}
 .tbcolor2 th{filter:progid:DXImageTransform.Microsoft.Gradient(gradienttype=0, startcolorstr=#D9E4F4, endcolorstr=#95B4ED);}
-.middle{ background:#E0E4EF}
-/*==================×ó±ßÑùÊ½±í================*/
+.middle{ background:#c3eaa6}
+/*==================å·¦è¾¹æ ·å¼è¡¨================*/
 .left{background:FEEECD url(../images/left.gif) no-repeat fixed right bottom;border-top:0 solid #FEEECD;
 }
 
@@ -264,8 +280,8 @@ filter: alpha(opacity=80);
 	background-position: left center;
 		
 }
-/*=============¶¥²¿ÑùÊ½¿ØÖÆ=============*/
-/*-----½¥±ä±³¾°--------*/
+/*=============é¡¶éƒ¨æ ·å¼æ§åˆ¶=============*/
+/*-----æ¸å˜èƒŒæ™¯--------*/
 
 #top {filter:progid:DXImageTransform.Microsoft.Gradient(gradienttype=1, startcolorstr=#ffffff, endcolorstr=#FF9610);
 	width:100%
@@ -286,7 +302,7 @@ filter: alpha(opacity=80);
 #top-alpha{background-color: ffffff; Filter: Alpha(Opacity=0, FinishOpacity=80, Style=1, StartX=40, StartY=0, FinishX=80, FinishY=0);}
 #top-alpha a{ color:#000000}
 
-/*==================·ÖÒ³ÏÔÊ¾²¿·ÖµÄÑùÊ½===========================*/
+/*==================åˆ†é¡µæ˜¾ç¤ºéƒ¨åˆ†çš„æ ·å¼===========================*/
 .apartpage_span {color:blue}
 
 a.apartpage:visited {
@@ -301,19 +317,19 @@ a.apartpage:hover{
 
 
 
-/*==================ÏµÍ³×ÖÌåÈ«¾Ö¿ØÖÆ===========================*/
+/*==================ç³»ç»Ÿå­—ä½“å…¨å±€æ§åˆ¶===========================*/
 td,input,th,select,textarea {
 		font-size: 12px;	
 }
 
-/*---¿ØÖÆÏµÍ³¸öÇøÓòÑÕÉ«¿é---*/
+/*---æ§åˆ¶ç³»ç»Ÿä¸ªåŒºåŸŸé¢œè‰²å—---*/
 .contentBlock,fieldset {border: 1px solid #E6E6E6;background:f8f8f8;}
 #operation,#location,{background:F8F8F8; }
 .input-text,textarea{border: 1px solid #81B3C8;}
 
-/**±íÍ·ÁĞµÄ±³¾°ÉèÖÃ**/
+/**è¡¨å¤´åˆ—çš„èƒŒæ™¯è®¾ç½®**/
 .tableHeader {
-  background-color:#D0D6EE;
+  background-color:#c3eaa6;
   text-align:center
 }
 .menuTD {
@@ -324,12 +340,12 @@ td,input,th,select,textarea {
 }
 
 td{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #003366;
 }
 .form{
-  font-family:ËÎÌå,Arial;
+  font-family:å®‹ä½“,Arial;
   font-size: 9pt;
   color: #003366;
   border: 1px solid #6592A7;
@@ -343,7 +359,7 @@ td{
 	text-align:center;
 	border-collapse: collapse;
 	border: dotted #003366 1px;
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 }
 .mainTable3 {
@@ -351,7 +367,7 @@ td{
 	text-align:center;
 	border-collapse: collapse;
 	border: dotted #003366 1px;
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	background-color: #FFFFFF;
 }
@@ -360,7 +376,7 @@ td{
 	text-align:center;
 	border-collapse: collapse;
 	border: dotted #003366 1px;
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	background-color: #AED4F0;
 }
@@ -368,12 +384,12 @@ td{
 	text-align:center;
 	border-collapse: collapse;
 	border: dotted #003366 1px;
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 }
 
 .naviTableOn {
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	width:200px;
 	height:22px;
@@ -385,7 +401,7 @@ td{
 	color: #FFFFFF;
 }
 .naviTableOff {
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	width:200px;
 	height:22px;
@@ -396,7 +412,7 @@ td{
 	color: 003366;
 }
 .tabCommon{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #FFFFFF;
 	background : url(../image/tab.bg.dln.gif);
@@ -404,7 +420,7 @@ td{
 	text-align:center;
 }
 .formButton{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 18px;
@@ -417,7 +433,7 @@ td{
 	letter-spacing: 1px;
 }
 .formButtonOn{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 18px;
@@ -430,7 +446,7 @@ td{
 	letter-spacing: 1px;
 }
 .tabButton{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #FFFFFF;
 	background : url(../image/button.jpg);
@@ -439,7 +455,7 @@ td{
 	width:1000px;
 }
 .buttonOff{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 20px;
@@ -453,7 +469,7 @@ td{
 	position: relative ;
 	}
 .buttonOn{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 20px;
@@ -474,7 +490,7 @@ td{
 }
 
 .tabOn{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #FFFFFF;
 	background : url(../image/tab.bg.on.gif);
@@ -482,7 +498,7 @@ td{
 	text-align:center;
 }
 .tabOff{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #FFFFFF;
 	background : url(../image/tab.bg.off.gif);
@@ -499,12 +515,12 @@ body {
 	scrollbar-darkshadow-color: #98AAB1;
 	text-align : center;
 	margin : 0;
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	background-color:#F6F8F7;
 	font-size: 9pt;
 }
 .common{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #003366;
 	height:48px;
@@ -516,19 +532,19 @@ body {
 	height:1px;
 }
 .href{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #330066;
 	text-decoration:none;
 }
 .href:hover{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: red;
 	text-decoration:underline;
 }
 .buttonSearch{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 19px;
@@ -541,7 +557,7 @@ body {
 	border: 1 solid #336699;
 	}
 .buttonView{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 19px;
@@ -554,7 +570,7 @@ body {
 	border: 1 solid #336699;
 	}
 .buttonDel{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 19px;
@@ -567,7 +583,7 @@ body {
 	border: 1 solid #336699;
 	}
 .buttonAdd{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 19px;
@@ -580,7 +596,7 @@ body {
 	border: 1 solid #336699;
 	}
 .buttonModify{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 19px;
@@ -593,7 +609,7 @@ body {
 	border: 1 solid #336699;
 	}
 .mainoption{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #000000;
 	height: 19px;
@@ -606,7 +622,7 @@ body {
 	border: 1 solid #336699;
 	}
 .form2{
-  font-family: ËÎÌå; 
+  font-family: å®‹ä½“; 
 	font-size: 9pt; 
 	padding-top: 2px;
 	color: #003366;
@@ -617,7 +633,7 @@ body {
 	border-bottom: 1 solid #104A7B;
 }
 .theader{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #FFFFFF;
 	background : url(../image/bgcolor.gif);
@@ -627,19 +643,19 @@ body {
 }
 
 .td2{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #003366;
 	border-bottom: 2px solid #336699;
 }
 .td3{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #003366;
 	border-bottom: 1px solid #F0F0F0;
 }
 .td4{
-	font-family:ËÎÌå,Arial;
+	font-family:å®‹ä½“,Arial;
 	font-size: 9pt;
 	color: #003366;
 	border-bottom: 1px solid #CCCCCC;

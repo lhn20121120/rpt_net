@@ -4,6 +4,7 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%     
   response.setHeader("Pragma","No-cache");     
   response.setHeader("Cache-Control","no-cache");     
@@ -19,7 +20,9 @@
 		<meta http-equiv="Expires" content="0">
 		<link href="style/globalStyle.css" rel="stylesheet" type="text/css">
 	</head>
-	<frameset id="superFrame" name="superFrame" rows="74,*" cols="*" border="0" frameSpacing="0" frameBorder="0">
+
+    <c:if test="${!applicationScope.IS_INTEGRATE_PORTAL}" >
+       <frameset id="superFrame" name="superFrame" rows="74,*" cols="*" border="0" frameSpacing="0" frameBorder="0">
 		<frame name="topFrame" scrolling="no" noresize target="contents" src="top.jsp">
 		<frameset name="firstFrame" rows="*" cols="170,*" framespacing="0" frameborder="no" border="0">
 			<frame name="naviFrame" target="mainFrame" src="navimenu.jsp" scrolling="no" noresize>
@@ -38,4 +41,23 @@
 			</body>
 		</noframes>
 	</frameset>
+    </c:if>
+    <%--与portal整合后显示portal的头--%>
+    <c:if test="${applicationScope.IS_INTEGRATE_PORTAL}" >
+        <frameset id="superFrame" name="superFrame" rows="0,26,*,20" cols="*" border="0" frameSpacing="0" frameBorder="0">
+            <frame scrolling="no" noresize src="">
+            <frame name="topnavi" scrolling="no" noresize target="contents" src="main_navi.jsp">
+           <frameset name="firstFrame" rows="*" cols="170,*" framespacing="0" frameborder="no" border="0">
+				<frame name="naviFrame" target="mainFrame" src="navimenu.jsp" scrolling="auto" noresize>
+				<frame name="mainFrame" target="mainFrame" src="main.jsp">
+			</frameset>
+            <frame src="copyright.jsp" name="copyright" scrolling="no" noresize>
+
+            <noframes>
+                <body>
+                <p>此网页使用了框架，但您的浏览器不支持框架。</p>
+                </body>
+            </noframes>
+        </frameset>
+    </c:if>
 </html:html>
