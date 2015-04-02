@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="schedulerFactoryBean"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		scope="singleton">
+		<property name="triggers">
+			<list>
+			    <!-- 
+			    <ref local="cronTriggerMonth" />
+				<ref local="cronTriggerSeason" />
+				<ref local="cronTriggerHalfYear" />
+				<ref local="cronTriggerYear" />
+				<ref local="cronTriggerYearBeginCarry" />
+				
+				<ref local="cronTriggerDay" /> 
+				<ref local="cronTriggerMonth" />
+				<ref local="cronTriggerSeason" />
+				<ref local="cronTriggerWarning" /> -->
+			</list>
+		</property>
+		<property name="applicationContextSchedulerContextKey">  
+            <value>applicationContext</value>  
+        </property>
+	</bean>
+	<!-- 日频度 -->
+	<bean id="workTaskFreqDayService" class="com.fitech.model.worktask.service.impl.WorkTaskFreqDayServiceImpl"
+		scope="singleton">
+		<property name="freqId" value="day"></property>
+		<property name="workTaskMoniService">
+			<ref bean="workTaskMoniService"/>
+		</property>
+	</bean>
+	<bean id="schedulerJobDetailDay"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		scope="singleton">
+		<property name="targetObject" ref="workTaskFreqDayService" />
+		<property name="targetMethod" value="insertTaskMoni" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<!-- 新增任务触发器 -->
+	<bean id="cronTriggerDay" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		scope="singleton">
+		<property name="jobDetail" ref="schedulerJobDetailDay" />
+		<property name="cronExpression">
+			 <value>0 0/2 * * * ?</value> 
+		</property>
+	</bean>
+	
+	<!-- 月频度 -->
+	<bean id="workTaskFreqMonthService" class="com.fitech.model.worktask.service.impl.WorkTaskFreqMonthServiceImpl"
+		scope="singleton">
+		<property name="freqId" value="month"></property>
+		<property name="workTaskMoniService">
+			<ref bean="workTaskMoniService"/>
+		</property>
+	</bean>
+	<bean id="schedulerJobDetailMonth"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		scope="singleton">
+		<property name="targetObject" ref="workTaskFreqMonthService" />
+		<property name="targetMethod" value="insertTaskMoni" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<!-- 新增任务触发器 -->
+	<bean id="cronTriggerMonth" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		scope="singleton">
+		<property name="jobDetail" ref="schedulerJobDetailMonth" />
+		<property name="cronExpression">
+			 <value>0 20 22 1 * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 季频度 -->
+	<bean id="workTaskFreqSeasonService" class="com.fitech.model.worktask.service.impl.WorkTaskFreqSeasonServiceImpl"
+		scope="singleton">
+		<property name="freqId" value="season"></property>
+		<property name="workTaskMoniService">
+			<ref bean="workTaskMoniService"/>
+		</property>
+	</bean>
+	<bean id="schedulerJobDetailSeason"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		scope="singleton">
+		<property name="targetObject" ref="workTaskFreqSeasonService" />
+		<property name="targetMethod" value="insertTaskMoni" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<!-- 新增任务触发器 -->
+	<bean id="cronTriggerSeason" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		scope="singleton">
+		<property name="jobDetail" ref="schedulerJobDetailSeason" />
+		<property name="cronExpression">
+			 <value>0 27 22 1 1,4,7,10 ?</value>
+		</property>
+	</bean>
+	
+	<!-- 半年频度 -->
+	<bean id="workTaskFreqHalfYearService" class="com.fitech.model.worktask.service.impl.WorkTaskFreqHalfYearServiceImpl"
+		scope="singleton">
+		<property name="freqId" value="halfyear"></property>
+		<property name="workTaskMoniService">
+			<ref bean="workTaskMoniService"/>
+		</property>
+	</bean>
+	<bean id="schedulerJobDetailHalfYear"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		scope="singleton">
+		<property name="targetObject" ref="workTaskFreqHalfYearService" />
+		<property name="targetMethod" value="insertTaskMoni" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<!-- 新增任务触发器 -->
+	<bean id="cronTriggerHalfYear" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		scope="singleton">
+		<property name="jobDetail" ref="schedulerJobDetailHalfYear" />
+		<property name="cronExpression">
+			 <value>0 27 22 1 1,7 ?</value>
+		</property>
+	</bean>
+	
+	<!-- 年频度 -->
+	<bean id="workTaskFreqYearService" class="com.fitech.model.worktask.service.impl.WorkTaskFreqYearServiceImpl"
+		scope="singleton">
+		<property name="freqId" value="year"></property>
+		<property name="workTaskMoniService">
+			<ref bean="workTaskMoniService"/>
+		</property>
+	</bean>
+	<bean id="schedulerJobDetailYear"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		scope="singleton">
+		<property name="targetObject" ref="workTaskFreqYearService" />
+		<property name="targetMethod" value="insertTaskMoni" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<!-- 新增任务触发器 -->
+	<bean id="cronTriggerYear" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		scope="singleton">
+		<property name="jobDetail" ref="schedulerJobDetailYear" />
+		<property name="cronExpression">
+			 <value>0 27 22 1 1 ?</value>
+		</property>
+	</bean>
+	
+	<!-- 年初结转 -->
+	<bean id="workTaskFreqYearBeginCarryService" class="com.fitech.model.worktask.service.impl.WorkTaskFreqYearBeginCarryServiceImpl"
+		scope="singleton">
+		<property name="freqId" value="yearbegincarry"></property>
+		<property name="workTaskMoniService">
+			<ref bean="workTaskMoniService"/>
+		</property>
+	</bean>
+	<bean id="schedulerJobDetailYearBeginCarry"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+		scope="singleton">
+		<property name="targetObject" ref="workTaskFreqYearBeginCarryService" />
+		<property name="targetMethod" value="insertTaskMoni" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<!-- 新增任务触发器 -->
+	<bean id="cronTriggerYearBeginCarry" class="org.springframework.scheduling.quartz.CronTriggerBean"
+		scope="singleton">
+		<property name="jobDetail" ref="schedulerJobDetailYearBeginCarry" />
+		<property name="cronExpression">
+			 <value>1 11 1 2 1 ?</value>
+		</property>
+	</bean>
+</beans>
+

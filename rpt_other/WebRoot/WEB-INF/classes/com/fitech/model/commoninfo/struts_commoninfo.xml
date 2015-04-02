@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="commoninfo" extends="struts-default,json-default" namespace="/">
+		
+		<!-- add by wmm     start -->
+		<!-- 消息action -->
+		<action name="tmsginfo" class="tMsgInfoAction" >
+			<result type="json">
+				<param name="root">orgclsMap</param>
+				
+			</result>
+			<result name="msgview">/byg/msg.jsp</result>
+			<result name="publishMsg.jsp">/byg/publishMsg.jsp</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;fileName="${fileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			
+		</action>
+		
+		<!-- add by wmm     end -->
+		
+	</package>
+</struts>

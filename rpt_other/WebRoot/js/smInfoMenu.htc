@@ -1,0 +1,21 @@
+<attach event="onmouseover" onevent="_over()"/>
+<attach event="onmouseout" onevent="_out()"/>
+<attach event="onmousedown" onevent="_down()"/>
+<script language="javascript">
+var _bgColor="";
+var _flag=0;
+
+function _over(){
+  _flag=0;
+  _bgColor=style.backgroundColor;
+	style.backgroundColor='#D4D5E8';
+}
+
+function _out(){
+  if(_flag==0) style.backgroundColor=_bgColor;
+}
+
+function _down(){
+  _flag=1;	
+}
+</script>

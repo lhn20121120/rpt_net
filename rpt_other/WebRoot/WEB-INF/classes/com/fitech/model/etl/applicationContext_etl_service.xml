@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="etlLoadFileInfoServiceTarget" class="com.fitech.model.etl.service.impl.ETLLoadFileInfoServiceImpl">
+		<property name="objectDao" ref="etlLoadFileInfoDAO"></property>
+		<property name="jdbcService" ref="etljdbcService"></property>
+		<property name="loadFileDetailService" ref="etlLoadFileDetailService"></property>
+	</bean>
+	<!-- 文件列字段信息服务类 -->
+	<bean id="etlLoadFileDetailServiceTarget" class="com.fitech.model.etl.service.impl.ETLLoadFileDetailServiceImpl">
+		<property name="objectDao" ref="etlLoadFileDetailDAO"></property>
+	</bean>
+	<bean id="etlLoadFileDetailService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="etlLoadFileDetailServiceTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="etlLoadFileInfoService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="etlLoadFileInfoServiceTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="etltxManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+		<property name="dataSource" ref="dataSourceJdbc" />
+	</bean>
+	<bean id="etlbaseJdbcServiceTarget"
+		class="com.fitech.model.etl.service.impl.ETLJdbcServiceImpl"
+		scope="prototype">
+		<property name="dataSource" ref="dataSourceJdbc"></property>
+	</bean>
+	<bean id="etljdbcService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="etltxManager" />
+		</property>
+		<property name="target">
+			<ref bean="etlbaseJdbcServiceTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="load*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="getResultSetBySQLServiceTarget" class="com.fitech.model.etl.service.impl.GetResultSetBySQLServiceImpl">
+		<property name="objectDao" ref="getResultSetBySQLDAO"></property>
+		<property name="etlJdbcService" ref="etljdbcService"></property>
+	</bean>
+	<bean id="getResultSetBySQLService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="getResultSetBySQLServiceTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
+

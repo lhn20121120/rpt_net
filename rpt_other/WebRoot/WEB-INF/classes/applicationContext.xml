@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd ">	
+	
+	<!-- sqlserver 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url" value="jdbc:sqlserver://localhost:1433;DataBase=RPTNET" />
+		<property name="username" value="fitech_boa" />
+		<property name="password" value="aaa" />
+	</bean> -->
+	
+	
+	<!-- oracle  -->
+	<!-- 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+		<property name="username" value="kerong" />
+		<property name="password" value="aaa" />	
+	</bean> -->
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	  <property name="jndiName" value="java:comp/env/rsmis">
+	  </property>
+	  <!-- <property name="resourceRef" value="true"></property> -->
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- SQLSERVER
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>-->
+				<!-- ORACLE -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				
+				<!-- 是否将Hibernate发送给数据库的sql显示出来 -->
+				<prop key="hibernate.show_sql">true</prop>
+				<!--
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>-->
+			</props>
+		</property>
+		<!-- 
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:/com/fitech/model/etl/model/pojo</value>
+			</list>
+		</property> -->
+		<property name="mappingResources">
+			<list>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskInfo.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeRole.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskType.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeInfo.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskMoni.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeParam.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeMoni.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeConductType.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeObject.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskCondType.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskBusiLine.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskTrriger.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeObjectMoni.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskNodeRepTime.hbm.xml</value>
+				
+				<value>com/fitech/model/worktask/model/pojo/ViewWorktaskTemplate.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ViewWorktaskOrg.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ViewWorktaskTemplateGroup.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ViewWorktaskRole.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ViewOrgRep.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ViewWorkTaskOperator.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ViewWorkTaskPurOrg.hbm.xml</value>
+				
+				<value>com/fitech/model/worktask/model/pojo/AfTemplateCollRep.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/AfTemplateOrgRelation.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/AfTemplateFreqRelation.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/MRepRange.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/TFreqInfo.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/MActuRep.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ReportIn.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/AfReport.hbm.xml</value>
+				
+				<value>com/fitech/model/worktask/model/pojo/MPurOrg.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/MUserGrp.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/MUserToGrp.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/Role.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/AfReportAgain.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/ReportAgainSet.hbm.xml</value>
+				<value>com/fitech/model/worktask/model/pojo/WorkTaskRepForce.hbm.xml</value>
+				<!-- 公告信息 -->
+				<value>com/fitech/model/commoninfo/model/pojo/Operator.hbm.xml</value>
+				<value>com/fitech/model/commoninfo/model/pojo/TMsgInfo.hbm.xml</value>
+				<value>com/fitech/model/commoninfo/model/pojo/UserRole.hbm.xml</value>
+				
+				<!-- 校验公式 -->
+				
+			</list>
+		</property>
+	</bean>
+	<!-- 定义事务管理器（声明式的事务） -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="insert*" propagation="REQUIRED"/>
+			<tx:method name="reload*" propagation="REQUIRED"/>
+			<tx:method name="*" propagation="NOT_SUPPORTED"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="interceptorPointCuts"
+			expression="execution(* com.fitech..*.*Impl.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts" />
+	</aop:config>
+	<!-- oracle-->
+	<!--  
+	<bean id="dataSourceJdbc" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+		<property name="username" value="kerong" />
+		<property name="password" value="aaa" />
+	</bean>
+	-->
+	 <!-- jdbc  dataSource -->
+	<bean id="dataSourceJdbc" class="org.springframework.jndi.JndiObjectFactoryBean">
+	  <property name="jndiName">
+	    <value>java:comp/env/rsmis</value>
+	  </property>
+	</bean>
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+		<property name="dataSource" ref="dataSourceJdbc" />
+	</bean>
+	<bean id="baseJdbcServiceTarget"
+		class="com.fitech.framework.core.service.impl.BaseJdbcServiceImpl"
+		scope="prototype">
+		<property name="dataSource">
+			<ref local="dataSourceJdbc" />
+		</property>
+	</bean>
+	<bean id="jdbcService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="txManager" />
+		</property>
+		<property name="target">
+			<ref bean="baseJdbcServiceTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="load*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

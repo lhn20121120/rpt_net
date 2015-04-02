@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>1.2</jsp-version>
+ <short-name>yt</short-name>
+ <uri>/fitechpage-tags</uri>
+ <display-name>分页</display-name>
+ <tag>
+  <name>pages</name>
+  <tag-class>com.fitech.framework.comp.pagetool.PageTag</tag-class>
+  <body-content>jsp</body-content>
+  <description>分页标签</description>
+  <attribute>
+   <name>pageNo</name>
+   <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+   <name>total</name>
+   <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+   <name>styleClass</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>分页标签的样式,不配置此项将采用默认的样式</description>
+  </attribute>
+  <attribute>
+   <name>theme</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>分页的主题，现支持number|text两种主题</description>
+  </attribute>
+  <attribute>
+   <name>url</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>分页提交的路径，默认不用配置该项，自动获取系统访问路径。</description>
+  </attribute>
+  <attribute>
+   <name>urlType</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>url的类型，现在支持两种url类型，第一种默认的url，这种情况不需要设置；第二种情况是目录型的url，此种情况请配置成dir。此种情况不支持动态查询，故标签体中不能加入参数</description>
+  </attribute>
+  <attribute>
+   <name>formName</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>from名称</description>
+  </attribute>
+  <attribute>
+   <name>formId</name>
+   <rtexprvalue>true</rtexprvalue>
+   <description>fromId</description>
+  </attribute>
+ </tag>
+</taglib>

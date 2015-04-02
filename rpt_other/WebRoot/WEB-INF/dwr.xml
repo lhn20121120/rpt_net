@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN" "dwr10.dtd" >
+<dwr>
+	<allow>
+		<!-- 服务类配置 -->
+		<create javascript="msgInfoService" creator="spring">
+			<param name="beanName" value="tMsgInfoService"></param>
+		</create>
+		
+		
+		<convert match="java.lang.StackTraceElement" converter="bean"></convert>
+		<convert match="java.lang.Exception" converter="exception"></convert>
+		<!-- 实体类配置 -->
+		<convert match="com.fitech.model.commoninfo.model.pojo.TMsgInfo" converter="bean"></convert>
+	</allow>
+	<!--
+	<signatures>
+		 [CDATA[
+			import java.util.List;
+			import com.fitech.model.etl.service.impl.ETLLoadFileInfoServiceImpl;
+			import com.fitech.model.etl.model.vo.ETLLoadFileDetailVo;
+			import com.fitech.model.etl.model.vo.ETLLoadFileInfoVo;
+			ETLLoadFileInfoServiceImpl.saveOrUpdateFileInfo(ETLLoadFileInfoVo,List<ETLLoadFileDetailVo>);
+		]] 
+	</signatures>
+	-->
+</dwr>

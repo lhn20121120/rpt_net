@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+    <class name="com.fitech.model.worktask.model.pojo.ViewOrgRep" table="VIEW_ORG_REP">
+        <id name="orgRepId" column="ORG_REP_ID" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+        <property name="orgId" column="ORG_ID" type="java.lang.String" />
+        <property name="childRepId" column="CHILD_REP_ID" type="java.lang.String" />
+        <property name="powType" column="POW_TYPE" type="java.lang.Integer" />
+        <property name="userId" column="USER_ID" type="java.lang.Integer" />
+    </class>
+    
+</hibernate-mapping>

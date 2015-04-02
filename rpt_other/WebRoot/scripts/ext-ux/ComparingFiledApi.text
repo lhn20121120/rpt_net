@@ -1,0 +1,100 @@
+比较数字 var valueField = new Ext.ux.ComparingField({
+        fieldLabel : "数量",
+        name : "value",
+        valueConfig:{
+            allowBlank:false
+        }
+    });比较日期
+var valueField= new Ext.ux.ComparingField({
+        fieldLabel : "日期",
+        type:'date',
+        name : "value",
+        valueConfig:{
+            allowBlank:false
+        }
+    });比较时间
+var valueField= new Ext.ux.ComparingField({
+        fieldLabel : "时间",
+        type:'time',
+        name : "value",
+        valueConfig:{
+            allowBlank:false
+        }
+    });
+比较日期时间
+var valueField= new Ext.ux.ComparingField({
+        fieldLabel : "日期时间",
+        type:'dateTime',
+        name : "value",
+        valueConfig:{
+            allowBlank:false
+        }
+    });
+说明:
+
+ 这里将往服务端发送两个相关的参数:
+ 
+valueSymbol ----前面的操作符号的数字代号
+  -2  <
+ -1  <=
+ 0   =
+ 1   >=
+ 2   >
+
+ valueValue ----后面比较的值
+
+
+IntervalField 的使用例子 
+限定数字在一个区间内
+
+var field = new Ext.ux.IntervalField({
+        fieldLabel : "数量",
+        name : "field",
+        startConfig:{
+            allowBlank:false
+        },
+        endConfig:{
+            allowBlank:false
+        }
+    });
+限定日期在一个区间内
+var field = new Ext.ux.IntervalField({
+        fieldLabel : "日期",
+        name : "field",
+        type:'date',
+        startConfig:{
+            allowBlank:false
+        },
+        endConfig:{
+            allowBlank:false
+        }
+    });
+限定时间在一个区间内
+    var field= new Ext.ux.IntervalField({
+        fieldLabel : "时间",
+        name : "field",
+        type:'time',
+        startConfig:{
+            allowBlank:false
+        },
+        endConfig:{
+            allowBlank:false
+        }
+    });
+限定日期时间在一个区间内
+var field = new Ext.ux.IntervalField({
+        fieldLabel : "日期时间",
+        name : "field",
+        type:'dateTime',
+        startConfig:{
+            allowBlank:false
+        },
+        endConfig:{
+            allowBlank:false
+        }
+    });
+说明:
+* 这里将往服务端发送两个相关的参数:
+* 
+* fieldStart----区间的下界
+* fieldEnd----区间的上界 

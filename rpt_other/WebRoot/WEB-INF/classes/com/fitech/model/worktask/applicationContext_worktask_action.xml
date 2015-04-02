@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<!-- 测试 -->
+	<bean id="testAction" class="com.fitech.model.worktask.action.TestAction" scope="prototype">
+		<property name="testService">
+			<ref bean="testService" />
+		</property> 
+	</bean>
+	<bean id="workTaskInfoAction" class="com.fitech.model.worktask.action.WorkTaskInfoAction" scope="prototype" autowire="byName">
+	</bean>
+	
+	<!-- <bean id="workTaskNodeDefineAction" class="com.fitech.model.worktask.action.WorkTaskNodeDefineAction" scope="prototype" autowire="byName">
+
+	</bean> -->
+
+	<!-- 待办业务处理 -->
+	<bean id="pendingTaskActiopn" class="com.fitech.model.worktask.action.WorkTaskPendingTaskAction" scope="prototype" autowire="byName">
+		<property name="pendingTaskService">
+			<ref bean="pendingTaskService"/>
+		</property>
+		<property name="workTaskRepForceService">
+			<ref bean="workTaskRepForceService"/>
+		</property>
+		<property name="workTaskNodeMoniService">
+			<ref bean="workTaskNodeMoniService"/>
+		</property>
+		<property name="workTaskNodeRoleServiceFlow">
+			<ref bean="nodeRoleService"/>
+		</property>
+		<property name="validateService">
+			<ref bean="workTaskValidateService"/>
+		</property>
+		<property name="workTaskInfoService">
+			<ref bean="workTaskInfoService"/>
+		</property>
+	</bean>
+	
+	<bean id="workTaskNodeDefineCollectAction" class="com.fitech.model.worktask.action.WorkTaskNodeDefineCollectAction" scope="prototype" autowire="byName">
+		<property name="nodeInfoService">
+			<ref bean="nodeInfoService" />
+		</property> 
+		<property name="nodeObjectService">
+			<ref bean="nodeObjectService" />
+		</property> 
+	</bean>
+	
+		<!-- add by 王明明   start  -->
+	<bean id="workTaskNodeDefineAction" class="com.fitech.model.worktask.action.WorkTaskNodeDefineAction" scope="prototype" autowire="byName">
+		<property name="nodeInfoService">
+			<ref bean="nodeInfoService" />
+		</property> 
+		<property name="nodeObjectService">
+			<ref bean="nodeObjectService" />
+		</property> 
+	</bean>
+	
+	<bean id="workTaskNodeListAction" class="com.fitech.model.worktask.action.WorkTaskNodeListAction" scope="prototype"  autowire="byName">
+		<property name="nodeInfoService">
+			<ref bean="nodeInfoService" />
+		</property> 
+		<property name="nodeObjectService">
+			<ref bean="nodeObjectService" />
+		</property> 
+	</bean>
+	
+	<bean id="editWorkTaskNodeInfoAction" class="com.fitech.model.worktask.action.WorkTaskEditNodeInfoAction" scope="prototype" autowire="byName">
+		<property name="nodeInfoService">
+			<ref bean="nodeInfoService" />
+		</property> 
+		<property name="nodeObjectService">
+			<ref bean="nodeObjectService" />
+		</property> 
+	</bean>
+	
+	<bean id="editWorkTaskCollectNodeInfoAction" class="com.fitech.model.worktask.action.WorkTaskEditCollectNodeInfoAction" scope="prototype" autowire="byName">
+		<property name="nodeInfoService">
+			<ref bean="nodeInfoService" />
+		</property> 
+		<property name="nodeObjectService">
+			<ref bean="nodeObjectService" />
+		</property> 
+	</bean>
+	
+	<bean id="workTaskNodeAction" class="com.fitech.model.worktask.action.WorkTaskNodeAction" scope="prototype" autowire="byName">
+	</bean>
+	
+	<!-- add by 王明明   end -->
+	
+	<bean id="loginSynchronAction" class="com.fitech.model.worktask.action.LoginSynchronizeAction" scope="prototype">
+		<property name="opreatorService">
+			<ref bean="opreatorService"/>
+		</property>
+	</bean>
+	
+	<bean id="workTaskInfoOrMoniAction" class="com.fitech.model.worktask.action.WorkTaskInfoOrMoniAction" scope="prototype">
+		<property name="workTaskInfoOrMoniService">
+			<ref bean="workTaskInfoOrMoniServiceImpl"/>
+		</property>
+	</bean>
+	
+	<bean id="taskSynchronizeAction" class="com.fitech.model.worktask.action.TaskSynchronizeAction" scope="prototype" autowire="byName">
+		<property name="workTaskNodeMoniService">
+			<ref bean="workTaskNodeMoniService"/>
+		</property>
+		<property name="workTaskLockService">
+				<ref bean="workTaskLockService"/>
+			</property>
+	</bean>
+</beans>
+

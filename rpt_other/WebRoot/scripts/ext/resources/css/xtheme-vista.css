@@ -1,0 +1,201 @@
+.x-grid3-td-topic b {
+    font-family:"Segoe UI", arial, tahoma, verdana;
+    display:block;
+}
+.x-grid3-td-topic b i {
+    font-weight:normal;
+    font-style: normal;
+    color:#000;
+}
+.x-grid3-td-topic .x-grid3-cell-inner {
+    white-space:normal;
+}
+.x-grid3-td-topic a {
+    color: #f0f0f0;
+    text-decoration:none;
+}
+.x-grid3-td-topic a:hover {
+    text-decoration:underline;
+}
+.details .x-btn-text {
+    background-image: url(../images/vista/details.gif);
+}
+.x-grid3-row-body p {
+    margin:5px 5px 10px 5px !important;
+	color:#99b8cd;
+}
+.x-grid3-body {
+	background:transparent;
+}
+
+.x-grid3-row {
+	border-color:transparent;
+	border-bottom:1px dotted #aaa;
+}
+.x-panel-body, .x-panel-header, .x-panel-footer, .x-grid3 {
+	border:0 none;
+	background:transparent;
+}
+.x-grid3-cell-inner {
+	color:#f0f0f0;
+}
+
+.x-panel-header {
+	background:#000;
+	text-align:center;
+}
+.x-panel-header-text {
+	color:#f0f0f0;
+	font:normal 12px helvetica, tahoma;
+}
+.x-grid3-scroller {
+	scrollbar-base-color:#333;
+	scrollbar-face-color:#000;
+	scrollbar-arrow-color:#fff;
+	scrollbar-track-color:#333;
+	
+	scrollbar-shadow-color:#333;
+	
+	scrollbar-darkshadow-color:#333; 
+	scrollbar-highlight-color:#3a456c; 
+}
+
+.x-grid3-row {
+	border-color:#000;
+	border-bottom:1px dotted #5e616d;
+}
+
+.x-grid3-header {
+	display:none;
+}
+
+.sort-asc, .sort-desc {
+	background:transparent !important;
+}
+
+.x-panel-header {
+	background:transparent url(../images/vista/hrow.gif) repeat-x;
+	border:0 none !important;
+}
+.x-grid3-hd {
+	border-left-color:transparent !important;
+	border-right-color:#555 !important;
+}
+
+.x-toolbar {
+	background-image:url(../images/vista/toolbar-bg.gif);
+	border:0 none !important;
+}
+
+
+.x-panel-tbar .x-toolbar {
+	border-bottom:1px solid #5e616d !important;
+}
+.x-panel-bbar .x-toolbar {
+	border-top:1px solid #5e616d !important;
+}
+.x-panel-bbar .x-toolbar input {
+	text-align:center !important;
+}
+
+.x-toolbar {
+	background-image:url(../images/vista/toolbar-bg.gif);
+	border:0 none !important;
+	border-top:1px solid #5e616d !important;
+	position:relative;
+}
+
+.x-toolbar .ytb-sep {
+	background:transparent;
+	border-left:1px solid #333;
+}
+
+.x-toolbar input {
+	background: #333;
+	border: 1px solid #3a456c;
+	padding-top:2px;
+}
+.x-toolbar * {
+	color:#cadaff !important;
+}
+.x-toolbar input, .x-toolbar button {
+	color:#fff !important;
+}
+
+.x-toolbar .x-btn-over .x-btn-left{
+	background: url(../images/vista/tb-btn-sprite.gif) no-repeat 0 0;
+}
+.x-toolbar .x-btn-over .x-btn-right{
+	background: url(../images/vista/tb-btn-sprite.gif) no-repeat 0 -21px;
+}
+.x-toolbar .x-btn-over .x-btn-center{
+	background: url(../images/vista/tb-btn-sprite.gif) repeat-x 0 -42px;
+}
+
+.x-toolbar .x-btn-click .x-btn-left, .x-toolbar .x-btn-pressed .x-btn-left, .x-toolbar .x-btn-menu-active .x-btn-left{
+	background: url(../images/vista/tb-btn-sprite.gif) no-repeat 0 -63px;
+}
+.x-toolbar .x-btn-click .x-btn-right, .x-toolbar .x-btn-pressed .x-btn-right, .x-toolbar .x-btn-menu-active .x-btn-right{
+	background: url(../images/vista/tb-btn-sprite.gif) no-repeat 0 -84px;
+}
+
+.x-toolbar .x-btn-click .x-btn-center, .x-toolbar .x-btn-pressed .x-btn-center, .x-toolbar .x-btn-menu-active .x-btn-center{
+	background: url(../images/vista/tb-btn-sprite.gif) repeat-x 0 -105px;
+}
+
+
+.x-form-field-wrap .x-form-clear-trigger{
+    background-image: url(../images/vista/clear-trigger.gif);
+}
+.x-form-field-wrap .x-form-search-trigger{
+    background-image: url(../images/vista/search-trigger.gif);
+}
+.x-form-field-wrap .x-form-trigger{
+    border-bottom: 1px solid #3a456c;
+}
+
+
+.ext-el-mask {
+    background-color: #000;
+}
+
+.ext-el-mask-msg {
+    border:1px solid #aaa;
+    background: #000;
+}
+.ext-el-mask-msg div {
+    border:1px solid transparent;
+	background-color:transparent;
+	color:white;
+}
+.x-mask-loading div {
+    background-image: url(../images/vista/16-on-black.gif);
+	background-position:5px 7px;
+}
+
+
+.docked .x-panel-tbar, .docked .x-panel-bbar{
+	display:none;
+}
+
+.docked .x-grid3-td-topic b {
+    font-size:10px;
+	font-weight:normal;
+	color:#99b8cd;
+}
+
+.docked .x-grid3-td-topic b a {
+    font-weight:normal;
+	display:block;
+	color:#f0f0f0;
+}
+.x-grid-loading {
+	display:none;
+}
+
+.menu-hd {
+	background:transparent url(../images/vista/menu-hd-bg.gif) repeat-x 0 bottom;
+	padding:5px 3px;
+	border:1px solid #ddd;
+	font-weight:bold;
+}

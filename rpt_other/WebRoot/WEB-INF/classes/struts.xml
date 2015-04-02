@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <!-- 请将struts配置全部放入struts_worktask.xm中! -->
+	<include file="com/fitech/model/worktask/struts_worktask.xml" />
+	<include file="com/fitech/model/commoninfo/struts_commoninfo.xml" />
+	<include file="com/fitech/model/etl/struts_etl.xml" />
+</struts> 

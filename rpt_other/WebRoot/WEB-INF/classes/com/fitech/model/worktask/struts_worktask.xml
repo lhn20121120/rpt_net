@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="worktask" extends="struts-default,json-default" namespace="/">
+	
+	<!-- 	<interceptors>
+			<interceptor name="workTaskInterceptor" class="com.fitech.model.worktask.interceptor.AdminLoginInterceptor" />
+			<interceptor-stack name="worktaskDefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="workTaskInterceptor">
+					<param name="excludeMethods">loginSynchronzize</param>
+			    </interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="worktaskDefault" /> -->
+		
+		
+		<global-results>
+			<result name="logout">logout.jsp</result>
+		</global-results>
+		
+		<!-- 服务器配置 -->
+		<action name="testAction" class="testAction">
+			<result name="success">index.jsp</result>
+			
+		</action>
+		
+		<!-- add by 王明明      start -->
+			<action name="workTaskNodeDefineAction" class="workTaskNodeDefineAction" >
+				<result name="success" type="chain">forwardNodeInfoPage
+				
+				</result>
+				<result name="taskList" type="redirectAction">findAll_workTaskInfoAction.action</result>
+				<result name="input">node_mgr/node_define.jsp</result>
+				<result name="quit" type="redirectAction">findAll_workTaskInfoAction.action</result>
+			
+				<result name="back_task" type="chain">preAdd_workTaskInfoAction</result>
+			</action>
+			
+			<action name="workTaskNodeListAction" class="workTaskNodeListAction" method="displayNodeList">
+				
+				<result name="input">node_mgr/task_node_list.jsp</result>
+			
+			</action>
+		
+			<action name="forwardNodeInfoPage" class="workTaskNodeDefineAction" method="forwardNodeInfoPage">
+				<result name="input">node_mgr/node_define.jsp</result>
+				<result name="success">node_mgr/node_define_other.jsp</result>
+			</action>
+		
+			<action name="editWorkTaskNodeInfo" class="editWorkTaskNodeInfoAction">
+				<result name="input">node_mgr/edit_node_info.jsp</result>
+				<result name="success" type="redirectAction">nodeList?taskId=${nodeInfoVo.taskId}</result>
+				<result name="preAddNodeInfo" >node_mgr/pre_node_define.jsp</result>
+				<result name="backAddNodeInfo" >node_mgr/back_node_define.jsp</result>
+			
+			</action>
+			
+			<action name="editWorkTaskCollectNodeInfoAction" class="editWorkTaskCollectNodeInfoAction">
+				<result name="input">node_mgr/edit_node_info_other.jsp</result>
+				<result name="success" type="redirectAction">nodeList?taskId=${nodeInfoVo.taskId}</result>
+				<result name="preAddNodeInfo" >node_mgr/pre_node_define.jsp</result>
+				<result name="backAddNodeInfo" >node_mgr/back_node_define.jsp</result>
+			
+			</action>
+			
+			<action name="nodeList" class="workTaskNodeListAction" method="displayNodeList">
+				<result name="input">node_mgr/task_node_list.jsp</result>
+			
+			</action>
+		
+		<!-- add by 王明明       end -->
+		
+		
+		<!-- add by LK     start -->
+		<action name="*_workTaskInfoAction" class="workTaskInfoAction" method="{1}">
+			<result name="{1}_hz">/task_manager/add/hz/collect_state.jsp</result>
+			<result name="{1}_zf" type="redirectAction">
+				<param name="actionName">workTaskNodeDefineAction</param>
+				<param name="method">forwardNodeInfoPage</param>
+			</result>
+			<result name="{1}_zfbs" type="redirectAction">
+				<param name="actionName">workTaskNodeDefineCollectAction</param>
+				<param name="method">forwardNodeInfoPage</param>
+			</result>
+			<result name="{1}_input">/task_manager/add/work_flow_index.jsp</result>
+			<result name="{1}_pre">/task_manager/add/work_flow_index.jsp</result>
+			<result name="{1}_list">/task_manager/task_list.jsp</result>
+			<result name="{1}_info">/task_manager/update/preUpdateTaskInfo.jsp</result>
+			<result name="{1}_success" type="chain" >
+			  	 <param name="actionName">findAll_workTaskInfoAction</param> 
+        		<param name="namespace">/</param> 
+        	</result>
+		</action>
+		<!-- add by LK     end -->
+		
+		<action name="workTaskNodeDefineCollectAction" class="workTaskNodeDefineCollectAction">
+				<result name="success" type="chain">forwardNodeInfoPage</result>
+				<result name="taskList" type="redirectAction">findAll_workTaskInfoAction.action</result>
+				<result name="input">node_mgr/node_define_other.jsp</result>
+				<result name="quit" type="redirectAction">findAll_workTaskInfoAction.action</result>
+		</action>
+		
+		<!-- add by LK     start -->
+		<action name="*_workTaskNodeAction" class="workTaskNodeAction" method="{1}">
+			<!-- <result name="saveHzNodeInfo_success">/task_manager/add/hz/haha.jsp</result> -->
+			<result name="{1}_success" type="chain" >
+			  	 <param name="actionName">findAll_workTaskInfoAction</param> 
+        		<param name="namespace">/</param> 
+        	 </result>
+        	 
+			<result name="{1}_info">/task_manager/update/preUpdateNodeInfo.jsp</result>
+			<result name="input">/task_manager/add/hz/input.jsp</result>
+		</action>
+		
+		<!-- add by LK     end -->
+		
+		
+		
+		<!-- 待办任务 -->
+		<action name="pendingTaskAction" class="pendingTaskActiopn" method="findPendingTasks">
+			<result name="success">/pendingtask/pending_task_index.jsp</result>
+			<result name="backTask_pending">/pendingtask/pending_task_back.jsp</result>
+			<result name="work_baclTask_detail">/pendingtask/pending_task_back_detail.jsp</result>
+			<result name="index_task">/system_home_page.jsp</result>
+			<result name="index_task_old">/system_home_page_no_affiche.jsp</result>
+			
+			<result name="seach_nodeInfo" type="json">
+				<param name="root">nodeMonis</param>
+			</result>
+			
+			<result name="task_info_rep">/pendingtask/work_task_rep.jsp</result>
+			<result name="rep_task">/pendingtask/rep_task_add.jsp</result>
+			<result name="bwsc_list">/pendingtask/bwsc_index.jsp</result>
+		</action>
+		
+		<action name="loginSynchronAction" class="loginSynchronAction" method="loginSynchronzize">
+		</action>
+		
+		<action name="workTaskInfoOrMoniAction" class="workTaskInfoOrMoniAction" method="findWorkTaskInfoOrMoni">
+			<result name="list">/task_info_moin/Info_task_index.jsp</result>
+			<result name="update" type="chain">workTaskInfoOrMoniAction</result>
+		</action>
+		
+		<action name="taskSynchronizeAction" class="taskSynchronizeAction" method="taskSynchronize">
+		</action>
+		
+	</package>
+</struts>
