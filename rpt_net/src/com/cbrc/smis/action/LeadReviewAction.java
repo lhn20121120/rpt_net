@@ -21,7 +21,7 @@ import com.cbrc.smis.security.Operator;
 import com.fitech.gznx.form.AFReportForm;
 import com.fitech.gznx.service.AFReportProductDelegate;
 import com.fitech.gznx.service.AFTemplateReviewDelegate;
-import com.ibm.db2.jcc.a.a;
+
 
 public class LeadReviewAction extends Action{
 	

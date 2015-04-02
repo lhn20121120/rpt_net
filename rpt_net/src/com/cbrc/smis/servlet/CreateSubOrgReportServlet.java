@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ibm.db2.jcc.b.fi;
+
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import com.cbrc.smis.adapter.StrutsActuRep;
