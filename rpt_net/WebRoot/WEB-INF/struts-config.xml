@@ -68,11 +68,8 @@
 		com.cbrc.smis.resources.TemplateMgrResources,
 		com.cbrc.smis.resources.WorkBenchResources,
 		com.cbrc.smis.resources.SystemManagerResources" />
+	<message-resources parameter="MessageResources"/>
 
 	<!--表单位验证设置-->
-	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
-		<set-property property="pathnames"
-			value="/WEB-INF/validator-rules.xml" />
-	</plug-in>
 </struts-config>
 
