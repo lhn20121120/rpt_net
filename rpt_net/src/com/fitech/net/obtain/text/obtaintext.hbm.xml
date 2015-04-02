@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.fitech.net.obtain.text.obtaintext" 
+    table="OBTAIN_TXT"
+>
+  <id
+        name="id"
+        type="java.lang.String"
+        column="ID"
+        length="32"
+    >
+        <generator class="uuid.hex"></generator>
+    </id>
+    
+     <property
+        name="childReportId"
+        type="java.lang.String"
+        column="CHILD_REP_ID"
+        length="5"
+    />
+     <property
+        name="versionId"
+        type="java.lang.String"
+        column="VERSION_ID"
+        length="4"
+    />
+    <property
+        name="dataSourceEname"
+        type="java.lang.String"
+        column="DATA_SOURCE_ENAME"
+        length="50"
+    />
+     <property
+        name="dataSourceCname"
+        type="java.lang.String"
+        column="DATA_SOURCE_CNAME"
+        length="150"
+    />
+    <property
+        name="rowColumn"
+        type="java.lang.String"
+        column="CELL_NUMBER"
+        length="20"
+    />
+    <property
+        name="splitChar"
+        type="java.lang.String"
+        column="SPLIT_CHAR"
+        length="3"
+    />
+    <property
+        name="formula"
+        type="java.lang.String"
+        column="FORMULA"
+        length="200"
+    />
+    <property
+        name="flag"
+        type="java.lang.String"
+        column="FLAG"
+        length="1"
+    />
+    <property
+        name="des"
+        type="java.lang.String"
+        column="DES"
+        length="200"
+    />
+   <property
+        name="orgId"
+        type="java.lang.String"
+        column="ORGID"
+        length="20"
+    />
+</class>
+</hibernate-mapping>
+

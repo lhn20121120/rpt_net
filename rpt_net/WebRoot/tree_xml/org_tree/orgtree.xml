@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<tree id="0">
+  <item text="浙商总行" id="331010000">
+    <item text="总行本级" id="3310XXXXX">
+      <item text="总行清算中心" id="331010401"/>
+      <item text="总行营业部" id="331010313"/>
+      <item text="余杭九堡支行" id="331051000"/>
+      <item text="杭州城西支行" id="331033000"/>
+      <item text="杭州余杭支行" id="331032000"/>
+      <item text="杭州萧山支行" id="331031000"/>
+      <item text="杭州建国支行" id="331034000"/>
+      <item text="总行电子银行业务处理中心" id="331010102"/>
+    </item>
+    <item text="宁波分行" id="332021000">
+      <item text="宁波慈溪支行" id="332043000"/>
+      <item text="宁波分行清算中心" id="332021401"/>
+      <item text="宁波分行营业部" id="332021307"/>
+      <item text="宁波北仑支行" id="332042000"/>
+      <item text="宁波鄞州支行" id="332041000"/>
+      <item text="浙商银行宁波分行财务经费" id="332021101"/>
+    </item>
+    <item text="温州分行" id="333022000">
+      <item text="温州分行清算中心" id="333033401"/>
+      <item text="温州分行营业部" id="333022307"/>
+    </item>
+    <item text="义乌分行" id="338721000">
+      <item text="义乌分行清算中心" id="338721401"/>
+      <item text="义乌分行营业部" id="338721301"/>
+    </item>
+    <item text="成都分行" id="651021000">
+      <item text="成都分行清算中心" id="651021401"/>
+      <item text="成都分行营业部" id="651021301"/>
+    </item>
+    <item text="天津分行" id="110021000">
+      <item text="天津分行清算中心" id="110021401"/>
+      <item text="天津分行营业部" id="110021301"/>
+    </item>
+  </item>
+</tree>

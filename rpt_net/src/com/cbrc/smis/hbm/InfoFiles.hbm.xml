@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.InfoFiles" 
+    table="INFO_FILES"
+>
+    <id
+        name="infoFilesId"
+        type="java.lang.Integer"
+        column="INFO_FILES_ID"
+    >
+       <generator class="increment">
+		</generator> 
+    </id>
+    <property
+        name="infoFileName"
+        type="java.lang.String"
+        column="INFO_FILE_NAME"
+        length="100"
+    > 
+    </property>
+    <property
+        name="infoFileType"
+        type="java.lang.String"
+        column="INFO_FILE_TYPE"
+        length="30"
+    >   
+    </property>
+    <property
+        name="infoFileSize"
+        type="java.lang.Integer"
+        column="INFO_FILE_SIZE"
+        length="10"
+    >   
+    </property>
+    <property
+        name="infoFileLocation"
+        type="java.lang.String"
+        column="INFO_FILE_LOCATION"
+        length="100"
+    >   
+    </property>
+    <property
+        name="infoFileDesc"
+        type="java.lang.String"
+        column="INFO_FILE_DESC"
+        length="500"
+    >   
+    </property>
+    <property
+        name="infoFileStyle"
+        type="java.lang.String"
+        column="INFO_FILE_STYLE"
+        length="1"
+    >   
+    </property>
+    <property
+        name="recordTime"
+        type="java.sql.Timestamp"
+        column="RECORD_TIME"
+    >   
+    </property>
+	
+	<many-to-one
+		name="operator"
+		class="com.cbrc.auth.hibernate.Operator"
+		not-null="true">
+		<column name="User_Id"/>	
+	</many-to-one>
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to FilesContent -->
+    <set
+        name="filesContents"
+        lazy="true"
+        inverse="true"
+		cascade="all"
+    >
+        <key>
+            <column name="INFO_FILES_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.FilesContent"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

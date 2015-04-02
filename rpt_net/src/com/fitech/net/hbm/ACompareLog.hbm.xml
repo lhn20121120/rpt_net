@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="com.fitech.net.hibernate.ACompareLog" table="A_COMPARE_LOG">
+        <composite-id name="key" class="com.fitech.net.hibernate.ACompareLogKey">
+            <key-property name="repInId" column="REP_ID_ID" type="java.lang.Integer"/>
+            <key-property name="acType" column="C_TYPE" type="java.lang.Integer"/>
+        </composite-id>
+ 
+        <property name="acRepInId" column="C_REP_IN_ID" type="java.lang.Integer" />
+        <property name="acState" column="C_STATE" type="java.lang.Integer" />
+        <property name="acLog" column="C_LOG" type="java.lang.String" />
+    </class>
+    
+</hibernate-mapping>

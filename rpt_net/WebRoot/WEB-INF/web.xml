@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <context-param>  
+        <param-name>contextConfigLocation</param-name>  
+        <param-value>/WEB-INF/classes/applicationContext.xml</param-value>  
+    </context-param>
+	<listener>  
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+    </listener>
+    <servlet>  
+        <servlet-name>CXFServlet</servlet-name>  
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>  
+        <load-on-startup>3</load-on-startup>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>CXFServlet</servlet-name>  
+        <url-pattern>/services/*</url-pattern> 
+    </servlet-mapping>
+   <servlet>
+      <servlet-name>action</servlet-name>
+      <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+      <init-param>
+         <param-name>config</param-name>
+         <param-value>
+         	/WEB-INF/struts-config.xml,
+         	/WEB-INF/paramter-config.xml,
+	         /WEB-INF/system_mgr_config.xml,
+	         /WEB-INF/template_config.xml,
+	         /WEB-INF/report_config.xml,
+	         /WEB-INF/infoFiles_config.xml,
+	         /WEB-INF/popedom_mgr_config.xml,
+	         /WEB-INF/struts-fitechorg.xml,
+	         /WEB-INF/fitech_org.xml,
+	         /WEB-INF/orgtogether_net.xml,
+	         /WEB-INF/obtain_Excel.xml,
+	         /WEB-INF/obtain_text.xml,
+	         /WEB-INF/org_manage.xml,
+	         /WEB-INF/netOrg_mgr_config.xml,
+	         /WEB-INF/struts-etl-config.xml,
+	         /WEB-INF/struts-analysis-config.xml,
+	         /WEB-INF/gznx.xml,
+	         /WEB-INF/extends.xml,
+			 /WEB-INF/struts-institu.xml,
+			 /WEB-INF/struts-fitetlcbrc.xml,
+			 /WEB-INF/struts-addtemp.xml
+         </param-value>
+      </init-param>
+      <init-param>
+         <param-name>debug</param-name>
+         <param-value>3</param-value>
+      </init-param>
+      <init-param>
+         <param-name>detail</param-name>
+         <param-value>3</param-value>
+      </init-param>
+      <load-on-startup>0</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>action</servlet-name>
+      <url-pattern>*.do</url-pattern>
+   </servlet-mapping>
+   
+   <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+	
+	<!--系统初始化Servlet(Begin)-->
+	<servlet>
+		<servlet-name>InitSystem</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.SystemServlet</servlet-class>
+		<init-param>
+			<param-name>DATATYPE</param-name>
+			<param-value>excel</param-value>
+		</init-param>
+		<!-- RAQ文件模板的path -->
+		<init-param>
+			<param-name>RAQ_TEMPLATE_PATH</param-name>
+			<!--<param-value>/input/fitech_ora</param-value>-->
+			 <param-value>D:/fitech/fitech_ora/</param-value>
+		</init-param>
+		<!-- CA服务的参数配置(end) -->
+		<load-on-startup>1</load-on-startup>		
+	</servlet>
+	<!--系统初始化Servlet(End)-->
+	
+	<!-- 字符编码过滤器(Begin)-->   
+   <filter>
+	 <filter-name>encodingFilter</filter-name>
+	 <filter-class>com.cbrc.smis.filter.SetCharacterEncodingFilter</filter-class>
+	 <init-param>
+		<param-name>encoding</param-name>
+		<param-value>GB2312</param-value>
+	 </init-param>
+   </filter>    
+   <filter-mapping>
+	 <filter-name>encodingFilter</filter-name>
+	 <url-pattern>*.do</url-pattern>
+   </filter-mapping>
+   <!-- 字符编码过滤器(End)-->      
+	
+	<!-- 用户验证过滤(Begin)-->
+	<filter>
+		<filter-name>operatorLoginFilter</filter-name>
+		<filter-class>com.cbrc.smis.filter.AdminLoginFilter</filter-class>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/preUserLogin.do</param-value>
+		</init-param>
+		<init-param>
+			<param-name>notFilterPage</param-name>
+			<param-value>
+				newlogin.jsp,/preUserLogin.do,/login.jsp,/loginSSO.jsp,/notLogin.jsp,/redirect.jsp,/image/,/tmp/,/userLogin.do,/css/,/js/,/calendar/,/template/pdf/,/portalyjbb.do,/portalrhbb.do,/portalhnbb.do,/portalrptnet.do,/services,/portalbspt.do
+			</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>operatorLoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+	<!-- 用户验证过滤(End)-->
+	
+	<!-- 过滤ETL任务 完成判断(Begin)-->
+	<!-- <filter>
+		<filter-name>checkTaskFilter</filter-name>
+		<filter-class>com.cbrc.smis.filter.CheckTaskFilter</filter-class>
+		 <init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/preUserLogin.do</param-value>
+		</init-param> 
+		<init-param>
+			<param-name>needFilterPage</param-name>
+			<param-value>
+				viewDataReport.do,viewNXDataReport.do,afReportProduct.do,viewCollectData.do,viewCollectNX.do
+			</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>checkTaskFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>  -->
+	<!-- 过滤ETL任务 完成判断(End)-->
+	<!-- 过滤报表任务 完成判断(Begin)-->
+	<filter>
+		<filter-name>templateFilter</filter-name>
+		<filter-class>com.cbrc.smis.filter.TemplateFilter</filter-class>
+		<init-param>
+			<param-name>needFilterPage</param-name>
+			<param-value>
+				reportPortal.do
+			</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>templateFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+	<!-- 过滤报表任务 完成判断(End)-->
+			
+	<!--读取PDF模板文件Servlet-->
+	<servlet>
+		<servlet-name>ReadPDFServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.ReadPDF</servlet-class>		
+	</servlet>
+	<!--读取Excel模板文件Servlet-->
+	<servlet>
+		<servlet-name>ReadExcelServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.ReadExcel</servlet-class>		
+	</servlet>
+	<!--控制读取模板文件Servlet-->
+	<servlet>
+		<servlet-name>ReadReportControlServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.ReadReportControl</servlet-class>		
+	</servlet>
+	<!--读取报表的数据XML内容并转换在PDF文档的Servlet-->
+	<servlet>
+		<servlet-name>ReadPDFReport</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.ReadPDFReport</servlet-class>
+	</servlet>
+    
+	<servlet-mapping>
+		<servlet-name>ReadPDFServlet</servlet-name>
+		<url-pattern>/servlets/ReadPDFServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReadExcelServlet</servlet-name>
+		<url-pattern>/servlets/ReadExcelServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReadReportControlServlet</servlet-name>
+		<url-pattern>/servlets/ReadReportControlServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReadPDFReport</servlet-name>	
+		<url-pattern>/servlets/ReadPDFReportServlet</url-pattern>
+	</servlet-mapping>
+	<!--下载文件-->
+	<servlet>
+		<servlet-name>DownLoadInfoFiles</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.DownLoadInfoFiles</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DownLoadInfoFiles</servlet-name>
+		<url-pattern>/servlets/DownLoadInfoFiles</url-pattern>
+	</servlet-mapping>
+	
+	<!--报表的Excel展示-->
+	<servlet>
+		<servlet-name>toExcelServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.ToExcelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toExcelServlet</servlet-name>
+		<url-pattern>/servlets/toExcelServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 报表校验EXCEL展示 -->
+		<servlet>
+		<servlet-name>toReadExcelServlet</servlet-name>
+		<servlet-class>com.fitech.gznx.servlet.ToReadExcelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toReadExcelServlet</servlet-name>
+		<url-pattern>/servlets/toReadExcelServlet</url-pattern>
+	</servlet-mapping>
+	<!--自定义报板的Excel展现-->
+	<servlet>
+		<servlet-name>selfReadExcelServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.SelfReadExcelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>selfReadExcelServlet</servlet-name>
+		<url-pattern>/servlets/selfReadExcelServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 下载文件 -->
+	<servlet>
+		<servlet-name>DownloadServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.DownloadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/servlets/DownloadServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 下载文件结束 -->
+	
+	
+	
+	<!--生成报表文件-->
+	<servlet>
+		<servlet-name>downLoadReportServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.DownLoadDataServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downLoadReportServlet</servlet-name>
+		<url-pattern>/servlets/downLoadReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--导出子行报表文件-->
+	<servlet>
+		<servlet-name>createSubOrgReportServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.CreateSubOrgReportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createSubOrgReportServlet</servlet-name>
+		<url-pattern>/servlets/createSubOrgReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--导出非1104报表文件-->
+	<servlet>
+		<servlet-name>createNXReportServlet</servlet-name>
+		<servlet-class>com.fitech.gznx.servlet.CreateNXReportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createNXReportServlet</servlet-name>
+		<url-pattern>/servlets/createNXReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--下载数据文件-->
+	<servlet>
+		<servlet-name>downLoadTemplateServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.DownLoadTemplateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downLoadTemplateServlet</servlet-name>
+		<url-pattern>/servlets/downLoadTemplateServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--下载以其他汇总方式生成的报表-->
+	<servlet>
+		<servlet-name>downLoadOtherCollectServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.DownLoadOtherCollectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downLoadOtherCollectServlet</servlet-name>
+		<url-pattern>/servlets/downLoadOtherCollectServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--显示饼图 -->
+	<servlet>
+    	<servlet-name>DisplayChart</servlet-name>
+    	<servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+   		 <servlet-name>DisplayChart</servlet-name>
+   		 <url-pattern>/servlet/DisplayChart</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet>   
+    <servlet-name>WebOfficeServ</servlet-name>
+    <servlet-class>com.cbrc.smis.servlet.WebOfficeServ</servlet-class>
+  </servlet> 
+
+ <servlet-mapping>
+    <servlet-name>WebOfficeServ</servlet-name>
+    <url-pattern>/servlet/WebOfficeServ</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>ClearTempFileServ</servlet-name>
+    <servlet-class>com.cbrc.smis.servlet.ClearTempFileServ</servlet-class>
+    <init-param>
+    	<param-name>interval</param-name>
+    	<!-- <param-value>86400000</param-value> -->
+    	<param-value>3000000</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+ 
+  <servlet-mapping>
+    <servlet-name>ClearTempFileServ</servlet-name>
+    <url-pattern>/servlet/ClearTempFileServ</url-pattern>
+  </servlet-mapping>
+	
+	
+	<!--**************************************** 报表工具 **************************************-->
+
+<servlet>
+	<servlet-name>reportServlet</servlet-name>
+	<servlet-class>com.runqian.util.webutil.SetContextServlet</servlet-class>
+	<init-param>
+	<param-name>configFile</param-name>
+	<param-value>/WEB-INF/reportConfig.xml</param-value>
+	</init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>  
+  <servlet>
+    <servlet-name>RaqFileServer</servlet-name>
+    <servlet-class>example.server.RaqFileServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FileServer</servlet-name>
+    <servlet-class>example.server.FileServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>com.runqian.report4.usermodel.PrintSetupServlet</servlet-name>
+    <servlet-class>com.runqian.report4.usermodel.PrintSetupServlet</servlet-class>
+    <init-param>
+      <param-name>saveDisplayScale</param-name>
+      <param-value>yes</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>com.runqian.report4.view.PagedPrint</servlet-name>
+    <servlet-class>com.runqian.report4.view.PagedPrint</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>com.runqian.report4.usermodel.PrintSetupServlet</servlet-name>
+    <url-pattern>/servlet/PrintSetupServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>reportServlet</servlet-name>
+    <url-pattern>/reportServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RaqFileServer</servlet-name>
+    <url-pattern>/servlet/RaqFileServer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileServer</servlet-name>
+    <url-pattern>/servlet/FileServer</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>com.runqian.report4.view.PagedPrint</servlet-name>
+    <url-pattern>/servlet/pagedPrintServer</url-pattern>
+  </servlet-mapping>
+
+	<!--下载数据文件-->
+	<servlet>
+		<servlet-name>downLoadNXReportServlet</servlet-name>
+		<servlet-class>com.fitech.gznx.servlet.DownloadALLReportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downLoadNXReportServlet</servlet-name>
+		<url-pattern>/servlets/downLoadNXReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--下载模板文件-->
+	<servlet>
+		<servlet-name>downLoadGatherReportServlet</servlet-name>
+		<servlet-class>com.fitech.gznx.servlet.DownLoadReportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downLoadGatherReportServlet</servlet-name>
+		<url-pattern>/servlets/downLoadGatherReportServlet</url-pattern>
+	</servlet-mapping>
+	<!--下载raq文件-->
+	<servlet>
+		<servlet-name>exportTemplate</servlet-name>
+		<servlet-class>com.fitech.gznx.action.ExportTemplateAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>exportTemplate</servlet-name>
+		<url-pattern>/gznx/reportmgr/expReportTemplate.do</url-pattern>
+	</servlet-mapping>
+	
+	<!--新增servlet2015-->
+			
+<servlet>
+		<servlet-name>createQDXMLReportServlet</servlet-name>
+		<servlet-class>com.fitech.export.servlet.CreateQDXMLReportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createQDXMLReportServlet</servlet-name>
+		<url-pattern>/servlets/createQDXMLReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 清单报表 excel下载 -->
+	 <servlet>
+		<servlet-name>downloadExcelQDServlet</servlet-name>
+		<servlet-class>com.fitech.export.servlet.DownloadExcelQDServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downloadExcelQDServlet</servlet-name>
+		<url-pattern>/servlets/downloadExcelQDServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>createSubOrgXMLReportServlet</servlet-name>
+		<servlet-class>com.cbrc.smis.servlet.CreateSubOrgXMLReportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createSubOrgXMLReportServlet</servlet-name>
+		<url-pattern>/servlets/createSubOrgXMLReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<listener>
+		<listener-class>com.cbrc.smis.filter.SessionInvalidateListner</listener-class>
+	</listener>
+	<welcome-file-list>
+		<welcome-file>prelogin.jsp</welcome-file>
+	</welcome-file-list>
+	<mime-mapping>
+	  <extension>xml</extension>
+	  <mime-type>text/xml</mime-type>
+	</mime-mapping>
+</web-app>

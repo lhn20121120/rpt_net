@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+
+   <global-exceptions />
+   <global-forwards />
+   <action-mappings >
+	   <!--添加sql执行包-->
+	   <action
+	   	  path="/fitetlcbrc"
+	      input="/exesqlcbrc/upLoadSqlFile.jsp"
+	      name="uploadFileForm"
+	     
+	      scope="request"
+	      type="com.cbrc.exesqlcbrc.action.ExecuteSqlAction" parameter="method">
+	      <forward name="success" path="/exesqlcbrc/upLoadSqlFile.jsp" />
+	   </action>
+	   
+   </action-mappings>
+</struts-config>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gen>
+	<version>0512</version>
+	<range>
+		<id>1</id>
+		<name>境内汇总数据</name>
+	</range>
+	<range>
+		<id>2</id>
+		<name>法人汇总数据(含境外分行)</name>
+	</range>
+	<range>
+		<id>3</id>
+		<name>合并报表数据(含附属公司)</name>
+	</range>
+	
+	
+	<!--model点式大表，part为拆分的小表-->
+	<!--G01资产负债项目统计表附注-->
+	<model row="3" col="0" title="G01资产负债项目统计表附注">
+		<!--subtitle 为小标题，position为小标题所在位置,startRow为起始行（以大标题开始算起）-->
+		<part id="G0101_0514">
+			<subtitle>第Ⅰ部分：非应计贷款、委托业务及债券发行情况报表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G0102_0514">
+			<subtitle>第Ⅱ部分：贷款质量五级分类情况简表</subtitle>
+			<startRow>15</startRow>		
+		</part>
+		<part id="G0103_0514">
+			<subtitle>第Ⅲ部分：存贷款明细报表（一）</subtitle>	
+			<startRow>25</startRow>		
+		</part>
+		<part id="G0104_0514">
+			<subtitle>第Ⅳ部分：存贷款明细报表（二）</subtitle>	
+			<startRow>46</startRow>		
+		</part>
+		<part id="G0105_0514">
+			<subtitle>第Ⅴ部分：人民币备付率和存贷比报表</subtitle>
+			<startRow>60</startRow>		
+		</part>
+		<part id="G0106_0514">
+			<subtitle>第Ⅵ部分：各项垫款情况表</subtitle>
+			<keyword>第一部分</keyword>	
+			<startRow>75</startRow>		
+		</part>
+		<part id="G0107_0514">
+			<subtitle>第Ⅶ部分：外资银行报表</subtitle>
+			<startRow>91</startRow>		
+		</part>
+		<part id="G0108_0514">
+			<subtitle>第Ⅷ部分：开办租赁业务的机构、信托投资公司报表</subtitle>
+			<startRow>134</startRow>		
+		</part>
+		<part id="G0109_0514">
+			<subtitle>第Ⅸ部分：中国农业发展银行报表</subtitle>
+			<keyword>第一部分</keyword>	
+			<startRow>152</startRow>		
+		</part>
+		<part id="G0110_0514">
+			<subtitle>第Ⅹ部分：中国进出口银行报表</subtitle>
+			<startRow>160</startRow>		
+		</part>
+		
+		<part id="G0101_0690">
+			<subtitle>第Ⅰ部分：非应计贷款、委托业务及债券发行情况报表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G0102_0690">
+			<subtitle>第Ⅱ部分：贷款质量五级分类情况简表</subtitle>
+			<startRow>15</startRow>		
+		</part>
+		<part id="G0103_0690">
+			<subtitle>第Ⅲ部分：存贷款明细报表（一）</subtitle>	
+			<startRow>25</startRow>		
+		</part>
+		<part id="G0104_0690">
+			<subtitle>第Ⅳ部分：存贷款明细报表（二）</subtitle>	
+			<startRow>46</startRow>		
+		</part>
+		<part id="G0105_0690">
+			<subtitle>第Ⅴ部分：人民币备付率报表</subtitle>
+			<startRow>60</startRow>		
+		</part>
+		<part id="G0106_0690">
+			<subtitle>第Ⅵ部分：各项垫款情况表</subtitle>
+			<keyword>第一部分</keyword>	
+			<startRow>75</startRow>		
+		</part>		
+	</model>
+	
+	
+	<!--G11资产质量五级分类情况表-->
+	<model row="3" col="0" title="G11资产质量五级分类情况表">
+		<part id="G1101_0514">
+			<subtitle>第Ⅰ部分：按行业分的贷款（按贷款投向）</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G1102_0514">
+			<subtitle>第Ⅱ部分：资产质量及准备金</subtitle>
+			<startRow>48</startRow>		
+		</part>
+		<part id="G1103_0514">
+			<subtitle>第Ⅲ部分：汽车金融公司适用的贷款分类情况</subtitle>
+			<startRow>115</startRow>		
+		</part>
+		
+		<part id="G1101_0690">
+			<subtitle>第Ⅰ部分：按行业分的贷款（按贷款投向）</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G1102_0690">
+			<subtitle>第Ⅱ部分：资产质量及准备金</subtitle>
+			<startRow>48</startRow>		
+		</part>		
+	</model>
+	
+	<!--G14授信集中情况表-->
+	<model row="3" col="0" title="G14授信集中情况表">
+		<part id="G1401_0514">
+			<subtitle>第Ⅰ部分：最大十家集团客户授信情况表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G1402_0514">
+			<subtitle>第Ⅱ部分：最大十家金融机构同业授信情况表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		
+		<part id="G1401_0690">
+			<subtitle>第Ⅰ部分：最大十家集团客户授信情况表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G1402_0690">
+			<subtitle>第Ⅱ部分：最大十家金融机构同业授信情况表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G1403_0690">
+			<subtitle>第Ⅲ部分：最大十家客户贷款情况表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+	</model>
+	
+	<!--G33利率重新定价风险情况表-->
+	<model row="3" col="0" title="G33利率重新定价风险情况表">
+		<part id="G3301_0514">
+			<subtitle>第Ⅰ部分：交易账户</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G3302_0514">
+			<subtitle>第Ⅱ部分：银行账户</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		
+		<part id="G3301_0690">
+			<subtitle>第Ⅰ部分：交易账户</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G3302_0690">
+			<subtitle>第Ⅱ部分：银行账户</subtitle>
+			<startRow>0</startRow>		
+		</part>
+	</model>
+	
+	<!--G53分地区情况表-->
+	<model row="3" col="0" title="G53分地区情况表">
+		<part id="G5301_0514">
+			<subtitle>第Ⅰ部分：资产负债简表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G5302_0514">
+			<subtitle>第Ⅱ部分：利润简表</subtitle>
+			<startRow>64</startRow>		
+		</part>
+		<part id="G5303_0514">
+			<subtitle>第Ⅲ部分：贷款行业情况简表</subtitle>
+			<startRow>90</startRow>		
+		</part>
+		<part id="G5304_0514">
+			<subtitle>第Ⅳ部分：五级分类情况简表</subtitle>
+			<startRow>118</startRow>		
+		</part>
+		
+		<part id="G5301_0690">
+			<subtitle>第Ⅰ部分：资产负债简表</subtitle>
+			<startRow>0</startRow>		
+		</part>
+		<part id="G5302_0690">
+			<subtitle>第Ⅱ部分：利润简表</subtitle>
+			<startRow>64</startRow>		
+		</part>
+		<part id="G5303_0690">
+			<subtitle>第Ⅲ部分：贷款行业情况简表</subtitle>
+			<startRow>90</startRow>		
+		</part>
+		<part id="G5304_0690">
+			<subtitle>第Ⅳ部分：五级分类情况简表</subtitle>
+			<startRow>118</startRow>		
+		</part>
+	</model>
+	
+	<!--S51案件信息统计表-->
+	<model row="3" col="0" title="S51案件信息统计表">
+		<part id="S5100_0514">
+			<subtitle></subtitle>
+			<startRow>0</startRow>		
+		</part>
+		
+		<part id="S5100_0690">
+			<subtitle></subtitle>
+			<startRow>3</startRow>		
+		</part>
+	</model>
+	
+	<!--清单式 startrow excel中循环起始行，-->
+	<!--G51-->
+	<bill id="G5100" title="G51客户大额授信统计表" model="G51.xml">
+		<startrow>6</startrow>
+		<detail>COL1-1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9-1,COL10-1,COL11-1,COL12-1,COL13-1,COL14-1,COL15-1,COL16-1,COL17-1,COL18-1,,,,,,,,,COL9-2,COL10-2,COL11-2,COL12-2,COL13-2,COL14-2,COL15-2,COL16-2,COL17-2,COL18-2,,,,,,,,,COL9-3,COL10-3,COL11-3,COL12-3,COL13-3,COL14-3,COL15-3,COL16-3,COL17-3,COL18-3,,,,,,,,,COL9-4,COL10-4,COL11-4,COL12-4,COL13-4,COL14-4,COL15-4,COL16-4,COL17-4,COL18-4</detail>
+		<endstr>填表人：</endstr>		
+	</bill>
+	<!--G52-->
+	<bill id="G5200" title="G52房地产、汽车零售贷款违约客户情况统计表" model="G52.xml">
+		<startrow>5</startrow>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7</detail>
+		<endstr>填表人：</endstr>		
+	</bill>
+	
+	
+	<!--清单式有合计得报表-->
+	<bill_1 id="S3201" title="S32信托投资公司管理信托财产状况统计表" model="S3201.xml">
+		<startrow>7</startrow>
+		<subtitle>第一部分：集合管理资金信托来源运用情况明细表</subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,COL21,COL22,COL23,COL24,COL25,COL26,COL27,COL28,COL29,COL30,COL31,COL32,COL33,COL34,COL35,COL36,COL37,COL38,COL39,COL40,COL41,COL42,COL43,COL44,COL45,COL46,COL47</detail>
+		<!--合计的内容(空格除外)-->
+		<total>,COL1,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,COL21,COL22,,,,,COL27,COL28,COL29,COL30,COL31,COL32,COL33,COL34,COL35,COL36,COL37,COL38,COL39,COL40,COL41,COL42,COL43,COL44,COL45,COL46,COL47</total>
+	</bill_1>
+	<bill_1 id="S3202" title="S32信托投资公司管理信托财产状况统计表" model="S3202.xml">
+		<startrow>7</startrow>
+		<subtitle>第二部分：单独管理资金信托来源运用情况明细表</subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,COL21,COL22,COL23,COL24,COL25,COL26,COL27,COL28,COL29,COL30,COL31,COL32,COL33,COL34,COL35,COL36,COL37,COL38,COL39,COL40,COL41,COL42,COL43</detail>
+		<total>,COL1,COL3,COL4,COL5,,,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,,,COL23,COL24,COL25,COL26,COL27,COL28,COL29,COL30,COL31,COL32,COL33,COL34,COL35,COL36,COL37,COL38,COL39,COL40,COL41,COL42,COL43</total>
+	</bill_1>	
+	<bill_1 id="S3203" title="S32信托投资公司管理信托财产状况统计表" model="S3203.xml">
+		<startrow>7</startrow>
+		<subtitle>第三部分：管理财产信托情况明细表</subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,COL21,COL22,COL23,COL24,COL25,COL26,COL27,COL28,COL29</detail>
+		<total>,COL1,,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,,,,,,COL25,COL26,COL27,COL28,COL29</total>
+	</bill_1>
+	<bill_1 id="S3204" title="S32信托投资公司管理信托财产状况统计表" model="S3204.xml">
+		<startrow>7</startrow>
+		<subtitle>补充材料：第一部分：公益信托明细情况表</subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8</detail>
+		<total>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8</total>
+	</bill_1>
+	<bill_1 id="S3205" title="S32信托投资公司管理信托财产状况统计表" model="S3205.xml">
+		<startrow>6</startrow>
+		<subtitle>补充材料：第二部分：年金信托明细情况表</subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,COL21</detail>
+		<total>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,,,,COL12,,,,,COL17,COL18,COL19,COL20,COL21</total>
+	</bill_1>
+	<bill_1 id="S3206" title="S32信托投资公司管理信托财产状况统计表" model="S3206.xml">
+		<startrow>6</startrow>
+		<subtitle>补充材料：第三部分：信托财产转委托管理情况明细表</subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9</detail>
+		<total>COL1,COL2,,COL4,,,,,</total>
+	</bill_1>
+	<bill_1 id="S3207" title="S32信托投资公司管理信托财产状况统计表" model="S3207.xml">
+		<startrow>6</startrow>
+		<subtitle>补充材料：第四部分：以信托财产提供担保风险情况表</subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18</detail>
+		<total>COL1,COL2,,,,,COL7,COL8,,,COL11,,,COL14,COL15,COL16,COL17,COL18</total>
+	</bill_1>
+	<bill_1 id="S3401" title="S34信托投资公司关联交易风险及客户集中度情况表" model="S3401.xml">
+		<startrow>8</startrow>
+		<subtitle>第一部分：信托投资公司关联交易风险状况(1)</subtitle>
+		<detail>COL1-1,COL2,COL3,COL4,COL5-1,COL6-1,COL7-1,COL8-1,COL9-1,COL10-1,COL11-1,COL12-1,COL13-1,COL14,COL15,COL16-1,COL17-1,COL18-1,COL19-1,COL20-1,COL1-2,,,,COL5-2,COL6-2,COL7-2,COL8-2,COL9-2,COL10-2,COL11-2,COL12-2,COL13-2,,,COL16-2,COL17-2,COL18-2,COL19-2,COL20-2,COL1-3,,,,COL5-3,COL6-3,COL7-3,COL8-3,COL9-3,COL10-3,COL11-3,COL12-3,COL13-3,,,COL16-3,COL17-3,COL18-3,COL19-3,COL20-3</detail>
+		<total>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20</total>
+	</bill_1>
+	<bill_1 id="S3700" title="S37回租业务情况统计表" model="S3700.xml">
+		<startrow>4</startrow>
+		<subtitle></subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8</detail>
+		<total>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8</total>
+	</bill_1>
+	<bill_1 id="S3300" title="S33信托项目到期情况统计表" model="S3300.xml">
+		<startrow>6</startrow>
+		<subtitle></subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,COL21,COL22,COL23,COL24,COL25</detail>
+		<total>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19,COL20,COL21,COL22,COL23,COL24,COL25</total>
+	</bill_1>
+	<bill_1 id="S3500" title="S35长期股权投资风险情况表" model="S3500.xml">
+		<startrow>5</startrow>
+		<subtitle></subtitle>
+		<detail>COL1,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19</detail>
+		<total>,COL2,COL3,COL4,COL5,COL6,COL7,COL8,COL9,COL10,COL11,COL12,COL13,COL14,COL15,COL16,COL17,COL18,COL19</total>
+	</bill_1>
+</gen>

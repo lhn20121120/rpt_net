@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.MCellForm" 
+    table="M_CELL_FORM"
+>
+
+    <id
+        name="cellFormId"
+        type="java.lang.Integer"
+        column="CELL_FORM_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="cellForm"
+        type="java.lang.String"
+        column="CELL_FORM"
+        length="500"
+    />
+    <property
+        name="formType"
+        type="java.lang.Integer"
+        column="FORM_TYPE"
+        length="22"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to DataValidateInfo -->
+    <set
+        name="dataValidateInfos"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CELL_FORM_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.DataValidateInfo"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

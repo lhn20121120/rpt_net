@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.RoleTool" 
+    table="ROLE_TOOL"
+>
+
+    <id
+        name="roleToolId"
+        type="java.lang.Long"
+        column="ROLE_TOOL_ID"
+    >
+        <generator class="sequence">
+        	<param name="sequence">seq_role_tool</param>
+		</generator>
+    </id>
+
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to ToolSetting -->
+    <many-to-one
+        name="toolSetting"
+        class="com.cbrc.auth.hibernate.ToolSetting"
+        not-null="true"
+    >
+        <column name="MENU_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Role -->
+    <many-to-one
+        name="role"
+        class="com.cbrc.auth.hibernate.Role"
+        not-null="true"
+    >
+        <column name="ROLE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

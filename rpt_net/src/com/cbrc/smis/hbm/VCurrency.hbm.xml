@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<class 
+    name="com.cbrc.smis.hibernate.VCurrency" 
+    table="V_CURRENCY"
+>
+
+    <id
+        name="vcid"
+        type="java.lang.String"
+        column="VC_ID"
+        length="10"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="vcenname"
+        type="java.lang.String"
+        column="VC_ENNAME"
+        length="18"
+    />
+    <property
+        name="vccnname"
+        type="java.lang.String"
+        column="VC_CNNAME"
+        length="18"
+    />
+    <property
+        name="vcinname"
+        type="java.lang.String"
+        column="VC_INNAME"
+        length="18"
+    />
+  </class>
+</hibernate-mapping>

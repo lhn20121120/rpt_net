@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+    <class name="com.fitech.net.hibernate.Index" table="INDEX">
+ 		<id name="id" column="I_ID" type="java.lang.Integer">
+            <generator class="increment">
+            </generator>
+        </id>
+        
+        <property name="name" column="I_NAME" type="java.lang.String" />
+        <property name="defaultvalue" column="I_DEFAULTVALUE" type="java.lang.String" />
+        <property name="precision" column="I_PRECISION" type="java.lang.String" />
+        <property name="type" column="I_TYPE" type="java.lang.String" />
+        <property name="iscollect" column="I_ISCOLLECT" type="java.lang.String" />
+    </class>
+    
+</hibernate-mapping>

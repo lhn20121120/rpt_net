@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+	<!-- 
+		Created by the Middlegen Hibernate plugin 2.1
+		
+		http://boss.bekk.no/boss/middlegen/
+		http://www.hibernate.org/
+	-->
+
+	<class name="com.fitech.gznx.po.AfViewReport"
+		table="view_af_report">
+
+		<composite-id name="comp_id"
+			class="com.fitech.gznx.po.AfViewReportPK">
+			<key-property name="templateId" column="template_id"
+				type="java.lang.String" />
+			<key-property name="versionId" column="version_id"
+				type="java.lang.String" />
+			<key-property name="orgId" column="org_id"
+				type="java.lang.String" />
+			<key-property name="repFreqId" column="rep_freq_id"
+				type="java.lang.Integer" />
+			<key-property name="curId" column="cur_id"
+				type="java.lang.Integer" />
+		</composite-id>
+
+		<property name="templateName" type="java.lang.String"
+			column="template_name" />
+		<property name="templateType" type="java.lang.String"
+			column="template_type" />
+		<property name="curName" type="java.lang.String"
+			column="cur_name" />
+
+		<property name="repFreqName" type="java.lang.String"
+			column="rep_freq_name" />
+		<property name="startDate" type="java.lang.String"
+			column="START_DATE" />
+		<property name="endDate" type="java.lang.String"
+			column="END_DATE" />
+		<property name="laterTime" type="java.lang.Integer"
+			column="later_time" />
+		<property name="normalTime" type="java.lang.Integer"
+			column="NORMAL_TIME" />
+		<property name="isReport" type="java.lang.Integer"
+			column="is_report" />
+		<property name="isLeader" type="java.lang.Integer"
+			column="is_leader" />
+		<property name="priorityFlag" type="java.lang.Integer">
+			<column name="PRIORITY_FLAG" />
+		</property>
+		<property name="supplementFlag" type="java.lang.Integer">
+			<column name="SUPPLEMENT_FLAG" />
+		</property>
+		<property name="bak1" type="java.lang.String">
+			<column name="BAK1" />
+		</property>
+		<property name="reportStyle" type="java.lang.Integer">
+			<column name="REPORT_STYLE" />
+		</property>
+	</class>
+</hibernate-mapping>

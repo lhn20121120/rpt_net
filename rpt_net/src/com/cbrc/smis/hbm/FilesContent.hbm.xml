@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.FilesContent" 
+    table="FILES_CONTENT"
+>
+    <id
+        name="filesContentId"
+        type="java.lang.Integer"
+        column="FILES_CONTENT_ID"
+    >
+        <generator class="increment">
+		</generator>
+    </id>
+
+    <property
+        name="content"
+        type="java.sql.Blob"
+        column="CONTENT"
+    >  
+    </property>
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to InfoFile -->
+    <many-to-one
+        name="infoFiles"
+        class="com.cbrc.smis.hibernate.InfoFiles"
+        not-null="true"
+    >
+        <column name="INFO_FILES_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

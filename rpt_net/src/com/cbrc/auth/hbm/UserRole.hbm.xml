@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.UserRole" 
+    table="USER_ROLE"
+>
+
+    <id
+        name="userRoleId"
+        type="java.lang.Long"
+        column="USER_ROLE_ID"
+    >
+        <generator class="sequence">
+        	<param name="sequence">seq_user_role</param>
+		</generator>
+    </id>
+
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to Role -->
+    <many-to-one
+        name="role"
+        class="com.cbrc.auth.hibernate.Role"
+        not-null="true"
+    >
+        <column name="ROLE_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Operator -->
+    <many-to-one
+        name="operator"
+        class="com.cbrc.auth.hibernate.Operator"
+        not-null="true"
+    >
+        <column name="USER_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

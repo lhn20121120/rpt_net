@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.MOrg" 
+    table="M_ORG"
+>
+
+    <id
+        name="orgId"
+        type="java.lang.String"
+        column="ORG_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="orgName"
+        type="java.lang.String"
+        column="ORG_NAME"
+        length="20"
+    />
+    <property
+        name="orgType"
+        type="java.lang.Integer"
+        column="ORG_TYPE"
+        length="22"
+    />
+    <property
+        name="isCorp"
+        type="java.lang.String"
+        column="IS_CORP"
+        length="1"
+    />
+    <property
+        name="isInUsing"
+        type="java.lang.String"
+        column="IS_IN_USING"
+        length="1"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to MRepRange -->
+    <set
+        name="MRepRanges"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="ORG_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MRepRange"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to Report -->
+    <set
+        name="reports"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="ORGID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.Report"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to RepRangeDownLog -->
+    <set
+        name="repRangeDownLogs"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="ORG_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.RepRangeDownLog"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to MappingRelation -->
+    <set
+        name="mappingRelations"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="ORGID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MappingRelation"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

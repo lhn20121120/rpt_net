@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+   <data-sources />
+   <form-beans >
+   		<!--鏈烘瀯绫诲瀷琛�-->
+    	<form-bean name="orgnetForm" type="com.fitech.net.org.form.OrgnetForm" />
+    	<form-bean name="regionForm" type="com.fitech.net.region.form.RegionForm" />
+    	<form-bean name="orgclsNetForm" type="com.fitech.net.orgcls.form.OrgclsNetForm" />
+    	<form-bean name="regionTypNetForm" type="com.fitech.net.regiontyp.form.RegionTypNetForm" />
+    	<form-bean name="mChildReportForm" type="com.cbrc.smis.form.MChildReportForm"/>
+    	<form-bean name="orgLayerForm" type="com.fitech.net.orglayer.form.OrgLayerForm"/>
+    	<form-bean name="reportInForm" type="com.cbrc.smis.form.ReportInForm"/>
+   </form-beans>
+
+   <global-exceptions />
+	
+   <global-forwards>
+	 <!-- 绯荤粺閿欒椤� -->
+	 <forward name="sysErrPage" path="/error.jsp"/>   
+   </global-forwards>
+		   
+   <action-mappings >  
+	   	
+	   	<!-- 娓呴櫎鍘嗗彶鏁版嵁 -->
+        <action path="/clearHistory" 
+        	type="com.fitech.net.obtain.excel.action.ClearHistoryAction"
+        	name="mChildReportForm"
+        	scope = "request" 
+        	validate="false">
+           <forward name="" path="" />
+        </action>
+        <!---鏈烘瀯-->
+	    <action
+	      path="/vieworgnet"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      type="com.fitech.net.org.action.OrgnetAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/org_net.jsp" />
+	    </action>	
+	    
+	     <action
+	   	  path="/addorgnet"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      type="com.fitech.net.org.action.AddOrgnetAction"
+	      validate="false">
+	      <forward name="failure" path="/orgtogether_net/orgnet_add.jsp" />
+	   </action>
+	   
+	   
+	    <action
+	   	  path="/deleteOrgnet"
+	      attribute="orgnetForm"	      
+	      name="orgnetForm"
+	      validate="false"
+	      scope="request"
+	      type="com.fitech.net.org.action.DeleteOrgnetAction">
+	      <forward name="failure" path="/orgtogether_net/org_net.jsp" />
+	   </action>
+	   
+	   <action
+	   	  path="/updateOrgnet"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      type="com.fitech.net.org.action.UpdateOrgnetAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/org_net.jsp" />
+	   </action>
+	   <action
+	      path="/viewChildorg"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      type="com.fitech.net.org.action.ChildOrgAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/viewchildorg.jsp" />
+	      
+	    </action>
+	   <!---鏈烘瀯鍒嗙被-->
+	    <action
+	      path="/orgclsNet"
+	      attribute="orgclsNetForm"
+	      name="orgclsNetForm"
+	      scope="request"
+	      type="com.fitech.net.orgcls.action.OrgclsNetAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/orgcls_net.jsp" />
+	    </action>	
+	    
+	     <action
+	   	  path="/insertorgClsNet"
+	      attribute="orgclsNetForm"
+	      name="orgclsNetForm"
+	      validate="false"
+	      scope="request"
+	      type="com.fitech.net.orgcls.action.AddOrgclsNetAction">
+	      <forward name="orgclsnet_add" path="/orgtogether_net/orgnetcls_add.jsp" />
+	   </action>
+	   
+	   <action
+	   	  path="/deleteorgClsNet"
+	      attribute="orgclsNetForm"	      
+	      name="orgclsNetForm"
+	      validate="false"
+	      scope="request"
+	      type="com.fitech.net.orgcls.action.DeleteOrgclsNetAction">
+	      <forward name="failure" path="/orgtogether_net/orgcls_net.jsp" />
+	   </action>
+	    
+	    <action
+	      path="/orgClsNet_update"
+	      attribute="orgclsNetForm"
+	      name="orgclsNetForm"
+	      scope="request"
+	      type="com.fitech.net.orgcls.action.UpdateOrgclsNetAction"
+	      validate="false">
+	      <forward name="update" path="/orgtogether_net/orgclsnet_update.jsp" />	       
+	    </action>
+	    
+	 <!---region-->  
+	   <action
+	   	  path="/regionnet"
+	      attribute="regionForm"	      
+	      name="regionForm"
+	      validate="false"
+	      scope="request"
+	      type="com.fitech.net.region.action.RegionAction">
+	      <forward name="success" path="/orgtogether_net/region_net.jsp" />
+	   </action>
+	   
+	   <action
+	   	  path="/deleteRegion"
+	      attribute="regionForm"	      
+	      name="regionForm"
+	      validate="false"
+	      scope="request"
+	      type="com.fitech.net.region.action.DeleteRegionAction">
+	      <forward name="success" path="/orgtogether_net/region_net.jsp" />
+	   </action>
+	   
+	   <action
+	      path="/addRegionNet"
+	      attribute="regionForm"
+	      name="regionForm"
+	      scope="request"
+	      type="com.fitech.net.region.action.AddRegionAction"
+	      validate="false">
+	      <forward name="failure" path="/orgtogether_net/regionnet_add.jsp" />
+	    </action>
+	   
+	   <action
+	      path="/updateRegionNet"
+	      attribute="regionForm"
+	      name="regionForm"
+	      scope="request"
+	      type="com.fitech.net.region.action.UpdateRegionAction"
+	      validate="false">
+	      <forward name="failure" path="/orgtogether_net/regionnet_update.jsp" />
+	    </action>
+	    
+	    <!---RegionTyp-->
+	    <action
+	      path="/regionTypNet"
+	      attribute="regionTypNetForm"
+	      name="regionTypNetForm"
+	      scope="request"
+	      type="com.fitech.net.regiontyp.action.ViewRegionTypNetAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/regiontyp_net.jsp" />
+	    </action>	
+	    
+	    <action
+	      path="/addRegionTypNet"
+	      attribute="regionTypNetForm"
+	      name="regionTypNetForm"
+	      scope="request"
+	      type="com.fitech.net.regiontyp.action.AddRegionTypNetAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/regiontyp_net.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/updateRegionTypNet"
+	      attribute="regionTypNetForm"
+	      name="regionTypNetForm"
+	      scope="request"
+	      type="com.fitech.net.regiontyp.action.UpdateRegionTypNetAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/regiontypnet_update.jsp" />
+	    </action>
+	    
+	    <action
+	      path="/deleteRegionTypNet"
+	      attribute="regionTypNetForm"
+	      name="regionTypNetForm"
+	      scope="request"
+	      type="com.fitech.net.regiontyp.action.DeleteRegionTypNetAction"
+	      validate="false">
+	      <forward name="success" path="/orgtogether_net/regiontyp_net.jsp" />
+	    </action>
+	    
+	    <!--妯℃澘鏌ョ湅-鍩烘湰淇℃伅鏌ョ湅-->
+	    <action
+	      path="/viewTemplateNet"
+	      name="mChildReportForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.template.action.ViewTemplateNetAction">
+      		<forward name="init" path="/orgtogether_net/viewtemplate.jsp" />
+  		 </action>
+  		  <!--鎶ヨ〃鏌ョ湅2006-07-22-->
+	    <action
+	      path="/viewReport"
+	      attribute="reportInForm"
+	      name="reportInForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.action.ViewReportAction">
+      		<forward name="view" path="/report_mgr/report_data_stat/viewReportData.jsp" />
+  		 </action>
+  		 
+  		 <!--鍦ㄧ嚎淇敼-->
+	    <action path="/viewonlineupdate"
+	    		type="com.fitech.net.template.action.ViewOnlineUpdateAction"
+	      		name="reportInForm"
+	      		scope="request"
+	      		validate="false">
+      		<forward name="init" path="/orgtogether_net/onlineupdate.jsp" />
+  		 </action>
+  		 
+  		 <!--鎵嬪伐璋冨钩鍚庣殑鏁版嵁鎶ラ��-->
+	    <action path="/viewOnLineSJBS"
+	    		type="com.fitech.net.template.action.ViewOnlineSJBSAction"
+	      		name="reportInForm"
+	      		scope="request"
+	      		validate="false">
+      		<forward name="init" path="/orgtogether_net/onLineSJBS.jsp" />
+  		 </action>
+  		 
+  		<!-- 涓婃姤鍦ㄧ嚎淇敼鐨勬姤琛�-->
+  		<action path="/upLoadOnLineReport"
+	    		type="com.fitech.net.template.action.UpLoadOnLineReportAction"
+	      		name="reportInForm"
+	      		scope="request"
+	      		validate="false">
+  		 </action>
+  		 
+  		 <!-- 涓婃姤鍦ㄧ嚎淇敼鐨勬姤琛�-->
+  		<action path="/upLoadOnLineMoreReport"
+	    		type="com.fitech.net.template.action.UpLoadOnLineMoreReportAction"
+	      		name="reportInForm"
+	      		scope="request"
+	      		validate="false">
+  		 </action>
+  		 
+  		<!-- 鎵归噺涓婃姤鍦ㄧ嚎淇敼鐨勬姤琛�-->
+  		<action path="/groupUpLoadReport"
+	    		type="com.fitech.net.template.action.GroupUpLoadReportAction"
+	      		name="reportInForm"
+	      		scope="request"
+	      		validate="false">
+  		</action>
+  		 
+  		<!-- 淇濆瓨鍦ㄧ嚎淇敼-->
+  		<action path="/saveOnLineUpdate"
+  				type="com.fitech.net.action.SaveOnLineUpdate"
+  				name="reportInForm"
+  				scope="request"
+  				validate="false">
+  			<forward name="" path=""/>
+  		</action>	 
+	    <!--鏈烘瀯閮ㄩ棬璁剧疆-->
+	    <action
+	      path="/viewDepartmentMgr"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.department.action.ViewDepartmentAction">
+      		<forward name="success" path="/departmentmgr/viewdepartment.jsp" />
+  		 </action>
+  		  <action
+	      path="/updateDepartmentMgr"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.department.action.UpdateDepartmentAction">
+      		<forward name="success" path="/departmentmgr/viewdepartment.jsp" />
+  		 </action>
+  		 <!--鏈烘瀯灞傛璁剧疆-->
+  		  <action
+	      path="/viewOrgLayer"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.department.action.ViewOrgLayerAction">
+      		<forward name="success" path="/departmentmgr/vieworglayer.jsp" />
+  		 </action>
+  		 <action
+	      path="/updateOrgLayer"
+	      attribute="orgnetForm"
+	      name="orgnetForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.department.action.UpdateOrgLayerAction">
+      		<forward name="success" path="/departmentmgr/vieworglayer.jsp" />    		
+  		 </action>
+  		 <!--鏈烘瀯灞傛绠＄悊-->
+  		 <action
+	      path="/viewOrgLayerMgr"
+	      attribute="orgLayerForm"
+	      name="orgLayerForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.orglayer.action.OrgLayerAction">
+      		<forward name="success" path="/orglayer/vieworglayer.jsp" />
+  		 </action>
+  		 <action
+	      path="/updateOrgLayerMgr"
+	      attribute="orgLayerForm"
+	      name="orgLayerForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.orglayer.action.UpdateOrgLayerAction">
+      		<forward name="success" path="/orglayer/vieworglayer.jsp" />
+      		<forward name="failure" path="/orglayer/orglayer_update.jsp" />
+  		 </action>
+  		 <action
+	      path="/deleteOrgLayerMgr"
+	      attribute="orgLayerForm"
+	      name="orgLayerForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.orglayer.action.DeleteOrgLayerAction">
+      		<forward name="success" path="/orglayer/vieworglayer.jsp" />
+  		 </action>
+  		 <action
+	      path="/addOrgLayerMgr"
+	      attribute="orgLayerForm"
+	      name="orgLayerForm"
+	      scope="request"
+	      validate="false"
+	      type="com.fitech.net.orglayer.action.AddOrgLayerAction">
+      		<forward name="success" path="/orglayer/vieworglayer.jsp" />
+      		<forward name="failure" path="/orglayer/orglayer_add.jsp" />
+  		 </action>
+   </action-mappings>
+	
+   <!--琛ㄥ崟浣嶉獙璇佽缃�-->
+   <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+     <set-property property="pathnames" value="/WEB-INF/validator-rules.xml"/>
+   </plug-in>
+</struts-config>
+

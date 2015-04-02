@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<title>JavaScript Navigation Tree</title>
+		<style> /* Style for tree item text */ .t0i { font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif,宋体; font-size: 12px; color: #000000; text-decoration: none; }
+	/* Style for tree item image */ .t0im { border: 0px; width: 19px; height: 16px; }
+	body { border: none; scrollbar-base-color: #F8F8F8; scrollbar-highlight-color: #F8F8F8; scrollbar-3dlight-color: #D8D8D8; scrollbar-darkshadow-color: #D8D8D8; scrollbar-shadow-color: #F8F8F8; scrollbar-face-color: #F8F8F8; scrollbar-track-color: #F8F8F8; scrollbar-arrow-color: black; margin:0; }
+	</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<meta content="BCBS-HP" name="Author">
+		<LINK href="../style/globalStyle.css" type="text/css" rel="stylesheet">
+			<script language="JavaScript" src="../js/tree.js"></script>
+			<script language="JavaScript" src="../js/tree_tpl.js"></script>
+	</head>
+	<body background="../image/navibk.jpg">
+		<form name="navi">
+			<input type="hidden" name="sys" value="no"> <input type="hidden" name="gongwen" value="no">
+		</form>
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td><img src="../image/navitop.jpg"></td>
+			</tr>
+			<div>
+				<tr>
+					<td height="35"><a href="javascript:window.parent.navi.location.assign('../navi.htm');window.parent.main.location.assign('../main.htm')">
+							<img src="../image/navin1.jpg" border="0"></a></td>
+				</tr>
+				<tr>
+					<td>
+						<table height="15" cellSpacing="6" cellPadding="0" width="150" align="left" border="0" ID="Table1">
+						<tr>
+							<td>
+								<script language="JavaScript" src="../js/tree.js"></script>
+								<script language="JavaScript">
+
+var TREE_ITEMS = [
+
+['', 'main.content.moban.htm',
+  ['报表模板','',
+  	['基础报表','',
+		['G01资产负债项目统计表','main.content.moban.detail.htm'],
+		['G01资产负债项目统计表附注',''],		
+		['G02表外业务统计表',''],		
+		['G04利润表',''],		
+		['G05利润分配表',''],		
+		['G11资产质量五级分类情况表',''],		
+		['G12贷款质量迁徙情况表',''],		
+		['G13最大十家关注类/次级类/可疑类/损失类贷款情况表',''],		
+		['G14授信集中情况表',''],		
+		['G15最大二十家关联方关联交易情况表',''],		
+		['G16 抵债资产账龄情况表',''],		
+		['G21流动性期限缺口统计表',''],		
+		['G22流动性比例监测表',''],		
+		['G23最大十家存款客户情况表',''],		
+		['G24最大十家金融机构同业拆入情况表',''],		
+		['G31有价证券及投资情况表',''],		
+		['G32外汇风险敞口情况表',''],		
+		['G33利率风险情况表',''],		
+		['G41资本充足率汇总表',''],		
+		['G42表内加权风险资产计算表',''],		
+		['G43表外加权风险资产计算表',''],		
+		['G51客户大额授信统计表',''],		
+		['G52房地产、汽车零售贷款违约客户情况统计表',''],		
+		['G53分地区情况表',''],		
+	],
+	
+	['特色报表','',
+		['S01其他风险资产损失情况统计表',''],		
+		['S02金融资产管理公司资产处置情况表',''],		
+		['S11银行信用卡业务情况表',''],				
+		['S12城市信用社信贷资产质量情况表',''],		
+		['S21国家开发银行专项贷款情况表',''],		
+		['S22邮政储蓄代理业务情况表',''],		
+		['S23邮政储蓄资金运用情况表',''],		
+		['S31信托项目资产负债汇总统计表',''],		
+		['S32信托投资公司管理信托财产状况统计表',''],		
+		['S33信托项目到期情况统计表',''],		
+		['S34信托投资公司关联交易风险及客户集中度情况表',''],		
+		['S35长期股权投资风险情况表',''],		
+		['S36债券托管及证券交易保证金存放情况表',''],		
+		['S37回租业务情况统计表',''],		
+		['S38汽车金融公司向股东及其关联人授信情况表',''],		
+		['S41农村合作金融机构业务状况表',''],		
+		['S42农村合作金融机构补充数据表',''],		
+		['S43农村合作金融机构不良贷款情况表',''],		
+		['S44法人机构单户贷款余额前十大户情况统计表',''],		
+		['S45农户贷款情况表',''],		
+		['S46农村合作金融机构利润分配表',''],		
+		['S51案件信息统计表',''],		
+		['S52现场检查情况统计表',''],		
+		['S53统计部特色报表__银监会有关外部数据',''],				
+	],
+  ],
+  ['模板维护','',
+  	['新增模板','main.content.moban.add.htm'],
+	['维护模板','main.content.moban.query.htm'],
+  ],	
+  ['报送关系设定','',
+	['基础报表','main.content.moban.bsgx.base.htm'],
+	['特色报表','main.content.moban.bsgx.chara.htm'],
+  ],
+  ['报送频率设定','',
+	['基础报表','main.content.moban.bspl.base.htm'],
+	['特色报表','main.content.moban.bspl.chara.htm'],
+  ],	
+  ['表内/间关系设定','main.content.moban.bjgx.htm',
+  ],
+  ['表异常标准设定','main.content.moban.ycbh.htm',
+  ],
+  ['代报关系设定','main.content.moban.dbgx.htm',
+  ],
+]
+]
+;
+								</script>
+								<script language="JavaScript" src="../js/tree_tpl.js"></script>
+								<script language="JavaScript">
+									new tree (TREE_ITEMS, tree_tpl);
+								</script>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				<tr id="l3">
+					<td height="1" valign="bottom" background="../image/navibk.jpg"><img src="../image/navisp.jpg"></td>
+				</tr>
+				<tr>
+					<td height="35"><a href="javascript:window.parent.navi.location.assign('../sjcx/navi.chaxun.htm');window.parent.main.location.assign('../sjcx/main.chaxun.htm')">
+						<img src="../image/navin2.jpg" border="0"></a></td>
+				</tr>
+				<tr id="l3">
+					<td height="1" valign="bottom" background="../image/navibk.jpg"><img src="../image/navisp.jpg"></td>
+				</tr>
+				<tr>
+					<td height="35"><a href="javascript:window.parent.navi.location.assign('../cldy/navi.celue.htm');window.parent.main.location.assign('../cldy/main.celue.htm')">
+						<img src="../image/navin3.jpg" border="0"></a></td>
+				</tr>
+				<tr id="l3">
+					<td height="1" valign="bottom" background="../image/navibk.jpg"><img src="../image/navisp.jpg"></td>
+				</tr>
+				<tr>
+					<td height="35"><a href="javascript:window.parent.navi.location.assign('../xtgl/navi.xitong.htm');window.parent.main.location.assign('../xtgl/main.xitong.htm')">
+						<img src="../image/navin4.jpg" border="0"></a></td>
+				</tr>
+				<tr id="l3">
+					<td height="1" valign="bottom" background="../image/navibk.jpg"><img src="../image/navisp.jpg"></td>
+				</tr>
+				<tr>
+					<td height="35"><a target="_top" href="../login.htm"><img src="../image/navin5.jpg" border="0"></a></td>
+				</tr>
+			
+		</table>
+	</body>
+</html>

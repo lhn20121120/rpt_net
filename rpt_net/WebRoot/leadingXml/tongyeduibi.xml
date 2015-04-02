@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="GB2312"?>
+<fitechGraph nextPage="isNull" title="存贷款情况">
+	<graph id="cunkuantongyeduibi" type="1" title="广州地区中资金融机构人民币各项存款余额比较"><!-- 柱状图 -->
+		<vlabel title="4" /><!--  1：表示元，2：表示万元 ，3：表示百万元 ， 4：表示亿元 -->
+		<dataset isContailMe="y"><!--  数据源节点 sql:取数的sql语句 柱状图必须有三项:1:label 2：select 两项 item:用逗号分开的分类长串分类长串-->
+			<!-- isContailMe:是指在当有序列时是否包含操作用户所有的机构 -->
+			<!-- 每个分类项表示页表示where中的一个条件 -->
+			<serial sql="select af.CELL_ID as org_id,af.COL_NAME as org_name from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX003' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID='9200') ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX003' and AF.CELL_PID='FT0001' and af.COL_NAME!='大广州' order by org_id"/>
+			<item label="各项存款" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA*10000*10000),2) as val,af.cell_id as org_id from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX003' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID='9200') ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX003' and AF.CELL_PID='FT0001' and af.COL_NAME!='大广州' order by org_id" />
+		</dataset>
+		<style>
+			<graphWidth value="780" /><!-- 图片的宽度-->
+			<graphHeight value="300" /><!-- 图片的高度-->
+			<bgColorRGB value="246,248,247" /><!-- 图片的背景色（R,G,B）-->
+			<ttFont value="宋体" /><!-- 标题的字体-->
+			<ttFontSize value="18" /><!-- 标题的字的大小-->
+			<ttColorRGB value="0,0,0" /><!-- 标题的字的颜色（R,G,B）-->
+
+			<cBgColorRGB value="246,248,247" /><!-- 柱状图的背景色-->
+			<cInsets value="15, 10, 5, 50" /><!-- 柱状图的边距-->
+			<cRangeGridlineColorRGB value="0,0,0" /><!--柱状图的纵向网格的颜色 -->
+			<cForegroundAlpha value="0.8" /><!-- 柱子的透明度-->
+
+			<cDomainAxisColor value="0,0,0" /><!-- 横轴的颜色-->
+			<cDomainAxisLabelFont value="宋体" /><!-- 横轴Label的字体-->
+			<cDomainAxisLabelFontSize value="12" /><!-- 横轴Label的字的大小-->
+			<cDomainAxisLabelFontColor value="0,0,0" /><!-- 横轴Leble的字的颜色-->
+
+			<cDomainAxisTickLabelFont value="宋体" /><!-- 横轴TickLabel的字的字体-->
+			<cDomainAxisTickLabelFontSize value="12" /><!-- 横轴TickLabel的字的大小 -->
+			<cDomainAxisTickLabelFontColor value="0,0,0" /><!-- 横轴TickLabel的字的颜色-->
+
+			<cRangeAxisColor value="0,0,0" /><!-- 纵轴的颜色-->
+			<cRangeAxisLabelFont value="宋体" /><!--纵轴Label的字体 -->
+			<cRangeAxisLabelFontSize value="12" /><!-- 纵轴Label字的大小-->
+			<cRangeAxisLabelFontColor value="0,0,0" /><!-- 纵轴Label字的颜色-->
+
+			<cRangeAxisTickLabelFont value="宋体" /><!-- 纵轴的TickLabel的字体 -->
+			<cRangeAxisTickLabelFontSize value="12" /><!--纵轴的TickLabel的字的大小 -->
+			<cRangeAxisTickLabelFontColor value="0,0,0" /><!--纵轴的TickLabel的字的颜色 -->
+
+			<isC3D value="y" /><!-- 是否为3D-->
+			<cWallPaint value="244,241,236" /><!-- 3D背景墙的颜色 -->
+			<cItemMargin value="0.2" /><!-- 柱的间距-->
+			<cLabelPositions value="0.0" /><!-- 横轴TickLabel的字的角度-->
+		</style>
+		<url exists="n" url="" /><!--链接节点 exists:是否存在链接 url:链接对应的url -->
+	</graph>
+	
+		<graph id="daikuantongyeduibi" type="1" title="广州地区中资金融机构人民币各项贷款余额比较"><!-- 柱状图 -->
+		<vlabel title="4" /><!--  1：表示元，2：表示万元 ，3：表示百万元 ， 4：表示亿元 -->
+		<dataset isContailMe="y"><!--  数据源节点 sql:取数的sql语句 柱状图必须有三项:1:label 2：select 两项 item:用逗号分开的分类长串分类长串-->
+			<!-- isContailMe:是指在当有序列时是否包含操作用户所有的机构 -->
+			<!-- 每个分类项表示页表示where中的一个条件 -->
+			<serial sql="select af.CELL_ID as org_id,af.COL_NAME as org_name from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX003' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID='9200') ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX003' and AF.CELL_PID='FT0004' and af.COL_NAME!='大广州'  order by org_id"/>
+			<item label="各项贷款" sql="select ROUND(STRTOFLOAT(afo.CELL_DATA*10000*10000),2) as val,af.cell_id as org_id from AF_CELLINFO AF JOIN (select REP_ID,VERSION_ID from AF_REPORT where TEMPLATE_ID='FX003' and YEAR=substr(@ReptDate@,1,4) and TERM=substr(@ReptDate@,5,2) and ORG_ID='9200') ar on ar.VERSION_ID=af.VERSION_ID left join (select CELL_DATA,  CELL_ID,  REP_ID from AF_OTHERREPORTDATA) afo on afo.REP_ID=ar.REP_ID and afo.CELL_ID=af.CELL_ID where af.TEMPLATE_ID='FX003' and AF.CELL_PID='FT0004' and af.COL_NAME!='大广州' order by org_id" />
+		</dataset>
+		<style>
+			<graphWidth value="780" /><!-- 图片的宽度-->
+			<graphHeight value="300" /><!-- 图片的高度-->
+			<bgColorRGB value="246,248,247" /><!-- 图片的背景色（R,G,B）-->
+			<ttFont value="宋体" /><!-- 标题的字体-->
+			<ttFontSize value="18" /><!-- 标题的字的大小-->
+			<ttColorRGB value="0,0,0" /><!-- 标题的字的颜色（R,G,B）-->
+
+			<cBgColorRGB value="246,248,247" /><!-- 柱状图的背景色-->
+			<cInsets value="15, 10, 5, 50" /><!-- 柱状图的边距-->
+			<cRangeGridlineColorRGB value="0,0,0" /><!--柱状图的纵向网格的颜色 -->
+			<cForegroundAlpha value="0.8" /><!-- 柱子的透明度-->
+
+			<cDomainAxisColor value="0,0,0" /><!-- 横轴的颜色-->
+			<cDomainAxisLabelFont value="宋体" /><!-- 横轴Label的字体-->
+			<cDomainAxisLabelFontSize value="12" /><!-- 横轴Label的字的大小-->
+			<cDomainAxisLabelFontColor value="0,0,0" /><!-- 横轴Leble的字的颜色-->
+
+			<cDomainAxisTickLabelFont value="宋体" /><!-- 横轴TickLabel的字的字体-->
+			<cDomainAxisTickLabelFontSize value="12" /><!-- 横轴TickLabel的字的大小 -->
+			<cDomainAxisTickLabelFontColor value="0,0,0" /><!-- 横轴TickLabel的字的颜色-->
+
+			<cRangeAxisColor value="0,0,0" /><!-- 纵轴的颜色-->
+			<cRangeAxisLabelFont value="宋体" /><!--纵轴Label的字体 -->
+			<cRangeAxisLabelFontSize value="12" /><!-- 纵轴Label字的大小-->
+			<cRangeAxisLabelFontColor value="0,0,0" /><!-- 纵轴Label字的颜色-->
+
+			<cRangeAxisTickLabelFont value="宋体" /><!-- 纵轴的TickLabel的字体 -->
+			<cRangeAxisTickLabelFontSize value="12" /><!--纵轴的TickLabel的字的大小 -->
+			<cRangeAxisTickLabelFontColor value="0,0,0" /><!--纵轴的TickLabel的字的颜色 -->
+
+			<isC3D value="y" /><!-- 是否为3D-->
+			<cWallPaint value="244,241,236" /><!-- 3D背景墙的颜色 -->
+			<cItemMargin value="0.2" /><!-- 柱的间距-->
+			<cLabelPositions value="0.0" /><!-- 横轴TickLabel的字的角度-->
+		</style>
+		<url exists="n" url="" /><!--链接节点 exists:是否存在链接 url:链接对应的url -->
+	</graph>
+</fitechGraph>

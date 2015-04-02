@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+   <form-beans >
+    <form-bean name="LogInForm" type="com.cbrc.smis.form.LogInForm" />
+    <form-bean name="CalendarDetailForm" type="com.cbrc.smis.form.CalendarDetailForm" />
+   </form-beans>
+   <global-exceptions />
+   <global-forwards />
+   <action-mappings >
+	   <!--日志查询-->
+	   <action
+	   	  path="/system_mgr/viewLogIn"
+	      attribute="LogInForm"
+	      input="/system_mgr/log_mgr.jsp"
+	      name="LogInForm"
+	     
+	      scope="request"
+	      type="com.cbrc.smis.action.ViewLogInAction">
+	      <forward name="log_mgr" path="/system_mgr/log_mgr.jsp" />
+	   </action>
+	    <!--日志删除-->
+	   <action
+	   	  path="/system_mgr/deleteLogIn"
+	      attribute="LogInForm"
+	      input="/system_mgr/log_mgr.jsp"
+	      name="LogInForm"
+	      scope="request"
+	      type="com.cbrc.smis.action.DeleteLogInAction">
+	      <forward name="log_mgr" path="/system_mgr/log_mgr.jsp" />
+	   </action>
+	   <!--查询工作日历-->
+	   <action
+	   	  path="/system_mgr/viewCalendarDetail"
+	      attribute="CalendarDetailForm"
+	      input="/system_mgr/calendar_mgr.jsp"
+	      name="CalendarDetailForm"
+	      scope="request"
+	      type="com.cbrc.smis.action.ViewCalendarDetailAction">
+	      <forward name="calendar_mgr" path="/system_mgr/calendar_mgr.jsp" />
+	   </action>
+	   <!--修改工作日历-->
+	   <action
+	   	  path="/system_mgr/updateCalendarDetail"
+	      attribute="CalendarDetailForm"
+	      input="/system_mgr/calendar_mgr.jsp"
+	      name="CalendarDetailForm"
+	      scope="request"
+	      type="com.cbrc.smis.action.UpdateCalendarDetailAction">
+	      <forward name="calendar_mgr" path="/system_mgr/calendar_mgr.jsp" />
+	   </action>
+	  	
+	    <!--手动生成仓库文件-->
+		<action 
+			path="/system_mgr/viewDb2XmlManual" 
+			type="com.cbrc.smis.action.Db2XmlManualAction">
+    	  <forward name="db2xml_manual" path="/system_mgr/db2xml_manual.jsp" />
+    	</action>
+    	
+    	<!--查看生成仓库文件日志-->
+	    <action 
+			path="/system_mgr/viewDb2XmlLog" 
+			type="com.cbrc.smis.action.ViewDb2XmlLogAction">
+	      <forward name="db2xml_manual" path="/system_mgr/db2xml_manual.jsp" />
+	    </action>
+	   
+		 <!--发布信息管理====浏览-->
+		 <action 
+			 path="/system_mgr/viewOutFile" 
+			 type="com.cbrc.smis.action.ViewOutInfoFilesAction">
+	      <forward name="view" path="/system_mgr/outfile_list.jsp" />
+		 </action>
+	   
+		 <!--发布信息管理====新建-->
+		 <action 
+			 path="/system_mgr/newOutFile" 
+			 attribute="infoFilesForm"
+			 name="infoFilesForm"
+			 type="com.cbrc.smis.action.NewOutInfoFilesAction">
+	      <forward name="view" path="/system_mgr/outfile_add.jsp"/>
+	   	 </action>
+	   
+	   	 <!-- 子机构查询 -->
+		 <action 
+		 	path="/system_mgr/viewChildOrg" 
+		 	scope="request" 
+		 	name="orgNetForm" 
+		 	type="com.cbrc.smis.action.ViewLogChildSysAction" 
+		 	validate="false">
+			<forward name="log_mgr" path="/system_mgr/child_org_view.jsp" />
+		 </action>
+		 
+		 <!-- 用户角色 -->
+		 <action 
+		 	path="/system_mgr/viewAllRole"
+	      	attribute="userRoleForm"
+	      	name="userRoleForm"
+	      	validate="false"
+	      	scope="request"
+	      	type="com.cbrc.smis.action.ViewUserAllRoleAction">
+	      <forward name="show_user_role" path="/system_mgr/viewChildOrg.do" />
+	    </action>
+	    
+	    <!-- 新用户角色登录 -->
+	    <action
+	     	path="/system_mgr/searchUserName"
+	      	attribute="orgNetForm"
+	      	name="orgNetForm"
+	      	validate="false"
+	      	scope="request"
+	      	type="com.cbrc.smis.action.SearchUserInfoAction">
+	      <forward name="success" path="/index.jsp" />
+	    </action>
+	     <!-- 报表修改日志处理 -->
+	    <action
+	     	path="/system_mgr/insertFillLog"
+	       input="/system_mgr/log_mgr.jsp"
+	       name="LogInForm"
+	      scope="request"
+	      type="com.cbrc.smis.action.InsertFillLogAction">
+	    </action>
+	    
+	    <!-- 增加备注信息 -->
+	    <action path="/system_mgr/addReportInDesc" 
+	    	scope="request"
+	    type="com.cbrc.smis.action.AddReportInDescAction"></action>
+   </action-mappings>
+</struts-config>

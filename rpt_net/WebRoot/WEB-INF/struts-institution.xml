@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="SysParameterForm" type="com.fitech.institution.form.SysParameterForm" />
+		<form-bean name="afTemplateColDefineForm" type="com.fitech.institution.form.AfTemplateColDefineForm" />
+		<form-bean name="uploadInfoForm" type="com.fitech.institution.form.UploadInfoForm" />
+		<form-bean name="viewFormulaForm" type="com.fitech.institution.form.ViewFormulaForm" />
+	
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+
+	<action-mappings>
+		<action path="/institution/detailCol" type="com.fitech.institution.action.DetailColAction"
+			name="SysParameterForm" scope="request" validate="false" input="/institution/detailCol.jsp">
+			<forward path="/institution/detailCol.jsp" name="detailCol" />
+		</action>
+		<action path="/institution/afTemplateColDefine" type="com.fitech.institution.action.AfTemplateColDefineAction"
+			name="afTemplateColDefineForm" scope="request" validate="false" input="/institution/detailCol.jsp">
+			<forward path="/institution/detailCol.jsp" name="save" />
+		</action>
+		<action path="/institution/viewFormula" type="com.fitech.institution.action.ViewFormulaAction"
+			name="viewFormulaForm" scope="request" validate="false" input="/institution/gszs.jsp">
+			<forward path="/institution/gszs.jsp" name="view" />
+		</action>
+		<action path="/institution/editFormula" type="com.fitech.institution.action.EditFormulaAction"
+			name="viewFormulaForm" scope="request" validate="false" input="/institution/gsxg.jsp">
+			<forward path="/institution/gsxg.jsp" name="edit" />
+		</action>
+		
+		<action path="/institution/uploadFile" type="com.fitech.institution.action.UploadFileAction"
+			name="uploadInfoForm" scope="request" validate="false" parameter="method">
+			<forward path="/institution/uploadFormula.jsp" name="success"/> 
+		</action>
+	</action-mappings>
+</struts-config>

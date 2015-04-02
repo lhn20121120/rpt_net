@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="uploadInfoForm" type="com.fitech.institution.form.UploadInfoForm" />
+		<form-bean name="viewFormulaForm" type="com.fitech.institution.form.ViewFormulaForm" />
+		<form-bean name="mCellFormuStandard" type="com.fitech.instiution.hbm.MCellFormuStandard" />
+    <form-bean name="mCellToFormuStandard" type="com.fitech.instiution.hbm.MCellToFormuStandard" />
+	
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+
+	<action-mappings>
+		
+		<!--添加制度包-->
+	   <action
+	   	  path="/institutioncbrc"
+	      input="/institutioncbrc/upLoadZipPac.jsp"
+	      name="uploadFileForm"	     
+	      scope="request"
+	      type="com.fitech.instiution.action.InstitutionAction" 
+	      parameter="method">
+	      <forward name="success" path="/institutioncbrc/upLoadZipPac.jsp" />
+	   </action>
+	</action-mappings>
+</struts-config>

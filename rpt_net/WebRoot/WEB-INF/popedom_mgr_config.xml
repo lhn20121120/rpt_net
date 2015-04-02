@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<!--闁劑妫穱鈩冧紖鐞涳拷-->
+		<form-bean name="departmentForm"
+			type="com.cbrc.auth.form.DepartmentForm" />
+
+		<!---缁崵绮洪悽銊﹀煕鐞涳拷-->
+		<form-bean name="productUserForm"
+			type="com.cbrc.auth.form.ProductUserForm" />
+
+		<!---鐟欐帟澹婄悰锟�-->
+		<form-bean name="roleForm" type="com.cbrc.auth.form.RoleForm" />
+
+		<!--閼挎粌宕熼崝鐔诲厴鐞涳拷-->
+		<form-bean type="com.cbrc.auth.form.ToolSettingForm"
+			name="toolSettingForm" />
+
+		<!---鐟欐帟澹婇崝鐔诲厴鐎靛湱鍙庣悰锟�-->
+		<form-bean name="roleToolForm"
+			type="com.cbrc.auth.form.RoleToolForm" />
+
+		<!---閻€劍鍩涚紒鍕嚠閻撗嗐��-->
+		<form-bean name="mUserGrpForm"
+			type="com.cbrc.auth.form.MUserGrpForm" />
+
+		<!---閻€劍鍩涚紒鍕綀闂勬劘銆�-->
+		<form-bean name="mPurBankLevelForm"
+			type="com.cbrc.auth.form.MPurBanklevelForm" />
+
+		<!---閻€劍鍩涚悰锟�-->
+		<form-bean name="operatorForm"
+			type="com.cbrc.auth.form.OperatorForm" />
+
+		<!---閻€劍鍩涚憴鎺曞鐎靛湱鍙庣悰锟�-->
+		<form-bean name="userRoleForm"
+			type="com.cbrc.auth.form.UserRoleForm" />
+
+		<!---閻€劍鍩涢悽銊﹀煕缂佸嫬顕悡褑銆�-->
+		<form-bean name="mUserToGrpForm"
+			type="com.cbrc.auth.form.MUserToGrpForm" />
+		
+		<!--贴士提醒-->
+		<form-bean name="remindTipsForm"
+			type="com.cbrc.auth.form.RemindTipsForm" />
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+
+	<action-mappings>
+
+		<!--************闁劑妫穱鈩冧紖缁狅紕鎮�********************-->
+
+		<!--闁劑妫穱鈩冧紖閺屻儳婀�-->
+		<action path="/popedom_mgr/viewDepartment"
+			attribute="departmentForm"
+			input="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" name="departmentForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewDepartmentAction">
+			<forward name="dept_mgr"
+				path="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" />
+		</action>
+
+		<!--闁劑妫穱鈩冧紖濞ｈ濮�-->
+		<action path="/popedom_mgr/insertDepartment"
+			attribute="departmentForm"
+			input="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" name="departmentForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.InsertDepartmentAction">
+			<forward name="dept_add"
+				path="/popedom_mgr/dept_info_mgr/dept_add.jsp" />
+		</action>
+
+		<!--闁劑妫穱鈩冧紖娣囶喗鏁�-->
+		<action path="/popedom_mgr/updateDepartment"
+			attribute="departmentForm"
+			input="/popedom_mgr/dept_info_mgr/dept_update.jsp"
+			name="departmentForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.UpdateDepartmentAction">
+			<forward name="dept_update"
+				path="/popedom_mgr/dept_info_mgr/dept_update.jsp" />
+		</action>
+
+		<!--闁劑妫穱鈩冧紖閸掔娀娅�-->
+		<action path="/popedom_mgr/deleteDepartment"
+			attribute="departmentForm"
+			input="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" name="departmentForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.DeleteDepartmentAction">
+			<forward name="dept_mgr"
+				path="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" />
+		</action>
+
+		<!--**********缁崵绮洪悽銊﹀煕缁狅紕鎮�*********************-->
+
+		<!--缁崵绮洪悽銊﹀煕娣団剝浼呴弻銉ф箙-->
+		<action path="/popedom_mgr/viewProductUser"
+			attribute="productUserForm"
+			input="/popedom_mgr/system_user_setting/system_user_setting.jsp"
+			name="productUserForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewProductUserAction">
+			<forward name="system_user_setting"
+				path="/popedom_mgr/system_user_setting/system_user_setting.jsp" />
+		</action>
+		<!--缁崵绮洪悽銊﹀煕娣団剝浼呮穱顔芥暭-->
+		<action path="/popedom_mgr/updateProductUser"
+			attribute="productUserForm"
+			input="/popedom_mgr/system_user_setting/system_user_setting.jsp"
+			name="productUserForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.UpdateProductUserAction">
+			<forward name="system_user_setting"
+				path="/popedom_mgr/system_user_setting/system_user_setting.jsp" />
+		</action>
+
+		<!--**********鐟欐帟澹婄粻锛勬倞*********************-->
+
+		<!--鐟欐帟澹婃穱鈩冧紖閺屻儳婀�-->
+		<action path="/popedom_mgr/viewRole" attribute="departmentForm"
+			input="/popedom_mgr/role_mgr/role_mgr.jsp" name="roleForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewRoleAction">
+			<forward name="role_mgr"
+				path="/popedom_mgr/role_mgr/role_mgr.jsp" />
+		</action>
+
+		<!--鐟欐帟澹婃穱鈩冧紖濞ｈ濮�-->
+		<action path="/popedom_mgr/insertRole" attribute="roleForm"
+			input="/popedom_mgr/role_mgr/role_mgr.jsp" name="roleForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.InsertRoleAction">
+			<forward name="role_add"
+				path="/popedom_mgr/role_mgr/role_add.jsp" />
+		</action>
+
+		<!--鐟欐帟澹婃穱鈩冧紖娣囶喗鏁�-->
+		<action path="/popedom_mgr/updateRole" attribute="roleForm"
+			input="/popedom_mgr/role_mgr/role_update.jsp" name="roleForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.UpdateRoleAction">
+			<forward name="role_update"
+				path="/popedom_mgr/role_mgr/role_update.jsp" />
+		</action>
+
+		<!--鐟欐帟澹婃穱鈩冧紖閸掔娀娅�-->
+		<action path="/popedom_mgr/deleteRole" attribute="roleForm"
+			input="/popedom_mgr/role_mgr/role_mgr.jsp" name="roleForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.DeleteRoleAction">
+			<forward name="role_mgr"
+				path="/popedom_mgr/role_mgr/role_mgr.jsp" />
+		</action>
+
+		<!--鐟欐帟澹婇弶鍐娣団剝浼呴弻銉ф箙-->
+		<action path="/popedom_mgr/viewRoleTool"
+			attribute="roleToolForm" name="roleToolForm" scope="request"
+			validate="false" type="com.cbrc.auth.action.ViewRoleToolAction">
+			<forward name="role_data_access"
+				path="/popedom_mgr/role_mgr/role_data_access.jsp" />
+		</action>
+
+		<!--鐟欐帟澹婇弶鍐娣団剝浼呮穱顔芥暭-->
+		<action path="/popedom_mgr/updateRoleTool"
+			attribute="roleToolForm" name="roleToolForm" scope="request"
+			validate="false" type="com.cbrc.auth.action.UpdateRoleToolAction">
+			<forward name="role_data_access"
+				path="/popedom_mgr/role_mgr/role_data_access.jsp" />
+		</action>
+
+		<!--*************閸旂喕鍏橀懣婊冨礋缁狅紕鎮�**************-->
+
+		<!--閸旂喕鍏樻穱鈩冧紖閺屻儳婀�-->
+		<action path="/popedom_mgr/viewToolSetting"
+			type="com.cbrc.auth.action.ViewToolSettingAction"
+			attribute="toolSettingForm"
+			input="/popedom_mgr/menu_mgr/menu_mgr.jsp" name="toolSettingForm"
+			validate="false" scope="request">
+			<forward name="menu_mgr"
+				path="/popedom_mgr/menu_mgr/menu_mgr.jsp" />
+		</action>
+		<!--閸旂喕鍏樻穱鈩冧紖濞ｈ濮�-->
+		<action path="/popedom_mgr/insertToolSetting"
+			type="com.cbrc.auth.action.InsertToolSettingAction"
+			attribute="toolSettingForm"
+			input="/popedom_mgr/menu_mgr/menu_add.jsp" name="toolSettingForm"
+			validate="false" scope="request">
+			<forward name="menu_add"
+				path="/popedom_mgr/menu_mgr/menu_add.jsp" />
+		</action>
+		<!--閸旂喕鍏樻穱鈩冧紖缂傛牞绶�-->
+		<action path="/popedom_mgr/updateToolSetting"
+			type="com.cbrc.auth.action.UpdateToolSettingAction"
+			attribute="toolSettingForm"
+			input="/popedom_mgr/menu_mgr/menu_update.jsp" name="toolSettingForm"
+			validate="false" scope="request">
+			<forward name="menu_update"
+				path="/popedom_mgr/menu_mgr/menu_update.jsp" />
+		</action>
+		<!--閸旂喕鍏樻穱鈩冧紖閸掔娀娅�-->
+		<action path="/popedom_mgr/deleteToolSetting"
+			type="com.cbrc.auth.action.DeleteToolSettingAction"
+			attribute="toolSettingForm"
+			input="/popedom_mgr/menu_mgr/menu_mgr.jsp" name="toolSettingForm"
+			validate="false" scope="request">
+			<forward name="menu_add"
+				path="/popedom_mgr/menu_mgr/menu_mgr.jsp" />
+		</action>
+
+		<!--************閻€劍鍩涚紒鍕繆閹垳顓搁悶锟�********************-->
+
+		<!--閻€劍鍩涚紒鍕繆閹垱鐓￠惇锟�-->
+		<action path="/popedom_mgr/viewMUserGrp"
+			attribute="mUserGrpForm"
+			input="/popedom_mgr/user_group_mgr/user_group_mgr.jsp"
+			name="mUserGrpForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewMUserGrpAction">
+			<forward name="user_group_mgr"
+				path="/popedom_mgr/user_group_mgr/user_group_mgr.jsp" />
+		</action>
+
+		<!--閻€劍鍩涚紒鍕繆閹垱鍧婇崝锟�-->
+		<action path="/popedom_mgr/insertMUserGrp"
+			attribute="mUserGrpForm"
+			input="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" name="mUserGrpForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.InsertMUserGrpAction">
+			<forward name="user_group_add"
+				path="/popedom_mgr/user_group_mgr/user_group_add.jsp" />
+		</action>
+
+		<!--閻€劍鍩涚紒鍕繆閹垯鎱ㄩ弨锟�-->
+		<action path="/popedom_mgr/updateMUserGrp"
+			attribute="mUserGrpForm"
+			input="/popedom_mgr/dept_info_mgr/dept_update.jsp"
+			name="mUserGrpForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.UpdateMUserGrpAction">
+			<forward name="user_group_update"
+				path="/popedom_mgr/user_group_mgr/user_group_update.jsp" />
+		</action>
+
+		<!--閻€劍鍩涚紒鍕繆閹垰鍨归梽锟�-->
+		<action path="/popedom_mgr/deleteMUserGrp"
+			attribute="mUserGrpForm"
+			input="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" name="mUserGrpForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.DeleteMUserGrpAction">
+			<forward name="user_group_mgr"
+				path="/popedom_mgr/user_group_mgr/user_group_mgr.jsp" />
+		</action>
+
+		<!--閻€劍鍩涚紒鍕簚閺嬪嫭娼堥梽鎰叀閻拷-->
+		<action path="/popedom_mgr/viewUserGrpOrgPopedom"
+			attribute="mUserGrpForm" name="mUserGrpForm" validate="false"
+			scope="request"
+			type="com.cbrc.auth.action.ViewUserGrpOrgPopedomAction">
+			<forward name="user_group_org_popedom"
+				path="/popedom_mgr/user_group_mgr/user_group_org_popedom.jsp" />
+		</action>
+
+		<!--闁俺绻冮張鐑樼�崚鍡欒id閺屻儳婀呯拠銉︽簚閺嬪嫬鍨庣猾璁崇瑓閻ㄥ嫭婧�閺嬪嫪淇婇幁锟�-->
+		<action path="/popedom_mgr/viewMUserOrg"
+			attribute="mPurBankLevelForm" name="mPurBankLevelForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewMUserOrgAction">
+			<forward name="user_group_org_popedom"
+				path="/popedom_mgr/user_group_mgr/user_group_org_popedom.jsp" />
+		</action>
+
+		<!--閻€劍鍩涚紒鍕Г鐞涖劍娼堥梽鎰叀閻拷-->
+		<action path="/popedom_mgr/viewUserGrpRepPopedom"
+			attribute="mPurBankLevelForm" name="mPurBankLevelForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewUserGrpRepPopedomAction">
+			<forward name="user_group_rep_popedom"
+				path="/popedom_mgr/user_group_mgr/user_group_rep_popedom.jsp" />
+		</action>
+
+		<!--閻€劍鍩涚紒鍕Г鐞涖劍娼堥梽鎰叀閻拷-->
+		<action path="/popedom_mgr/updateMPurBankLevel"
+			attribute="mPurBankLevelForm" name="mPurBankLevelForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.UpdateMPurBankLevelAction">
+			<forward name="view" path="/popedom_mgr/viewMUserGrp.do" />
+		</action>
+
+		<!--************閻€劍鍩涙穱鈩冧紖缁狅紕鎮�********************-->
+
+		<!--閻€劍鍩涙穱鈩冧紖閺屻儳婀�-->
+		<action path="/popedom_mgr/viewOperator"
+			attribute="operatorForm" input="/popedom_mgr/user_mgr/user_mgr.jsp"
+			name="operatorForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewOperatorAction">
+			<forward name="user_mgr"
+				path="/popedom_mgr/user_mgr/user_mgr.jsp" />
+		</action>
+		<!-- 查看在线用户列表 -->
+		<action path="/popedom_mgr/viewOnlineOperator"
+			attribute="operatorForm" input="/popedom_mgr/user_mgr/user_mgr.jsp"
+			name="operatorForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewOnlineOperatorAction" parameter="m">
+			<forward name="success"
+				path="/popedom_mgr/user_mgr/user_onLine_mgr.jsp" />
+		</action>
+		<!--鐢ㄦ埛鍚嶆煡璇㈠姛鑳�-->
+		<action path="/popedom_mgr/searchOperator"
+			attribute="operatorForm" input="/popedom_mgr/user_mgr/user_mgr.jsp"
+			name="operatorForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.SearchOperatorAction">
+			<forward name="user_mgr"
+				path="/popedom_mgr/user_mgr/user_mgr.jsp" />
+		</action>
+		<!--閻€劍鍩涙穱鈩冧紖濞ｈ濮�-->
+		<action path="/popedom_mgr/insertOperator"
+			attribute="operatorForm" input="/popedom_mgr/user_mgr/user_mgr.jsp"
+			name="operatorForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.InsertOperatorAction">
+			<forward name="user_add"
+				path="/popedom_mgr/user_mgr/user_add.jsp" />
+			<forward name="view" path="/popedom_mgr/viewOperator.do" />
+		</action>
+
+		<!--閻€劍鍩涚憰浣锋叏閺�閫涗繆閹垱鐓￠惇锟�-->
+		<action path="/popedom_mgr/viewUpdateOperator"
+			attribute="operatorForm"
+			input="/popedom_mgr/user_mgr/user_update.jsp" name="operatorForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewUpdateOperatorAction">
+			<forward name="user_update"
+				path="/popedom_mgr/user_mgr/user_update.jsp" />
+		</action>
+
+		<!--閻€劍鍩涙穱鈩冧紖娣囶喗鏁�-->
+		<action path="/popedom_mgr/updateOperator"
+			attribute="operatorForm"
+			input="/popedom_mgr/user_mgr/user_update.jsp" name="operatorForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.UpdateOperatorAction">
+			<forward name="view" path="/popedom_mgr/viewOperator.do" />
+			<forward name="user_update"
+				path="/popedom_mgr/user_mgr/user_update.jsp" />
+		</action>
+
+		<!--閻€劍鍩涙穱鈩冧紖閸掔娀娅�-->
+		<action path="/popedom_mgr/deleteOperator"
+			attribute="operatorForm"
+			input="/popedom_mgr/dept_info_mgr/dept_mgr.jsp" name="operatorForm"
+			validate="false" scope="request"
+			type="com.cbrc.auth.action.DeleteOperatorAction">
+			<forward name="view" path="/popedom_mgr/viewOperator.do" />
+		</action>
+
+		<!--閻€劍鍩涚拠锔剧矎娣団剝浼呴弻銉ф箙-->
+		<action path="/popedom_mgr/viewUserDetail"
+			attribute="operatorForm" name="operatorForm" validate="false"
+			scope="request" type="com.cbrc.auth.action.ViewUserDetailAction">
+			<forward name="user_detail"
+				path="/popedom_mgr/user_mgr/user_detail.jsp" />
+		</action>
+
+		<!--閻€劍鍩涢悽銊﹀煕缂佸嫪淇婇幁顖涚叀閻拷-->
+		<action path="/popedom_mgr/viewMUserToGrp"
+			attribute="mUserToGrpForm" name="mUserToGrpForm" validate="false"
+			scope="request" type="com.cbrc.auth.action.ViewMUserToGrpAction">
+			<forward name="user_userGrp_setting"
+				path="/popedom_mgr/user_mgr/user_userGrp_setting.jsp" />
+			<forward name="view" path="/popedom_mgr/viewOperator.do" />
+		</action>
+
+		<!--閻€劍鍩涢悽銊﹀煕缂佸嫪淇婇幁顖涙纯閺傦拷-->
+		<action path="/popedom_mgr/updateMUserToGrp"
+			attribute="mUserToGrpForm" name="mUserToGrpForm" validate="false"
+			scope="request" type="com.cbrc.auth.action.UpdateMUserToGrpAction">
+			<forward name="user_userGrp_setting"
+				path="/popedom_mgr/user_mgr/user_userGrp_setting.jsp" />
+			<forward name="view" path="/popedom_mgr/viewOperator.do" />
+		</action>
+
+
+		<!--閻€劍鍩涚憴鎺曞娣団剝浼呴弻銉ф箙-->
+		<action path="/popedom_mgr/viewUserRole"
+			attribute="userRoleForm" name="userRoleForm" validate="false"
+			scope="request" type="com.cbrc.auth.action.ViewUserRoleAction">
+			<forward name="user_role_setting"
+				path="/popedom_mgr/user_mgr/user_role_setting.jsp" />
+		</action>
+
+		<!--閻€劍鍩涚憴鎺曞娣団剝浼呴弴瀛樻煀-->
+		<action path="/popedom_mgr/updateUserRole"
+			attribute="userRoleForm" name="userRoleForm" validate="false"
+			scope="request" type="com.cbrc.auth.action.UpdateUserRoleAction">
+			<forward name="user_role_setting"
+				path="/popedom_mgr/user_mgr/user_role_setting.jsp" />
+			<forward name="view" path="/popedom_mgr/viewOperator.do" />
+		</action>
+
+		<!--鐢ㄦ埛鏇存敼瀵嗙爜-->
+		<action path="/popedom_mgr/updatePwdOperator"
+			attribute="operatorForm" input="/system_mgr/modifyPwd.jsp"
+			name="operatorForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.UpdatePwdOperatorAction">
+			<forward name="update_pwd" path="/system_mgr/modifyPwd.jsp" />
+			<!--forward name="view" path="/popedom_mgr/viewOperator.do" /-->
+		</action>
+		
+		<!--鏌ヨ鍙互閲嶇疆瀵嗙爜鐨勭敤鎴?-->
+		<action path="/system_mgr/viewResetPwd"
+			attribute="operatorForm" input="/system_mgr/viewResetPwd.jsp"
+			name="operatorForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.ViewResetPwdAction">
+			<forward name="view_user"
+				path="/system_mgr/viewResetPwd.jsp" />
+		</action>
+		
+		<!--閲嶇疆鐢ㄦ埛瀵嗙爜 -->
+		<action path="/system_mgr/resetPwd"
+			attribute="operatorForm" input="/system_mgr/viewResetPwd.jsp"
+			name="operatorForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.ResetPwdAction">
+			<forward name="view" path="/system_mgr/viewResetPwd.do" />
+		</action>
+		
+		<!--鏌ヨ鐢ㄦ埛淇℃伅-->
+		<action path="/popedom_mgr/showUserInfo"
+			attribute="operatorForm" name="operatorForm" validate="false"
+			scope="request" type="com.cbrc.auth.action.ShowOperatorInfoAction">
+			<forward name="show_info"
+				path="/netOrg/orgNetInfo/viewUserInFo.jsp" />
+		</action>
+		
+		<!--保存贴士提醒 -->
+		<action path="/system_mgr/saveRemindTips"
+			attribute="remindTipsForm" input="/system_mgr/viewRemindTips.jsp"
+			name="remindTipsForm" validate="false" scope="request"
+			type="com.cbrc.auth.action.SaveRemindTipsAction">
+			<forward name="view_remind"
+				path="/system_mgr/viewRemindTips.jsp" />
+		</action>
+	</action-mappings>
+</struts-config>
+
+

@@ -1,0 +1,4 @@
+body{margin:0; padding:0; background-image:url(../image/wel.png); background-position:center center; background-repeat:no-repeat;}
+.weltop{background:url(../image/rightbg.gif) repeat-x top; padding-top:65px; overflow:hidden;}
+.welleft{ width:82px; height:33px; float:left; margin-left:60px;}
+.welcenter{width:323px; height:59px; margin-left:50%; margin-right:60%; }

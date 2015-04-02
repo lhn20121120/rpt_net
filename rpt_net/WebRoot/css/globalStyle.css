@@ -1,0 +1,414 @@
+.globalTable {
+	width:1024;
+	border: 0 none;
+	text-align:center;
+	border-collapse: collapse;
+}
+td{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+}
+.form{
+  font-family:宋体,Arial;
+  font-size: 9pt;
+  color: #oooooo;
+  border: 1px solid #f3d897;
+  padding-left: 1;
+  padding-right: 1;
+  padding-top: 3;
+  background-color: #f3d897;
+}
+.mainTable {
+	width:880px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #f3d897 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+}
+.mainTable3 {
+	width:650px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #f3d897 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	background-color: #f3d897;
+}
+.mainTable2 {
+	width:940px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #f3d897 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	background-color: #f3d897;
+}
+.mainLikeTable {
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #f3d897 1px;
+	font-family:宋体,Arial;
+	font-size: 9pt;
+}
+
+.naviTableOn {
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	width:200px;
+	height:22px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #f3d897 1px;
+	background-color:#f3d897;
+	cursor: hand;
+	color: #000000;
+}
+.naviTableOff {
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	width:200px;
+	height:22px;
+	text-align:center;
+	border-collapse: collapse;
+	border: dotted #f3d897 1px;
+	cursor: hand;
+	color: #000000;
+}
+.tabCommon{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	background : url(../image/tab.bg.dln.gif);
+	height:48px;
+	text-align:center;
+}
+.formButton{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 18px;
+	background : url(../image/buttonBk.jpg);
+	border: 1 solid #f3d897;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: hand;
+	padding-top: 1px;
+	letter-spacing: 1px;
+}
+.formButtonOn{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 18px;
+	background-color: #f3d897;
+	border: 1 solid #f3d897;
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: hand;
+	padding-top: 1px;
+	letter-spacing: 1px;
+}
+.tabButton{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	background : url(../image/button.jpg);
+	height:29px;
+	border: 1px #f3d897;
+	width:1000px;
+}
+.buttonOff{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: hand;
+	padding-top: 2px;
+	letter-spacing: 1px;
+	border: 1 solid #f3d897;
+	top: 1px; 
+	position: relative ;
+	}
+.buttonOn{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 20px;
+	border: 1 solid #f3d897;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: hand;
+	padding-top: 2px;
+	background-color: #f3d897;
+	letter-spacing: 1px;
+	top: 1px; 
+	position: relative ;
+}
+.buttonPlaceholder{
+	width: 8px;
+	background : url(../image/place.jpg);
+	height: 10px;
+}
+
+.tabOn{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	background : url(../image/tab.bg.on.gif);
+	height:48px;
+	text-align:center;
+}
+.tabOff{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	background : url(../image/tab.bg.off.gif);
+	height:48px;
+	text-align:center;
+}
+body {
+	scrollbar-face-color: #F4E0B5;
+	scrollbar-highlight-color: #f3d897;
+	scrollbar-shadow-color: #f3d897;
+	scrollbar-3dlight-color: #f3d897;
+	scrollbar-arrow-color: #f3d897;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #f3d897;
+	text-align : center;
+	margin : 0;
+	font-family:宋体,Arial;
+	background-color:#F3F3F3;
+	font-size: 9pt;
+}
+.common{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height:48px;
+	text-align:center;
+	background-color: #f3d897;
+}
+.tdLine{
+	background-color: #f3d897;
+	height:1px;
+}
+.href{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	text-decoration:none;
+}
+.href:hover{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: red;
+	text-decoration:underline;
+}
+.buttonSearch{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonSearch.gif);
+	letter-spacing: 1px;
+	border: 1 solid #f3d897;
+	}
+.buttonView{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonView.gif);
+	letter-spacing: 1px;
+	border: 1 solid #f3d897;
+	}
+.buttonDel{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonDel.gif);
+	letter-spacing: 1px;
+	border: 1 solid #f3d897;
+	}
+.buttonAdd{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonAdd.gif);
+	letter-spacing: 1px;
+	border: 1 solid #f3d897;
+	}
+.buttonModify{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonModify.gif);
+	letter-spacing: 1px;
+	border: 1 solid #f3d897;
+	}
+.mainoption{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	height: 19px;
+	padding-left: 12px;
+	cursor: hand;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	background : url(../image/buttonModify.gif);
+	letter-spacing: 1px;
+	border: 1 solid #f3d897;
+	}
+.form2{
+  font-family: 宋体; 
+	font-size: 9pt; 
+	padding-top: 2px;
+	color: #000000;
+	background-color: #f3d897; 
+	border-left: 1 solid #f3d897; 
+	border-right: 1 solid #f3d897; 
+	border-top: 1 solid #f3d897; 
+	border-bottom: 1 solid #f3d897;
+}
+.theader{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	background : url(../image/bgcolor.gif);
+	height:24px;
+	border: 1px #f3d897;
+	font-weight: bold;
+}
+a{
+  font-family:宋体,Arial;
+  font-size: 9pt;
+  color: #000000;
+  text-decoration:none;
+  cursor:hand;
+}
+a:hover {
+  font-family:宋体,Arial;
+  color: #000000;
+}
+.td2{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	border-bottom: 2px solid #f3d897;
+}
+.td3{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	border-bottom: 1px solid #f3d897;
+}
+.td4{
+	font-family:宋体,Arial;
+	font-size: 9pt;
+	color: #000000;
+	border-bottom: 1px solid #f3d897;
+}
+
+.univer_model{margin:4px 4px 6px 4px;width:auto;clear:both;padding:6px;background:url(../image/content_bg.jpg) repeat-x bottom #fff;border:1px solid #f3d897;overflow-x:hidden}
+
+.datalist{
+	border:1px solid #c1c1c1; 
+	/*
+	font-family:Arial;
+	font-size:12px;
+	*/
+	border-collapse:collapse; 
+	background-color:#f3d897; 
+	
+	font-size: 12px;
+	color: #000000;
+	font-family:宋体,Tahoma;
+}
+.datalist caption{
+	padding-bottom:5px;
+	font:bold 1.4em;
+	text-align:left;
+}
+.datalist th{
+	border:1px solid #f3d897; 
+	background-color:#f3d897; 
+	color:#000000;  
+	font-weight:bold;
+	padding-top:4px; padding-bottom:4px;
+	padding-left:12px; padding-right:12px;
+	text-align:center;
+}
+.datalist td{
+	border:1px solid #f3d897;
+	text-align:center;
+	padding-top:4px; padding-bottom:4px;
+	padding-left:10px; padding-right:10px;
+}
+.datalist tr:hover, .datalist tr.altrow{
+	background-color:#f3d897;
+}
+.location1{width:80%;height:25px;overflow:hidden;clear:both;background:url(../image/content_title_bg.jpg) repeat-x;margin:6px 0}
+.location1 .name{font-size:12px;color:#000000;text-indent:48px;padding-top:5px;float:left;width:100%;background:url(../image/location_title_bg.jpg) no-repeat;height:25px;overflow:hidden}
+
+.titletab {
+        width:170;
+       	filter:progid:DXImageTransform.Microsoft.Gradient(gradienttype=0, startcolorstr=#f3d897, endcolorstr=#f3d897);
+		
+        border:0;
+      
+		
+}
+.titletd-exp {  
+		color:#000000;
+		font:bold;
+        border:0;
+        height:28;
+        vertical-align:middle;
+        padding-left:21;
+		background:#f3d897;
+  		background-repeat: repeat-y;
+		background-position: right center;
+		background-image: url(../image/leftbarbg.gif);
+		cursor:hand;
+}
+.titletd-col {
+	color:#000000;
+	font:bold;
+	   border:0;
+        height:28;
+        vertical-align:middle;
+        padding-left:21;
+      	background:#f3d897;
+	 	background-repeat: repeat-y;
+		background-position: right center;
+        cursor:hand;
+		background-image: url(../image/leftbarbg.gif) ;
+     
+}

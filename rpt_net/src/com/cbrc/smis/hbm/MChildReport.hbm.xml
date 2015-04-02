@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.MChildReport" 
+    table="M_CHILD_REPORT"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.MChildReportPK">
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+    </composite-id>    
+
+    <property
+        name="reportName"
+        type="java.lang.String"
+        column="REPORT_NAME"
+        length="50"
+    />
+    <property
+        name="startDate"
+        type="java.lang.String"
+        column="START_DATE"
+        length="10"
+    />
+     <property
+        name="templateType"
+        type="java.lang.String"
+        column="TEMPLATETYPE"
+        length="10"
+    />
+    <property
+        name="endDate"
+        type="java.lang.String"
+        column="END_DATE"
+        length="10"
+    />
+    <property
+        name="formatTempId"
+        type="java.lang.String"
+        column="FORMAT_TEMP_ID"
+        length="20"
+    />
+    <property
+        name="isPublic"
+        type="java.lang.Integer"
+        column="IS_PUBLIC"
+        length="5"
+    />
+    <property
+        name="repRangeFlag"
+        type="java.lang.Integer"
+        column="REP_RANGE_FLAG"
+        length="1"
+    />
+    <property
+        name="actuRepFlag"
+        type="java.lang.Integer"
+        column="ACTU_REP_FLAG"
+        length="1"
+    />
+	<property
+		name="reportStyle"
+		type="java.lang.Integer"
+		column="REPORT_STYLE"
+		length="5"
+	/>
+	<property
+		name="frOrFzType"
+		type="java.lang.String"
+		column="FRORFZTYPE"
+		length="1"
+	/>
+		
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+    <!-- bi-directional many-to-one association to MCurUnit -->
+    <many-to-one
+        name="MCurUnit"
+        class="com.cbrc.smis.hibernate.MCurUnit"
+        not-null="true"
+        cascade="none"
+    >
+        <column name="CUR_UNIT" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to MMainRep -->
+    <many-to-one
+        name="MMainRep"
+        class="com.cbrc.smis.hibernate.MMainRep"
+        not-null="true">
+        <column name="REP_ID" />
+    </many-to-one>
+    <!-- bi-directional one-to-many association to MActuRep -->
+    <set
+        name="MActuReps"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.MActuRep"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to ListingTable -->
+    <set
+        name="listingTables"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ListingTable"
+        />
+    </set>
+    <!-- bi-directional one-to-one association to ReportData -->
+    <!-- 
+    <one-to-one
+        name="reportData"
+        class="com.cbrc.smis.hibernate.ReportData"
+        outer-join="auto"
+        cascade="none"
+    />
+    -->
+    <!-- bi-directional one-to-many association to MRepRange -->
+    <set
+        name="MRepRanges"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.MRepRange"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to ColToFormu -->
+    <set
+        name="colToFormus"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ColToFormu"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to AbnormityChange -->
+    <set
+        name="abnormityChanges"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.AbnormityChange"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to ReportIn -->
+    <set
+        name="reportIns"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ReportIn"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to ColAbnormityChange -->
+    <set
+        name="colAbnormityChanges"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ColAbnormityChangeInfo"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to MCell -->
+    <set
+        name="MCells"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.MCell"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.DataValidateInfo" 
+    table="DATA_VALIDATE_INFO"
+>
+
+    <composite-id name="comp_id" class="com.gather.hibernate.DataValidateInfoPK">
+        <key-property 
+            name="repOutId" 
+            column="REP_OUT_ID" 
+            type="java.lang.Integer"
+            length="22"
+        />
+        <key-property 
+            name="sequenceId" 
+            column="SequenceId" 
+            type="java.lang.Integer"
+            length="22"
+        />
+    </composite-id>    
+
+        <property 
+            name="validateTypeId"  
+            type="java.lang.Integer"
+            column="VALIDATE_TYPE_ID"
+            length="22"
+        />
+        <property 
+            name="cellFormId" 
+            type="java.lang.Integer"
+            column="CELL_FORM_ID" 
+            length="22"
+        />
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to ValidateType -->
+    <many-to-one
+        name="validateType"
+	    class="com.gather.hibernate.ValidateType"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="VALIDATE_TYPE_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to Report -->
+    <many-to-one
+        name="report"
+	    class="com.gather.hibernate.Report"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="REP_OUT_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to MCellForm -->
+    <many-to-one
+        name="MCellForm"
+	    class="com.gather.hibernate.MCellForm"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CELL_FORM_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

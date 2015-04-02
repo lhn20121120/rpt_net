@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form1
+><Subform1
+><detailHeader1
+><FH3
+>C </FH3
+><FH4
+>D</FH4
+><FH5
+>E</FH5
+><FH6
+>F</FH6
+><FH7
+>G</FH7
+><FH8
+>H</FH8
+><FH9
+>I</FH9
+><FH10
+>J</FH10
+><FH11
+>K</FH11
+><FH12
+>L</FH12
+><K6
+>正常 </K6
+><L6
+>关注 </L6
+><M6
+>次级 </M6
+><N6
+>可疑 </N6
+><O6
+>损失 </O6
+><FH2
+>B </FH2
+><A4
+>序号</A4
+><D5
+>交易对方信托项目(计划)名称</D5
+><G5
+>交易种类</G5
+><FH1
+>A </FH1
+><B5
+>信托项目(计划)名称</B5
+><F5
+>交易金额</F5
+><H5
+>交易合同起止日期</H5
+><K5
+>风险状况 </K5
+><J5
+>信息披露频率</J5
+><I5
+>委托人受益人同意情况</I5
+><fitechTitle
+>S34信托投资公司关联交易风险及客户集中度情况表</fitechTitle
+><B3
+>二、信托财产相互交易风险状况表</B3
+><fitechSubtitle
+>第一部分：信托投资公司关联交易风险状况 (2)</fitechSubtitle
+><fitechUnit
+>万元</fitechUnit
+><fitechRange
+/><fitechSubmitMonth
+/><fitechSubmitYear
+/></detailHeader1
+><total1
+><COL3
+/><COL1
+/><COL4
+/><COL5
+/><COL6
+/><COL7
+/><COL8
+/><COL9
+/><COL10
+/><COL11
+/><COL12
+/><COL13
+/><COL2
+>合计</COL2
+><jiaoyanwei
+>未校验！</jiaoyanwei
+></total1
+></Subform1
+><Subform1
+><detailHeader2
+><K6
+>正常 </K6
+><L6
+>关注 </L6
+><M6
+>次级 </M6
+><N6
+>可疑 </N6
+><O6
+>损失 </O6
+><FH2
+>B </FH2
+><FH3
+>C </FH3
+><FH4
+>D </FH4
+><FH5
+>E </FH5
+><FH6
+>F </FH6
+><FH7
+>G </FH7
+><FH8
+>H </FH8
+><FH9
+>I </FH9
+><FH10
+>J</FH10
+><FH11
+>K</FH11
+><FH12
+>L</FH12
+><FH13
+>M</FH13
+><FH1
+>A </FH1
+><J17
+>信息披露频率</J17
+><I17
+>委托人受益人同意情况</I17
+><F17
+>交易金额 </F17
+><G17
+>交易种类</G17
+><H17
+>交易合同起止日期</H17
+><E17
+>固有财产类别</E17
+><K17
+>风险状况 </K17
+><B17
+>信托项目(计划)名称</B17
+><A16
+>序号</A16
+><D17
+>信托财产类别</D17
+><B15
+> 三、信托财产与固有财产交易风险状况表</B15
+></detailHeader2
+><total2
+><COL3
+/><COL1
+/><COL5
+/><COL6
+/><COL7
+/><COL8
+/><COL9
+/><COL10
+/><COL11
+/><COL12
+/><COL13
+/><COL14
+/><COL2
+>合计</COL2
+><jiaoyanwei
+>未校验！</jiaoyanwei
+><fitechVersion
+>0513</fitechVersion
+><fitechFiller
+/><fitechChecker
+/><fitechPrincipal
+/></total2
+></Subform1
+></form1
+>

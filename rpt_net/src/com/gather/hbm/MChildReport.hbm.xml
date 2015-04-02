@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.MChildReport" 
+    table="M_CHILD_REPORT"
+>
+
+    <composite-id name="comp_id" class="com.gather.hibernate.MChildReportPK">
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="5"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="4"
+        />
+    </composite-id>    
+
+    <property
+        name="reportName"
+        type="java.lang.String"
+        column="REPORT_NAME"
+        length="50"
+    />
+    <property
+        name="startDate"
+        type="java.util.Date"
+        column="START_DATE"
+        length="10"
+    />
+    <property
+        name="endDate"
+        type="java.util.Date"
+        column="END_DATE"
+        length="10"
+    />
+    <property
+        name="formatTempId"
+        type="java.lang.String"
+        column="FORMAT_TEMP_ID"
+        length="20"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+    <!-- bi-directional many-to-one association to MCurUnit -->
+    <many-to-one
+        name="MCurUnit"
+        class="com.gather.hibernate.MCurUnit"
+        not-null="true"
+        cascade="none"
+    >
+        <column name="CUR_UNIT" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to MMainRep -->
+    <many-to-one
+        name="MMainRep"
+        class="com.gather.hibernate.MMainRep"
+        not-null="true"
+        cascade="none"
+    >
+        <column name="REP_ID" />
+    </many-to-one>
+    <!-- bi-directional one-to-many association to MActuRep -->
+    <set
+        name="MActuReps"
+        lazy="false"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MActuRep"
+        />
+    </set>
+    <!-- bi-directional one-to-one association to ReportData -->
+    <!-- 
+    <one-to-one
+        name="reportData"
+        class="com.gather.hibernate.ReportData"
+        outer-join="auto"
+        cascade="none"
+    />
+    -->
+    <!-- bi-directional one-to-many association to MRepRange -->
+    <set
+        name="MRepRanges"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.MRepRange"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to Report -->
+    <set
+        name="reports"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILDREPID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.Report"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to RepRangeDownLog -->
+    <set
+        name="repRangeDownLogs"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="CHILD_REP_ID" />
+            <column name="VERSION_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.RepRangeDownLog"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

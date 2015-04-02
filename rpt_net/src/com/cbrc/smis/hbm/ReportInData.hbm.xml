@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.ReportInData" 
+    table="Report_In_Data"
+>
+	<id
+		name="repInId"
+		column="Rep_In_Id"
+		type="java.lang.Integer"
+		length="10">
+		<generator class="assigned"/>
+	</id>
+	
+	<property
+		name="xml"
+		column="Xml"
+		type="java.sql.Blob"
+	/>
+	
+	<property
+		name="xmlSize"
+		column="Xml_Size"
+		type="java.lang.Integer"
+	/>
+	
+	
+</class>
+</hibernate-mapping>

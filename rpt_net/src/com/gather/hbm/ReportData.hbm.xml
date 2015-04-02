@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.ReportData" 
+    table="REPORT_DATA"
+>
+
+    <composite-id name="comp_id" class="com.gather.hibernate.ReportDataPK">
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="5"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="4"
+        />
+    </composite-id>    
+
+    <property
+        name="pdf"
+        type="java.sql.Blob"
+        column="PDF"
+        length="4000"
+    />
+    <property
+        name="note"
+        type="java.sql.Blob"
+        column="NOTE"
+        length="4000"
+    />
+    <property
+        name="xml"
+        type="java.sql.Blob"
+        column="XML"
+        length="4000"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- end of derived association(s) -->
+  
+    <!-- bi-directional one-to-one association to MChildReport -->
+    <!-- 
+    <one-to-one
+        name="MChildReport"
+        class="com.gather.hibernate.MChildReport"
+        outer-join="auto"
+        constrained="false"
+    />
+    -->
+</class>
+</hibernate-mapping>

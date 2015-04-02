@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.ReportAgainSet" 
+    table="REPORT_AGAIN_SET"
+>
+
+	 <id name="rasId"
+		 column="RAS_ID"
+         type="java.lang.Integer"  
+		 length="18">
+		 <generator class="sequence">
+        	<param name="sequence">seq_report_in</param>
+		</generator>
+	 </id>
+	
+    <property 
+       name="repInId" 
+       column="REP_IN_ID" 
+       type="java.lang.Integer"
+       length="10"
+    />
+	
+    <property
+        name="cause"
+        type="java.lang.String"
+        column="CAUSE"
+        length="500"
+    />
+    <property
+        name="setDate"
+        type="java.sql.Timestamp"
+        column="SET_DATE"
+        length="26"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to ReportIn -->
+    <many-to-one
+        name="reportIn"
+	    class="com.cbrc.smis.hibernate.ReportIn"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="REP_IN_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

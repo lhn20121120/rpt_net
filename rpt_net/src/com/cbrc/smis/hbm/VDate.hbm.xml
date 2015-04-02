@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+
+<class 
+    name="com.cbrc.smis.hibernate.VDate" 
+    table="V_DATE"
+>
+
+    <id
+        name="vdid"
+        type="java.lang.Integer"
+        column="VD_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="vdname"
+        type="java.lang.String"
+        column="VD_NAME"
+        length="50"
+    />
+    <property
+        name="vdyear"
+        type="java.lang.Integer"
+        column="VD_YEAR"
+    />
+    <property
+        name="vdsea"
+        type="java.lang.Integer"
+        column="VD_SEA"
+    />
+    <property
+        name="vdmonth"
+        type="java.lang.Integer"
+        column="VD_MONTH"
+    />
+	<property
+        name="vdday"
+        type="java.lang.Integer"
+        column="VD_DAY"
+    />
+
+</class>
+</hibernate-mapping>

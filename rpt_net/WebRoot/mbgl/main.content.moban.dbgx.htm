@@ -1,0 +1,406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<SCRIPT language=javascript>
+function trimPrefix(str,prefix)
+{
+	var tmpstr = str;
+	var len = prefix.length;
+	
+	//alert("char code:"+tmpstr.charCodeAt(0));
+	//alert(tmpstr.substring(0,len));
+	if(tmpstr.substring(0,len) == prefix)
+	//if(prefix.indexOf(tmpstr.substring(0,len)) != -1)
+	{
+		tmpstr = tmpstr.substr(len);
+	}
+	return tmpstr;
+}
+
+function trimPrefixIndent(str)
+{
+	//(2004-01-18,by Fred)space in Option.text is unicode 160
+	var prefixIndent = String.fromCharCode(160,160)+"--";
+	return trimPrefix(str,prefixIndent);
+}
+</SCRIPT>
+
+<SCRIPT language=JAVASCRIPT>
+function ToGo()
+{  SelectTotal('SelectedIndustry[]');
+   SelectTotal('SelectedFunction[]');
+   SelectTotal('SelectedArea[]');
+   SelectTotal('SelectedComp[]');
+   window.Form1.action="/cv/CResume/CV_COtherSelf.php"+"?Read=0&ID=3637653";
+   window.Form1.submit();
+}
+
+function SelectTotal(ObjName)
+{ ObjID = GetObjID(ObjName);
+  if (ObjID != -1)
+  { for (i=0; i<document.Form1.elements[ObjID].length; i++)
+      document.Form1.elements[ObjID].options[i].selected = true;
+  }
+}
+
+function GetObjID(ObjName)
+{ for ( var ObjID=0; ObjID < window.Form1.elements.length; ObjID++ )
+      if (window.Form1.elements[ObjID].name == ObjName )
+      {  return(ObjID);
+         break;
+      }
+  return(-1);
+}
+
+function ChangeOption(ObjName, DesName)
+{
+  //GET OBJECT VALUE, ID OF DESTINATION OBJECT
+  ObjID    = GetObjID(ObjName);
+  DesObjID = GetObjID(DesName);
+  //CLEAR OLD OPTIONS
+  document.Form1.elements[DesObjID].length= 0;
+  //Add NEW OPTIONS
+  if ( ObjID != -1 && DesObjID != -1 )
+  {  CatValue = window.Form1.elements[ObjID].value.substring(0, 2);
+     if ( CatValue == "00" )
+        document.Form1.elements[DesObjID].length=0;
+     else
+     {  //PARSING
+        if ( ObjName == "AreaCat")
+           var tt = document.Form1.AreaCode.value;
+        else
+           var tt = document.Form1.FuncCode.value;
+        var SubCategory = tt.split(";");
+        //GENERATE OPTIONS
+        j=0;
+        for (var i=0; i< SubCategory.length; i++ )
+        {   pp = SubCategory[i].split(",");
+            if ( pp[0].substring(0,2) == CatValue && pp[0].substring(2,4) != "00" )
+            {  document.Form1.elements[DesObjID].options[j]= new Option( pp[1], pp[0]);
+               j++;
+            }//if
+        }//for
+     }//if
+  }//if
+}//function
+
+function InsertItem(ObjID, Location)
+{ len=document.Form1.elements[ObjID].length;
+  for (counter=len; counter>Location; counter--)
+  {   Value = document.Form1.elements[ObjID].options[counter-1].value;
+      Text2Insert  = document.Form1.elements[ObjID].options[counter-1].text;
+      document.Form1.elements[ObjID].options[counter] = new Option(trimPrefixIndent(Text2Insert), Value);
+  }
+}
+
+function GetLocation(ObjID, Value)
+{ total=document.Form1.elements[ObjID].length;
+  for (pp=0; pp<total; pp++)
+      if (document.Form1.elements[ObjID].options[pp].text == "---"+Value+"---")
+      {  return (pp);
+         break;
+      }
+  return (-1);
+}
+
+function AddItem(ObjName, DesName, CatName)
+{
+  //GET OBJECT ID AND DESTINATION OBJECT
+  ObjID    = GetObjID(ObjName);
+  DesObjID = GetObjID(DesName);
+  CatObjID = GetObjID(CatName);
+
+  if ( ObjID != -1 && DesObjID != -1 && CatObjID != -1 )
+  {   hasNum = overalert(DesObjID);
+      if (hasNum == 5)
+         window.alert("最多选五项。");
+      else
+      {  //GET SELECTED ITEM NUMBER
+         SelNum = 0;
+         for (var j=0; j<document.Form1.elements[ObjID].length; j++)
+         {   if ( document.Form1.elements[ObjID].options[j].selected)
+             SelNum ++;
+         }
+         if ((SelNum + hasNum) > 5)
+            window.alert("最多选五项。");
+         else
+         {  jj       = document.Form1.elements[CatObjID].selectedIndex;
+            CatValue = trimPrefixIndent(document.Form1.elements[CatObjID].options[jj].text);
+            CatCode  = document.Form1.elements[CatObjID].options[jj].value;
+            i        = document.Form1.elements[ObjID].options.length;
+            j        = document.Form1.elements[DesObjID].options.length;
+            for (h=0; h<i; h++)
+            {   if (document.Form1.elements[ObjID].options[h].selected )
+                {  Code = document.Form1.elements[ObjID].options[h].value;
+                   Text = trimPrefixIndent(document.Form1.elements[ObjID].options[h].text);
+                   j    = document.Form1.elements[DesObjID].options.length;
+
+                   HasSelected = false;
+                   for (k=0; k<j; k++ )
+                   if (document.Form1.elements[DesObjID].options[k].value == Code)
+                   {  HasSelected = true;
+                      break;
+                   }
+                   if (HasSelected == false)
+                   {  Location = GetLocation(DesObjID, CatValue);
+					  if (Location == -1 )
+                      {  document.Form1.elements[DesObjID].options[j] =  new Option("---"+CatValue+"---",CatCode);
+                         document.Form1.elements[DesObjID].options[j+1] = new Option(Text, Code);
+                      }
+                      else
+                      {  InsertItem(DesObjID, Location+1);
+                         document.Form1.elements[DesObjID].options[Location+1] = new Option(Text, Code);
+                      }
+                   }
+                   else
+                       window.alert("此项已选择。");
+                }
+            }
+         }//else
+      }//else
+      //CLEAR SELECTION
+      for (i=0; i<document.Form1.elements[ObjID].length; i++)
+          document.Form1.elements[ObjID].options[i].selected = false;
+
+  }//if
+}//end of function
+
+//written by liming
+function overalert(ID)
+{ var over  = 0;
+  thelength = document.Form1.elements[ID].length;
+  for (m=0; m<thelength; m++)
+  {   thevalue = document.Form1.elements[DesObjID].options[m].value
+      thevalue = thevalue.substring(2)
+      if (thevalue!="00")
+         over=over+1;
+  }
+  return(over);
+}
+//end
+
+//MODIFIED BY DAVID AND CLOUD
+function DeleteItem(ObjName)
+{ ObjID = GetObjID(ObjName);
+  if ( ObjID != -1 )
+  {  var  check_index = new Array();
+     for (i=window.Form1.elements[ObjID].length-1; i>=0; i--)
+     {   if (window.Form1.elements[ObjID].options[i].selected)
+         {  check_index[i] = true;
+            window.Form1.elements[ObjID].options[i].selected = false;
+         }
+         else
+            check_index[i] = false;
+     }
+     for (i=window.Form1.elements[ObjID].length-1; i>=0; i--)
+     {   if (check_index[i])
+         {  info = window.Form1.elements[ObjID].options[i].value;
+            if (!(info.substring(2)=="00")) window.Form1.elements[ObjID].options[i] = null
+         }
+     }
+     var b=0
+     var indexarr = new Array()
+     for (i=0;i<window.Form1.elements[ObjID].length;i++)
+     {   value1 = window.Form1.elements[ObjID].options[i].value
+         if (value1.substring(2)=="00"){
+           if (window.Form1.elements[ObjID].length==i+1)
+              window.Form1.elements[ObjID].options[i]=null
+           else
+           {  value2 = window.Form1.elements[ObjID].options[i+1].value
+              if (value2.substring(2)=="00"){
+              indexarr[b]=i
+              b++
+           }
+     }
+        }
+    }
+    for (var c=0;c<b;c++){
+             window.Form1.elements[ObjID].options[indexarr[c]-c]=null
+         }
+  }
+}
+
+
+function IsSelected(ID, Value)
+{ if (ID != -1 && Value != "")
+  {  for (var cc=0; cc<document.Form1.elements[ID].length; cc++ )
+     {   if (document.Form1.elements[ID].options[cc].value == Value)
+            return true;
+     }
+     return false;
+  }
+  return false;
+}
+
+function HasTotal(ID)
+{ if (ID != -1 )
+  {  for (var cc=0; cc<document.Form1.elements[ID].length; cc++ )
+     {   if ( document.Form1.elements[ID].options[cc].selected )
+         {  if (document.Form1.elements[ID].options[cc].value == "0000")
+            {  return true;
+            }
+         }
+     }
+     return false;
+  }
+  return false;
+}
+
+
+function AppendItem(ObjName, DesName)
+{ ObjID    = GetObjID(ObjName);
+  DesObjID = GetObjID(DesName);
+  if (ObjID != -1 && DesObjID != -1)
+  {  if ( IsSelected(DesObjID, "0000") )
+        window.alert("已包含");
+     else
+     {  if ( HasTotal(ObjID) )
+        {  document.Form1.elements[DesObjID].length = 0;
+           document.Form1.elements[DesObjID].options[0]= new Option("---不限---", "0000");
+
+        }
+        else
+        {  if (document.Form1.elements[DesObjID].length == 5)
+              window.alert("最多选五项。");
+           else
+           {  //GET SELECTED ITEM NUMBER
+              SelNum = 0;
+              for (var j=0; j<document.Form1.elements[ObjID].length; j++)
+              {   if ( document.Form1.elements[ObjID].options[j].selected)
+                  SelNum ++;
+              }
+              if ((SelNum + document.Form1.elements[DesObjID].length) > 5)
+                 window.alert("最多选五项。");
+              else
+              {  //add
+                 for (j=0; j<document.Form1.elements[ObjID].length; j++)
+                 {   if (document.Form1.elements[ObjID].options[j].selected)
+                     {  //GET VALUE
+                        dd = document.Form1.elements[ObjID].options[j].value;
+                        if (!IsSelected(DesObjID, dd))
+                        {  //GET LENGTH
+                           DesLen = document.Form1.elements[DesObjID].length;
+                           // NEW OPTION
+                           document.Form1.elements[DesObjID].options[DesLen]= new Option(trimPrefixIndent(document.Form1.elements[ObjID].options[j].text), document.Form1.elements[ObjID].options[j].value);
+                        }
+                        else
+                           window.alert("此选项已选择。");
+
+                     }
+                 }
+              }
+           }
+        }
+     }
+     //CLEAR
+     for (j=0; j<document.Form1.elements[ObjID].length; j++)
+          document.Form1.elements[ObjID].options[j].selected = false;
+  }
+}
+
+function RemoveItem(ObjName)
+{ ObjID = GetObjID(ObjName);
+  if ( ObjID != -1 )
+  {  var  check_index = new Array();
+     for (i=window.Form1.elements[ObjID].length-1; i>=0; i--)
+     {   if (window.Form1.elements[ObjID].options[i].selected)
+         {  check_index[i] = true;
+            window.Form1.elements[ObjID].options[i].selected = false;
+         }
+         else
+            check_index[i] = false;
+     }
+     for (i=window.Form1.elements[ObjID].length-1; i>=0; i--)
+     {   if (check_index[i])
+             window.Form1.elements[ObjID].options[i] = null
+     }
+  }
+}
+
+</SCRIPT>
+
+
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<link href="../css/common.css" rel="stylesheet" type="text/css">
+	</head>
+	<body scroll="yes">
+		<table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+				<td valign="top" id="operation">
+					<table width="70%" border="0" align="center" cellpadding="0" cellspacing="0">
+						<tr>
+							<td valign="top" height="19">
+							</td>
+						</tr>
+						<tr>
+						<FORM name=Form1 method=post>
+	<INPUT type=hidden 
+    value="0100,中行北京分行;0109,通县农村商业银行;0110,顺义农村型用合作社;0133,大兴农村型用合作社;0134,大兴农村商业银行;0123,怀柔农村信用合作社;" 
+    name=FuncCode> 
+							<td valign="top">
+							<fieldset id="fieldset" style="width: 695; height: 277">
+									<legend>
+										<strong>&nbsp;代报关系&nbsp;</strong></legend>
+									<TABLE width="100%" border="0" align="center" cellpadding="2" cellspacing="2" height="286">
+										<TBODY>
+											<TR>
+							<TD width="19%">
+								<p align="right" style="margin-top: 0px; margin-bottom: -2px">
+								金融机构名称：</p>
+							</TD>
+							<TD width="30%" colspan="2">
+								<p align="center" style="margin-top: 0px; margin-bottom: -2px"><font face="Arial">
+										<span style="FONT-SIZE: 9pt">
+											<input class="input-text" id="Text1" type="text" size="28" name="Text1"></span></font></p>
+							</TD>
+							<TD width="30%" colspan="2">
+								<p align="center" style="margin-top: 0px; margin-bottom: -2px">
+										<SELECT id="Function" onchange="JavaScript:ChangeOption(this.name, 'SubFunction')" 
+            name="Function" class="input-text" size="1">
+											<option value=0 selected>----请选择----</OPTION>
+											<option value=0100>中行北京分行</option>
+											<option value=0200>工行天津分行</option>
+											<option value=0300>农行沈阳分行</option>
+											<option value=0400>建行安徽分行</option>
+											<option value=0500>工行北京分行</option>
+											<option value=0600>建行江苏分行</option>
+											<option value=0700>光大银行南京分行</option>
+											<option value=0800>交通银行北京分行</option>
+											<option>……</option>
+										</SELECT></p>
+							</TD>
+							<TD width="20%">
+								<p align="center" style="margin-top: 0px; margin-bottom: -2px">
+								<INPUT class="input-button" id="Button3" type="button" value=" 查 询 " name="Button1" onclick="window.Form1.Function.selectedIndex='1';ChangeOption('Function','SubFunction')">
+								</TD>
+											</TR>
+											<tr>
+											
+          <TD width="33%" colspan="2" align="center">
+			<p>
+			<SELECT style="WIDTH: 160; height:162" multiple 
+            name=SubFunction></SELECT></TD>
+          <TD width="34%" colspan="2" align="center"><INPUT onclick="JavaScript:AddItem('SubFunction', 'SelectedFunction[]', 'Function')" type=button value="添加>>" name=""><p><INPUT onclick="JavaScript:DeleteItem('SelectedFunction[]')" type=button value="删除" name=""/></TD>
+          <TD width="33%" colspan="2" align="center">
+			<SELECT style="WIDTH: 160; height:163" multiple 
+            size=5 name=SelectedFunction[]> </SELECT></TD>
+            								
+            								
+          									</tr>
+										</TBODY>
+									</TABLE>
+								</fieldset><p align="right">
+													<input name="OK1" type="button" class="input-button" id="OK1" value=" 保 存 ">&nbsp;
+										<input class="input-button" id="OK" onclick="window.history.back()" type="submit" value=" 返 回 "
+						name="OK"></td>
+					
+						</tr>
+					</table>
+					<p>
+					</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

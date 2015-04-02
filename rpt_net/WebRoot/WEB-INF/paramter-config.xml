@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <form-beans>
+   
+	   <!--货币单位-->
+	   <form-bean name="curUnitForm" type="com.cbrc.smis.form.MCurUnitForm"/>
+	   <!-- 列表显示校验类型-->
+	   <form-bean name="verifyTypeForm" type="com.cbrc.smis.form.ValidateTypeForm"/>
+	   <!-- 列表显示上报频率-->
+	   <form-bean name="repFreqForm" type="com.cbrc.smis.form.MRepFreqForm"/>
+	   <!-- 列表币种类型-->
+	   <form-bean name="currForm" type="com.cbrc.smis.form.MCurrForm"/>
+	   <!-- 列表显示日历类型-->
+	   <form-bean name="calendarForm" type="com.cbrc.smis.form.CalendarForm"/>
+	   <!-- 列表显示报表范围-->
+	   <form-bean name="dataRgTypeForm" type="com.cbrc.smis.form.MDataRgTypeForm"/>
+	   <!-- 列表显示上报类型-->
+	   <form-bean name="repTypeForm" type="com.cbrc.smis.form.MRepTypeForm"/>
+	   <!-- 列表显示参数表类型-->
+	   <form-bean name="vParamForm" type="com.fitech.net.form.VParameterForm"/>
+	   
+	   
+	   <form-bean name="sysParameterForm" type="com.cbrc.smis.form.SysParameterForm"/>
+	   <!-- 代报机构-->
+	   <form-bean name="mToRepOrgForm" type="com.cbrc.org.form.MToRepOrgForm"/>
+	   
+	   <form-bean name="f" type="com.cbrc.org.form.GuoduForm"/>
+	   
+	   <form-bean name="orgDeptMappingForm" type="com.fitech.net.form.OrgDeptMappingForm"/>
+	   
+	   <!--指标 -->
+	   <form-bean name="targetNormalForm" type="com.fitech.net.form.TargetNormalForm"/>	   
+	   <form-bean name="targetBusinessForm" type="com.fitech.net.form.TargetBusinessForm"/>
+	   <form-bean name="targetForm" type="com.fitech.net.form.TargetDefineForm"/>
+	   <form-bean name="targetDefineWarnForm" type="com.fitech.net.form.TargetDefineWarnForm"/>
+	   <form-bean name="actuTargetResultForm" type="com.fitech.net.form.ActuTargetResultForm"/>
+	   <form-bean name="targetRangeForm" type="com.fitech.net.form.TargetRangeForm"/>
+	   
+   </form-beans>
+	
+   <global-exceptions />
+	
+	<global-forwards>
+		<forward name="unitTypeAdd" path="/config/unitTypeAdd.jsp"/>
+	    
+	</global-forwards>
+   
+   <action-mappings>
+   
+        <!-- ==================代报机构(Begin)================== -->
+        
+        <action path="/test"
+				type="com.cbrc.org.action.TestAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+		
+		        <forward name="test" path="/inputData.jsp"/>
+	    
+		</action> 	
+        <!--浏览代报机构的初始化操作-->
+        <action path="/initVisitMToRepOrg"
+				type="com.cbrc.org.action.InitVisitMToRepOrgAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+		
+		        <forward name="showMToRepOrgsJsp" path="/showMToRepOrgs.jsp"/>
+	    
+		</action> 	
+        
+        <!--当初始化initVisitMToRepOrg后用来为用户提供分页浏览代报机构的操作-->
+        <action path="/conductShowMToRepOrgs"
+				type="com.cbrc.org.action.ConductShowMToRepOrgsAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+		
+		        <forward name="showMToRepOrgsJsp" path="/showMToRepOrgs.jsp"/>
+	    
+		</action> 	
+		
+		<!--通过代报机构来浏览相关的金融机构的初始化操作-->
+		<action path="/initVisitMFinaOrg"
+				type="com.cbrc.org.action.InitVisitMFinaOrgAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+		
+		        <forward name="showMFinaOrgsJsp" path="/showMFinaOrgs.jsp"/>
+	    
+		</action> 	
+		
+		<!--当初始化initVisitMFinaOrg后用来为用户提供分页浏览代报机构的操作-->
+		<action path="/conductShowMFinaOrg"
+				type="com.cbrc.org.action.ConductShowMFinaOrgAction"
+				name="f"
+				scope="request"
+				validate="false">
+		
+		        <forward name="showMFinaOrgsJsp" path="/showMFinaOrgs.jsp"/>
+		        <forward name="zhuanfaJsp" path="/zhuanfa.jsp"/>
+	    
+		</action>	
+       <!-- ==================代报机构(End)================== -->
+	   
+   		<!-- ==================货币单位设定模板(Begin)==================-->
+   		
+   	    <!--查找货币单位-->
+		<action path="/config/ViewCurUnit"
+				type="com.cbrc.smis.action.ViewMCurUnitAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+			<forward name="view" path="/config/unitType.jsp"/>
+		</action> 	
+		
+		<!-- 添加货币单位-->
+		<action path="/config/InsertCurUnit"
+				type="com.cbrc.smis.action.InsertMCurUnitAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/config/unitTypeAdd.jsp"/>
+		</action> 
+		
+		<!-- 删除货币单位-->
+		<action path="/config/DeleteCurUnit"
+				type="com.cbrc.smis.action.DeleteMCurUnitAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+			<forward name="view" path="/config/unitType.jsp"/>
+		</action>
+		
+		<!-- 修改货币单位-->
+		<action path="/config/EditCurUnit"
+				type="com.cbrc.smis.action.EditMCurUnitAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/config/unitTypeEdit.jsp"/>
+		</action>
+		
+		<!-- 更新货币单位-->
+		<action path="/config/UpdateCurUnit"
+				type="com.cbrc.smis.action.UpdateMCurUnitAction"
+				name="curUnitForm"
+				scope="request"
+				validate="false"
+				input="/config/unitTypeEidt.jsp">
+				<forward name="update" path="/config/ViewCurUnit.do"/>
+		</action>
+		
+		<!-- ======================货币单位设定模板(End)========================-->
+		
+		
+		
+		
+		<!-- ======================校验类型设定模板(Begin)========================-->
+		<!-- 显示校验类型-->
+		<action path="/config/ViewCurVerifyType"
+				type="com.cbrc.smis.action.ViewValidateTypeAction"
+				name="verifyTypeForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/config/verifyType.jsp"/>
+		</action>
+		
+		<!-- 添加校验类型-->
+		<action path="/config/InsertCurVerifyType"
+				type="com.cbrc.smis.action.InsertValidateTypeAction"
+				name="verifyTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/config/verifyTypeAdd.jsp"/>
+		</action> 
+		
+		<!-- 删除校验类型-->
+		<action path="/config/DeleteCurVerifyType"
+				type="com.cbrc.smis.action.DeleteValidateTypeAction"
+				name="verifyTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="delect" path="/config/verifyType.jsp"/>
+		</action>
+		
+		<!-- 修改校验类型-->
+		<action path="/config/EditCurVerifyType"
+				type="com.cbrc.smis.action.EditValidateTypeAction"
+				name="verifyTypeForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/config/verifyTypeEdit.jsp"/>
+		</action>
+		
+		<!-- 更新校验类型-->
+		<action path="/config/UpdateCurVerifyType"
+				type="com.cbrc.smis.action.UpdateValidateTypeAction"
+				name="verifyTypeForm"
+				scope="request"
+				validate="false"
+				input="/config/verifyTypeEdit.jsp">
+				<forward name="update" path="/config/ViewCurVerifyType.do"/>
+		</action>
+		
+		<!-- ======================校验类型设定模板(End)========================-->
+		
+		
+		
+		<!-- ======================上报频率设定模板(Begin)========================-->
+		<!-- 列表显示上报频率-->
+		<action path="/config/ViewCurRepFreqence"
+				type="com.cbrc.smis.action.ViewMRepFreqAction"
+				name="repFreqForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/config/reportFrequence.jsp"/>
+		</action>
+		
+		<!-- 添加上报频率-->
+		<action path="/config/InsertCurRepFreqence"
+				type="com.cbrc.smis.action.InsertMRepFreqAction"
+				name="repFreqForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/config/reportFrequenceAdd.jsp"/>
+		</action> 
+		
+		<!-- 删除上报频率-->
+		<action path="/config/DeleteCurRepFreqence"
+				type="com.cbrc.smis.action.DeleteMRepFreqAction"
+				name="repFreqForm"
+				scope="request"
+				validate="false">
+			<forward name="delect" path="/config/reportFrequence.jsp"/>
+		</action>
+		
+		<!-- 修改上报频率-->
+		<action path="/config/EditCurRepFreqence"
+				type="com.cbrc.smis.action.EditMRepFreqAction"
+				name="repFreqForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/config/reportFrequenceEdit.jsp"/>
+		</action>
+		
+		<!-- 更新上报频率-->
+		<action path="/config/UpdateCurRepFreqence"
+				type="com.cbrc.smis.action.UpdateMRepFreqAction"
+				name="repFreqForm"
+				scope="request"
+				validate="false"
+				input="/config/reportFrequenceEdit.jsp">
+				<forward name="update" path="/config/ViewCurRepFreqence.do"/>
+		</action>
+		
+		<!-- ======================上报频率设定模板(End)========================-->
+		
+		<!-- =====================币种设定模板(Begin)==============================-->
+		<!-- 查找币种类型-->
+		<action path="/config/ViewCurr"
+				type="com.cbrc.smis.action.ViewMCurrAction"
+				name="currForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/config/moneyType.jsp"/>
+		</action>
+		
+		<!-- 添加币种类型-->
+		<action path="/config/InsertCurr"
+				type="com.cbrc.smis.action.InsertMCurrAction"
+				name="currForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/config/moneyTypeAdd.jsp"/>
+		</action> 
+		
+		<!-- 删除币种类型-->
+		<action path="/config/DeleteCurr"
+				type="com.cbrc.smis.action.DeleteMCurrAction"
+				name="currForm"
+				scope="request"
+				validate="false">
+			<forward name="delect" path="/config/moneyType.jsp"/>
+		</action>
+		
+		<!-- 修改币种类型-->
+		<action path="/config/EditCurr"
+				type="com.cbrc.smis.action.EditMCurrAction"
+				name="currForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/config/moneyTypeEdit.jsp"/>
+		</action>
+		
+		<!-- 更新币种类型-->
+		<action path="/config/UpdateCurr"
+				type="com.cbrc.smis.action.UpdateMCurrAction"
+				name="currForm"
+				scope="request"
+				validate="false"
+				input="/config/moneyTypeEdit.jsp">
+				<forward name="update" path="/config/ViewCurr.do"/>
+		</action>
+		
+		<!-- ========================币种设定模板(End)========================-->
+		
+		
+		
+		<!-- 列表显示日历类型-->
+		<action path="/config/ViewCalendarType"
+				type="com.cbrc.smis.action.ViewCalendarAction"
+				name="calendarForm"
+				scope="request"
+				validate="false">
+				<forward name="" path=""/>
+		</action>
+		
+		
+		
+		<!-- =====================报表范围模板(Begin)==============================-->
+		<!-- 显示报表范围类别-->
+		<action path="/config/ViewDataRangeType"
+				type="com.cbrc.smis.action.ViewMDataRgTypeAction"
+				name="dataRgTypeForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/config/dataRangeType.jsp"/>
+		</action>
+		
+		<!-- 添加报表范围类别-->
+		<action path="/config/InsertDataRangeType"
+				type="com.cbrc.smis.action.InsertMDataRgTypeAction"
+				name="dataRgTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/config/dataRangeTypeAdd.jsp"/>
+		</action> 
+		
+		<!-- 删除报表范围类别-->
+		<action path="/config/DeleteDataRangeType"
+				type="com.cbrc.smis.action.DeleteMDataRgTypeAction"
+				name="dataRgTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="delect" path="/config/dataRangeType.jsp"/>
+		</action>
+		
+		<!-- 修改报表范围类别-->
+		<action path="/config/EditDataRangeType"
+				type="com.cbrc.smis.action.EditMDataRgTypeAction"
+				name="dataRgTypeForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/config/dataRangeTypeEdit.jsp"/>
+		</action>
+		
+		<!-- 更新报表范围类别-->
+		<action path="/config/UpdateDataRangeType"
+				type="com.cbrc.smis.action.UpdateMDataRgTypeAction"
+				name="dataRgTypeForm"
+				scope="request"
+				validate="false"
+				input="/config/dataRangeTypeEidt.jsp">
+				<forward name="update" path="/config/ViewDataRangeType.do"/>
+		</action>
+		
+		<!-- ======================报表范围设定模板(End)========================-->
+		
+		
+		
+		<!-- ======================报表设定模板(Begin)==========================-->
+   		
+   	    <!--查找报表类别-->
+		<action path="/config/ViewRepType"
+				type="com.cbrc.smis.action.ViewMRepTypeAction"
+				name="repTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="view" path="/config/reportType.jsp"/>
+		</action> 	
+		
+		<!-- 添加报表类别-->
+		<action path="/config/InsertRepType"
+				type="com.cbrc.smis.action.InsertMRepTypeAction"
+				name="repTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="view" path="/config/reportTypeAdd.jsp"/>
+		</action> 
+		
+		<!-- 删除报表类别-->
+		<action path="/config/DeleteRepType"
+				type="com.cbrc.smis.action.DeleteMRepTypeAction"
+				name="repTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="view" path="/config/reportType.jsp"/>
+		</action>
+		
+		<!-- 修改报表类别-->
+		<action path="/config/EditRepType"
+				type="com.cbrc.smis.action.EditMRepTypeAction"
+				name="repTypeForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/config/reportTypeEdit.jsp"/>
+		</action>
+		
+		<!-- 更新报表类别-->
+		<action path="/config/UpdateRepType"
+				type="com.cbrc.smis.action.UpdateMRepTypeAction"
+				name="repTypeForm"
+				scope="request"
+				validate="false"
+				input="/config/reportTypeEidt.jsp">
+				
+				<forward name="view" path="/config/ViewRepType.do"/>
+		</action>
+		<!-- =============报表类别设定模板(End)===============-->
+		
+		<!-- 代报机构查询-->
+		<action path="/config/viewMToRepOrg"
+				type="com.cbrc.org.action.ViewMToRepOrgAction"
+				name="mToRepOrgForm"
+				scope="request"
+				validate="false">
+				<forward name="proxy_set" path="/config/proxy_set.jsp"/>
+		</action>		
+		
+		
+		<!-- =============查看指标业务(start)===============-->
+		<action path="/target/viewTargetNormal"
+				type="com.fitech.net.action.ViewTargetNormalAction"
+				name="targetNormalForm"
+				scope="request"
+				validate="false">
+				<forward name="view_normal" path="/target/guideYW.jsp"/>
+		</action>
+		
+		<action path="/target/normalAdd"
+				type="com.fitech.net.action.TargetNormalAddAction"
+				name="targetNormalForm"
+				scope="request"
+				validate="false">
+				<forward name="bad_add" path="/target/guideYWAdd.jsp"/>
+		</action>
+		
+		<action path="/target/editTargetNormal"
+				type="com.fitech.net.action.EditTargetNormalAction"
+				name="targetNormalForm"
+				scope="request"
+				validate="false">
+				<forward name="bad_edit" path="/target/guideYWEdit.jsp"/>
+		</action>
+		
+		<action path="/target/updateTargetNormal"
+				type="com.fitech.net.action.UpdateTargetNormalAction"
+				name="targetNormalForm"
+				scope="request"
+				validate="false">
+				<forward name="update" path="/target/viewTargetNormal.do"/>
+		</action>
+		
+		<action path="/target/deleteTagetNormal"
+				type="com.fitech.net.action.DeleteTargetNormalAction"
+				name="targetNormalForm"
+				scope="request"
+				validate="false">
+				<forward name="update" path="/target/viewTargetNormal.do"/>
+		</action>
+				
+		<action path="/target/viewTargetBusiness"
+				type="com.fitech.net.action.ViewTargetBusinessAction"
+				name="targetBusinessForm"
+				scope="request"
+				validate="false">
+				<forward name="view_business" path="/target/guideLX.jsp"/>
+		</action>
+		
+		<action path="/target/businessAdd"
+				type="com.fitech.net.action.TargetBusinessAddAction"
+				name="targetBusinessForm"
+				scope="request"
+				validate="false"
+				input = "/target/guideLXAdd.jsp">
+				<forward name="bad_add" path="/target/guideLX.jsp"/>
+		</action>
+		<action path="/target/businessDelete"
+				type="com.fitech.net.action.TargetBusinessDeleteAction"
+				name="targetBusinessForm"
+				scope="request"
+				validate="false"
+				>
+				<forward name="bad_add" path="/target/guideLX.jsp"/>
+		</action>
+		<action path="/target/deleteTagetBusiness"
+				type="com.fitech.net.action.DeleteTargetBusinessAction"
+				name="targetBusinessForm"
+				scope="request"
+				validate="false">
+				<forward name="update" path="/target/viewTargetNormal.do"/>
+		</action>
+		
+		<action path="/target/editTargetBusiness"
+				type="com.fitech.net.action.EditTargetBusinessAction"
+				name="targetBusinessForm"
+				scope="request"
+				validate="false">
+				<forward name="bad_edit" path="/target/guideLXEdit.jsp"/>
+		</action>
+		
+		<action path="/target/updateTargetBusiness"
+				type="com.fitech.net.action.UpdateTargetBusinessAction"
+				name="targetBusinessForm"
+				scope="request"
+				validate="false"
+				input="/target/guideLXEdit.jsp">
+				<forward name="update" path="/target/viewTargetBusiness.do"/>
+		</action>
+		<action path="/target/deleteTargetDefine"
+				type="com.fitech.net.action.deleteTargetDefineAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<action path="/target/insertTargetDefine"
+				type="com.fitech.net.action.insertTargetDefineAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/add/addTargetDefine.jsp"/>
+				<forward name="next" path="/target/add/addwarn.jsp"/>
+		</action>
+		<action path="/target/viewTargetDefine"
+				type="com.fitech.net.action.viewTargetDefineAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				
+				<forward name="view" path="/target/add/viewTargetDefine.jsp"/>
+		</action>
+		<action path="/target/insertTargetDefineWarn"
+				type="com.fitech.net.action.insertTargetDefineWarnAction"
+				name="targetDefineWarnForm"
+				scope="request"
+				validate="false">
+				<forward name="next" path="/target/add/addPreStandard.jsp"/>
+				<forward name="add" path="/target/add/addwarn.jsp"/>
+		</action>
+		<action path="/target/insertTargetDefinePrestandard"
+				type="com.fitech.net.action.InsertTargetdefinePrestandardAction"
+				name="targetDefineWarnForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/add/addPreStandard.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====编辑指标定义=======-->
+		<action path="/target/editTargetDefine"
+				type="com.fitech.net.action.EditTargetDefineAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/target/edit/editTargetDefine.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====更新指标定义=======-->
+		<action path="/target/updateTargetDefine"
+				type="com.fitech.net.action.UpdateTargetDefineAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/target/edit/editTargetDefine.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====编辑指标预警=======-->
+		<action path="/target/editWarn"
+				type="com.fitech.net.action.EditWarnInitAction"
+				name="targetDefineWarnForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/target/edit/editwarn.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====更新指标预警=======-->
+		<action path="/target/updateWarn"
+				type="com.fitech.net.action.UpdateWarnAction"
+				name="targetDefineWarnForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/target/edit/editwarn.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====编辑比上期=======-->
+		<action path="/target/editPreStandard"
+				type="com.fitech.net.action.EditPreStandardInitAction"
+				name="targetDefineWarnForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====更新比上期=======-->
+		<action path="/target/updatePreStandard"
+				type="com.fitech.net.action.UpdatePreStandardAction"
+				name="targetDefineWarnForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====察看详细=======-->
+		<action path="/target/viewDetail"
+				type="com.fitech.net.action.ViewTargetDefineDetailAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/view/viewDetail.jsp"/>
+		</action>
+		<!-- ====更新选中=======-->
+		<action path="/target/saveTargetDefine"
+				type="com.fitech.net.action.SaveTargetSelectAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====更新所有指标=======-->
+		<action path="/target/saveAllTargetDefine"
+				type="com.fitech.net.action.SaveAllTargetSelectAction"
+				name="targetForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====指标生成查看=======-->
+		<action path="/target/viewTargetGenerate"
+				type="com.fitech.net.action.ViewTargetResultAction"
+				name="actuTargetResultForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/result/viewResult.jsp"/>
+				<forward name="view" path="/target/viewTargetDefine.do"/>
+		</action>
+		<!-- ====指标生成=======-->
+		<action path="/target/generateTarget"
+				type="com.fitech.net.action.GenerateTargetAction"
+				name="actuTargetResultForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/viewTargetGenerate.do"/>
+				<forward name="toView" path="/target/result/viewResult.jsp"/>
+		</action>
+		<!-- =============查看指标业务(end)===============-->
+		<!-- ====指标预警详细察看=======-->
+		<action path="/target/viewWarnDetail"
+				type="com.fitech.net.action.ViewWarnDetailAction"
+				name="actuTargetResultForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/result/viewWarnDetail.jsp"/>
+		</action>
+		<action path="/target/viewPreStandDetail"
+				type="com.fitech.net.action.ViewPreStandAction"
+				name="actuTargetResultForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/result/viewPreStandDetail.jsp"/>
+		</action>
+		
+		<action path="/target/optionWarnDetail"
+				type="com.fitech.net.action.OptionWarnDetailAction"
+				name="actuTargetResultForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>				
+				<forward name="option" path="/target/result/optionWarnDetail.jsp"/>
+				
+		</action>	
+		<action path="/target/viewWarnDetail"
+				type="com.fitech.net.action.ViewWarnDetailAction"
+				name="actuTargetResultForm"
+				scope="request"
+				validate="false">
+				<forward name="add" path="/target/edit/editPreStandard.jsp"/>
+				<forward name="view" path="/target/figure/viewWarnFigure.jsp"/>	
+				
+		</action>
+		<!-- =============查看指标业务(end)===============-->
+		
+		<!-- =============指标公式添加修改===============-->
+		<action path="/target/targetDefine"		
+				type="com.fitech.net.action.TargetDefineAction"		
+				name="targetForm"								
+				scope="request"
+				validate="false">				
+				<forward name="view" path="/target/add/definePage.jsp"/>
+		</action>	
+		
+		<action path="/target/targetSave"		
+				type="com.fitech.net.action.TargetSaveAction"		
+				name="targetForm"																	
+				scope="request"
+				validate="false">				
+				<forward name="addView" path="/target/add/addTargetDefine.jsp"/>				
+				<forward name="editView" path="/target/edit/editTargetDefine.jsp"/>
+				<forward name="view" path="/target/add/viewTargetDefine.jsp"/>
+		</action>	
+		
+		<!-- =============查看参数表(start)=============== -->
+		<!-- 查找参数表-->
+		<action path="/config/ViewVParam"
+				type="com.fitech.net.action.ViewVParameterAction"
+				name="vParamForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/config/vparameter.jsp"/>
+		</action>
+		
+		<!-- 添加参数表-->
+		<action path="/config/InsertVParam"
+				type="com.fitech.net.action.InsertVParameterAction"
+				name="vParamForm"
+				scope="request"
+				validate="false"
+				input="/config/vparameterAdd.jsp">
+			<forward name="insert" path="/config/vparameterAdd.jsp"/>
+		</action> 
+		
+		<!-- 删除参数表-->
+		<action path="/config/DeleteVParam"
+				type="com.fitech.net.action.DeleteVParameterAction"
+				name="vParamForm"
+				scope="request"
+				validate="false">
+			<forward name="delete" path="/config/vparameter.jsp"/>
+		</action>
+		
+		<!-- 修改参数表-->
+		<action path="/config/EditVParam"
+				type="com.fitech.net.action.EditVParameterAction"
+				name="vParamForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/config/vparameterEdit.jsp"/>
+		</action>
+		
+		<!-- 更新参数表-->
+		<action path="/config/UpdateVParam"
+				type="com.fitech.net.action.UpdateVParameterAction"
+				name="vParamForm"
+				scope="request"
+				validate="false"
+				input="/config/vparameterEdit.jsp">
+				<forward name="update" path="/config/ViewVParam.do"/>
+		</action>
+		<!-- =============查看参数表(end)===============-->
+		
+		<!-- =============系统参数设定(start)=============== -->
+		<!-- 查看参数-->
+		<action path="/config/ViewSysPar"
+				type="com.cbrc.smis.action.ViewSysParameterAction"
+				name="sysParameterForm"
+				scope="request"
+				validate="false">
+				<forward name="view" path="/config/viewSysParameter.jsp"/>
+		</action>
+		<!-- 更新参数-->
+		<action path="/config/SaveSysPar"
+				type="com.cbrc.smis.action.SaveSysParameterAction"
+				name="sysParameterForm"
+				scope="request"
+				validate="false">
+		</action>
+
+		<!-- =============系统参数设定(end)===============-->
+		
+		
+		<!-- ======================机构部门映射(Begin)========================-->
+		<!-- 显示机构部门映射-->
+<!--		<action path="/config/ViewOrgAndDept"-->
+<!--				type="com.cbrc.smis.action.ViewOrgAndDeptAction"-->
+<!--				name="orgDeptMappingForm"-->
+<!--				scope="request"-->
+<!--				validate="false">-->
+<!--				<forward name="view" path="/config/verifyType.jsp"/>-->
+<!--		</action>-->
+		
+<!--		 添加校验类型-->
+<!--		<action path="/config/InsertCurVerifyType"-->
+<!--				type="com.cbrc.smis.action.InsertValidateTypeAction"-->
+<!--				name="verifyTypeForm"-->
+<!--				scope="request"-->
+<!--				validate="false">-->
+<!--			<forward name="insert" path="/config/verifyTypeAdd.jsp"/>-->
+<!--		</action> -->
+<!--		-->
+<!--		 删除校验类型-->
+<!--		<action path="/config/DeleteCurVerifyType"-->
+<!--				type="com.cbrc.smis.action.DeleteValidateTypeAction"-->
+<!--				name="verifyTypeForm"-->
+<!--				scope="request"-->
+<!--				validate="false">-->
+<!--			<forward name="delect" path="/config/verifyType.jsp"/>-->
+<!--		</action>-->
+		
+		<!-- 修改校验类型-->
+<!--		<action path="/config/EditCurVerifyType"-->
+<!--				type="com.cbrc.smis.action.EditValidateTypeAction"-->
+<!--				name="verifyTypeForm"-->
+<!--				scope="request"-->
+<!--				validate="false">-->
+<!--				<forward name="edit" path="/config/verifyTypeEdit.jsp"/>-->
+<!--		</action>-->
+		
+		<!-- 更新校验类型-->
+<!--		<action path="/config/UpdateCurVerifyType"-->
+<!--				type="com.cbrc.smis.action.UpdateValidateTypeAction"-->
+<!--				name="verifyTypeForm"-->
+<!--				scope="request"-->
+<!--				validate="false"-->
+<!--				input="/config/verifyTypeEdit.jsp">-->
+<!--				<forward name="update" path="/config/ViewCurVerifyType.do"/>-->
+<!--		</action>-->
+		
+		<!-- ======================机构部门映射(End)========================-->
+		
+		
+   </action-mappings>	   
+
+</struts-config>

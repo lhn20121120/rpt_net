@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+	<!--  参数说明:    		
+	    表分为以下几种情况,1,普通的点对点式累加汇总报表,如G0100等,  2种,点对点式有排序的,如G1401, 3种,点对点式其中包含1,2种. 4种:清单式的普通汇总表,  5种:清单式中的一些特殊的,
+		开始行	<startRow>
+		开始列	<startCol>
+		结束行	<endRow>
+		结束列	<endCol>
+		报表类型, 0 为点对点式, 1 为清单式	<reportType>
+		排序中比较的列		<compareCol>
+		排序的行除外的普通单元格		<commonCell> 用","号分隔
+		要合计的单元格列表		<totalValue1>
+		清单式报表类型,0为普通,1为特殊报表 (含有多个子表),2为有子行的报表(S3401)<ListingReportType>)
+		
+		***点对点式累加***
+			endRow=结束行,endCol=结束列;	
+	-->
+	<version id="0690">
+		<report id="G0100">
+			<!-- 开始行 -->
+			<startRow>6</startRow>
+			<!--开始列-->
+			<startCol>D</startCol>
+			<!--结束行-->
+			<endRow>124</endRow>
+			<!--结束列-->
+			<endCol>F</endCol>
+			<!-- 报表类型, 0 为点对点式, 1 为清单式-->
+			<reportType>0</reportType>
+		</report>
+		<report id="F0002">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>11</endRow>
+			<endCol>C</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0101">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>16</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0102">
+			<startRow>21</startRow>
+			<startCol>C</startCol>
+			<endRow>26</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0104">
+			<startRow>52</startRow>
+			<startCol>C</startCol>
+			<endRow>61</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0105">
+			<startRow>67</startRow>
+			<startCol>C</startCol>
+			<endRow>73</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0106">
+			<startRow>82</startRow>
+			<startCol>C</startCol>
+			<endRow>92</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0200">
+			<startRow>8</startRow>
+			<startCol>D</startCol>
+			<endRow>30</endRow>
+			<endCol>M</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0300">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>18</endRow>
+			<endCol>I</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0400">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>54</endRow>
+			<endCol>C</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G0500">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>21</endRow>
+			<endCol>D</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G1101">
+			<startRow>8</startRow>
+			<startCol>C</startCol>
+			<endRow>49</endRow>
+			<endCol>J</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G1102">
+			<startRow>56</startRow>
+			<startCol>C</startCol>
+			<endRow>120</endRow>
+			<endCol>J</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G1200">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>23</endRow>
+			<endCol>M</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G1301">
+			<startRow>6</startRow>
+			<startCol>B</startCol>
+			<endRow>15</endRow>
+			<endCol>M</endCol>
+			<reportType>0</reportType>
+			<!-- 排序中比较的列-->
+			<compareCol>D</compareCol>
+		</report>
+		<report id="G1302">
+			<startRow>6</startRow>
+			<startCol>B</startCol>
+			<endRow>15</endRow>
+			<endCol>M</endCol>
+			<reportType>0</reportType>
+			<compareCol>D</compareCol>
+		</report>
+		<report id="G1303">
+			<startRow>6</startRow>
+			<startCol>B</startCol>
+			<endRow>15</endRow>
+			<endCol>M</endCol>
+			<reportType>0</reportType>
+			<compareCol>D</compareCol>
+		</report>
+		<report id="G1304">
+			<startRow>6</startRow>
+			<startCol>B</startCol>
+			<endRow>15</endRow>
+			<endCol>M</endCol>
+			<reportType>0</reportType>
+			<compareCol>D</compareCol>
+		</report>
+		<report id="G1401">
+			<startRow>8</startRow>
+			<startCol>C</startCol>
+			<endRow>17</endRow>
+			<endCol>R</endCol>
+			<reportType>0</reportType>
+
+			<compareCol>P</compareCol>
+			<!--排序的行除外的普通单元格-->
+			<commonCell>D19</commonCell>
+		</report>
+		<report id="G1402">
+			<startRow>8</startRow>
+			<startCol>C</startCol>
+			<endRow>17</endRow>
+			<endCol>R</endCol>
+			<reportType>0</reportType>
+			<compareCol>P</compareCol>
+			<!--排序的行除外的普通单元格-->
+			<commonCell>D19</commonCell>
+		</report>
+		<report id="G1403">
+			<startRow>8</startRow>
+			<startCol>C</startCol>
+			<endRow>17</endRow>
+			<endCol>R</endCol>
+			<reportType>0</reportType>
+			<compareCol>P</compareCol>
+			<!--排序的行除外的普通单元格-->
+			<commonCell>D19</commonCell>
+		</report>
+		<report id="G1500">
+			<startRow>7</startRow>
+			<startCol>C</startCol>
+			<endRow>26</endRow>
+			<endCol>V</endCol>
+			<reportType>0</reportType>
+			<compareCol>M</compareCol>
+			<!--排序的行除外的普通单元格-->
+			<commonCell>D34,G34,J34,N35,N36,N37,N38</commonCell>
+		</report>
+		<report id="G1600">
+			<startRow>6</startRow>
+			<startCol>D</startCol>
+			<endRow>16</endRow>
+			<endCol>M</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G1700">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>51</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G2100">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>35</endRow>
+			<endCol>K</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G2200">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>35</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G2300">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>14</endRow>
+			<endCol>G</endCol>
+			<reportType>0</reportType>
+			<compareCol>E</compareCol>
+			<commonCell>C16</commonCell>
+		</report>
+		<report id="G2400">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>14</endRow>
+			<endCol>F</endCol>
+			<reportType>0</reportType>
+			<compareCol>E</compareCol>
+			<commonCell>C16</commonCell>
+		</report>
+		<report id="G3100">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>32</endRow>
+			<endCol>H</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G3200">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>33</endRow>
+			<endCol>N</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G3301">
+			<startRow>8</startRow>
+			<startCol>C</startCol>
+			<endRow>45</endRow>
+			<endCol>P</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G3302">
+			<startRow>8</startRow>
+			<startCol>C</startCol>
+			<endRow>45</endRow>
+			<endCol>P</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G4100">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>48</endRow>
+			<endCol>C</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G4200">
+			<startRow>9</startRow>
+			<startCol>C</startCol>
+			<endRow>49</endRow>
+			<endCol>T</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G4300">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>90</endRow>
+			<endCol>I</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G5301">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>12</endRow>
+			<endCol>AJ</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G5302">
+			<startRow>70</startRow>
+			<startCol>C</startCol>
+			<endRow>87</endRow>
+			<endCol>AJ</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G5303">
+			<startRow>96</startRow>
+			<startCol>C</startCol>
+			<endRow>122</endRow>
+			<endCol>AJ</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="G5304">
+			<startRow>124</startRow>
+			<startCol>C</startCol>
+			<endRow>131</endRow>
+			<endCol>AJ</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S0100">
+			<startRow>5</startRow>
+			<startCol>F</startCol>
+			<endRow>23</endRow>
+			<endCol>H</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S0200">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>17</endRow>
+			<endCol>C</endCol>
+			<reportType>0</reportType>
+		</report>
+		<!--   #################0690没有这张表#######################
+		<report id="S1100">
+			<startRow>6</startRow>
+			<startCol>D</startCol>
+			<endRow>41</endRow>
+			<endCol>G</endCol>
+			<reportType>0</reportType>
+		</report>
+		-->
+		<report id="S1200">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>10</endRow>
+			<endCol>D</endCol>
+			<reportType>0</reportType>
+		</report>
+		
+		<report id="S2100">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>42</endRow>
+			<endCol>AJ</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S2200">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>10</endRow>
+			<endCol>D</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S2300">
+			<startRow>7</startRow>
+			<startCol>C</startCol>
+			<endRow>29</endRow>
+			<endCol>J</endCol>
+			<reportType>0</reportType>		
+
+			<addAndComp>1</addAndComp>
+			<PStartRow>36</PStartRow>
+			<PStartCol>C</PStartCol>
+			<PEndRow>45</PEndRow>
+			<PEndCol>I</PEndCol>
+			<compareCol>E</compareCol>
+				
+		</report>
+		<report id="S2400">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>49</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S3100">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>53</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S3201">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>47</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>47</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+			<specialCol>23,24,25,26</specialCol>
+		</report>
+		<report id="S3202">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>43</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>43</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+			<specialCol>6,7,21,22</specialCol>
+		</report>
+		<report id="S3203">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>29</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>29</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+			<specialCol>20,21,22,23,24</specialCol>
+		</report>
+			<report id="S3204">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>4</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>8</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+	
+		</report>
+		<report id="S3205">
+			<ListStartCol>3</ListStartCol>
+			<ListEndCol>21</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>21</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+			<specialCol>9,10,11,13,14,15,16</specialCol>
+		</report>
+		
+		<report id="S3206">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>4</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>9</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+		</report>
+		<report id="S3207">
+			<!--开始列-->
+			<ListStartCol>7</ListStartCol>
+			<ListEndCol>18</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>18</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+			<specialCol>9,10,12,13</specialCol>
+		</report>
+		<report id="S3208">
+			<startRow>6</startRow>
+			<startCol>C</startCol>
+			<endRow>46</endRow>
+			<endCol>J</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S3209">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>8</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>8</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>1</ListingReportType>
+		</report>
+		<report id="S3300">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>25</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>25</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+			<specialCol>9,10,11,12,13,14,15,19</specialCol>
+		</report>
+		<report id="S3401">
+			<ListStartCol>6</ListStartCol>
+			<ListEndCol>20</ListEndCol>
+			<maxCol>20</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>1</ListingReportType>
+			<!-- 该报表有特殊的子行  单独处理  -->
+			<!-- 清单式报表的特殊列  -->
+			<specialCol>14,15</specialCol>
+		</report>
+		<report id="S3402">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>14</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>13</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>1</ListingReportType>
+		</report>
+		<report id="S3403">
+			
+		</report>
+		
+		<report id="S3500">
+			<ListStartCol>5</ListStartCol>
+			<ListEndCol>19</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>19</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+			<specialCol>7,10,11,12,13</specialCol>
+		</report>
+		<report id="S3600">
+			<ListStartCol>4</ListStartCol>
+			<ListEndCol>8</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>8</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>1</ListingReportType>
+		</report>
+			<report id="S3700">
+			<ListStartCol>5</ListStartCol>
+			<ListEndCol>6</ListEndCol>
+			<firstCol>2</firstCol>
+			<maxCol>8</maxCol>
+			<reportType>1</reportType>
+			<ListingReportType>0</ListingReportType>
+		</report>
+		<report id="S3800">
+		
+			
+		</report>
+	<report id="S3900">
+			<startRow>7</startRow>
+			<startCol>C</startCol>
+			<endRow>19</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S4100">
+			<startRow>5</startRow>
+			<startCol>D</startCol>
+			<endRow>181</endRow>
+			<endCol>I</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S4200">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>48</endRow>
+			<endCol>C</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S4300">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>33</endRow>
+			<endCol>D</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S4400">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>125</endRow>
+			<endCol>D</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S4500">
+			<startRow>5</startRow>
+			<startCol>D</startCol>
+			<endRow>68</endRow>
+			<endCol>E</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S4600">
+			<startRow>5</startRow>
+			<startCol>C</startCol>
+			<endRow>20</endRow>
+			<endCol>D</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S5100">
+			<startRow>10</startRow>
+			<startCol>D</startCol>
+			<endRow>101</endRow>
+			<endCol>L</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S5200">
+			<startRow>7</startRow>
+			<startCol>C</startCol>
+			<endRow>60</endRow>
+			<endCol>Q</endCol>
+			<reportType>0</reportType>
+		</report>
+		<report id="S5400">
+			<startRow>7</startRow>
+			<startCol>C</startCol>
+			<endRow>17</endRow>
+			<endCol>J</endCol>
+			<reportType>0</reportType>
+		</report>
+	</version>
+</xml-body>

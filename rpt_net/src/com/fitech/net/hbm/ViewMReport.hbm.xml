@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.fitech.net.hibernate.ViewMReport" 
+    table="VIEW_M_REPORT"
+>
+
+    <composite-id name="comp_id" class="com.fitech.net.hibernate.ViewMReportPK">
+        <key-property 
+            name="childRepId" 
+            column="CHILD_REP_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="versionId" 
+            column="VERSION_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="orgId" 
+            column="ORG_ID" 
+            type="java.lang.String"
+        />
+        <key-property 
+            name="dataRangeId" 
+            column="DATA_RANGE_ID" 
+            type="java.lang.Integer"
+        />
+        <key-property 
+            name="curId" 
+            column="CUR_ID" 
+            type="java.lang.Integer"
+        />
+    </composite-id>    
+
+    <property
+        name="reportName"
+        type="java.lang.String"
+        column="REPORT_NAME"
+        length="50"
+    />
+    <property
+        name="dataRgTypeName"
+        type="java.lang.String"
+        column="DATA_RG_DESC"
+    />
+    <property
+        name="curName"
+        type="java.lang.String"
+        column="CUR_NAME"
+    />
+    <property
+        name="repFreqId"
+        type="java.lang.Integer"
+        column="REP_FREQ_ID"
+    />
+    <property
+        name="repFreqName"
+        type="java.lang.String"
+        column="REP_FREQ_NAME"
+    />
+    <property
+        name="startDate"
+        type="java.lang.String"
+        column="START_DATE"
+    />
+    <property
+        name="endDate"
+        type="java.lang.String"
+        column="END_DATE"
+    />
+     <property
+        name="delayTime"
+        type="java.lang.Integer"
+        column="DELAY_TIME"
+    />
+     <property
+        name="normalTime"
+        type="java.lang.Integer"
+        column="NORMAL_TIME"
+    />
+    <property
+        name="frOrFzType"
+        type="java.lang.String"
+        column="FRORFZTYPE"
+    />
+     <property
+        name="repTypeId"
+        type="java.lang.Integer"
+         column="REP_TYPE_ID"
+    />
+     <property
+        name="reportStyle"
+        type="java.lang.Integer"
+         column="REPORT_STYLE"
+    />
+    
+</class>
+</hibernate-mapping>

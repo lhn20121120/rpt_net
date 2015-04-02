@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.org.hibernate.MRegion" 
+    table="M_REGION"
+>
+
+    <id
+        name="regionId"
+        type="java.lang.String"
+        column="REGIONID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="regionTypId"
+        type="java.lang.String"
+        column="REGIONTYPID"
+        length="4"
+    />
+    <property
+        name="regionName"
+        type="java.lang.String"
+        column="REGIONNAME"
+        length="20"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

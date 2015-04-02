@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="com.fitech.net.hibernate.ViewOrgRep" table="VIEW_ORG_REP">
+        <id name="orgRepId" column="ORG_REP_ID" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+        <property name="orgId" column="ORG_ID" type="java.lang.String" />
+        <property name="childRepId" column="CHILD_REP_ID" type="java.lang.String" />
+        <property name="powType" column="POW_TYPE" type="java.lang.Integer" />
+        <property name="userId" column="USER_ID" type="java.lang.Integer" />
+    </class>
+    
+</hibernate-mapping>

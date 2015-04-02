@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.SysSet" 
+    table="SYS_SET"
+>
+
+    <id
+        name="sysSetId"
+        type="java.lang.Integer"
+        column="SYS_SET_ID"
+    >
+        <generator class="increment">
+		</generator>
+    </id>
+
+    <property
+        name="sysSetKey"
+        type="java.lang.String"
+        column="SYS_SET_KEY"
+        length="40"
+    />
+    <property
+        name="sysSetValue"
+        type="java.lang.String"
+        column="SYS_SET_VALUE"
+        length="40"
+    />
+    <property
+        name="memo"
+        type="java.lang.String"
+        column="MEMO"
+        length="250"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

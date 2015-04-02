@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.fitech.institution.po.AfTemplateColDefine" table="af_template_col_define">
+     <composite-id name="id" class="com.fitech.institution.po.AfTemplateColDefineId">
+            <key-property name="templateId" type="java.lang.String">
+                <column name="af_template_id" length="20" />
+            </key-property>
+            <key-property name="col" type="java.lang.String">
+            	<column name="col" length="10" />
+        	</key-property>
+      </composite-id>
+        <property name="colName" type="java.lang.String">
+            <column name="col_NAME" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

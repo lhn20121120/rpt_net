@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.EEXChangeRate" 
+    table="E_EXCHANGERATE"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.EEXChangeRatePK">
+        <key-property 
+            name="vcid" 
+            column="VC_ID" 
+            type="java.lang.String"
+            length="10"
+        />
+        <key-property 
+            name="vdid" 
+            column="VD_ID" 
+            type="java.lang.Integer"
+         />
+    </composite-id> 
+    <property
+        name="eeramt"
+        type="java.lang.Double"
+        column="EER_AMT"
+	/>
+	
+
+</class>
+</hibernate-mapping>

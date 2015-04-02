@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.Notice" 
+    table="NOTICE"
+>
+
+    <id
+        name="noticeId"
+        type="java.lang.Integer"
+        column="NOTICE_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="noticeTitle"
+        type="java.lang.String"
+        column="NOTICE_TITLE"
+        length="50"
+    />
+    <property
+        name="content"
+        type="java.lang.String"
+        column="CONTENT"
+        length="200"
+    />
+    <property
+        name="publishTime"
+        type="java.util.Date"
+        column="PUBLISH_TIME"
+        length="7"
+    />
+    <property
+        name="state"
+        type="java.lang.Integer"
+        column="STATE"
+        length="22"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

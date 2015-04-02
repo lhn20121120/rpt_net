@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.MUserGrp" 
+    table="M_USER_GRP"
+>
+
+    <id
+        name="userGrpId"
+        type="java.lang.Long"
+        column="USER_GRP_ID"
+    >
+        <generator class="sequence">
+        	<param name="sequence">SEQ_M_USER_GRP</param>
+		</generator>
+    </id>
+
+    <property
+        name="userGrpNm"
+        type="java.lang.String"
+        column="USER_GRP_NM"
+        length="50"
+    />
+    
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-one association to MUserToGrp -->
+    <one-to-one
+        name="MUserToGrp"
+        class="com.cbrc.auth.hibernate.MUserToGrp"
+        outer-join="auto"
+    />
+    <!-- bi-directional one-to-many association to MPurView -->
+    <set
+        name="MPurBanklevels"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="USER_GRP_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.MPurBanklevel"
+        />
+    </set>
+
+	<many-to-one
+        name="setOrg"
+        class="com.fitech.net.hibernate.OrgNet"
+        not-null="true"
+    >
+        <column name="SET_ORG_ID" />
+    </many-to-one>
+</class>
+</hibernate-mapping>

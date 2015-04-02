@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.ReportInInfo" 
+    table="REPORT_IN_INFO"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.ReportInInfoPK">
+        <key-property 
+            name="cellId" 
+            column="CELL_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="repInId" 
+            column="REP_IN_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+    </composite-id>    
+
+    <property
+        name="reportValue"
+        type="java.lang.String"
+        column="REPORT_VALUE"
+        length="100"
+    />
+    <property
+        name="thanPrevRise"
+        type="java.lang.Float"
+        column="THAN_PREV_RISE"
+        length="10"
+    />
+    <property
+        name="thanSameRise"
+        type="java.lang.Float"
+        column="THAN_SAME_RISE"
+        length="10"
+    />
+    <property
+        name="thanSameFall"
+        type="java.lang.Float"
+        column="THAN_SAME_FALL"
+        length="10"
+    />
+    <property
+        name="thanPrevFall"
+        type="java.lang.Float"
+        column="THAN_PREV_FALL"
+        length="10"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to ReportIn 与内网实际表单表的一对一关系-->
+    <many-to-one
+        name="reportIn"
+	    class="com.cbrc.smis.hibernate.ReportIn"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="REP_IN_ID" />
+	</many-to-one>
+	  
+	<many-to-one
+        name="MCell"
+	    class="com.cbrc.smis.hibernate.MCell"
+	    update="false"
+	    insert="false"
+	>
+   <column name="CELL_ID" />
+	</many-to-one>
+  <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

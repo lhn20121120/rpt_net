@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.org.hibernate.MVirtuOrg" 
+    table="M_VIRTUORG"
+>
+
+    <id
+        name="orgId"
+        type="java.lang.String"
+        column="ORGID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="virtualOrgName"
+        type="java.lang.String"
+        column="VIRTUALORGNAME"
+        length="100"
+    />
+    <property
+        name="startDate"
+        type="java.lang.String"
+        column="STARTDATE"
+        length="10"
+    />
+    <property
+        name="endDate"
+        type="java.lang.String"
+        column="ENDDATE"
+        length="10"
+    />
+    <property
+        name="orgCode"
+        type="java.lang.String"
+        column="ORGCODE"
+        length="30"
+    />
+    <property
+        name="virtuTypeId"
+        type="java.lang.String"
+        column="VIRTUTYPEID"
+        length="10"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

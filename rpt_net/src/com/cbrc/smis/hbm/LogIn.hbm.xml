@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.LogIn" 
+    table="LOG_IN"
+>
+
+    <id
+        name="logInId"
+        type="java.lang.Integer"
+        column="LOG_IN_ID"
+    >
+        <generator class="sequence">
+        	<param name="sequence">seq_log_in</param>
+		</generator>
+    </id>
+
+    <property
+        name="userName"
+        type="java.lang.String"
+        column="USER_NAME"
+        length="20"
+    />
+    <property
+        name="logTime"
+        type="java.sql.Timestamp"
+        column="LOG_TIME"
+        length="21"
+    />
+    <property
+        name="operation"
+        type="java.lang.String"
+        column="OPERATION"
+        length="100"
+    />
+    <property
+        name="memo"
+        type="java.lang.String"
+        column="MEMO"
+        length="250"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to LogType -->
+    <many-to-one
+        name="logType"
+        class="com.cbrc.smis.hibernate.LogType"
+    >
+    <column name="LOG_TYPE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

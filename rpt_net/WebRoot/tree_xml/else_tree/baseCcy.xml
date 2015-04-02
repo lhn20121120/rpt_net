@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312"?>
+
+<tree id="0" open="1">
+  <!--This is a test for ccy, add by ximengnan-->
+  <item id="01" text="人民币"/> 
+  <item id="14" text="美元"/>
+  <item id="12" text="英镑"/>
+  <item id="38" text="欧元"/>
+  <item id="999" text="本外币合计"/> 
+  <item id="997" text="外币折美元"/>
+  <item id="998" text="外币折人民币"/>
+  <item id="13" text="港币"/>
+  <item id="17" text="台币"/>
+  <item id="27" text="日本元"/>
+  <item id="33" text="欧州货币单位"/> 
+  <item id="02" text="折欧元合计"/>
+  <item id="15" text="瑞士法郎"/>
+  <item id="16" text="特别提款权"/>  
+  <item id="18" text="新加坡元"/>
+  <item id="19" text="巴基斯坦卢比"/>
+  <item id="20" text="印尼盾"/>
+  <item id="21" text="韩国元"/>
+  <item id="22" text="丹麦克朗"/>
+  <item id="23" text="挪威克朗"/>
+  <item id="24" text="奥地利先令"/>
+  <item id="25" text="比利时法郎"/>
+  <item id="26" text="意大利里拉"/>  
+  <item id="28" text="加拿大元"/>
+  <item id="29" text="澳大利亚元"/>
+  <item id="30" text="坦桑尼亚先令"/>
+  <item id="31" text="西班牙比赛塔"/> 
+  <item id="40" text="斯里兰卡卢比"/>
+  <item id="42" text="芬兰马克"/>
+  <item id="43" text="加纳塞地"/>
+  <item id="45" text="马里法郎"/>
+  <item id="46" text="摩洛哥地拉姆"/>
+  <item id="47" text="塞加利昂"/>
+  <item id="81" text="澳门元"/>
+  <item id="83" text="菲律宾比索"/>
+  <item id="84" text="泰国铢"/>
+  <item id="88" text="电子汇票E币"/>
+  <item id="95" text="新西兰元"/>
+  <item id="00" text="其他"/>
+</tree>

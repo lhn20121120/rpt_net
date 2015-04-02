@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.MRepFreq" 
+    table="M_REP_FREQ"
+>
+
+    <id
+        name="repFreqId"
+        type="java.lang.Integer"
+        column="REP_FREQ_ID"
+    >
+        
+		<generator class="sequence">
+        	<param name="sequence">seq_m_rep_freq</param>
+		</generator>
+    </id>
+
+    <property
+        name="repFreqName"
+        type="java.lang.String"
+        column="REP_FREQ_NAME"
+        length="50"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to MActuRep -->
+    <set
+        name="MActuReps"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="REP_FREQ_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.MActuRep"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

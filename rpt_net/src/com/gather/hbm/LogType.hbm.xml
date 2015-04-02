@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.LogType" 
+    table="LOG_TYPE"
+>
+
+    <id
+        name="logTypeId"
+        type="java.lang.Integer"
+        column="LOG_TYPE_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="logType"
+        type="java.lang.String"
+        column="LOG_TYPE"
+        length="30"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to Log -->
+    <set
+        name="logs"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="LOG_TYPE_ID" />
+        </key>
+        <one-to-many 
+            class="com.gather.hibernate.Log"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

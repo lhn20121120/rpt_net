@@ -1,0 +1,71 @@
+marquee {
+	border: 1px solid ButtonShadow;
+	background: FFFFFF;
+	height: 17px;
+	font-size: 1px;
+	margin: 1px;
+	width: 150px;
+	-moz-binding: url("marquee-binding.xml#marquee");
+	-moz-box-sizing: border-box;
+	display: block;
+	overflow: hidden;
+}
+
+marquee span {
+	height: 15px;
+	margin: 1px;
+	width: 10px;
+	background: #2BAD2B;
+	float: left;
+	font-size: 1px;
+}
+
+.progressBarHandle-0 {
+	filter: alpha(opacity = 20);
+	-moz-opacity: 0.20;
+}
+
+.progressBarHandle-1 {
+	filter: alpha(opacity = 40);
+	-moz-opacity: 0.40;
+}
+
+.progressBarHandle-2 {
+	filter: alpha(opacity = 60);
+	-moz-opacity: 0.6;
+}
+
+.progressBarHandle-3 {
+	filter: alpha(opacity = 80);
+	-moz-opacity: 0.8;
+}
+
+.progressBarHandle-4 {
+	filter: alpha(opacity = 100);
+	-moz-opacity: 1;
+}
+
+.progressBarHandle-5 {
+	filter: alpha(opacity = 100);
+	-moz-opacity: 1.2;
+}
+
+.progressBarHandle-6 {
+	filter: alpha(opacity = 100);
+	-moz-opacity: 1.4;
+}
+
+.progressBarHandle-7 {
+	filter: alpha(opacity = 100);
+	-moz-opacity: 1.8;
+}
+
+.progressBarHandle-8 {
+	filter: alpha(opacity = 100);
+	-moz-opacity: 2;
+}
+
+.progressBarHandle-9 {
+	filter: alpha(opacity = 100);
+	-moz-opacity: 2.2;
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.gather.hibernate.Log" 
+    table="LOG"
+>
+
+    <id
+        name="logId"
+        type="java.lang.Integer"
+        column="LOG_ID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="userName"
+        type="java.lang.String"
+        column="USER_NAME"
+        length="20"
+    />
+    <property
+        name="logTime"
+        type="java.util.Date"
+        column="LOG_TIME"
+        length="10"
+    />
+    <property
+        name="operation"
+        type="java.lang.String"
+        column="OPERATION"
+        length="100"
+    />
+    <property
+        name="memo"
+        type="java.lang.String"
+        column="MEMO"
+        length="250"
+    />
+        <property
+        name="orgId"
+        type="java.lang.String"
+        column="ORGID"
+        length="17"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to LogType -->
+    <many-to-one
+        name="logType"
+        class="com.gather.hibernate.LogType"
+        not-null="true"
+    >
+        <column name="LOG_TYPE_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

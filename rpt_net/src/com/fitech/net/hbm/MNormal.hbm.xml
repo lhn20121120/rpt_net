@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+    <class name="com.fitech.net.hibernate.MNormal" table="M_NORMAL">
+        <id name="normalId" column="NM_NORMALSORTID" type="java.lang.Integer">
+            <generator class="increment">
+            </generator>
+        </id>
+ 
+        <property name="normalName" column="NM_NORMALSORTNAME" type="java.lang.String" />
+        <property name="normalNote" column="NM_NOTE" type="java.lang.String" />
+    
+    
+    <set 
+			name="targetDefine" 
+			inverse="true">
+            <key column="NM_NORMALSORTID"/>
+            <one-to-many class="com.fitech.net.hibernate.TargetDefine"/>
+        </set>
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+   <form-beans>
+		<!--鎶ヨ〃妯℃澘FormBean-->
+	   <form-bean name="mChildReportForm" type="com.cbrc.smis.form.MChildReportForm"/>
+	   <!--EXCEL鎶ヨ〃妯℃澘FormBean-->
+	   <form-bean name="mExcelChildReportForm" type="com.cbrc.smis.form.MExcelChildReportForm"/>
+	    <form-bean name="eTLReportForm" type="com.fitech.net.form.ETLReportForm"/>
+	    
+	   <!-- 濉姤鑼冨洿FormBean-->
+	   <form-bean name="mOrgForm" type="com.cbrc.org.form.MOrgForm"/>
+
+	   <!--鍗曞厓鏍煎叕寮忔弿杩拌〃FormBean-->
+	   <form-bean name="mCellForumForm" type="com.cbrc.smis.form.MCellFormuForm"/>
+	   <!--寮傚父鍙樺寲璁惧畾FormBean-->
+	   <form-bean name="abnormityChangeForm" type="com.cbrc.smis.form.AbnormityChangeForm"/>
+   
+	   <!-- 璧勪骇璐熷�鸿〃濉姤鑼冨洿FormBean-->
+	   <form-bean name="mOrg" type="com.cbrc.org.form.MOrgForm"/>	   
+		
+		<!-- 璧勪骇璐熷�鸿〃濉姤鑼冨洿鍔犺浇璁惧畾FormBean-->
+		<form-bean name="mOrgCl" type="com.cbrc.org.form.MOrgClForm"/>
+   
+		<!--鎶ラ�侀搴﹁缃瓼ormBean--> 
+		<form-bean name="mActuRepForm" type="com.cbrc.smis.form.MActuRepForm"/>
+		
+		<!-- 妯＄増鍙戝竷-->
+		<form-bean name="mChildRep" type="com.cbrc.smis.form.MChildReportForm"/>
+		<!-- 鍗曞厓鏍煎叕寮忓鐓ц〃-->
+		<form-bean name="mCellToFormuForm" type="com.cbrc.smis.form.MCellToFormuForm"/>
+		<!-- 鎶ヨ〃鏈烘瀯閫傜敤鑼冨洿琛�-->
+		<form-bean name="mRepRangeForm" type="com.cbrc.smis.form.MRepRangeForm"/>
+	    <!-- 鎶ヨ〃鐨勯搴︾被鍒獸ormBean-->
+	    <form-bean name="orgActuTypeForm" type="com.cbrc.smis.form.OrgActuTypeForm"/>
+		<!-- 妯℃澘鏌ヨ鏉′欢Form -->
+		<form-bean name="mrqtForm" type="com.cbrc.smis.form.MChildReportQueryTermForm"/>
+	    <!--鏈烘瀯FormBean-->
+		<form-bean type="com.cbrc.smis.form.OrgForm" name="orgForm"/>
+
+		<!-- 鏁版嵁涓婃姤-->
+		<form-bean type="com.cbrc.smis.form.UploadFileForm" name="uploadFileForm"/>
+		
+		<!-- 鏁版嵁鏌ヨ-->
+		<!-- form-bean type="com.cbrc.smis.form.SearchTemplateForm" name="searchTemplateForm"/-->
+		<form-bean name="reportInInfoForm" type="com.cbrc.smis.form.ReportInInfoForm"/>
+		
+		<form-bean name="templateDownForm" type="com.fitech.net.form.TemplateDownForm"/>
+		
+		<!--淇濆瓨鎶ラ�佽寖鍥碏ormBean-->
+		<form-bean type="com.cbrc.smis.form.UpdateBSFWForm" name="updateBSFWForm"/>
+		<!--鏁版嵁缁存姢鍏崇郴 -->
+		<form-bean name="iDataRelationForm" type="com.fitech.net.form.IDataRelationForm"/>
+		<!-- 鍙栨暟鎸囨爣鍏紡 -->
+		<form-bean name="etlIndexForm" type="com.fitech.net.form.EtlIndexForm"/>
+	</form-beans>
+	
+   <global-exceptions />
+   <global-forwards />
+	
+   <action-mappings >
+	   <!--
+		 #################################################################################
+		 鎶ヨ〃妯℃澘鏂板妯″潡(Begin)
+		 #################################################################################
+		-->
+	   <!--杞藉叆鎶ヨ〃妯℃澘-->
+	   <action path="/test/ApartPageTest"
+			   type="com.fitech.net.collect.test.ApartPageTestAction">
+			   
+		   <forward path="/test/TestJsp.jsp" name="ok"/>
+		   
+	   </action>
+	   <action path="/template/uploadTmpt"
+			   type="com.cbrc.smis.action.UploadTemplateAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/add/init.jsp">
+		   <forward path="/template/add/bcmp.jsp" name="saveTmpt"/>
+		   <forward path="/template/add/bcmp_qd.jsp" name="saveTmptQD"/>
+	   </action>
+	   
+	   <action path="/template/uploadNot1104Tmpt"
+			   type="com.cbrc.smis.action.UploadNot1104TemplateAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/add/Not1104Init.jsp">
+		   <forward path="/template/add/Not1104Bcmp.jsp" name="saveTmpt"/>
+		   <forward path="/template/add/bcmp_qd.jsp" name="saveTmptQD"/>
+	   </action>
+	   
+	   
+	   
+	   <!--淇濆瓨鎶ヨ〃妯℃澘淇℃伅-->
+	   <action path="/template/saveTmpt"
+			   type="com.cbrc.smis.action.SaveTemplateAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/add/bjgx.jsp" name="bjgxSet"/>
+		   <forward path="/template/add/bcmp_qd.jsp" name="inputQD"/>
+		   <forward path="/template/add/bcmp.jsp" name="inputDD"/>
+	   </action>
+	   
+	   <action path="/template/saveNot1104Tmpt"
+			   type="com.cbrc.smis.action.SaveNot1104TemplateAction"
+			   name="mExcelChildReportForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/add/bjgx.jsp" name="bjgxSet"/>   
+		   <forward path="/template/add/Not1104Bcmp.jsp" name="inputDD"/>
+	   </action>
+	   
+	   <!-- 鏂板鍒嗘敮妯℃澘 @author Yao -->
+   	   <action path="/template/saveFZTmpt"
+			   type="com.cbrc.smis.action.SaveFZTemplateAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/add/bjgx.jsp" name="success"/>   
+		   <forward path="/template/add/addFZTemplate.jsp" name="fail"/>
+	   </action>
+	   
+	   <!-- 鏂板鍒嗘敮妯℃澘 @author Yao -->
+   	   <action path="/template/searchTemplateVersion"
+			   type="com.cbrc.smis.action.SearchTemplateVersionAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false">
+	   </action>
+	   
+ 		<!-- 寮傚父鍙樺寲鈥旀満鏋勪俊鎭煡璇�-->
+	   <action path="/template/viewMOrg"
+	   			type="com.cbrc.org.action.ViewMOrgAction"
+	   			name="mOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/add/tbfw_xx.jsp" name="tbfw_xx"/>
+	   	</action>
+	   
+   		<!--寮傚父鍙樺寲鈥斿鐞嗘満鏋勭被鍨嬬粏鑺�-->
+	    <action
+	      path="/template/operationOrgType"
+	      type="com.cbrc.org.action.OperationOrgTypeAction"
+	      name="mOrgForm"
+	      scope="request"
+	      validate="false"
+	      >
+	      <forward name="tbfw_xx" path="/template/viewMOrg.do"/>
+	    </action>
+	   
+	   
+	   <!--濉姤鑼冨洿鈥旀満鏋勪俊鎭煡璇�-->
+	   <action path="/template/viewTBFWOrgInfo"
+	   			type="com.cbrc.smis.action.ViewTBFWOrgInfoAction"
+	   			name="mOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/add/tbfw_orgDetail.jsp" name="tbfw_orgDetail"/>
+	   	</action>
+	   
+	    <!--濉姤鑼冨洿鈥旇缁嗘満鏋勯�夋嫨-->
+	    <action
+	      path="/template/operationTBFWOrgType"
+	      type="com.cbrc.smis.action.OperationTBFWOrgTypeAction"
+	      name="mOrgForm"
+	      scope="request"
+	      validate="false"
+	      >
+	      <forward name="viewTBFWOrgInfo" path="/template/viewTBFWOrgInfo.do"/>
+	      <forward name="viewTBFW" path="/template/viewTBFW.do"/>
+	      </action>
+	    
+	    <!--浠庢満鏋勯�夋嫨鏌ヨ椤甸潰杩斿洖濉姤鑼冨洿璁惧畾椤�-->
+		<action path="/template/returnTBFW"
+				type="com.cbrc.smis.action.ReturnTBFWAction"
+				scope="request">
+		   <forward name="goto" path="/template/viewTBFW.do"/>
+		</action>
+		
+	   
+	   <!--淇濆瓨琛ㄥ唴琛ㄩ棿鍏崇郴璁惧畾-->
+	   <action path="/template/saveBJGX"
+			   type="com.cbrc.smis.action.SaveBJGXAction"
+			   name="mCellForumForm"
+			   scope="request"
+			   validate="false"
+			   parameter="add"
+			   input="/template/add/bjgx.jsp">
+		   <!-- forward path="/template/mod/pEditBSFW.do" name="tbfwSet"/-->
+		   <forward path="/template/viewBSFW.do" name="tbfwSet"/>
+	   </action>
+	   
+	   <!--涓婅浇琛ㄥ唴琛ㄩ棿鍏崇郴琛ㄨ揪寮忓畾涔夋枃浠�-->
+	   <action path="/template/uploadBJGX"
+			   type="com.cbrc.smis.action.UploadBJGXAction"
+			   name="mCellForumForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/add/load_gx.jsp">
+		   <forward path="/template/add/bjgx.jsp" name="bjgxSet"/>
+		   <forward path="/template/mod/bjgx_append.jsp" name="bjgx_append"/>
+		   <forward path="/template/mod/bjgx_load.jsp" name="mod_load"/>
+	   </action>
+
+	   <!--寮傚父鍙樺寲璁惧畾淇濆瓨-->
+	   <action path="/template/saveYCBH"
+			   type="com.cbrc.smis.action.SaveYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/addYCBHInit.do">
+			<forward path="/template/add/bpfb.jsp" name="bpfbSet"/>
+	   </action>
+	   
+	   <!--鏂板寮傚父鍙樺寲-->
+	   <action path="/template/addYCBH"
+			   name="abnormityChangeForm"
+			   type="com.cbrc.smis.action.AddYCBHAction"
+			   scope="request"
+			   validate="false"
+			   input="/template/addYCBHInit.do"/>
+	   
+	   <!--鏂板寮傚父鍙樺寲鍒濆鍖栬瀹�-->
+	   <action path="/template/addYCBHInit"
+			   name="abnormityChangeForm"
+			   type="com.cbrc.smis.action.AddYCBHInitAction"
+			   scope="request"
+			   validate="false"
+			   input="/template/add/ycbh_new.jsp"/>
+
+	   <!-- 鎶ヨ〃濉姤鑼冨洿淇濆瓨-->
+	   <action path="/template/saveTBFW"
+			   type="com.cbrc.org.action.InsertMOrgAction"
+	   		   name="mOrgCl"
+	   		   scope="request"
+	   		   validate="false"
+			   input="/template/viewTBFW.do">
+	   		<forward path="/template/add/bspl.jsp" name="setBSPL"/>
+		</action>
+		
+		<!-- 鎶ヨ〃濉姤鑼冨洿璁惧畾鍔犺浇-->
+	   <action path="/template/viewTBFW"
+	   			type="com.cbrc.org.action.ViewMOrgClAction"
+	   			name="mOrgCl"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/add/tbfw.jsp" name="view"/>
+		</action>
+
+		
+		<!-- 妯＄増鍙戝竷-->
+		<action	path="/template/issueRep"
+				type="com.cbrc.org.action.InsertMChildReportAction"
+				name="mChildRep"
+				scope="request"
+				validate="false"
+				parameter="add"
+				input="/template/add/bpfb.jsp">
+			<forward path="/template/add/addFZTemplate.jsp" name="view"/>
+		</action>
+ 
+	   <!--鎶ヨ〃骞惰〃鑼冨洿鍙婃姤閫侀搴︽椂闂磋瀹�-->
+	   <action path="/template/updateMActuRept"
+			   type="com.cbrc.smis.action.InsertMActuRepAction"
+			   name="mActuRepForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/add/bspl.jsp">
+		   <forward path="/template/addYCBH.do" name="ycbhSet"/>
+		   <forward path="/template/add/bspl.jsp" name="bspl"/>
+	   </action>
+
+	   <!--鎶ヨ〃绠＄悊-鏌ユ壘-->
+	   <action path="/template/viewMChildReport"
+			   type="com.cbrc.smis.action.ViewMChildReportAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/mod/init.jsp">
+		   <forward path="/template/mod/init.jsp" name="init"/>
+	   </action>
+    
+	    <!--鏄剧ず璇ユ満鏋勭被鍒凡缁忛�変腑鐨勬満鏋勪俊鎭�-->
+	    <action
+	   	  path="/template/viewSelectedOrg"
+	      attribute="mOrgForm"
+	      name="mOrgForm"
+	      scope="request"
+	      validate="false"
+	      type="com.cbrc.org.action.ViewSelectedOrgAction">
+	      <forward name="selectedOrgDetail" path="/template/add/selectedOrgDetail.jsp" />
+	      <forward name="tbfw_selectedOrgDetail" path="/template/add/tbfw_selectedOrgDetail.jsp"/>
+	      <forward name="mod_tbfw_selectedOrgDetail" path="/template/mod/selectedOrgDetail.jsp"/>
+	    </action>
+	     
+	     <!--浠庨�変腑鐨勬満鏋勫垪琛ㄤ腑鍒犻櫎鎸囧畾鏈烘瀯-->
+	    <action 
+	    	path="/template/deleteOrgFromSession" 
+	    	type="com.cbrc.org.action.DeleteOrgFromSessionAction" 
+			scope="request"/>
+	    	
+		<!--浠庢満鏋勯�夋嫨鏌ヨ椤甸潰杩斿洖寮傚父鍙樺寲璁惧畾椤�-->
+		<action path="/template/returnYCBH"
+				type="com.cbrc.smis.action.ReturnYCBHAction"
+				scope="request">
+		   <forward name="goto" path="/template/addYCBHInit.do"/>
+		</action>
+		
+		<!--###############################################################################-->
+	   <!--
+		 #################################################################################
+			妯℃澘鏌ョ湅
+		 #################################################################################
+		-->
+		
+		<!--妯℃澘鏌ョ湅-鍩烘湰淇℃伅鏌ョ湅-->
+	    <action
+	      path="/template/viewTemplate"
+	      attribute="mChildReportForm"
+	      name="mChildReportForm"
+	      scope="request"
+	      validate="false"
+	      type="com.cbrc.smis.action.ViewTemplateAction">
+      		<forward name="init" path="/template/view/init.jsp" />
+  		 </action>
+ 		<!--妯℃澘鏌ョ湅-璇︾粏淇℃伅鏌ョ湅-->
+	 	<action
+	      path="/template/viewTemplateDetail"
+	      attribute="mChildReportForm"
+	      name="mChildReportForm"
+	      validate="false"
+	      scope="request"
+	      type="com.cbrc.smis.action.ViewTemplateDetailAction">
+	      <forward name="templateDetailView" path="/template/view/templateDetailView.jsp" />
+	      <forward name="templateDetailEdit" path="/template/edit/templateDetailView.jsp" />
+	    </action>
+	  
+		
+	   <!--妯℃澘鏌ョ湅-骞惰〃鑼冨洿鍙婃姤閫侀搴︽椂闂存煡鐪�-->
+	   <action path="/template/viewMActuRept"
+			   type="com.cbrc.smis.action.ViewMActuRepAction"
+			   name="mActuRepForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/view/bspl.jsp">
+		<forward path="/template/view/bspl.jsp" name="bspl"/>
+	   </action>
+	   
+	   <!--妯℃澘鏌ョ湅-琛ㄥ唴琛ㄩ棿鍏崇郴鏌ョ湅-->
+	   <action path="/template/viewMCellToFormu"
+			   type="com.cbrc.smis.action.ViewMCellToFormuAction"
+			   name="mCellToFormuForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/view/bjgx.jsp">
+		<forward path="/template/view/bjgx.jsp" name="bjgx"/>
+	   </action>
+	   
+	   <!--妯℃澘鏌ョ湅-濉姤鑼冨洿鏌ョ湅-->
+	   <action path="/template/viewMRepRange"
+			   type="com.cbrc.smis.action.ViewMRepRangeAction"
+			   name="mRepRangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/view/tbfw.jsp">
+		<forward path="/template/view/modBSFW.jsp" name="tbfw"/>
+	   </action>
+	     <!--妯℃澘鏌ョ湅-濉姤鑼冨洿鏈烘瀯璇︾粏淇℃伅鏌ョ湅-->
+	    <action
+	      path="/template/view/viewTBFWOrgDetail"
+	      attribute="mRepRangeForm"
+	      name="mRepRangeForm"
+	      scope="request"
+	      type="com.cbrc.smis.action.ViewTBFWOrgDetailAction">
+	      <forward name="view" path="/template/view/tbfw_orgDetail.jsp" />
+    	</action>
+	   <!--妯℃澘鏌ョ湅-寮傚父鍙樺寲鏌ョ湅-->
+	   <action path="/template/viewAbnormityChange"
+			   type="com.cbrc.smis.action.ViewAbnormityChangeAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/view/ycbh.jsp">
+		<forward path="/template/view/ycbh_new.jsp" name="ycbh"/>
+	   </action>
+	   
+	   
+	   <!--###############################################################################-->
+	   <!--
+		 #################################################################################
+		 鎶ヨ〃妯℃澘缁存姢妯″潡(Begin)
+		 #################################################################################
+		-->
+	   <!--琛ㄥ唴琛ㄩ棿鍏崇郴淇敼鍓嶇殑鍒濆鍖�-->
+	   <action path="/template/mod/editBJGXInit"
+			   type="com.cbrc.smis.action.EditBJGXInit"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/mod/bjgx_mod.jsp" name="view"/>
+	   </action>
+	   <!--琛ㄥ唴琛ㄩ棿鍏崇郴鍒犻櫎-->
+	   <action path="/template/mod/deleteBJGX"
+			   type="com.cbrc.smis.action.DeleteBJGXAction"
+			   name="mCellForumForm"
+			   validate="false"
+			   scope="request"
+			   input="/template/mod/editBJGXInit.do">
+		   <forward name="view" path="/template/mod/editBJGXInit.do"/>
+	   </action>   
+	   <!--琛ㄥ唴琛ㄩ棿鍏崇郴琛ㄨ揪寮忎慨鏀圭殑鏂板鍏崇郴琛ㄨ揪寮�-->
+	   <action path="/template/mod/appendBJGX"
+			  type="com.cbrc.smis.action.SaveBJGXAction"
+			   name="mCellForumForm"
+			   scope="request"
+			   validate="false"
+			   parameter="mod"
+			   input="/template/mod/bjgx_append.jsp">
+		   <forward name="view" path="/template/viewMChildReport.do"/>
+	   </action>
+		   
+
+	   <!--================ 鎶ラ�佽寖鍥翠慨鏀瑰墠鐨勫垵濮嬪寲=================-->
+	   <action path="/template/mod/editBSFWInit"
+	   			type="com.cbrc.smis.action.EditBSFWInitAction"
+			   name="mRepRangeForm"
+			   scope="request"
+			   validate="false">
+	   		<forward path="/template/mod/bsfw_mod.jsp" name="view"/>
+	   	</action>
+	   	
+	   	<!-- 鏂板鎶ラ�佽寖鍥村墠鐨勫睍鐜�-->
+	   	<action path="/template/viewBSFW"
+	   			type="com.cbrc.smis.action.ViewBSFWAction"
+	   		name="mRepRangeForm"
+			scope="request"
+			validate="false">
+			<forward path="/template/add/bspl.jsp" name="schemaFlag"/>
+	   		<forward path="/template/add/addBSFW.jsp" name="view"/>
+	   	</action> 
+	   	
+	   	<!-- 鎶ラ�佽寖鍥翠慨鏀瑰墠鐨勫垵濮嬪寲-->
+	   	<action path="/template/mod/preEditBSFW"
+	   			type="com.cbrc.smis.action.PreEditBSFWAction"
+		>
+	   		<forward path="/template/mod/modBSFW.jsp" name="view"/>
+	   	</action>
+	   	
+	   	<!-- 鏌ョ湅鎶ラ�佽寖鍥�-->
+	   	<action path="/template/view/viewPreBSFW"
+	   			type="com.cbrc.smis.action.ViewPreBSFWAction"
+		>
+	   		<forward path="/template/view/viewPreBSFW.jsp" name="view"/>
+	   	</action>
+	   	
+	   	<!-- 鏂板鎶ラ�佽寖鍥�-->
+	   	<action path="/template/add/insertBSFW"
+	   			type="com.cbrc.smis.action.InsertBSFWAction"
+	   			name="updateBSFWForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/add/bspl.jsp" name="setBSPL"/>
+	   	</action>
+	   	
+	   <!-- 鎶ラ�佽寖鍥寸殑淇濆瓨-->
+	   	<action path="/template/mod/updateBSFW"
+	   			type="com.cbrc.smis.action.UpdateBSFWAction"
+	   			name="updateBSFWForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/add/bspl.jsp" name="setBSPL"/>
+	   		<forward path="/template/viewMChildReport.do" name="updateOK"/>
+	   	</action>
+	   		<!-- 鎶ラ�佽寖鍥翠慨鏀瑰墠鐨勫垵濮嬪寲鍙︿竴涓�-->
+	   	<action path="/template/mod/pEditBSFW"
+	   			type="com.cbrc.smis.action.PEditBSFWAction"
+>
+	   		<forward path="/template/add/modBSFW.jsp" name="view"/>
+	   
+	   	</action>
+	   	<!-- gongming 2008-07-02 -->
+	   	<action path="/template/mod/validTemplate" type="com.cbrc.smis.action.ValidTemplateAction"/>
+	   	
+	   <!-- 鎶ラ�佽寖鍥寸殑淇濆瓨鍙︿竴涓�-->
+	   	<action path="/template/mod/update_BSF"
+	   			type="com.cbrc.smis.action.Update_BSFAction"
+	   			name="updateBSFWForm"
+	   			scope="request"
+	   			validate="false"
+	   			input="/template/viewTBFW.do">
+	   		<forward path="/template/add/bspl.jsp" name="setBSPL"/>
+	   		<forward path="/template/add/bsp1.jsp" name="updateOK"/>
+	   	</action>
+	   		<!-- 濉姤鑼冨洿鈥旀満鏋勪俊鎭摼鎺ョ偣鍑荤殑鏌ヨ-->
+	   <action path="/template/mod/viewMOrg"
+	   			type="com.cbrc.org.action.CheckMOrgAction"
+	   			name="mOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/mod/bsfw.jsp" name="check"/>
+	   	</action>
+	   	
+	   	<!-- 鎶ラ�佽寖鍥寸殑淇濆瓨
+	   	<action path="/template/mod/updateBSFW"
+	   			type="com.cbrc.smis.action.UpdateBSFWAction"
+	   			name="mOrgCl"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/mod/bsfw_mod.jsp" name="update"/>
+	   	</action>-->
+	   	
+	   <!--浠庢満鏋勯�夋嫨鏌ヨ椤甸潰杩斿洖濉姤鑼冨洿璁惧畾椤�-->
+		<action path="/template/returnTBFW_mod"
+				type="com.cbrc.smis.action.Mod_ReturnTBFWAction"
+				scope="request">
+		   <forward name="goto" path="/template/mod/editBSFWInit.do"/>
+		</action>
+	   	
+	   	<!-- 鎶ヨ〃缁存姢濉姤鑼冨洿鏇存柊-->
+	   <action path="/template/mod/updateTBFW"
+			   type="com.cbrc.org.action.UpdateMOrgAction"
+	   		   name="mOrgCl"
+	   		   scope="request"
+	   		   validate="false">
+	   		<forward name="main" path="/template/viewMChildReport.do"/>
+	   		<forward name="view" path="/template/mod/editBSFWInit.do"/>
+		</action>
+	   	
+	   	<!--鎶ラ�佽寖鍥粹�旀満鏋勪俊鎭煡璇�-->
+	   <action path="/template/viewTBFWOrgInfo_mod"
+	   			type="com.cbrc.smis.action.Mod_ViewTBFWOrgInfoAction"
+	   			name="mOrgForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/mod/tbfw_orgDetail.jsp" name="tbfw_orgDetail"/>
+	   	</action>
+	   	
+	   	<!--鎶ラ�佽寖鍥粹�旇缁嗘満鏋勯�夋嫨-->
+	    <action
+	      path="/template/operationTBFWOrgType_mod"
+	      type="com.cbrc.smis.action.Mod_OperationTBFWOrgTypeAction"
+	      name="mOrgForm"
+	      scope="request"
+	      validate="false"
+	      >
+	      <forward name="viewTBFWOrgInfo" path="/template/viewTBFWOrgInfo_mod.do"/>
+	      <forward name="viewTBFW" path="/template/mod/editBSFWInit.do"/>
+	      </action>
+	   	<!-- 鎶ラ�佽寖鍥寸殑璇︾粏鍐呭閫夋嫨鍚庝慨鏀圭殑淇濆瓨-->
+	    <action
+	      		path="/template/mod/operationOrgType"
+	      		type="com.cbrc.org.action.SaveRepRangeAction"
+	      		name="mRepRangeForm"
+	      		scope="request"
+	      		validate="false">
+	      <forward name="save" path="/template/mod/bsfw.jsp"/>
+	    </action>   
+	   
+	   <!-- ************************************************************-->
+	   <!--鎶ラ�侀搴﹀拰棰戠巼鐨勪慨鏀瑰墠鐨勫垵濮嬪寲-->
+	   <action path="/template/mod/editBSPLInit"
+			   type="com.cbrc.smis.action.EditMActuRepAction"
+			   name="mActuRepForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/mod/bspl.jsp">
+		   <forward name="back" path="/template/viewTemplate.do"/> 
+	   </action>
+		   
+	   <!--鎶ラ�侀搴﹀拰鎶ラ�佹椂闂寸殑淇敼鏇存柊-->
+	   <action path="/template/mod/updateMActuRept"
+			   type="com.cbrc.smis.action.UpdateMActuRepAction"
+			   name="mActuRepForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/mod/bspl.jsp">
+		   <forward name="view" path="/template/viewMChildReport.do"/> 
+	   </action>	
+	      
+	   <!--淇敼鎶ラ�侀搴﹀墠鐨勫垵濮嬪寲-->
+	   <action path="/template/mod/editYCBHInit"
+			   type="com.cbrc.smis.action.EditYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/mod/ycbh_new.jsp">
+		   <forward name="view" path="/template/viewMChildReport.do"/>
+	   </action>
+	   
+	   <!--鏌ョ湅寮傚父鍙樺寲-->
+	   <action path="/template/view/viewPreYCBH"
+			   type="com.cbrc.smis.action.ViewPreYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/view/viewPreYCBH.jsp">
+		   <forward name="view" path="/template/viewTemplate.do"/>
+	   </action>
+	   
+	   <!--鏂板寮傚父鍙樺寲涔嬪墠鐨勫睍鐜�-->
+	   <action path="/template/add/viewYCBHInit"
+			   type="com.cbrc.smis.action.ViewYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/add/addYCBH.jsp">
+		   <forward name="view" path="/template/viewMChildReport.do"/>
+	   </action>
+	   
+	   <!--鎻掑叆寮傚父鍙樺寲鏍囧噯璁惧畾淇敼-->
+	   <action path="/template/add/insertYCBH"
+			   type="com.cbrc.smis.action.InsertYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/add/viewYCBHInit.do">
+		   <forward name="view" path="/template/add/bpfb.jsp"/>
+	   </action>
+	   
+	   <!--鏇存柊寮傚父鍙樺寲鏍囧噯璁惧畾淇敼-->
+	   <action path="/template/mod/updateYCBH"
+			   type="com.cbrc.smis.action.UpdateYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/mod/editYCBHInit.do">
+		   <forward name="view" path="/template/viewMChildReport.do"/>
+	   </action>
+	   
+	   <!-- 妯＄増鍙戝竷-->
+		<action	path="/template/mod/bpfb"
+				type="com.cbrc.org.action.InsertMChildReportAction"
+				name="mChildRep"
+				scope="request"
+				validate="false"
+				parameter="mod"
+				input="/template/mod/bpfb.jsp">
+			<forward path="/template/viewMChildReport.do" name="view"/>
+		</action>
+	   <!--###############################################################################-->
+	   
+	   <!--
+		 #################################################################################
+		 寮傚父鍙樺寲淇敼妯″潡(Begin)
+		 #################################################################################
+		-->
+	   <!--鎶ヨ〃绠＄悊-寮傚父鍙樺寲淇敼鐨勬姤琛ㄦā鏉夸俊鎭垪琛�-->
+	   <action path="/template/ycbh/viewMChildReport"
+			   type="com.cbrc.smis.action.ViewYCBHMChildReportAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/ycbh/init.jsp">
+		   <forward path="/template/ycbh/init.jsp" name="init"/>
+	   </action>
+	   <!--鏇存柊寮傚父鍙樺寲鏍囧噯淇敼-->
+	   <action path="/template/ycbh/updateYCBH"
+			   type="com.cbrc.smis.action.UpdateYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/ycbh/editYCBHInit.do">
+		   <forward name="view" path="/template/ycbh/viewMChildReport.do"/>
+	   </action>
+	   <!--杩涘叆寮傚父鍙樺寲鏈烘瀯璁剧疆鍓嶅垵濮嬪寲-->
+	   <action path="/template/ycbh/PAddYCBH"
+			   type="com.cbrc.smis.action.P_AddYCBH"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/ycbh/editYCBHInit.do">
+		   <forward name="view" path="/template/add/modBSFW_ycbh.jsp"/>
+	   </action>
+	   <!--杩涘叆寮傚父鍙樺寲鏈烘瀯璁剧疆鍓嶅垵濮嬪寲-->
+	   <action path="/template/ycbh/PreEditYCBH"
+			   type="com.cbrc.smis.action.PreEditYCBH"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/ycbh/editYCBHInit.do">
+		   <forward name="view" path="/template/mod/modBSFW_ycbh.jsp"/>
+	   </action>
+	   <!--璁剧疆寮傚父鍙樺寲褰撳墠鏈烘瀯-->
+	   <action path="/template/ycbh/UpdataYCBHAction"
+			   type="com.cbrc.smis.action.UpdataYCBHAction"
+			   name="updateBSFWForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/ycbh/editYCBHInit.do">
+		   <forward name="view" path="/template/ycbh/PreEditYCBH.do"/>
+	   </action>
+	   <!--璁剧疆寮傚父鍙樺寲褰撳墠鏈烘瀯-->
+	   <action path="/template/ycbh/UpdataAddYCBHAction"
+			   type="com.cbrc.smis.action.UpdataAddYCBHAction"
+			   name="updateBSFWForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/ycbh/editYCBHInit.do">
+		   <forward name="view" path="/template/ycbh/PAddYCBH.do"/>
+	   </action>
+	   <!--淇敼鎶ラ�侀搴﹀墠鐨勫垵濮嬪寲-->
+	   <action path="/template/ycbh/editYCBHInit"
+			   type="com.cbrc.smis.action.EditYCBHAction"
+			   name="abnormityChangeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/ycbh/ycbh.jsp">
+		   <forward name="view" path="/template/ycbh/viewMChildReport.do"/>
+	   </action>
+	   
+	   <!-- 妯℃澘鏌ヨ(鏍规嵁鐢ㄦ埛杈撳叆鐨勬煡璇㈠弬鏁�) -->
+	   <action path="/template/queryTemplate"
+			   type="com.cbrc.smis.action.QueryTemplateAction"
+			   name="mrqtForm"
+			   scope="request"
+			   validate="true"  
+			   input="/template/ycbh/ycbh.jsp">
+		   <forward name="showTemplateJsp" path="/template/add/showTemplate.jsp"/>
+		   <forward name="turnHtml" path="/template/add/turn.html"/>
+	   </action>
+  
+	   <!--###############################################################################-->
+	   
+	   <!--
+		 ###############################################################################
+		 棰戝害绫诲埆绠＄悊妯″潡 
+		 ###############################################################################
+	   -->
+	   <!--绫诲埆淇℃伅娴忚-->
+	   <action path="/template/oat/OATInit"
+			   type="com.cbrc.smis.action.OATInitAction"
+			   scope="request"
+			   validate="false">
+			<forward name="view" path="/template/oat/index.jsp"/>
+	   </action>
+	   <!--鏂板-->
+	   <action path="/template/oat/OATAdd"
+			   type="com.cbrc.smis.action.OATAddAction"
+			   name="orgActuTypeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/oat/add.jsp">
+		   <forward name="view" path="/template/oat/OATInit.do"/>
+	   </action>  
+	   <!--瑕佷慨鏀圭殑淇℃伅鏌ョ湅--> 
+	   <action path="/template/oat/OATViewUpdate"
+			   type="com.cbrc.smis.action.OATViewUpdateAction"
+			   name="orgActuTypeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/oat/update.jsp">
+		   <forward name="OAT_Update" path="/template/oat/update.jsp"/>
+	   </action>
+	   <!--鏇存柊-->  
+	   <action path="/template/oat/OATUpdate"
+			   type="com.cbrc.smis.action.OATUpdateAction"
+			   name="orgActuTypeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/oat/update.jsp">
+		   <forward name="view" path="/template/oat/OATInit.do"/>
+		   <forward name="OAT_Update" path="/template/oat/update.jsp" />
+	   </action>
+	   <!--鍒犻櫎-->
+	   <action path="/template/oat/OATDelete"
+			   type="com.cbrc.smis.action.OATDeleteAction"
+			   name="orgActuTypeForm"
+			   scope="request"
+			   validate="false"
+			   input="/template/oat/OATInit.do">
+		   <forward name="view" path="/template/oat/OATInit.do"/>
+	   </action>
+	   <!--###############################################################################-->
+	   
+	   <!--
+		 ###############################################################################
+		 鏈烘瀯鎵�灞為搴︾被鍒瀹氭ā鍧�
+		 ###############################################################################
+	   -->
+	   <!--鏈烘瀯淇℃伅娴忚-->
+	   <action path="/template/org/ViewOrg"
+			   name="orgForm"
+			   type="com.cbrc.smis.action.ViewOrgAction"
+			   scope="request"
+			   validate="false">
+			<forward name="view" path="/template/org/index.jsp"/>
+	   </action>
+	   <!--鏈烘瀯淇℃伅鏌ヨ-->
+	   <action path="/template/org/SearchOrg"
+			   name="orgForm"
+			   type="com.cbrc.smis.action.ViewOrgAction"
+			   scope="request"
+			   validate="false">
+		   <forward name="view" path="/template/org/index.jsp"/>
+	   </action>
+	   <!--鎸夋満鏋勭被鍨嬭缃満鏋勬墍灞炵殑棰戝害绫诲埆-->
+	   <action path="/template/org/OrgClsOATSet"
+			   name="orgForm"
+			   type="com.cbrc.smis.action.OrgClsOATSetAction"
+			   scope="request"
+			   validate="false"
+			   input="/template/org/orgClsOATSet.jsp">
+		   <forward name="view" path="/template/org/ViewOrg.do"/>
+	   </action>	   
+	   <!--璁剧疆鏈烘瀯鎵�灞炵殑棰戝害绫诲埆-->
+	   <action path="/template/org/OrgOATSet"
+			   name="orgForm"
+			   type="com.cbrc.smis.action.OrgOATSetAction"
+			   scope="request"
+			   validate="false"
+			   input="/template/org/orgOATSet.jsp">
+		   <forward name="view" path="/template/org/ViewOrg.do"/>
+	   </action>	  		   
+	   <!--###############################################################################-->
+	   	
+	   	<!-- 妯℃澘涓嬭浇-->
+	   	<action path="/template/templateDownload"
+			   name="templateDownForm"					  
+			   type="com.cbrc.smis.action.TempletDownloadAction"
+			   scope="request"
+			   validate="true">		  
+		    <forward name="view_list" path="/template/templateDownloadList.do"></forward>
+	   	</action>
+	   	
+	   	<!-- 鏁版嵁涓婃姤-->
+	   	<action path="/template/uploadFile"
+			   name="uploadFileForm"				     
+			   type="com.fitech.net.action.UploadFileAction"
+			   scope="request"
+			   validate="false">
+		   <forward name="view" path="/template/data_report/upReport.jsp"/>
+	   	</action>
+	   	
+	   	 	<!-- 批量离线载入-->
+	   	<action path="/template/uploadZipFile"
+			   name="uploadFileForm"				     
+			   type="com.fitech.net.action.UploadZipFileAction"
+			   scope="request"
+			   validate="false">
+		   <forward name="view" path="/template/data_report/upZipReport.jsp"/>
+	   	</action>
+	   	
+	   	<!-- 鏁版嵁涓婃姤-->
+	   	<action path="/template/uploadMoreFile"
+			   name="uploadFileForm"				     
+			   type="com.fitech.net.action.UploadMoreFileAction"
+			   scope="request"
+			   validate="false">
+		   <forward name="view" path="/template/data_report/upMoreReport.jsp"/>
+	   	</action>
+	   	
+	   	<!-- 鎶ヨ〃鏌ヨ-->
+	   	<action path="/template/searchTem"
+				type="com.cbrc.smis.action.SearchTemplateAction"
+				name="reportInInfoForm"
+				scope="request"
+				validate="false">
+			<forward name="viewTemSearch" path="/template/data_report/template_search.jsp"/>
+		</action>
+		
+		
+		<!-- 鏁版嵁鍏ュ簱-->
+	   	<action path="/template/intoTem"
+				type="com.cbrc.smis.action.IntoTemplateAction"			
+				scope="request"
+				validate="false">
+			<forward name="upreport" path="/template/data_report/data_upreport.jsp"/>
+		</action>
+	   	
+	   	<!--鏁版嵁鍏崇郴缁存姢鏌ヨ-->
+	   	<action path="/template/viewProTmpt"
+			   type="com.fitech.net.action.ViewProtectTemplateAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/protect/viewProtect.jsp" name="view"/>
+	   	</action>
+	   	
+	   	<!--鏁版嵁鍏崇郴缁存姢璁剧疆-->
+	   	<action path="/template/proTmpt"
+			   type="com.fitech.net.action.ProtectTemplateAction"
+			   name="mChildReportForm"
+			   scope="request"
+			   validate="false">
+		   <!-- forward path="/template/protect/templateProtect.jsp" name="success"/-->
+		   <forward path="/template/protect/frame_templateProtect.jsp" name="success"/>		   
+	   	</action>
+	  	<!--鏁版嵁鍏崇郴缁存姢淇濆瓨-->
+	   	<action path="/template/saveProTmpt"
+			   type="com.fitech.net.action.SaveProtectTemplateAction"
+			   name="iDataRelationForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/protect/templateProtect.jsp" name="success"/>
+	   	</action>
+	   	<!-- 鏁版嵁鍏崇郴缁存姢淇濆瓨鍦⊿ESSION涓互鍙婂垏鎹㈠崟鍏冩牸鏃跺垵璇曞寲-->
+	   	<action path="/template/changeProTmpt"
+			   type="com.fitech.net.action.ChangeProtectTemplateAction"
+			   name="iDataRelationForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/protect/setExcel.jsp" name="success"/>
+		   <forward path="/template/protect/showAllData.jsp" name="showAllData"/>
+	   	</action>	   	
+	   	   	<!-- 璁剧疆绯荤粺涓氬姟鐢熸垚鍏紡 -->
+	   	<action path="/template/viewDataRelationFormualSetting"
+			   type="com.fitech.net.action.ViewDataRelationFormualSettingActionNEW"
+			   name="iDataRelationForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/protect/dataRelationFormulaSettingNEW.jsp" name="view"/>
+	   	</action>
+	   	<!--
+	   	<action path="/template/viewDataRelationFormualSetting"
+			   type="com.fitech.net.action.ViewDataRelationFormualSettingAction"
+			   name="iDataRelationForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/protect/dataRelationFormulaSetting.jsp" name="view"/>
+	   	</action>
+	   	-->
+	   	<!-- 娴嬭瘯绯荤粺涓氬姟鐢熸垚鐨勫叕寮� -->
+	   		<action path="/template/checkFormula"
+			   type="com.fitech.net.action.CheckFormulaAction"
+			   name="iDataRelationForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/protect/dataRelationFormulaSettingNEW.jsp" name="view"/>
+	   	</action>
+	   	
+	   	<!-- 淇濆瓨绯荤粺涓氬姟鐢熸垚鍏紡 -->
+	   	<action path="/template/saveDataRelationFormualSetting"
+			   type="com.fitech.net.action.SaveDataRelationFormualSettingAction"
+			   name="iDataRelationForm"
+			   scope="request"
+			   validate="false">
+		   <forward path="/template/protect/dataRelationFormulaSettingNEW.jsp" name="fail"/>
+	   	</action>
+	   	
+	   	<!-- 鐢熸垚Excel -->
+	   	<action path="/template/protect/createExcel"
+	   			type="com.fitech.net.template.action.CreateExcelFromFormulaActionNEW"
+	   			name="iDataRelationForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/protect/createExcelNEW.jsp" name="view"/>
+	   	</action>
+	   		<!-- 鐢熸垚Excel --><!--
+	   	<action path="/template/protect/createExcel"
+	   			type="com.fitech.net.template.action.CreateExcelFromFormulaAction"
+	   			name="iDataRelationForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/protect/createExcel.jsp" name="view"/>
+	   	</action>
+	   	--><!-- 鏄剧ず鍙栨暟鎸囨爣鍏紡 -->
+	   	<action path="/template/ViewTargetFormual"
+	   			type="com.fitech.net.template.action.ViewTargetFormulaAction"
+	   			name="etlIndexForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/view/TargetFormula.jsp" name="view"/>
+	   	</action>
+	   	<!-- 鍒犻櫎鍙栨暟鎸囨爣鍏紡 -->
+	   	<action path="/template/deleteEtlIndex"
+	   			type="com.fitech.net.template.action.DeleteTargetFormulaAction"
+	   			name="etlIndexForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/ViewTargetFormual.do" name="delete"/>
+	   	</action>
+	   	 <!-- 淇敼鍙栨暟鎸囨爣鍏紡 -->
+	   	<action path="/template/EditEtlIndex"
+	   			type="com.fitech.net.template.action.EditEtlIndexFormulaAction"
+	   			name="etlIndexForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/edit/editEtlIndex.jsp" name="edit"/>
+	   	</action>
+	   	<!-- 淇濆瓨鍙栨暟鎸囨爣鍏紡 -->
+	   	<action path="/template/updateEtlIndexFormual"
+	   			type="com.fitech.net.template.action.UpdateEtlIndexFormulaAction"
+	   			name="etlIndexForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/ViewTargetFormual.do" name="update"/>
+	   	</action>
+	   	<!-- 澧炲姞鍙栨暟鎸囨爣鍏紡 -->
+	   	<action path="/template/addEtlIndexFormual"
+	   			type="com.fitech.net.template.action.AddEtlIndexFormulaAction"
+	   			name="etlIndexForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/template/ViewTargetFormual.do" name="add"/>
+	   	</action>
+	   	
+	   	<!--======================= 鏈烘瀯绠＄悊妯″潡锛屾姤閫佽寖鍥磋瀹歋tart ==========================-->
+	   	<!-- 鏄剧ず鏈烘瀯鐨勬姤閫佽寖鍥� -->
+		<action path="/showOrgBSFW"
+				type="com.fitech.net.action.ShowOrgBSFWAction"
+				name="mRepRangeForm"
+				scope="request"
+				validate="false">
+			<forward name="show_BSFW" path="/netOrg/orgNet/show_org_BSFW.jsp"/>
+		</action>
+		<!-- 鏈烘瀯鐨勬姤閫佽寖鍥寸殑璁惧畾 -->
+		<action path="/orgBSFWUpdate"
+				type="com.fitech.net.action.OrgBSFWUpdateAction"
+				name="mRepRangeForm"
+				scope="request"
+				validate="false">
+		</action>
+		<!--======================= 鏈烘瀯绠＄悊妯″潡锛屾姤閫佽寖鍥磋瀹欵nd ==========================-->
+		<!-- Excel瀵瑰簲姹囨�诲叧绯荤殑淇敼   -->
+		<action path="/template/mod/viewCollectTypeAction"
+				type="com.cbrc.smis.action.ViewCollectTypeAction"
+				name="mRepRangeForm"
+				scope="request"
+				validate="false">
+			<forward name="show_collectRelation" path="/template/mod/collectRelation.jsp"/>
+			
+		</action>
+		
+		<action path="/template/mod/saveCollectTypeAction"
+				type="com.cbrc.smis.action.SaveCollectTypeAction"
+				name="mRepRangeForm"
+				scope="request"
+				validate="false">
+			
+			<forward name="show_collectRelation" path="/template/mod/collectRelation.jsp"/>
+		</action>
+		
+		<!-- ETL生成报表  -->
+		<action path="/template/protect/etlDataBuild"
+	   			type="com.fitech.net.template.action.EtlDataBuildAction"
+	   			name="eTLReportForm"
+	   			scope="request"
+	   			validate="false">
+	   		<forward path="/report_mgr/etl/etlDataBuild.jsp" name="view"/>
+	   	</action>
+	   	
+	   	
+		<!--	模板映射维护   -->
+	   	<action path="/template/ETLMappingMChildReport"
+	      attribute="mChildReportForm"
+	      name="mChildReportForm"
+	      scope="request"
+	      validate="false"
+	      type="com.cbrc.smis.action.ViewTemplateAction">
+      		<forward name="init" path="/template/mod/etl_mapping.jsp" />
+  		 </action>
+  		 
+  		
+         <action path="/template/jiaoYanAction" type="com.fitech.net.action.JiaoYanReportAction">
+  		 	<forward name="edit" path="/template/mod/jiaoyanReport.jsp"></forward>
+  		 	<forward name="view" path="/template/mod/jiaoyanReportView.jsp"></forward>
+  		 </action>
+  		 
+  		 <action path="/template/saveDataAction" type="com.fitech.net.action.SaveDataJiaoYanReportAction">
+  		 	<forward name="success" path="/template/jiaoYanAction.do?type=edit"></forward>
+  		 	<forward name="next" path="/gznx/preSetHZSD.do?opration=next"></forward>
+  		 </action>
+  		 
+  		 <action path="/template/fileaction" type="com.fitech.net.action.FileExistsAction">
+  		 </action>
+   </action-mappings>  
+
+</struts-config>

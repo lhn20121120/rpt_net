@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	
+	<form-beans>
+		<!--信息发布上传Form-->
+		<form-bean name="mRegionForm" type="com.fitech.net.form.MRegionForm"/>
+		<form-bean name="orgLayerForm" type="com.fitech.net.form.OrgLayerForm"/>
+		<form-bean name="orgNetForm" type="com.fitech.net.form.OrgNetForm"/>
+		<form-bean name="orgTypeForm" type="com.fitech.net.form.OrgTypeForm"/>
+	</form-beans>
+	
+	<action-mappings>
+	
+	<!-- ========================机构级别设定(Start)========================-->
+		<action	path="/viewOrgLayer"
+				 type="com.fitech.net.action.ViewOrgLayerAction"
+				 name="orgLayerForm"
+				 scope="request"
+				 input=""
+				 validate="false">
+			<forward name="view" path="/netOrg/orgLayer/viewOrgLayer.jsp"></forward>
+		</action>
+		
+		<action path="/insertOrgLayer"
+				type="com.fitech.net.action.InsertOrgLayerAction"
+				name="orgLayerForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/netOrg/orgLayer/orgLayerAdd.jsp"/>
+		</action> 
+		
+		<action path="/deleteOrgLayer"
+				type="com.fitech.net.action.DeleteOrgLayerAction"
+				name="orgLayerForm"
+				scope="request"
+				validate="false">
+		</action>
+		
+		<action path="/editOrgLayer"
+				type="com.fitech.net.action.EditOrgLayerAction"
+				name="orgLayerForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/netOrg/orgLayer/orgLayerEdit.jsp"/>
+		</action>
+		
+		<action path="/updateOrgLayer"
+				type="com.fitech.net.action.UpdateOrgLayerAction"
+				name="orgLayerForm"
+				scope="request"
+				validate="false"
+				input="/netOrg/orgLayer/viewOrgLayer.jsp">
+				<forward name="update" path="/viewOrgLayer.do"/>
+		</action>
+	   
+	<!-- ========================机构级别设定(End)========================-->
+	
+	
+	<!-- ========================机构类别设定(Start)======================-->
+	<action	path="/viewOrgType"
+				 type="com.fitech.net.action.ViewOrgTypeAction"
+				 name="orgTypeForm"
+				 scope="request"
+				 input=""
+				 validate="false">
+			<forward name="view" path="/netOrg/orgType/viewOrgType.jsp"></forward>
+		</action>
+		
+		<action path="/insertOrgType"
+				type="com.fitech.net.action.InsertOrgTypeAction"
+				name="orgTypeForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/netOrg/orgType/orgTypeAdd.jsp"/>
+		</action> 
+		
+		<action path="/deleteOrgType"
+				type="com.fitech.net.action.DeleteOrgTypeAction"
+				name="orgTypeForm"
+				scope="request"
+				validate="false">
+		</action>
+		
+		<action path="/editOrgType"
+				type="com.fitech.net.action.EditOrgTypeAction"
+				name="orgTypeForm"
+				scope="request"
+				validate="false">
+				<forward name="edit" path="/netOrg/orgType/orgTypeEdit.jsp"/>
+		</action>
+		
+		<action path="/updateOrgType"
+				type="com.fitech.net.action.UpdateOrgTypeAction"
+				name="orgTypeForm"
+				scope="request"
+				validate="false"
+				input="/netOrg/orgType/viewOrgType.jsp">
+				<forward name="update" path="/viewOrgType.do"/>
+		</action>
+	<!-- ========================机构类别设定(End)========================-->
+	
+	
+	<!-- ========================机构地区设定(Start)======================-->
+	<action	path="/viewMRegion"
+				 type="com.fitech.net.action.ViewMRegionAction"
+				 name="mRegionForm"
+				 scope="request"
+				 input=""
+				 validate="false">
+			<forward name="view" path="/netOrg/mRegion/viewMRegion.jsp"></forward>
+		</action>
+		
+		<action path="/insertMRegion"
+				type="com.fitech.net.action.InsertMRegionAction"
+				name="mRegionForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/netOrg/mRegion/mRegionAdd.jsp"/>
+		</action> 
+		
+		<action path="/deleteMRegion"
+				type="com.fitech.net.action.DeleteMRegionAction"
+				name="mRegionForm"
+				scope="request"
+				validate="false">
+		</action>
+		
+		<action path="/editMRegion"
+				type="com.fitech.net.action.EditMRegionAction"
+				name="mRegionForm"
+				scope="request"
+				validate="false">
+				<forward name="editMRegion" path="/netOrg/mRegion/mRegionEdit.jsp"/>
+		</action>
+		
+		<action path="/updateMRegion"
+				type="com.fitech.net.action.UpdateMRegionAction"
+				name="mRegionForm"
+				scope="request"
+				validate="false"
+				input="/netOrg/mRegion/viewMRegion.jsp">
+				<forward name="update" path="/viewMRegion.do"/>
+		</action>
+	<!-- ========================机构地区设定(End)========================-->
+	
+	
+	<!-- ========================机构设定(Start)======================-->
+	<action	path="/org/selectOrgNet"
+				 type="com.fitech.net.action.SelectNetOrgAction"
+				 name="orgNetForm"
+				 scope="request"
+				 validate="false">
+			<forward name="view" path="/netOrg/orgNet/OrgList.jsp"></forward>		
+		</action>
+	
+	
+	<action	path="/viewOrgNet"
+				 type="com.fitech.net.action.ViewOrgNetAction"
+				 name="orgNetForm"
+				 scope="request"
+				 input=""
+				 validate="false">
+			<forward name="view" path="/netOrg/orgNet/viewOrgNet.jsp"></forward>
+			<forward name="newAddView" path="/netOrg/newAddOrg/newAddFrame.jsp"></forward>
+			<forward name="updateView" path="/netOrg/newAddOrg/updateOrgMain.jsp"></forward>			
+		</action>
+		
+		<action path="/insertOrgNet"
+				type="com.fitech.net.action.InsertOrgNetAction"
+				name="orgNetForm"
+				scope="request"
+				validate="false">
+			<forward name="insert" path="/viewOrgNet.do"/>
+		</action> 
+		
+		<action path="/deleteOrgNet"
+				type="com.fitech.net.action.DeleteOrgNetAction"
+				name="orgNetForm"
+				scope="request"
+				validate="false">
+		</action>
+		
+		
+		<action path="/updateOrgNet"
+				type="com.fitech.net.action.UpdateOrgNetAction"
+				name="orgNetForm"
+				scope="request">
+			<forward name="update" path="/viewOrgNet.do"/>
+		</action>
+		<action path="/editOrgNet"
+				type="com.fitech.net.action.EditOrgNetAction"
+				name="orgNetForm"
+				scope="request"
+				validate="false">
+			<forward name="editOrgNet" path="/netOrg/newAddOrg/updateOrgMain.jsp"/>
+		</action>
+	<!-- ========================机构设定(End)========================-->
+			
+	<!--机构信息查询-->
+	    <action	path="/orgNetInfoTree"
+				 type="com.fitech.net.action.OrgAndUserInfoSearch"
+				 name="orgNetForm"
+				 scope="request"
+				 input=""
+				 validate="false">
+			<forward name="view" path="/netOrg/orgNetInfo/viewOrgAndUser.jsp"></forward>
+		</action>	 
+	</action-mappings>
+</struts-config>

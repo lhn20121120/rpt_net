@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <data-sources />
+   <form-beans >   
+	     <form-bean name="uploadInfoForm" type="com.fitech.upload.form.UploadInfoForm"/>
+	     <form-bean name="afDataImportForm" type="com.fitech.gznx.form.AFDataImporForm"/>
+   </form-beans>
+	
+   <global-exceptions />
+    <global-forwards/>
+	
+   <action-mappings>
+         <action path="/uploadFileAction"
+	             name="uploadInfoForm"
+	             scope="request"
+	             type="com.fitech.upload.action.UploadFileAction"  
+	             validate="false" 
+	             parameter="m"> 
+	        <forward name="success" path="/upload/fileUpload.jsp"></forward>
+	     </action> 
+	     <!-- 批量载入机构信息 -->
+	     <action path="/afOrgImportAction" type="com.fitech.gznx.action.AFOrgImportAction"
+			name="afTemplateForm" scope="request" validate="false">
+			<forward name="org_import.jsp" path="/gznx/org_manager/org_import.jsp" />
+		</action>
+		<!-- 批量报文载入 -->
+	     <action path="/gznx/reportsearch/afDataImportAction" type="com.fitech.gznx.action.AFDataImportAction"
+			name="afDataImportForm" scope="request" validate="false">
+			<forward name="pboc_data_import.jsp" path="/gznx/reportsearch/pboc_data_import.jsp" />
+		</action>  
+	</action-mappings>
+
+</struts-config>

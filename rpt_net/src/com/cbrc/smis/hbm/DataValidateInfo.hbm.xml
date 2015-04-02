@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.DataValidateInfo" 
+    table="DATA_VALIDATE_INFO"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.DataValidateInfoPK">
+        <key-property 
+            name="repInId" 
+            column="REP_IN_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="validateTypeId" 
+            column="VALIDATE_TYPE_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="cellFormuId" 
+            column="CELL_FORMU_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+		<key-property
+			name="seqNo"
+			column="Seq_No"
+			type="java.lang.Integer"
+			/>
+    </composite-id>    
+
+    <property
+        name="result"
+        type="java.lang.Integer"
+        column="RESULT"
+        length="10"
+    />
+    
+            <property name="sourceValue" type="java.lang.String">
+            <column name="SOURCE_VALUE" />
+        </property>
+        <property name="targetValue" type="java.lang.String">
+            <column name="TARGET_VALUE" />
+        </property>
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to ValidateType -->
+    <many-to-one
+        name="validateType"
+	    class="com.cbrc.smis.hibernate.ValidateType"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="VALIDATE_TYPE_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to ReportIn -->
+    <many-to-one
+        name="reportIn"
+	    class="com.cbrc.smis.hibernate.ReportIn"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="REP_IN_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to MCellFormu -->
+    <many-to-one
+        name="MCellFormu"
+	    class="com.cbrc.smis.hibernate.MCellFormu"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CELL_FORMU_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

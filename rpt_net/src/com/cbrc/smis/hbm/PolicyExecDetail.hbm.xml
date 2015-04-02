@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.PolicyExecDetail" 
+    table="POLICY_EXEC_DETAIL"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.PolicyExecDetailPK">
+        <key-property 
+            name="repInId" 
+            column="REP_IN_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="policyId" 
+            column="POLICY_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+    </composite-id>    
+
+    <property
+        name="execTime"
+        type="java.sql.Timestamp"
+        column="EXEC_TIME"
+        length="26"
+    />
+
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to Policy -->
+    <many-to-one
+        name="policy"
+	    class="com.cbrc.smis.hibernate.Policy"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="POLICY_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to ReportIn -->
+    <many-to-one
+        name="reportIn"
+	    class="com.cbrc.smis.hibernate.ReportIn"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="REP_IN_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

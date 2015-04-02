@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+   <form-beans>
+		 <!--信息发布上传Form-->
+	  <form-bean name="infoFilesForm" type="com.cbrc.smis.form.InfoFilesForm"/>
+   </form-beans>
+	
+   <action-mappings>
+	   <!-- 信息上传-->
+	   <action path="/upInfoFiles"
+	   			type="com.cbrc.smis.action.UpInfoFilesAction"
+	   			name="infoFilesForm"
+	   			scope="request"
+			    input="/info_files/upfile_list.jsp"
+			  	validate="true">
+	   </action>
+		   <!-- 信息上传浏览-->
+	   <action path="/viewUpInfoFiles"
+	   			type="com.cbrc.smis.action.ViewUpInfoFilesAction"
+	   			name="infoFilesForm"
+	   			scope="request"
+				  validate="false">
+		  	 <forward name="view" path="/info_files/upfile_list.jsp"/>
+	   </action>
+	   	   <!-- 删除文件-->
+	   <action path="/delInfoFiles"
+	   			type="com.cbrc.smis.action.DeleteInfoFilesAction"
+	   			name="infoFilesForm"
+	   			scope="request"
+				validate="false">
+	   </action>
+		 		   <!-- 发布信息浏览-->
+	   <action path="/viewOutInfoFile"
+	   			type="com.cbrc.smis.action.ViewOutInfoFileAction"
+	   			name="infoFilesForm"
+	   			scope="request"
+				  validate="false">
+		  	 <forward name="view" path="/info_files/outfile_list.jsp"/>
+	   </action>
+	   
+   </action-mappings>
+</struts-config>

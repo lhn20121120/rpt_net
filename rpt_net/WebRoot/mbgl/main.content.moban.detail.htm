@@ -1,0 +1,171 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<meta name="Author" content="BroadContact Business Software Co.">
+		<link href="../css/common.css" rel="stylesheet" type="text/css">
+			<script src="../script/globalScript.js" type="text/javascript" language="javascript"></script>
+	</head>
+	<body>
+		<!--<table width="720" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<FONT face="宋体" color="#003366"></FONT>
+				<td height="10" background="image/inside_index_bg1.jpg">
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<div align="center">-->
+		<!--</div>
+				</td>
+			</tr>
+		</table>-->
+		<TABLE id="Table1" cellSpacing="1" width="100%" border="0" height="120">
+			<TR align="center" valign="top">
+				<TD colSpan="3" height="55">
+					<table width="95%" border="0" cellpadding="0" cellspacing="3" height="63" id="table2">
+						<tr height="40">
+							<td align="left" valign="top" width="100%" noWrap colSpan="4" background="../image/top.gif"
+								height="28">
+								<span style="LETTER-SPACING: 1pt">
+									<b><font face="Arial" size="5">G01</font></b></span></td>
+						</tr>
+						<tr height="30">
+							<td align="left" width="37%" noWrap background="../image/top.gif" height="25">
+								<font face="Arial">报表名称：<INPUT id="Text1" type="text" class="input-text" size="30" name="Text1" value="资产负债项目统计表"></font></td>
+							<td align="left" width="25%" noWrap background="../image/top.gif" height="25">
+								正在使用的版本：<INPUT class="input-text" id="Text2" type="text" size="10" value="V 0101" name="Text1"></td>
+							<td align="left" noWrap background="../image/top.gif" height="25" width="21%">
+								有效期限：<INPUT class="input-text" id="Text3" type="text" size="10" value="2005/8/22" name="Text2"></td>
+							<td align="left" noWrap background="../image/top.gif" height="25">
+								历史版本：<SELECT id="Select2" name="Select2" class="input-text" size="1">
+									<OPTION selected>V 0101</OPTION>
+									<OPTION>V 0100</OPTION>
+								</SELECT></td>
+						</tr>
+					</table>
+				</TD>
+			</TR>
+			<tr align="center" valign="top">
+				<td>
+					<div align="center">
+						<table width="95%" border="0" cellpadding="2" height="118">
+							<TR>
+								<td colspan="6"><fieldset id="fieldset">
+										<legend>
+											<strong>&nbsp;简要描述（V01.102）&nbsp;</strong></legend>
+										<div align="center">
+											<TABLE width="98%" border="0" cellpadding="2" height="115">
+												<TBODY>
+													<TR>
+														<TD align="left">
+															&nbsp;&nbsp; 1、本表反映填报机构在某一特定日期财务状况，应当按照资产、负债和所有者权益分类分项列示。本表资产总计等于负债和所有者权益总计。<br>
+															&nbsp;&nbsp; 2、报表编码：银监 号<br>
+															&nbsp;&nbsp; 
+															3、填报机构：填报本表的机构为除金融资产管理公司以外所有的银行业金融机构。包括各政策性银行、国有商业银行、股份制商业银行、城市商业银行、农村商业银行、农村合作银行、外资法人机构、外国银行分行、城市信用社、农村信用社、企业集团财务公司、信托投资公司、金融租赁公司、汽车金融公司和邮政储蓄机构。<br>
+															&nbsp;&nbsp; 4、报送频度：月报（境内分支机构）、季报（境内外分支机构）、半年报和年报（境内外分支机构和附属公司）。<br>
+															&nbsp;&nbsp; 
+															5、报送时间：月报为月后10日，季报为季后20日，半年报为半年后50日，年报为年后50日内填报，遇“劳动节”、“国庆节”法定节假日顺延三天。<br>
+															&nbsp;&nbsp; 6、报送方式：以电子报表形式报送银监会。<br>
+															&nbsp;&nbsp; 7、数据单位：万元。<br>
+															&nbsp;&nbsp; 8、四舍五入要求：保留整数。<br>
+															&nbsp;&nbsp; 
+															9、本表分别按人民币、外币折人民币、本外币合计折人民币填报，资产、负债类汇率使用期末国家外汇管理局公布的外汇牌价，权益类适用汇率按有关要求执行。</TD>
+													</TR>
+												</TBODY>
+											</TABLE>
+										</div>
+									</fieldset></td>
+							<TR height="25">
+								<TD align="left" width="17%">
+									<FONT face="宋体"><INPUT id="Button1" type="submit" value="查看报送关系/频率" name="Button1" class="input-button"
+											onclick="window.parent.contents.location.assign('main.content.moban.bsgxbspl.detail.htm')"></FONT></TD>
+								<TD align="left" width="17%">
+									<FONT face="宋体"><INPUT id="Button2" type="submit" value="查看表内/表间关系" name="Button2" class="input-button"
+											onclick="window.parent.contents.location.assign('main.content.moban.bjgx.detail.htm')"></FONT>
+								</TD>
+								<TD align="left" width="16%">
+									<FONT face="宋体"><INPUT id="Button6" type="submit" value="查看数据变化标准" name="Button6" class="input-button"
+											onclick="window.parent.contents.location.assign('main.content.moban.ycbh.detail.htm')"></FONT>
+								</TD>
+								<TD align="left" width="11%">
+									<FONT face="宋体"><INPUT id="Button3" type="submit" value="查看PDF文件" name="Button3" class="input-button" 
+											onclick="window.open('../data/G01.pdf')"></FONT>
+								</TD>
+								<TD align="center" width="12%">
+									<FONT face="宋体"><INPUT id="Button4" type="submit" value="查看填报说明" name="Button4" class="input-button" 
+											onclick="window.open('../data/G01.doc')"></FONT>
+								</TD>
+								<TD align="left" width="12%">
+									<FONT face="宋体"><INPUT id="Button5" type="submit" value="编辑模板描述" name="Button5" class="input-button" style="FLOAT: right"
+											onclick="window.open('main.content.moban.edit.htm','','width=870 height=265')"></FONT></TD>
+							</TR>
+							<tr>
+								<TD align="center" colspan="6">
+									<TABLE id="table3" height="68" cellSpacing="1" cellPadding="1" width="100%" border="1">
+										<TBODY>
+											<tr>
+												<TD width="326" height="21" background="../image/titlebk.gif">
+													<P align="center"><FONT face="宋体" size="2"><STRONG>模板名称</STRONG></FONT></P>
+												</TD>
+												<TD height="21" background="../image/titlebk.gif" width="237">
+													<P align="center"><FONT face="宋体" size="2"><STRONG>版本号</STRONG></FONT></P>
+												</TD>
+												<TD background="../image/titlebk.gif" height="21">
+													<P align="center"><STRONG> <font face="宋体" size="2">有效期</font></STRONG></P>
+												</TD>
+											</tr>
+											<TR>
+												<TD width="326">
+													<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<font face="Arial">G01资产负债项目统计表</font></p>
+												</TD>
+												<TD align="center" width="237">
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<font face="Arial">V 0101</font></P>
+												</TD>
+												<TD align="center">
+													<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<font face="Arial">2005/8/22</font></p>
+												</TD>
+											</TR>
+											<TR>
+												<TD width="326">
+													<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><FONT face="Arial">G01资产负债项目统计表</FONT></p>
+												</TD>
+												<TD align="center" width="237">
+													<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<a href="#"><font face="Arial">V 0100</font></a>
+													</P>
+												</TD>
+												<TD align="center">
+													<p style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">
+														<font face="Arial">2005/4/4</font></p>
+												</TD>
+											</TR>
+											<TR>
+												<TD width="326">
+													<P align="center" style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><FONT face="宋体">……</FONT></P>
+												</TD>
+												<TD width="237">
+													<P align="center" style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><FONT face="宋体">……</FONT></P>
+												</TD>
+												<TD>
+													<p align="center"><FONT face="宋体">……</FONT></p>
+												</TD>
+											</TR>
+										</TBODY></TABLE>
+								</TD>
+							</tr>
+							<TR height="25">
+								<TD align="center" colspan="6" valign="bottom">
+									<p align="right">
+						<input class="input-button" id="OK" onclick="window.history.back()" type="submit" value=" 返 回 "
+						name="OK"></TD>
+							</TR>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</TABLE>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+    <class name="com.cbrc.smis.hibernate.SysParameter" table="SYS_PARAMETER" >
+        <id name="parName" type="java.lang.String">
+            <column name="PAR_NAME" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="parType" type="java.lang.String">
+            <column name="PAR_TYPE" length="30" not-null="true" />
+        </property>
+      <property name="parValue" type="java.lang.Integer">
+            <column name="PAR_VALUE"  not-null="true" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

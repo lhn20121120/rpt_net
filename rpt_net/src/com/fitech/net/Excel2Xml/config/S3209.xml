@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form1
+>
+	
+	<Subform1
+><detailHeader1
+><fitechTitle
+>S32信托投资公司管理信托财产状况统计表 </fitechTitle
+><A3
+>附注2：债券托管及证券交易保证金存放情况表</A3
+><A5
+>一、中央结算公司债券二级托管情况</A5
+><A6
+>A：丙类托管账户</A6
+><fitechSubtitle
+>补充材料：  第五部分：信托资金投资有价证券风险情况表(附注2)</fitechSubtitle
+><A5
+>一、中央结算公司债券二级托管情况</A5
+><A6
+>A：丙类托管账户</A6
+><FH
+>A    </FH
+><FH
+>B   </FH
+><FH
+>C </FH
+><FH
+>D  </FH
+><FH
+>E  </FH
+><FH
+>F  </FH
+><FH
+>G  </FH
+><D9
+>国债 </D9
+><E9
+>央行债券及票据</E9
+><F9
+>金融债</F9
+><G9
+>企业债</G9
+><H9
+>其他  </H9
+><A7
+>序号  </A7
+><B8
+>结算代理人</B8
+><C8
+>托管账号      </C8
+><FH1
+>A    </FH1
+><FH2
+>B   </FH2
+><FH3
+>C </FH3
+><FH4
+>D  </FH4
+><FH5
+>E  </FH5
+><FH6
+>F  </FH6
+><FH7
+>G  </FH7
+><D9
+>国债 </D9
+><E9
+>央行债券及票据</E9
+><F9
+>金融债</F9
+><G9
+>企业债</G9
+><H9
+>其他  </H9
+><A7
+>序号  </A7
+><B8
+>结算代理人</B8
+><C8
+>托管账号      </C8
+><D8
+>托管余额</D8
+><fitechUnit
+>万元</fitechUnit
+><fitechRange
+/><fitechSubmitMonth
+/><fitechSubmitYear
+/></detailHeader1
+><total1
+><B16
+/><A16
+>合计   </A16
+><COL2
+/><C16
+/><COL4
+>0.00000000</COL4
+><COL5
+>0.00000000</COL5
+><COL6
+>0.00000000</COL6
+><COL7
+>0.00000000</COL7
+><COL8
+>0.00000000</COL8
+><COL1
+>合计   </COL1
+><COL3
+/></total1
+></Subform1
+>
+	
+	
+	
+	
+	<Subform1
+><detailHeader2
+><A17
+>B：二级托管账户（不含丙类托管账户）</A17
+><FH
+>A    </FH
+><FH
+>B   </FH
+><FH
+>C </FH
+><FH
+>D  </FH
+><FH
+>E  </FH
+><FH
+>F  </FH
+><FH
+>G  </FH
+><D20
+>国债 </D20
+><E20
+>央行债券及票据</E20
+><F20
+>金融债</F20
+><G20
+>企业债</G20
+><H20
+>其他  </H20
+><A18
+>序号  </A18
+><B19
+>托管代理人</B19
+><C19
+>托管账号      </C19
+><FH1
+>A    </FH1
+><FH2
+>B   </FH2
+><FH3
+>C </FH3
+><FH4
+>D  </FH4
+><FH5
+>E  </FH5
+><FH6
+>F  </FH6
+><FH7
+>G  </FH7
+><D20
+>国债 </D20
+><E20
+>央行债券及票据</E20
+><F20
+>金融债</F20
+><G20
+>企业债</G20
+><H20
+>其他  </H20
+><D19
+>托管余额</D19
+><A18
+>序号  </A18
+></detailHeader2
+><detail2
+><COL2
+>  </COL2
+><COL1
+/><COL3
+/><COL4
+/><COL5
+/><COL6
+/><COL7
+/><COL8
+/></detail2
+><total2
+><COL2
+/><A27
+>合计   </A27
+><COL3
+/><COL4
+/><COL5
+/><COL6
+/><COL7
+/><COL8
+/><COL1
+>合计   </COL1
+></total2
+></Subform1
+>
+	
+	
+	
+	
+	<Subform1
+><detailHeader3
+><A29
+>二、交易所市场通过证券公司席位债券托管及证券交易保证金存放情况</A29
+><FH
+>A    </FH
+><FH
+>B   </FH
+><FH
+>C </FH
+><FH
+>D  </FH
+><FH
+>E  </FH
+><D32
+>国债 </D32
+><E32
+>企业债</E32
+><F32
+>其他  </F32
+><A30
+>序号  </A30
+><B31
+>证券公司名称</B31
+><C31
+>托管账号      </C31
+><D31
+>托管余额</D31
+><FH
+>F  </FH
+><G31
+>证券交易保证金余额</G31
+><A29
+>二、交易所市场通过证券公司席位债券托管及证券交易保证金存放情况</A29
+><FH1
+>A    </FH1
+><FH2
+>B   </FH2
+><FH3
+>C </FH3
+><FH4
+>D  </FH4
+><FH5
+>E  </FH5
+><D32
+>国债 </D32
+><E32
+>企业债</E32
+><F32
+>其他  </F32
+><A30
+>序号  </A30
+><B31
+>证券公司名称</B31
+><C31
+>托管账号      </C31
+><FH6
+>F  </FH6
+><G31
+>证券交易保证金余额</G31
+></detailHeader3
+><detail3
+><COL3
+/><COL1
+/><COL2
+>  </COL2
+><COL4
+/><COL5
+/><COL6
+/><COL7
+/></detail3
+><total3
+><B39
+/><A39
+>合计   </A39
+><COL2
+/><C39
+/><COL4
+/><COL5
+/><COL6
+/><COL7
+/><COL1
+>合计   </COL1
+><COL3
+/><B41
+/><C41
+>无数据</C41
+><B41
+/><fitechFiller
+/><fitechChecker
+/><fitechPrincipal
+/><fitechVersion
+>0513</fitechVersion
+><ko
+>0.00000000</ko
+><C41
+>系统自动生成</C41
+></total3
+></Subform1
+>
+</form1
+>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<tree id="0">
+  <item text="公式" id="N_1" open="1">
+    <item text="ACCOUNTING" id="[ACCOUNTING;DFYE;(101000,1020000);01]" orgInfo="NCJYE 表示年初借方余额
+						NCDFYE 表示年初贷方余额
+						DFYE 表示贷方余额
+						NCJYE 表示借方余额
+		" open="1"/>
+    <item text="TPOS_A" id="[TPOS_A:BOOKVAL;(交易账户);(GB,CT);(0);01]" orgInfo="
+				BOOKVAL 表示账面价
+				MKTVAL 表示市场价
+				0,固定利率
+				1,浮动利率
+				11,以央行利率为基准的浮动利率
+				12,以银行间同业利率为基准的浮动利率
+				2,结构性
+	    " open="1"/>
+  </item>
+</tree>

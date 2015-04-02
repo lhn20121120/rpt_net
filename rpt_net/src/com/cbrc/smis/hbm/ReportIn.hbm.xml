@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.ReportIn" 
+    table="REPORT_IN"
+>
+
+    <id
+        name="repInId"
+        type="java.lang.Integer"
+        column="REP_IN_ID"
+    >
+        <generator class="sequence">
+        	<param name="sequence">seq_report_in</param>
+		</generator>
+    </id>
+
+	<property
+		name="orgId"
+		type="java.lang.String"
+		column="ORG_ID"
+		length="20"
+	/>
+    <property
+        name="term"
+        type="java.lang.Integer"
+        column="TERM"
+        length="10"
+    />
+    <property
+        name="times"
+        type="java.lang.Integer"
+        column="TIMES"
+        length="10"
+    />
+    <property
+        name="year"
+        type="java.lang.Integer"
+        column="YEAR"
+        length="10"
+    />
+    <property
+        name="tblOuterValidateFlag"
+        type="java.lang.Short"
+        column="TBL_OUTER_VALIDATE_FLAG"
+        length="5"
+    />
+    <property
+        name="reportDataWarehouseFlag"
+        type="java.lang.Short"
+        column="REPORT_DATA_WAREHOUSE_FLAG"
+        length="5"
+    />
+    <property
+        name="tblInnerValidateFlag"
+        type="java.lang.Short"
+        column="TBL_INNER_VALIDATE_FLAG"
+        length="5"
+    />
+    <property
+        name="repName"
+        type="java.lang.String"
+        column="REP_NAME"
+        length="50"
+    />
+    <property
+        name="checkFlag"
+        type="java.lang.Short"
+        column="CHECK_FLAG"
+        length="5"
+    />
+    <property
+        name="_package"
+        type="java.lang.Integer"
+        column="PACKAGE"
+        length="10"
+    />
+    <property
+        name="reportDate"
+        type="java.util.Date"
+        column="REPORT_DATE"
+        length="10"
+    />
+    <property
+        name="abmormityChangeFlag"
+        type="java.lang.Short"
+        column="ABMORMITY_CHANGE_FLAG"
+        length="5"
+    />
+    <property
+        name="repRangeFlag"
+        type="java.lang.Short"
+        column="REP_RANGE_FLAG"
+        length="5"
+    />
+    <property
+        name="forseReportAgainFlag"
+        type="java.lang.Short"
+        column="FORSE_REPORT_AGAIN_FLAG"
+        length="5"
+    />
+    <property
+        name="laterReportDay"
+        type="java.lang.Short"
+        column="LATER_REPORT_DAY"
+        length="5"
+    />
+    <property
+        name="notReportFlag"
+        type="java.lang.Short"
+        column="NOT_REPORT_FLAG"
+        length="5"
+    />
+    <property
+        name="writer"
+        type="java.lang.String"
+        column="WRITER"
+        length="20"
+    />
+    <property
+        name="checker"
+        type="java.lang.String"
+        column="CHECKER"
+        length="20"
+    />
+    <property
+        name="principal"
+        type="java.lang.String"
+        column="PRINCIPAL"
+        length="20"
+    />
+    <property
+        name="tblOuterInvalidateCause"
+        type="java.lang.String"
+        column="TBL_OUTER_INVALIDATE_CAUSE"
+        length="500"
+    />
+	
+	<property
+        name="repOutId"
+        type="java.lang.Integer"
+        column="REP_OUT_ID"
+        length="20"
+    />
+
+        <property name="checkDate" type="java.sql.Date">
+            <column name="CHECK_DATE" length="10" />
+        </property>
+        <property name="verifyDate" type="java.sql.Date">
+            <column name="VERIFY_DATE" length="10" />
+        </property>
+        <property name="recheckFlag" type="java.lang.Integer">
+            <column name="RECHECK_FLAG" />
+		</property>
+		<property name="repDesc" type="java.lang.String">
+            <column name="REP_DESC" />
+        </property>
+    <!-- Associations -->
+  
+   
+    <!-- bi-directional one-to-many association to ReportInInfo 内网基本数据表的一对多关系-->
+    <set
+        name="reportInInfos"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="REP_IN_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ReportInInfo"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to PolicyExecDetail 策略执行明细表的一对多关系-->
+    <set
+        name="policyExecDetails"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="REP_IN_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.PolicyExecDetail"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to ReportAgainSet 特殊重报设置表的一对多关系 -->
+    <set
+        name="reportAgainSets"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="REP_IN_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.ReportAgainSet"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to DataValidateInfo 数据校验情况表的一对多关系-->
+    <set
+        name="dataValidateInfos"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="REP_IN_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.smis.hibernate.DataValidateInfo"
+        />
+    </set>
+    <!-- bi-directional many-to-one association to MCurr 币种的多对一的关系 -->
+    <many-to-one
+        name="MCurr"
+        class="com.cbrc.smis.hibernate.MCurr"
+        not-null="true"
+    >
+        <column name="CUR_ID" />
+    </many-to-one>
+	<!-- bi-directional many-to-one association to MDataRgType 数据范围类别的多对一关系-->
+    <many-to-one
+        name="MDataRgType"
+        class="com.cbrc.smis.hibernate.MDataRgType"
+        not-null="true"
+    >
+        <column name="DATA_RANGE_ID" />
+    </many-to-one>
+	<!-- bi-directional many-to-one association to MRepRange 报表机构适用范围的多对一关系 -->
+    <many-to-one
+        name="MRepRange"
+        class="com.cbrc.smis.hibernate.MRepRange"
+        not-null="true"
+        insert="false"
+        update="false">
+        <column name="ORG_ID" />
+        <column name="CHILD_REP_ID" />
+        <column name="VERSION_ID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to MChildReport 子报表的多对一关系-->
+    <many-to-one
+        name="MChildReport"
+        class="com.cbrc.smis.hibernate.MChildReport"
+        not-null="true"
+        insert="true"
+        update="false"
+    >
+        <column name="CHILD_REP_ID" />
+        <column name="VERSION_ID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

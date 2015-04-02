@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping>
+
+	<class name="com.fitech.net.collect.bean.CollectReport" table="COLLECT_REPORT">		
+		<composite-id name="id" class="com.fitech.net.collect.bean.CollectReportPK" >
+			<key-property column="ORG_ID" name="orgId" type="java.lang.String"/>
+			<key-property name="childRepId" column="CHILD_REP_ID" type="java.lang.String"/>
+			<key-property name="versionId" column="VERSION_ID" type="java.lang.String"/>
+			<key-property name="year" column="YEAR" type="java.lang.Integer"/>
+			<key-property name="term" column="TERM" type="java.lang.Integer"/>
+		</composite-id>
+		<property name="repInId" column="REP_IN_ID" type="java.lang.Integer"/>	
+	</class>
+</hibernate-mapping>

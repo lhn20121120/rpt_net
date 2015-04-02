@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.smis.hibernate.CalendarDetail" 
+    table="CALENDAR_DETAIL"
+>
+
+    <composite-id name="comp_id" class="com.cbrc.smis.hibernate.CalendarDetailPK">
+        <key-property 
+            name="calYear" 
+            column="CAL_YEAR" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="calMonth" 
+            column="CAL_MONTH" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="calDay" 
+            column="CAL_DAY" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="calId" 
+            column="CAL_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+        <key-property 
+            name="calTypeId" 
+            column="CAL_TYPE_ID" 
+            type="java.lang.Integer"
+            length="10"
+        />
+    </composite-id>    
+
+	<property
+		name="calDate"
+		type="java.util.Date"
+		column="CAL_DATE"
+	/>
+    <!-- Associations -->
+    <!-- derived association(s) for compound key -->
+    <!-- bi-directional many-to-one association to CalendarType -->
+    <many-to-one
+        name="calendarType"
+	    class="com.cbrc.smis.hibernate.CalendarType"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CAL_TYPE_ID" />
+	</many-to-one>
+	
+    <!-- bi-directional many-to-one association to Calendar -->
+    <many-to-one
+        name="calendar"
+	    class="com.cbrc.smis.hibernate.Calendar"
+	    update="false"
+	    insert="false"
+	>
+    	<column name="CAL_ID" />
+	</many-to-one>
+	
+    <!-- end of derived association(s) -->
+  
+
+</class>
+</hibernate-mapping>

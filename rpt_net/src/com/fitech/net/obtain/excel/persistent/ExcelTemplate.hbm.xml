@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Thu May 18 19:48:10 CST 2006                         -->
+<hibernate-mapping package="com.fitech.net.obtain.excel.persistent">
+
+    <class name="ExcelTemplate" table="Excel_Template">
+        <id name="id" column="ID" type="string">
+            <generator class="uuid.hex"/>
+        </id>
+ 
+        <property name="excelName" column="Excel_Name" type="string" />
+        <property name="versionId" column="Version_ID" type="string" />
+        <property name="childRepId" column="Child_Rep_ID" type="string" />
+    </class>
+    
+</hibernate-mapping>

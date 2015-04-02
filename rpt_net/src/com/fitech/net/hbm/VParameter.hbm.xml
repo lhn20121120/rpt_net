@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+    <class name="com.fitech.net.hibernate.VParameter" table="V_PARAMETER">
+ 		<id name="vpId" column="VP_ID" type="java.lang.Integer">
+            <generator class="increment">
+            </generator>
+        </id>
+ 
+        <property name="vpNote" column="VP_NOTE" type="java.lang.String"/>
+        <property name="vpTabledesc" column="VP_TABLEDESC" type="java.lang.String"  not-null="true" />
+        <property name="vpColumnid" column="VP_COLUMNID" type="java.lang.String"  not-null="true" />
+        <property name="vpColumndesc" column="VP_COLUMNDESC" type="java.lang.String"  not-null="true" />
+        <property name="vpColtype" column="VP_COLTYPE" type="java.lang.Integer"  not-null="true" />
+        <property name="vpTableid" column="VP_TABLEID" type="java.lang.String"  not-null="true" />
+        <property name="vttId" column="VTT_ID" type="java.lang.String" />
+        <property name="pre_vpId" column="VP_PARENTID" type="java.lang.Integer" />
+    </class>
+    
+</hibernate-mapping>

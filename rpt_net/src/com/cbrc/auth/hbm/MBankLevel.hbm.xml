@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.MBankLevel" 
+    table="M_BANK_LEVEL"
+>
+	<id 
+	    name="bankLevelId" 
+	    type="java.lang.Integer"
+	    column="BANK_LEVEL_ID"
+	>
+		<generator class="increment">
+		</generator>
+	</id>
+ 
+	<property 
+	    name="bankLevelName" 
+	    type="java.lang.String"
+	    column="BANK_LEVEL_NAME" 
+	/>
+   
+	<set 
+	    name="MPurBanklevelSet" 
+	    lazy="true"
+	    inverse="true"
+	    cascade="none"
+	>
+		<key>
+			<column name="BANK_LEVEL_ID"/>
+		</key>
+		<one-to-many 
+		    class="com.cbrc.auth.hibernate.MPurBanklevel"
+		/>
+	</set>
+</class>    
+</hibernate-mapping>

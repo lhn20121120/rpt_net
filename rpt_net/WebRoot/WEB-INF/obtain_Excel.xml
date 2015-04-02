@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<!--
+     This is the Struts configuration file for the "Hello!" sample application
+-->
+
+<struts-config>  
+    <!-- ======== Form Bean Definitions =================================== -->
+    <form-beans>  
+    	<form-bean name="mChildReportForm" type="com.cbrc.smis.form.MChildReportForm"/>      
+        <form-bean name="FileForm" type="com.fitech.net.obtain.excel.form.FileForm"/>
+    </form-beans>
+
+  <!-- ========== Action Mapping Definitions ============================== -->
+  <action-mappings>
+          <action path="/reportEdit" 
+        	type="com.fitech.net.webedit.action.WebEditAction"
+        	scope = "request" >
+           <forward name="success" path="/webEditor/reportEdit.jsp" />
+        </action>
+
+        <!-- 模板列表 -->
+        <action path="/templateList" 
+        	type="com.fitech.net.obtain.excel.action.TemplateListAction"
+        	scope = "request" >
+           <forward name="success" path="/obtain/templateList.jsp" />
+        </action>
+        <!-- 取数列表 -->
+        <action path="/templateDataBuildList" 
+        	type="com.fitech.net.obtain.excel.action.templateDataBuildList"
+        	name="mChildReportForm"
+        	scope = "request" >
+           <forward name="success" path="/obtain/templateDataBuildList.jsp" />
+        </action>
+        <!-- 取数准备 -->
+        <action path="/templateDataBuild" 
+        	type="com.fitech.net.obtain.excel.action.templateDataBuild"
+        	scope = "request" >
+           <forward name="success" path="/obtain/templateDataBuild.jsp" />
+        </action>
+        <!--取数-->
+        <action path="/templateDataBuildPre" 
+        	type="com.fitech.net.obtain.excel.action.templateDataBuildPre"
+        	scope = "request" >
+           <forward name="success" path="/obtain/templateDataBuildPre.jsp" />
+        </action>
+       <!-- 模板配置页面显示 -->
+        <action path="/templateConfigurePre" 
+        	type="com.fitech.net.obtain.excel.action.templateConfigurePreAction"
+        	scope = "request" >
+           <forward name="success" path="/obtain/templateConfigure.jsp" />
+        </action>
+        <action path="/obtain/templateConfigure" 
+        	name="FileForm" 
+        	type="com.fitech.net.obtain.excel.action.templateConfigureAction"
+        	scope = "request" >
+           <forward name="success" path="/obtain/templateConfigure.jsp" />
+        </action>
+      	<action path="/templateView" 
+        	type="com.fitech.net.obtain.excel.action.TemplateObtainViewAction"
+        	scope = "request" >
+           <forward name="success" path="/obtain/templateDataBuild.jsp" />
+        </action>
+        
+        <!-- 将数据导出到excel -->
+        <action path="/expExcel" type="com.fitech.net.action.ExpExcelDataAction">
+        </action>
+        
+  </action-mappings>
+  
+
+
+</struts-config>

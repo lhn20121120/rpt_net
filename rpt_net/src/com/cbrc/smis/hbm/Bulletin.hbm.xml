@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+<hibernate-mapping>
+ <class name="com.cbrc.smis.hibernate.Bulletin" table="BULLETIN">
+        <id column="BULL_ID" name="bullId" type="java.lang.Integer">
+        	<generator class="sequence">
+        	<param name="sequence">SEQ_BULLETIN</param>
+		</generator>
+        </id>
+        <property name="bullTitle" column="BULL_TITLE" type="java.lang.String" />
+        <property name="bullContent" column="BULL_CONTENT" type="java.lang.String" />
+        <property name="bullState" column="BULL_STATE" type="java.lang.Integer" />
+        <property name="addTime" column="ADD_TIME" type="java.lang.String" /><property name="uploadFileName" column="UPLOAD_FILENAME" type="java.lang.String"></property>
+ 	<property name="virtualName" column="VIRTUAL_NAME" type="java.lang.String"></property>
+ </class>
+</hibernate-mapping>

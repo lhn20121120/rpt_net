@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.cbrc.auth.hibernate.ToolSetting" 
+    table="TOOL_SETTING"
+>
+
+    <id
+        name="menuId"
+        type="java.lang.Long"
+        column="MENU_ID"
+    >
+        <generator class="sequence">
+        	<param name="sequence">seq_tool_setting</param>
+		</generator>
+    </id>
+
+    <property
+        name="menuName"
+        type="java.lang.String"
+        column="MENU_NAME"
+        length="100"
+    />
+    <property
+        name="functionName"
+        type="java.lang.String"
+        column="FUNCTION_NAME"
+        length="100"
+    />
+    <property
+        name="url"
+        type="java.lang.String"
+        column="URL"
+        length="1000"
+    />
+    <property
+        name="priorId"
+        type="java.lang.Long"
+        column="PRIOR_ID"
+        length="10"
+    />	
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to RoleTool -->
+    <set
+        name="roleTools"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="MENU_ID" />
+        </key>
+        <one-to-many 
+            class="com.cbrc.auth.hibernate.RoleTool"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>
