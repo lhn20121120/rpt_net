@@ -6,7 +6,8 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
-<%@ page import="java.text.SimpleDateFormat,java.util.Calendar;" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Calendar" %>
 
 <html:html>
 <%
@@ -25,13 +26,17 @@
 		<meta http-equiv="Expires" content="0">
 		<script language="javascript" src="js/func.js"></script>
 		<link href="css/globalStyle.css" type="text/css" rel="stylesheet">
-		<jsp:include page="calendar.jsp" flush="true">
-		<jsp:param name="path" value="" />
-		</jsp:include>
 		
+		<%@ include file="calendar.jsp"  %>
+		
+		<%-- <jsp:include page="calendar.jsp">
+			<jsp:param name="path" value="" />
+		</jsp:include>	 --%>	
+				
 		<style type="text/css">
 			
 		</style>
+		
 		<script language="javascript">
 			function submitData()
 			{
