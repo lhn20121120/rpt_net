@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="workTaskInfoDAO" class="com.fitech.model.worktask.dao.WorkTaskInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskRepForceDAO" class="com.fitech.model.worktask.dao.WorkTaskRepForceDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="workTaskNodeRoleDAO" class="com.fitech.model.worktask.dao.WorkTaskNodeRoleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskTypeDAO" class="com.fitech.model.worktask.dao.WorkTaskTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskNodeInfoDAO" class="com.fitech.model.worktask.dao.WorkTaskNodeInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskMoniDAO" class="com.fitech.model.worktask.dao.WorkTaskMoniDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskNodeParamDAO" class="com.fitech.model.worktask.dao.WorkTaskNodeParamDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="workTaskNodeMoniDAO" class="com.fitech.model.worktask.dao.WorkTaskNodeMoniDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskNodeConductTypeDAO" class="com.fitech.model.worktask.dao.WorkTaskNodeConductTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskNodeObjectDAO" class="com.fitech.model.worktask.dao.WorkTaskNodeObjectDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="workTaskTrrigerDA" class="com.fitech.model.worktask.dao.WorkTaskTrrigerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskCondTypeDA" class="com.fitech.model.worktask.dao.WorkTaskCondTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskBusiLineDA" class="com.fitech.model.worktask.dao.WorkTaskBusiLineDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="viewWorktaskTemplateDAO" class="com.fitech.model.worktask.dao.ViewWorktaskTemplateDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="viewWorktaskOrgDAO" class="com.fitech.model.worktask.dao.ViewWorktaskOrgDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="viewWorktaskTemplateGroupDAO" class="com.fitech.model.worktask.dao.ViewWorktaskTemplateGroupDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="viewWorktaskRoleDAO" class="com.fitech.model.worktask.dao.ViewWorktaskRoleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskLockDAO" class="com.fitech.model.worktask.dao.WorkTaskLockDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="afTemplateOrgRelationDAO" class="com.fitech.model.worktask.dao.AfTemplateOrgRelationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="afTemplateCollRepDAO" class="com.fitech.model.worktask.dao.AfTemplateCollRepDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="mRepRangeDAO" class="com.fitech.model.worktask.dao.MRepRangeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="tFreqInfoDAO" class="com.fitech.model.worktask.dao.TFreqInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskNodeRepTimeDAO" class="com.fitech.model.worktask.dao.WorkTaskNodeRepTimeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="workTaskInfoOrMoniDAO" class="com.fitech.model.worktask.dao.WorkTaskInfoOrMoniDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="sequenceDAO" class="com.fitech.model.worktask.dao.SequenceDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+</beans>
+

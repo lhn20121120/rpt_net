@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 测试方法 -->
+	<bean id="testService" class="com.fitech.model.worktask.service.impl.TestServiceImpl" >
+		<property name="objectDao">
+			<ref bean="workTaskTypeDAO" />
+		</property>
+	</bean>
+	<!-- add by 王明明  start -->
+	<bean id="workTaskRepForceService" class="com.fitech.model.worktask.service.impl.WorkTaskRepForceServiceImpl">
+		<property name="objectDao">
+			<ref bean="workTaskRepForceDAO"/>
+		</property>
+		<property name="workTaskNodeMoniService">
+			<ref bean="workTaskNodeMoniService"/>
+		</property>
+	</bean>
+	<!-- 节点信息 -->
+	<bean id="nodeInfoService" class="com.fitech.model.worktask.service.impl.WorkTaskNodeInfoServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="workTaskInfoDAO" />
+		</property>
+		<property name="objectService">
+			<ref bean="nodeObjectService" />
+		</property>
+		<property name="nodeRoleService">
+			<ref bean="nodeRoleService" />
+		</property>
+		<property name="workTaskNodeInfoService">
+			<ref bean="workTaskNodeInfoService" />
+		</property>
+		
+		<property name="workTaskRoleService">
+			<ref bean="workTaskRoleService" />
+		</property>
+		
+		<property name="workTaskNodeObjectService">
+			<ref bean="workTaskNodeObjectService" />
+		</property> 
+		<property name="workTaskInfoService">
+			<ref bean="workTaskInfoService" />
+		</property> 
+		<property name="mRepRangeService">
+			<ref bean="mRepRangeService" />
+		</property> 
+		<property name="afTemplateCollRepService">
+			<ref bean="afTemplateCollRepService" />
+		</property> 
+		<property name="workTaskTemplateService">
+			<ref bean="workTaskTemplateService" />
+		</property> 
+	</bean> 
+	<!-- 节点对象 -->
+ 	<bean id="nodeObjectService" class="com.fitech.model.worktask.service.impl.WorkTaskNodeObjectServiceImpl">
+		<property name="objectDao">
+			<ref bean="workTaskNodeObjectDAO" />
+		</property>
+	</bean> 
+	<!-- 节点角色 -->
+	 <bean id="nodeRoleService" class="com.fitech.model.worktask.service.impl.WorkTaskNodeRoleServiceImpl">
+		<property name="objectDao">
+			<ref bean="workTaskNodeRoleDAO" />
+		</property>
+	</bean> 
+	<!-- add by 王明明  end  -->
+	<!-- 待办业务 -->
+	<bean id="pendingTaskService" class="com.fitech.model.worktask.service.impl.WorkTaskPendingTaskServiceImpl">
+		<property name="objectDao">
+			<ref bean="workTaskNodeMoniDAO"/>
+		</property>
+		<property name="nodeMoniService">
+			<ref bean="workTaskNodeMoniService"/>
+		</property>
+		<property name="mUserService">
+			<ref bean="infoMessionUserService"/>
+		</property>
+	</bean>
+	<!--  节点执行任务 -->
+	<bean id="workTaskNodeMoniService" class="com.fitech.model.worktask.service.impl.WorkTaskNodeMoniServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="workTaskNodeMoniDAO"/>
+		</property>
+		<property name="workTaskMoniService">
+			<ref bean="workTaskMoniService"/>
+		</property>
+		<property name="validateService">
+			<ref bean="workTaskValidateService"/>		
+		</property>
+		<property name="workTaskRepForceService">
+			<ref bean="workTaskRepForceService"/>
+		</property>
+		<property name="pendingTaskService">
+			<ref bean="pendingTaskService"/>
+		</property>
+	</bean>
+	
+	<!-- 任务 锁 -->
+	<bean id="workTaskLockService" class="com.fitech.model.worktask.service.impl.WorkTaskLockServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="workTaskLockDAO"/>
+		</property>
+	</bean>
+	
+	<!--  工作执行任务 -->
+	<bean id="workTaskMoniService" class="com.fitech.model.worktask.service.impl.WorkTaskMoniServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="workTaskMoniDAO"/>
+		</property>
+		<property name="workTaskPendingTaskService">
+			<ref bean="pendingTaskService"/>
+		</property>
+	</bean>
+	<bean id="workTaskInfoService"
+		class="com.fitech.model.worktask.service.impl.WorkTaskInfoServiceImpl" autowire="byName">
+		 <property name="objectDao">
+			<ref bean="workTaskInfoDAO" />
+		</property>
+	
+	</bean>
+
+	<bean id="workTaskOrgService"
+		class="com.fitech.model.worktask.service.impl.WorkTaskOrgServiceImpl" autowire="byName"> 
+		<property name="objectDao">
+			<ref bean="viewWorktaskOrgDAO" />
+		</property>
+	</bean>
+	
+	<bean id="workTaskTemplateService"
+		class="com.fitech.model.worktask.service.impl.WorkTaskTemplateServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="viewWorktaskTemplateDAO" />
+		</property>
+	</bean>
+	
+	<bean id="workTaskRoleService"
+		class="com.fitech.model.worktask.service.impl.WorkTaskRoleServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="viewWorktaskRoleDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="workTaskNodeInfoService"
+		class="com.fitech.model.worktask.service.impl.WorkTaskNodeInfoServiceImpl" autowire="byName"> 
+		<property name="objectDao">
+			<ref bean="workTaskNodeInfoDAO" />
+		</property>
+	</bean>
+	
+	<bean id="workTaskNodeObjectService"
+		class="com.fitech.model.worktask.service.impl.WorkTaskNodeObjectServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="workTaskNodeObjectDAO" />
+		</property>
+	</bean>
+	<bean id="afTemplateOrgRelationService"
+		class="com.fitech.model.worktask.service.impl.AfTemplateOrgRelationServiceImpl"  autowire="byName">
+		<property name="objectDao">
+			<ref bean="afTemplateOrgRelationDAO" />
+		</property>
+	</bean>
+	
+	<bean id="afTemplateCollRepService"
+		class="com.fitech.model.worktask.service.impl.AfTemplateCollRepServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="afTemplateCollRepDAO" />
+		</property>
+	</bean>
+	
+	<bean id="mRepRangeService"
+		class="com.fitech.model.worktask.service.impl.MRepRangeServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="mRepRangeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tFreqInfoService"
+		class="com.fitech.model.worktask.service.impl.TFreqInfoServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="tFreqInfoDAO" />
+		</property>
+	</bean>
+	
+	<bean id="workTaskNodeRepTimeService"
+		class="com.fitech.model.worktask.service.impl.WorkTaskNodeRepTimeServiceImpl" autowire="byName">
+		<property name="objectDao">
+			<ref bean="workTaskNodeRepTimeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="workTaskValidateService" class="com.fitech.model.worktask.service.impl.WorkTaskValidateServiceImpl">
+		<property name="objectDao">
+			<ref bean="workTaskNodeMoniDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="opreatorService" class="com.fitech.model.worktask.service.impl.OperatorServiceImpl">
+		<property name="objectDao">
+			<ref bean="viewWorktaskRoleDAO"/>
+		</property>
+	</bean>
+	<bean id="workTaskInfoOrMoniServiceImpl" class="com.fitech.model.worktask.service.impl.WorkTaskInfoOrMoniServiceImpl">
+		<property name="objectDao">
+			<ref bean="workTaskInfoOrMoniDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="workTaskRptNetService" class="com.fitech.model.worktask.service.impl.WorkTaskRptNetServiceImpl">
+		<property name="objectDao">
+			<ref bean="workTaskNodeMoniDAO"/>
+		</property>
+		<property name="workTaskRepForceService">
+			<ref bean="workTaskRepForceService"/>
+		</property>
+	</bean>
+	
+	<bean id="sequenceServiceImpl" class="com.fitech.model.worktask.service.impl.SequenceServiceImpl">
+		<property name="objectDao">
+			<ref bean="sequenceDAO"/>
+		</property>
+	</bean>
+	<!-- 产品化 -->
+	<bean id="infoMessionUserService" class="com.fitech.model.worktask.service.impl.InfoMessionUserServiceImpl"/>
+	<!-- 珠海银行客户化 -->
+	<bean id="infoMessionUserServiceForZhyh" class="com.fitech.model.worktask.service.impl.custom.InfoMessionUserServiceImplForZhyh"/>
+</beans>
+

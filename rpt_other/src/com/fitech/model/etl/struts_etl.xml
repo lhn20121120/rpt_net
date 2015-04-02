@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="etl" extends="struts-default" namespace="/">
+		<action name="getResultSetAction" class="getResultSetAction">
+			<result name="success">getsql/tabletree.jsp</result>
+			<result name="OBJVIEW">getsql/objview.jsp</result>
+			<result name="INSERTSQLVIEW">getsql/insertsqlview.jsp</result>
+			<result name="input">getsql/tabletree.jsp</result>
+			<result name="uploadSuccess">getsql/rightindex.jsp</result>
+		</action>
+	</package>
+</struts>
