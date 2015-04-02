@@ -279,7 +279,7 @@
 			      <td align="center">
 			      	<p>
 					  <html:select styleId="orgList" property="orgList" size="15" multiple="true" style="width:190">
-					  		<logic:present name="LowerOrgNetList"scope="request">
+					  		<logic:present name="LowerOrgNetList" scope="request">
 					  			<html:optionsCollection name="LowerOrgNetList" label="label" value="value" />
 					  		</logic:present>
 					  </html:select>
