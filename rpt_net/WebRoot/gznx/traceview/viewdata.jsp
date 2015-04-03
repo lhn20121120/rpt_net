@@ -191,7 +191,7 @@
 								报表名称：<input name="repName" value="${afReportForm.repName}" />
 							</td>
 							<td>报表机构：<input type="hidden" name="orgId" id="orgId" value="${orgId}"/>
-								<input name="orgName" id="orgName" readonly="true" size="15" style="width:150px;cursor:hand" onclick="return showTree1()" style="input-text" value="${orgName}" />
+								<input name="orgName" id="orgName" readonly="true" size="15" style="width:150px;cursor:hand" onclick="return showTree1()" styleClass="input-text"  value="${orgName}" />
 								<div id="orgpreTree" style="left:316px;top:70px;width:150px; height:0;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto; VISIBILITY: hidden; position:absolute; z-index:2;">					
 								<script type="text/javascript">
 									<bean:write  name="FormBean"  property="orgReportPodedomTree" filter="false"/>
