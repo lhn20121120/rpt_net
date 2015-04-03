@@ -457,8 +457,7 @@
 							<tr>							
 								<td>
 									报表时间：
-									<html:text property="date" readonly="true"  
-										size="10"  styleId="date" style="text"
+									<html:text property="date" readonly="true" size="10"  styleId="date"
 									 	onclick="clostTree1();return showCalendar('date', 'y-mm-dd');" />
 									<img src="../../image/calendar.gif" border="0" onclick="return showCalendar('date', 'y-mm-dd');">
 									
@@ -478,8 +477,8 @@
 								<tr>
 								<td height="25" align="left">
 									报表机构：
-									<html:text property="orgName" readonly="true" size="10" style="width:150px;cursor:hand" onclick="return showTree1()" style="input-text" ></html:text>
-									<div id="orgpreTree" style="left:316px;top:70px;width:150px; height:0;background-color:#f5f5f5;border :1px solid Silver;; overflow:auto; VISIBILITY: hidden; position:absolute; z-index:2;">					
+									<html:text property="orgName" readonly="true" size="10" style="width:150px;cursor:hand" onclick="return showTree1()" styleClass="input-text" ></html:text>
+									<div id="orgpreTree" style="left:316px;top:70px;width:150px; height:0;background-color:#f5f5f5;border :1px solid Silver; overflow:auto; VISIBILITY: hidden; position:absolute; z-index:2;">					
 									<script type="text/javascript">
 										<bean:write  name="FormBean"  property="orgReportPodedomTree" filter="false"/>
 									    var tree1= new ListTree("tree1", TREE2_NODES,DEF_TREE_FORMAT,"","treeOnClick1('#KEY#','#CAPTION#');");

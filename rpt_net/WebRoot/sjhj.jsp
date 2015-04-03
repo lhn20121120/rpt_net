@@ -920,7 +920,7 @@
 					scrollHeight="1000"
 					width="1000"
 					selectText="yes"
-					backAndRefresh="yes"  
+				
 	  				promptAfterSave="yes"  
 					submitTarget="_self" 					
 			 		keyRepeatError="yes" 
