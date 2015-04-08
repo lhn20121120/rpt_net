@@ -101,7 +101,8 @@ public final class InsertMActuRepAction extends Action {
 		  //移除request范围内的信息
 		  FitechUtil.removeAttribute(mapping,request);
 		  //在request范围内存放信息
-		  messages.add(resources.getMessage("template.bspl.success")); 
+		  //messages.add(resources.getMessage("template.bspl.success"));
+		  messages.add("报表并表范围及报送频度时间设定保存成功！");
 
 		  if(messages.getMessages() != null && messages.getMessages().size() > 0)
 			  request.setAttribute(Config.MESSAGES,messages);
