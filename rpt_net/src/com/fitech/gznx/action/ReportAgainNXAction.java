@@ -55,7 +55,9 @@ public class ReportAgainNXAction extends Action {
 				boolean result = AFReportDelegate.ForseReportAgainSetting(reportInForm);
            
 				if (result == true) {
-					messages.add(resources.getMessage("report_again_setting.new.success"));
+					
+					//messages.add(resources.getMessage("report_again_setting.new.success"));
+					messages.add("新建报表重报设定成功！");
 					flag = true;
 				} else 
 					messages.add(resources.getMessage("report_again_setting.new.fail"));
