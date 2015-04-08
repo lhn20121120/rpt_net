@@ -53,7 +53,9 @@ public class NewReportAgainSettingAction extends Action {
 //			boolean 	result=StrutsReportInDelegate.updateForseReportAgain(reportInForm);
            
 				if(result == true){
-					messages.add(resources.getMessage("report_again_setting.new.success"));
+					//由于resources.getMessage 在tomcat7里跑的时候获取不到值，所以在下面写死
+					//messages.add(resources.getMessage("report_again_setting.new.success"));
+					messages.add("新增重报成功！");
 					flag = true;
 					FitechLog.writeRepLog(new Integer(21), "新增重报成功", request, reportInForm.getRepInId().toString(),reportFlg);
 				}else messages.add(resources.getMessage("report_again_setting.new.fail"));
