@@ -198,11 +198,13 @@ public class SaveFZTemplateAction extends Action
 							mCellForumForm.setVersionId(mChildReportForm.getVersionId());
 							mCellForumForm.setReportStyle(mChildReportForm.getReportStyle());
 							request.setAttribute("ObjForm", mCellForumForm);
-							messages.add(FitechResource.getMessage(locale, resources, "save.success", "template.msg"));
+							//messages.add(FitechResource.getMessage(locale, resources, "save.success", "template.msg"));
+							messages.add("保存模板操作成功!");
 						}
 						else
 						{
-							messages.add(FitechResource.getMessage(locale, resources, "save.fail", "template.msg"));
+							//messages.add(FitechResource.getMessage(locale, resources, "save.fail", "template.msg"));
+							messages.add("保存模板操作失败！");
 						}
 					}
 					else
@@ -212,8 +214,10 @@ public class SaveFZTemplateAction extends Action
 				}
 				else
 				{
-					messages.add(FitechResource.getMsg(locale, resources, "template.exists", mChildReportForm
-							.getChildRepId(), mChildReportForm.getVersionId()));
+					//messages.add(FitechResource.getMsg(locale, resources, "template.exists", mChildReportForm
+						//	.getChildRepId(), mChildReportForm.getVersionId()));
+					messages.add("保存模板：编号"+mChildReportForm.getChildRepId()+"，版本号："+mChildReportForm.getVersionId()+"已经存在！");
+					
 				}
 			}
 			catch (Exception e)
