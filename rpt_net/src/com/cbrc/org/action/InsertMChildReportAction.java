@@ -101,7 +101,8 @@ public final class InsertMChildReportAction extends Action{
 			  
 			   
 			   if(result==true){
-				   messages.add(FitechResource.getMessage(locale,resources,"bpfb.save.success"));
+				   //messages.add(FitechResource.getMessage(locale,resources,"bpfb.save.success"));
+				   messages.add("报表发布成功!");
 				   MChildReport mChildReport=null;
 				//   synchrocnizedGather(messages,locale,resources,mChildReport,mChildReportForm);
 			   }else{
