@@ -532,7 +532,7 @@
 					<%
 						if(reportFlg.equals(com.fitech.gznx.common.Config.CBRC_REPORT) && Config.SYSTEM_SCHEMA_FLAG==0){
 					%>
-					<input type="button" value="同步数据" class="input-button" onclick="return synsData()">
+					<input type="hidden" value="同步数据" class="input-button" onclick="return synsData()">
 					<%
 						}
 					%>
