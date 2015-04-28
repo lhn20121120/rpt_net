@@ -16,14 +16,32 @@
       <name>semanticsFile</name>
       <value>/WEB-INF/runqianSemanticFile.xml</value>
     </config>
+    <!-- 配置直接连接的datasource --> 
+    <jdbc-ds-configs> 
+     <jdbc-ds-config> 
+      <name>rsmis</name> 
+      <db-type>ORACLE</db-type> 
+      <connection-url> 
+       jdbc:oracle:thin:@127.0.0.1:1521:orcl 
+      </connection-url> 
+      <driver-class>oracle.jdbc.driver.OracleDriver</driver-class> 
+      <user-name>rptnet</user-name> 
+      <password>rptnet</password> 
+      <db-charset>GBK</db-charset> 
+      <client-charset>GBK</client-charset> 
+      <extend-properties></extend-properties> 
+     </jdbc-ds-config> 
+    </jdbc-ds-configs> 
+    <!-- 
 	<config>
       <name>JNDIPrefix</name>
       <value>java:comp/env</value>
     </config>
     <config>
-      <name>dataSource</name><!-- sqlserver,oracle -->
+      <name>dataSource</name>
       <value>rsmis,oracle,GBK</value>
     </config>
+     -->
 	<config>
       <name>jspCharset</name>
       <value>GBK</value>
