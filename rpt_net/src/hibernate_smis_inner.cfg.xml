@@ -21,18 +21,19 @@
 			net.sf.hibernate.dialect.OracleDialect
 		</property>
 		
-		
+		<!-- 
 		<property name="connection.datasource">java:comp/env/rsmis</property>
 		<property name="jdbc.fetch_size">50</property>
 		<property name="jdbc.batch_size">25</property>
 		<property  name="connection.provider_class">net.sf.hibernate.connection.DatasourceConnectionProvider</property>
+		 -->
 		<!-- jdbc -->
-		<!--  
-		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-		<property name="connection.url">jdbc:sqlserver://localhost:1433;DataBase=BOA</property>
-		<property name="connection.username">fitech_boa</property>
-		<property name="connection.password">aaa</property>
-		-->
+		<!--  -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@127.0.0.1:1521:orcl</property>
+		<property name="connection.username">rptnet</property>
+		<property name="connection.password">rptnet</property>
+		
 		<!-- 江苏银行配置修改 -->
 		<!-- 
 		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
