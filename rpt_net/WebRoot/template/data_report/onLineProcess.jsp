@@ -13,7 +13,7 @@
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta http-equiv="Expires" content="0">
 	<link href="../../css/common.css" rel="stylesheet" type="text/css">
-	<script language="javascript" src="<%=Config.WEBROOTULR%>/js/prototype-1.4.0.js"></script>
+	<script language="javascript" src="<%=request.getContextPath() %>/js/prototype-1.4.0.js"></script>
 
 	<script type="text/javascript">
 		//±¨±íÂ·¾¶	
@@ -59,7 +59,7 @@
 		function autoFillZero()
 		{
 			try{
-				var url = "<%=Config.WEBROOTULR%>report/autoFillZeroReport.do?fileName="
+				var url = "<%=request.getContextPath() %>/report/autoFillZeroReport.do?fileName="
 						+fileName+"&repInId="+repInId+"&excelPath="+excelPath;
 				 var param = "radom="+Math.random();
 				 new Ajax.Request(url,{method: 'post',parameters:param});
@@ -82,7 +82,7 @@
 			  		//return;
 			  //	}
 			  	
-			  	var validateURL = "<%=Config.WEBROOTULR%>report/validateOnLineReport.do?repInId="+repInId; 
+			  	var validateURL = "<%=request.getContextPath() %>/report/validateOnLineReport.do?repInId="+repInId; 
 			    var param = "radom="+Math.random();
 			   	new Ajax.Request(validateURL,{method: 'post',parameters:param,onComplete:validateReportHandler,onFailure: reportError});
 			   	prodress.style.display = "" ;
@@ -135,7 +135,7 @@
 			 	try
 			 	 {
 				  	reportInId=repInId;
-				  	var upReportURL ="<%=Config.WEBROOTULR%>upLoadOnLineReport.do?" +requestParam+"&repInId=" + repInId ;
+				  	var upReportURL ="<%=request.getContextPath() %>/upLoadOnLineReport.do?" +requestParam+"&repInId=" + repInId ;
 				    var param = "radom="+Math.random();
 				   	new Ajax.Request(upReportURL,{method: 'post',parameters:param,onComplete:upReportHandler,onFailure: reportError});
 			   	}

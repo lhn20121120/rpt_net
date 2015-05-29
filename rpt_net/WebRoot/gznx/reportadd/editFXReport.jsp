@@ -37,7 +37,7 @@
 	<meta http-equiv="Expires" content="0">
 	<link href="../../css/common.css" type="text/css" rel="stylesheet">
 	<script language="javascript" src="../../js/func.js"></script>
-	<script language="javascript" src="<%=Config.WEBROOTULR%>/js/prototype-1.4.0.js"></script>
+	<script language="javascript" src="<%=request.getContextPath() %>/js/prototype-1.4.0.js"></script>
 	<jsp:include page="../../calendar.jsp" flush="true">
 		<jsp:param name="path" value="../../" />
 	</jsp:include>

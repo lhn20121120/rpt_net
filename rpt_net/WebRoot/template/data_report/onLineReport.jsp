@@ -12,7 +12,7 @@
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta http-equiv="Expires" content="0">
 	<LINK REL="StyleSheet" HREF="<bean:write name="css"/>" TYPE="text/css">
-	<script language="javascript" src="<%=Config.WEBROOTULR%>/js/prototype-1.4.0.js"></script>
+	<script language="javascript" src="<%=request.getContextPath() %>/js/prototype-1.4.0.js"></script>
 
 	<script type="text/javascript">
 		//报表路径	
@@ -40,8 +40,8 @@
 				document.all.FramerControl1.DsoHttpInit();
 				// document.all.FramerControl1.HttpAddPostCurrFile("reportFile", repInId);
 				document.all.FramerControl1.DsoHttpAddPostCurrFile("reportFile", repInId); 
-				//  saveResult = document.all.FramerControl1.HttpPost('<%=Config.WEBROOTULR%>/report/saveOnLineReport.do?repInId='+repInId+'&fileName='+fileName); 
-				saveResult = document.all.FramerControl1.DsoHttpPost('<%=Config.WEBROOTULR%>report/saveOnLineReport.do?repInId='+repInId+'&fileName='+fileName);						
+				//  saveResult = document.all.FramerControl1.HttpPost('<%=request.getContextPath() %>/report/saveOnLineReport.do?repInId='+repInId+'&fileName='+fileName); 
+				saveResult = document.all.FramerControl1.DsoHttpPost('<%=request.getContextPath() %>/report/saveOnLineReport.do?repInId='+repInId+'&fileName='+fileName);						
 				//   document.location.reload();
 				enableValidate = true;
 				enableSend = true;
@@ -71,7 +71,7 @@
 		function autoFillZero(){
 			try{
 				document.all.FramerControl1.DsoHttpInit();		
-				document.all.FramerControl1.DsoHttpPost('<%=Config.WEBROOTULR%>report/autoFillZeroReport.do?fileName='
+				document.all.FramerControl1.DsoHttpPost('<%=request.getContextPath() %>/report/autoFillZeroReport.do?fileName='
 					+fileName+"&repInId="+repInId+"&excelPath="+excelPath);
 				window.setTimeout("openDoc()",2000) ;
 			//	document.all.FramerControl1.Open(fileURL,true,'Excel.Sheet');   //重新打开已填零的Excel				
@@ -92,7 +92,7 @@
 			  		return;
 			  	}
 			  	
-			  	var validateURL = "<%=Config.WEBROOTULR%>report/validateOnLineReport.do?repInId="+repInId; 
+			  	var validateURL = "<%=request.getContextPath() %>/report/validateOnLineReport.do?repInId="+repInId; 
 			    var param = "radom="+Math.random();
 			   	new Ajax.Request(validateURL,{method: 'post',parameters:param,onComplete:validateReportHandler,onFailure: reportError});
 			   	prodress.style.display = "" ;
@@ -160,7 +160,7 @@
 			 	try
 			 	 {
 				  	reportInId=repInId;
-				  	var upReportURL ="<%=Config.WEBROOTULR%>upLoadOnLineReport.do?" +requestParam+"&repInId=" + repInId ;
+				  	var upReportURL ="<%=request.getContextPath() %>/upLoadOnLineReport.do?" +requestParam+"&repInId=" + repInId ;
 				    var param = "radom="+Math.random();
 				   	new Ajax.Request(upReportURL,{method: 'post',parameters:param,onComplete:upReportHandler,onFailure: reportError});
 			   	}

@@ -68,7 +68,7 @@
       		   <table width="100%" border="0" align="center" cellpadding="4" cellspacing="1">				      
 		          <tr>
 				      <TD width="100%" height="100%" align=center >
-						  <script language="javascript" src="<%=Config.WEBROOTULR%>/js/createDSOFrame.js"></script>
+						  <script language="javascript" src="<%=request.getContextPath() %>/js/createDSOFrame.js"></script>
 				     </TD>
 				   </tr>
 	           </table>

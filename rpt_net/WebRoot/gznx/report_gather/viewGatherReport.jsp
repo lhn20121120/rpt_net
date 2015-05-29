@@ -44,7 +44,7 @@
 	<meta http-equiv="Expires" content="0">
 	<link href="../../css/common.css" type="text/css" rel="stylesheet">
 	<script language="javascript" src="../../js/func.js"></script>
-	<script language="javascript" src="<%=Config.WEBROOTULR%>/js/prototype-1.4.0.js"></script>
+	<script language="javascript" src="<%=request.getContextPath() %>/js/prototype-1.4.0.js"></script>
 	<link href="../../css/calendar-blue.css" type="text/css" rel="stylesheet">	
 	<script language="javascript" src="../../js/func.js"></script>
 <script type="text/javascript" src="../../js/tree/tree.js"></script>

@@ -130,7 +130,7 @@
 	       //提交检查-模版ID，版本号 
 	    function checkReptId(reptId,versionId)
 	    {
-	    	var url = "<%=Config.WEBROOTULR%>/template/searchTemplateVersion.do?validate=reptId&childRepId="+reptId+"&versionId="+versionId;
+	    	var url = "<%=request.getContextPath() %>/template/searchTemplateVersion.do?validate=reptId&childRepId="+reptId+"&versionId="+versionId;
 			var param = "radom="+Math.random();
 			new Ajax.Request(url,{method: 'post',parameters:param,onComplete:validateReptIDHandler,onFailure: reptIdCheckError});
 			//$("checkResult_reptId").innerHTML="<font color='#ff0000'>信息检查中.....</font>";		  

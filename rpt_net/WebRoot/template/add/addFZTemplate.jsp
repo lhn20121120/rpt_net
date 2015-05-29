@@ -191,7 +191,7 @@
 	    //提交检查-模版ID，版本号 
 	    function checkReptId(reptId,versionId)
 	    {
-	    	var url = "<%=Config.WEBROOTULR%>/template/saveFZTmpt.do?validate=reptId&childRepId="+reptId+"&versionId="+versionId;
+	    	var url = "<%=request.getContextPath() %>/template/saveFZTmpt.do?validate=reptId&childRepId="+reptId+"&versionId="+versionId;
 			var param = "radom="+Math.random();
 			new Ajax.Request(url,{method: 'post',parameters:param,onComplete:validateReptIDHandler,onFailure: reptIdCheckError});
 			//$("checkResult_reptId").innerHTML="<font color='#ff0000'>信息检查中.....</font>";		  
@@ -199,7 +199,7 @@
 	    //提交检查-模版名称
 	    function checkReptName(reptName)
 	    {
-	    	var url = "<%=Config.WEBROOTULR%>/template/saveFZTmpt.do?validate=reptName";
+	    	var url = "<%=request.getContextPath() %>/template/saveFZTmpt.do?validate=reptName";
 			var param ="reportName="+reptName+"&radom="+Math.random();
 			//中文转码
 			param = encodeURI(param);

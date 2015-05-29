@@ -36,7 +36,7 @@
 <jsp:useBean id="configBean" scope="page" class="com.cbrc.smis.common.Config" />
 <jsp:useBean id="utilForm" scope="page" class="com.cbrc.smis.form.UtilForm"/>
 <jsp:useBean id="FormBean" scope="page" class="com.fitech.gznx.util.FormUtil" />
-<script language="javascript" src="<%=Config.WEBROOTULR%>/js/prototype-1.4.0.js"></script>
+<script language="javascript" src="<%=request.getContextPath() %>/js/prototype-1.4.0.js"></script>
 <jsp:setProperty property="orgPodedom" name="FormBean" value="<%=childRepCheckPodedom%>"/>
 <html:html locale="true">
 <head>
