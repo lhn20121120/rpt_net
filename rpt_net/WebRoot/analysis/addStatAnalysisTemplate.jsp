@@ -137,7 +137,7 @@
 	    //提交检查-模版ID 
 	    function checkReptId(reptId)
 	    {
-	    	var url = "<%=Config.WEBROOTULR%>/analysis/addAnalysisTemplate.do?validate=reptId";
+	    	var url = "<%=request.getContextPath() %>/analysis/addAnalysisTemplate.do?validate=reptId";
 			var param = "ATId="+reptId+"&radom="+Math.random();
 			new Ajax.Request(url,{method: 'post',parameters:param,onComplete:validateReptIDHandler,onFailure: reptIdCheckError});
 			//$("checkResult_reptId").innerHTML="<font color='#ff0000'>信息检查中.....</font>";		  
@@ -145,7 +145,7 @@
 	    //提交检查-模版名称
 	    function checkReptName(reptName)
 	    {
-	    	var url = "<%=Config.WEBROOTULR%>/analysis/addAnalysisTemplate.do?validate=reptName";
+	    	var url = "<%=request.getContextPath() %>/analysis/addAnalysisTemplate.do?validate=reptName";
 			var param ="ATName="+reptName+"&radom="+Math.random();
 			//中文转码
 			param = encodeURI(param);
