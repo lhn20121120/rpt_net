@@ -9,7 +9,6 @@
 
 <html:html locale="true">
 <head>
-
 	<%
 		Operator operator = null;
 		if (session.getAttribute(Config.OPERATOR_SESSION_ATTRIBUTE_NAME) != null)
@@ -706,7 +705,7 @@
 			 *转到分析系统
 			 */			 
 			function toUrl(){				
-					window.open("<%=Config.WEBROOTULR%>/redirect.jsp");
+					window.open("<%=request.getContextPath() %>/redirect.jsp");
 			}
 		</script>
 </head>
@@ -834,7 +833,7 @@
 						%>
 						
 						<%
-							if (yjh_bbcl_ybbhz ) {
+							if (false && yjh_bbcl_ybbhz ) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -999,7 +998,7 @@
 						%>
 						
 						<%
-							if(yjh_bbcx_sjcx){
+							if(false && yjh_bbcx_sjcx){
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -1011,7 +1010,7 @@
 							}
 						%>
 						<%
-							if(yjh_bbcx_hjcx){
+							if(false && yjh_bbcx_hjcx){
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -1037,7 +1036,7 @@
 						%>
 						
 						<%
-							if (yjh_bbcx_ybbtz) {
+							if (false && yjh_bbcx_ybbtz) {
 							//if(false){
 						%>
 						<tr>
@@ -1097,7 +1096,7 @@
 						%>
 						
 						<%
-							if (yjh_bbgl_ygbgxgl) {
+							if (false && yjh_bbgl_ygbgxgl) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -1122,7 +1121,7 @@
 						}
 						%>
 						<%
-							if (yjh_bbgl_yjygxgl) {
+							if (false && yjh_bbgl_yjygxgl) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -1148,10 +1147,11 @@
 						}
 						if(yjh_xxgl_yydxx || yjh_xxgl_yxxgl){
 					%>
-						<td height="30"  background="image/button_blue.jpg">
+				<!-- 		<td height="30"  background="image/button_blue.jpg">
 							<a href="javascript:menu_pic_click('YXXCL')"> 
 							<font class=b size="3"><b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息处理</b></font> </a>
 						</td>
+				 -->
 			</tr>
 				<tr id="tr_YXXCL" style="display:none">
 						<td>
@@ -2127,7 +2127,7 @@
 						%>
 	
 						<%
-							if( rh_bbcl_rbbhz) {
+							if(false && rh_bbcl_rbbhz) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -2140,7 +2140,7 @@
 						%>
 	
 						<%
-							if( rh_bbcl_rbbjy) {
+							if(rh_bbcl_rbbjy) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -2292,7 +2292,7 @@
 						}
 						%>
 						<%
-							if(yjh_bbcx_hjcx_f){
+							if(false && yjh_bbcx_hjcx_f){
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -2304,7 +2304,7 @@
 							}
 						%>
 	                    <%
-							if(rmyh_bbcx_sjcx) {
+							if(false && rmyh_bbcx_sjcx) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -2317,7 +2317,7 @@
 						%>
 						
 						<%
-							if( rh_bbcx_rlhcx) {
+							if(false && rh_bbcx_rlhcx) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -2343,7 +2343,7 @@
 						%>
 											
 						<%
-							if(rh_bbcx_rbbtz ) {
+							if(false && rh_bbcx_rbbtz ) {
 							//if(false){
 						%>
 						<tr>
@@ -2396,7 +2396,7 @@
 						%>
 						 
 						<%
-							if( rh_bbgl_rgbgxgl) {
+							if(false && rh_bbgl_rgbgxgl) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -2409,7 +2409,7 @@
 						%>
 						
 						<%
-							if( rh_bbgl_rjygxgl) {
+							if(false && rh_bbgl_rjygxgl) {
 						%>
 						<tr>
 							<td background="image/button_q.gif" height="25">
@@ -2433,10 +2433,11 @@
 						}
 						if(rh_xxgl_rydxx || rh_xxgl_rxxgl){
 					%>
-						<td height="30"  background="image/button_blue.jpg">
+					<!-- 	<td height="30"  background="image/button_blue.jpg">
 							<a href="javascript:menu_pic_click('RXXCL')"> 
 							<font class=b size="3"><b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息处理</b></font> </a>
 						</td>
+					 -->
 			</tr>
 				<tr id="tr_RXXCL" style="display:none">
 						<td>
@@ -2479,7 +2480,7 @@
 		
 		<!--其他报表(Begin)--->
 		<%
-			if(qtbb){
+			if(false && qtbb){
 		 %>
 		<tr>
 			<td>
@@ -2876,7 +2877,7 @@
 		</tr>
 		<!--其他报表(end)--->
 		<%
-			if( sjbl) {
+			if(false && sjbl) {
 			//if(false){
 		%>		
 		<tr>
@@ -3064,7 +3065,7 @@
 
 	
 					<%
-						if( xtgl_zdgl) {
+						if(false && xtgl_zdgl) {
 					%>
 					<tr>
 						<td background="image/button_q.gif" height="25">
@@ -3122,7 +3123,7 @@
 					%>
 
 					<%
-						if( xtgl_rzgl) {
+						if(false && xtgl_rzgl) {
 					%>
 					<tr>
 						<td background="image/button_q.gif" height="25">
@@ -3134,7 +3135,7 @@
 					}
 					%>
 					<%
-						if(xtgl_ysgxgl){
+						if(false && xtgl_ysgxgl){
 					%>
 					<tr>
 						<td background="image/button_q.gif" height="25">
@@ -3153,10 +3154,11 @@
 					</tr>
 					
 					<tr>
-							<td height="30"  background="image/button_blue.jpg">
+						<!-- 	<td height="30"  background="image/button_blue.jpg">
 								<a href="javascript:menu_pic_click1('XXCL')"> 
 								<font class=b size="3"><b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消息处理</b></font> </a>
 							</td>
+							 -->
 					</tr>
 					<tr id="tr_XXCL" style="display:none">
 					<td>
@@ -3201,7 +3203,7 @@
 		<%
 			}
 			
-			if( etljk) {
+			if(false && etljk) {
 			//	if( false) {
 		%>
 		<tr>

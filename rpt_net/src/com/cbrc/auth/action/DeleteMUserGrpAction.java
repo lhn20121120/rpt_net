@@ -84,7 +84,7 @@ public final class DeleteMUserGrpAction extends Action {
                if(result==false)/**É¾³ýÊ§°Ü*/
                     messages.add(FitechResource.getMessage(locale,resources,"delete.fail","userGrp.info"));
                else/**É¾³ý³É¹¦*/
-                   messages.add(FitechResource.getMessage(locale,resources,"delete.success","userGrp.info"));  
+                   messages.add("É¾³ý³É¹¦£¡");  
            } 
            catch (Exception e) 
            {

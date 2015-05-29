@@ -82,14 +82,14 @@ public final class InsertDepartmentAction extends Action {
     			 * 影响对象：Department**/
         		result = StrutsDepartmentDelegate.create(departmentForm,operator);
         		if(result==true)
-        			messages.add(FitechResource.getMessage(locale,resources,"save.success","dept.info"));
+        			messages.add("添加部门成功！");
         		else{ /**错误则返回原页面*/
         			messages.add(FitechResource.getMessage(locale,resources,"save.failed","dept.info"));
         			request.setAttribute(Config.MESSAGES,messages);
         			return mapping.findForward("dept_add");
         		}
     		}else{ //该部门名称已经存在
-    			messages.add(resources.getMessage("save.failed.Exist"));	
+    			messages.add("该部门已经存在！");	
     			request.setAttribute(Config.MESSAGES,messages);
     			return mapping.findForward("dept_add");
     		}

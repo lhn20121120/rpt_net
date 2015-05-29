@@ -87,14 +87,14 @@ public final class InsertMUserGrpAction extends Action {
     		    * 影响对象：MUserGrp*/
     		   result = StrutsMUserGrpDelegate.create(mUserGrpForm);	           
     		   if(result==true)	           
-    			   messages.add(FitechResource.getMessage(locale,resources,"userGrp.popedom.save.success"));	            
+    			   messages.add("成功添加用户！请点击“权限分配”为该用户组分配权限！");	            
     		   else{ /**错误则返回原页面*/	                		                
     			   messages.add(FitechResource.getMessage(locale,resources,"save.failed","userGrp.info"));	               
     			   request.setAttribute(Config.MESSAGES,messages);	               
     			   return mapping.findForward("user_group_add");	            
     		   }       	   
     	   }else{	       
-    		   messages.add(resources.getMessage("save.musergrp.failed.Exist"));					
+    		   messages.add("用户组名称已经存在！");					
     		   request.setAttribute(Config.MESSAGES,messages);				
     		   return mapping.findForward("user_group_add");       	   
     	   }          

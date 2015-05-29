@@ -82,14 +82,14 @@ public final class DeleteDepartmentAction extends Action {
         	    * 影响对象：Department*/
                boolean result = StrutsDepartmentDelegate.remove(departmentForm);
                if(result==false)/**删除失败*/
-                    messages.add(FitechResource.getMessage(locale,resources,"delete.failed","dept.info"));
+                    messages.add("删除失败！");
                else/**删除成功*/
-                   messages.add(FitechResource.getMessage(locale,resources,"delete.success","dept.info"));  
+                   messages.add("删除成功！");  
            } 
            catch (Exception e) 
            {
                log.printStackTrace(e);
-               messages.add(FitechResource.getMessage(locale,resources,"delete.failed","dept.info"));
+               messages.add("删除出现异常，请截取后台日志联系开发组！");
            }         
        }
        if(messages.getMessages() != null && messages.getMessages().size() != 0)
