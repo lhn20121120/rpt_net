@@ -494,5 +494,11 @@ public class WorkTaskMoniServiceImpl extends DefaultBaseService<WorkTaskMoni, Lo
 		result = (WorkTaskMoni)this.objectDao.findObject(hsql);
 		return result;
 	}
-	
+	@Override
+	public WorkTaskMoni insertWorkTaskSplitByManualnew(List<String> tempateIdList,Integer taskMoniId,Integer nodeId,String orgId,Date taskTerm,String inputTaskName)throws Exception{
+		WorkTaskMoni moni = this.insertWorkTaskSplit(tempateIdList, taskMoniId, nodeId, orgId, taskTerm);
+		moni.setTaskName(inputTaskName);
+		this.objectDao.update(moni);
+		return moni;
+	}
 }

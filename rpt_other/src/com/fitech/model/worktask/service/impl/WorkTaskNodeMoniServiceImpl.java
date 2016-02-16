@@ -1699,7 +1699,7 @@ public class WorkTaskNodeMoniServiceImpl extends DefaultBaseService<WorkTaskNode
 			throws Exception {
 		// TODO Auto-generated method stub
 		String str = "";
-		String hql ="select nInfo from WorkTaskNodeInfo nInfo where nInfo.nodeId not in("+
+		String hql ="from WorkTaskNodeInfo nInfo where nInfo.nodeId not in("+
 		 			" select preNodeId from WorkTaskNodeInfo)";
 		List<WorkTaskNodeInfo> infos = this.objectDao.findListByHsql(hql, null);
 		if(infos!=null && !infos.isEmpty()){

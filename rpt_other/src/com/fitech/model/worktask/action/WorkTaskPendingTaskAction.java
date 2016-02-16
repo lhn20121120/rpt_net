@@ -989,6 +989,159 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 		}
 		return "seach_nodeInfo";
 	}
+	private String taskTaget;
+	public String getTaskTaget() {
+		return taskTaget;
+	}
+
+	public void setTaskTaget(String taskTaget) {
+		this.taskTaget = taskTaget;
+	}
+	
+	/**
+	 * 重报任务 缓冲方法，
+	 * @return
+	 */
+	public String newTurnToRep() {
+		System.out.println(taskName);
+		System.out.println(tasktemplateIds);
+		System.out.println(wMoni.getId());
+		System.out.println(taskTaget);
+		repType = "1";
+		return "rep_task_new";
+	}
+	
+	/**
+	 * 提交任务重报，可选重报哪些报表 ， 单只能单任务 节点 。
+	 * @return
+	 */
+	public String newCommiRepTask() {
+		//                  286,113,817000000,yjtx,15-2-1 1:00:00.000
+//		tasktemplateIds = 	G0300_1510_1_817000000_1,G1500_1010_1_817000000_1
+		String returnDesc = pendingTaskQueryConditions.getReturnDesc();//重报原因
+		if (taskName != null && tasktemplateIds != null && wMoni != null
+				&& wMoni.getId() != null && returnDesc != null ) {
+			taskName += "(重报)";
+			String[] templateIds  = tasktemplateIds.split(",");
+			String templateStr = "";
+			for (int i = 0; i < templateIds.length; i++) {
+				String templateId = templateIds[i];
+				String temId[]  = templateId.split("_");
+				if(i >0 ){
+					templateStr += ",";
+				}
+				templateStr += temId[0] ;
+			}
+			WorkTaskMoni splitMoni = splitSelectReport(taskName, templateStr, wMoni);
+			
+			//286,113,817000000,yjtx,15-2-1 1:00:00.000
+			if(splitMoni!=null&&!StringUtil.isEmpty(taskTaget)){
+				taskTaget  = splitMoni.getTaskMoniId()+taskTaget.substring(taskTaget.indexOf(",", 1));
+			}
+			repSelectReport( taskTaget  ,pendingTaskQueryConditions,repDay);
+		}
+		return findAllRepTaskInfo();
+	}
+	/**
+	 * 自动把 需要重报的报表拆分出来 。
+	 * 
+	 * @param taskName
+	 *            拆分后的 任务名称 
+	 * @param tasktemplateIds
+	 *            需要拆分的模版ID  
+	 * @param wMoni
+	 *            WorkTaskNodeMoni对象
+	 */
+	private WorkTaskMoni splitSelectReport(String taskName, String tasktemplateIds,
+			WorkTaskNodeMoni wMoni) {
+		System.out.println("自动把 需要重报的报表拆分出来 。");
+		WorkTaskMoni splitMoni = null;
+		if (taskName != null && tasktemplateIds != null && wMoni != null
+				&& wMoni.getId() != null) {
+			try {
+				String[] tls = tasktemplateIds.split(",");
+				List<String> templateList = new ArrayList<String>();
+				if (tls != null && tls.length > 0) {
+					for (int i = 0; i < tls.length; i++) {
+						templateList.add(tls[i]);
+					}
+				}
+				if (!templateList.isEmpty()) {
+					String hsql = "select count(*) from WorkTaskNodeObjectMoni where id.taskMoniId="
+							+ wMoni.getId().getTaskMoniId()
+							+ " and id.orgId='"
+							+ wMoni.getId().getOrgId()
+							+ "' and id.nodeId="
+							+ wMoni.getId().getNodeId()
+							+ " and id.nodeIoFlag=1";
+					List remainObject = (List) workTaskNodeMoniService
+							.findListByHsql(hsql, null);
+					if (remainObject != null && !remainObject.isEmpty()) {
+						int count = ((Long) remainObject.get(0)).intValue();
+						if (count <= templateList.size()) {
+							msg = "不可选择当前任务下所有的报表进行拆分!";
+							System.out.println(msg);
+							return null;//不拆分任务调用原有的重报 代码 
+						}
+					}
+					WorkTaskMoni moni = workTaskMoniService
+							.findOneWorkTaskMoni(wMoni.getId().getTaskMoniId());
+				    splitMoni = workTaskMoniService.insertWorkTaskSplitByManualnew(
+							templateList, wMoni.getId().getTaskMoniId()
+									.intValue(), wMoni.getId().getNodeId(),
+							wMoni.getId().getOrgId(), moni.getTaskTerm(),
+							taskName);
+
+					msg = taskName + "任务拆分成功!";
+					System.out.println(msg);
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return splitMoni;
+	}
+
+	
+	private void repSelectReport(String moniInfo ,PendingTaskQueryConditions pendingTaskQueryConditions ,Integer repDay) {
+		System.out.println("将拆分出来的 任务 设定重报");
+		WorkTaskRptNetService workTaskRptNetService = (WorkTaskRptNetService) this
+				.getBean("workTaskRptNetService");
+		op = (Operator)this.getRequest().getSession().getAttribute(WorkTaskConfig.OPERATOR_SESSION_NAME);
+		String message="";
+		try {
+			if (moniInfo != null && !moniInfo.equals("")) {
+				cks = StringUtil.converStringToArray(moniInfo, "#");
+				if (cks != null) {
+					List<WorkTaskPendingTaskVo> pvos = workTaskNodeMoniService
+							.findPendingTaskVos(cks);
+					if (pvos != null && !pvos.isEmpty()) {
+						String result = workTaskRptNetService
+								.updateReport(pvos);
+						if (result == null) {
+							boolean res = workTaskNodeMoniService
+									.saveRepTaskInfo(pvos,
+											pendingTaskQueryConditions, repDay);
+							if (res)
+								msg = "重报成功!";
+						} else {
+							msg = result;
+							taskMoniIds = pvos.get(0).getTaskMoniId();
+							nodeIds = pvos.get(0).getNodeId();
+							orgIds = pvos.get(0).getOrgId();
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (msg == null || msg.equals(""))
+			msg = "重报失败!";
+
+	}
+
 	
 	public String turnToRep(){
 		if(cks!=null){

@@ -53,4 +53,7 @@ public interface IWorkTaskMoniService extends IBaseService<WorkTaskMoni, Long>{
 	 * @throws Exception
 	 */
 	public void insertWorkTaskSplitByManual(List<String> tempateIdList,Integer taskMoniId,Integer nodeId,String orgId,Date taskTerm,String inputTaskName)throws Exception;
+
+	public WorkTaskMoni insertWorkTaskSplitByManualnew(List<String> tempateIdList,Integer taskMoniId,Integer nodeId,String orgId,Date taskTerm,String inputTaskName)throws Exception;
+
 }

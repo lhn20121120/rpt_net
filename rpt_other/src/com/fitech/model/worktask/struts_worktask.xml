@@ -131,8 +131,10 @@
 				<param name="root">nodeMonis</param>
 			</result>
 			
-			<result name="task_info_rep">/pendingtask/work_task_rep.jsp</result>
-			<result name="rep_task">/pendingtask/rep_task_add.jsp</result>
+		    <!-- <result name="task_info_rep">/pendingtask/work_task_rep.jsp</result>
+			<result name="rep_task">/pendingtask/rep_task_add.jsp</result> -->
+			<result name="task_info_rep">/pendingtask/work_task_rep_new.jsp</result>
+			<result name="rep_task_new">/pendingtask/rep_task_add_new.jsp</result>
 			<result name="bwsc_list">/pendingtask/bwsc_index.jsp</result>
 		</action>
 		
