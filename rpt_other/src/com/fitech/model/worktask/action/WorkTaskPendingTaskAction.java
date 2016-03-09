@@ -813,22 +813,25 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					op = (Operator)this.getRequest().getSession().getAttribute(WorkTaskConfig.OPERATOR_SESSION_NAME);
+					WorkTaskRptNetService workTaskRptNetService = (WorkTaskRptNetService)this.getBean("workTaskRptNetService");
+					String returnDesc  = pendingTaskQueryConditions.getReturnDesc();
 					if(taskType.contains("djsh")){
 						for (int i = 0; i <pvos.size(); i++) {
 							List<String> noPassTemplateList=validateService.getNoPassTemplateIds(pvos.get(i),"goback");
 							if(noPassTemplateList!=null&&noPassTemplateList.size()>0){
-								
 								workTaskMoniService.insertWorkTaskSplit(noPassTemplateList, Integer.valueOf(pvos.get(i).getTaskMoniId()+""), pvos.get(i).getNodeId(), pvos.get(i).getOrgId(), pvos.get(i).getTaskTerm());
+								workTaskRptNetService.writLog(op.getUserName(),returnDesc,noPassTemplateList);
 							}
 						}
 					}
 					workTaskNodeMoniService.backWorkTaskNodeMoni(cks, 
 							pendingTaskQueryConditions!=null?pendingTaskQueryConditions.getReturnDesc():null
 									,taskNodeIds,nodeIds,repDay);
+//					List<WorkTaskPendingTaskVo> pvos = workTaskNodeMoniService.findPendingTaskVos(cks);
 					result = true ; 
 				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				result = false;
 			}
@@ -1024,6 +1027,7 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 			taskName += "(重报)";
 			String[] templateIds  = tasktemplateIds.split(",");
 			String templateStr = "";
+			List <String >noPassTemplateList = new ArrayList<String>();
 			for (int i = 0; i < templateIds.length; i++) {
 				String templateId = templateIds[i];
 				String temId[]  = templateId.split("_");
@@ -1031,6 +1035,7 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 					templateStr += ",";
 				}
 				templateStr += temId[0] ;
+				noPassTemplateList.add(temId[0]+"_"+temId[1]);
 			}
 			WorkTaskMoni splitMoni = splitSelectReport(taskName, templateStr, wMoni);
 			
@@ -1039,6 +1044,15 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 				taskTaget  = splitMoni.getTaskMoniId()+taskTaget.substring(taskTaget.indexOf(",", 1));
 			}
 			repSelectReport( taskTaget  ,pendingTaskQueryConditions,repDay);
+			op = (Operator)this.getRequest().getSession().getAttribute(WorkTaskConfig.OPERATOR_SESSION_NAME);
+			WorkTaskRptNetService workTaskRptNetService = (WorkTaskRptNetService)this.getBean("workTaskRptNetService");
+			try {
+				workTaskRptNetService.writLog(op.getUserName(),returnDesc,noPassTemplateList);
+			} catch (Exception e) {
+				e.printStackTrace();
+				Exception ea = new Exception("重报日志异常");
+				ea.printStackTrace();		
+			}
 		}
 		return findAllRepTaskInfo();
 	}
@@ -1118,13 +1132,14 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 							.findPendingTaskVos(cks);
 					if (pvos != null && !pvos.isEmpty()) {
 						String result = workTaskRptNetService
-								.updateReport(pvos);
+								.updateReport(pvos , null);
 						if (result == null) {
 							boolean res = workTaskNodeMoniService
 									.saveRepTaskInfo(pvos,
 											pendingTaskQueryConditions, repDay);
-							if (res)
+							if (res){
 								msg = "重报成功!";
+							}
 						} else {
 							msg = result;
 							taskMoniIds = pvos.get(0).getTaskMoniId();
@@ -1217,7 +1232,7 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 					if(cks!=null){
 						List<WorkTaskPendingTaskVo> pvos = workTaskNodeMoniService.findPendingTaskVos(cks);
 						if(pvos!=null && !pvos.isEmpty()){
-							String result = rptNetService.updateReport(pvos);
+							String result = rptNetService.updateReport(pvos,"");
 							if(result==null){
 								boolean res = workTaskNodeMoniService.saveRepTaskInfo(pvos, 
 										pendingTaskQueryConditions,repDay);

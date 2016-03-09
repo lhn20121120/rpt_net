@@ -23,6 +23,7 @@ Operator operator = null;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
 <title>新重报任务</title>
 	
 	<link href="<%=request.getContextPath() %>/css/index.css" rel="stylesheet" type="text/css" />
@@ -568,7 +569,6 @@ function showdivold(){
 }
 
 	function showdiv(){
-		alert("new chongbao");
 		var flag  = true;
 		var taskTaget = getId("taskTaget").value;
 		
@@ -577,7 +577,6 @@ function showdivold(){
 			try{
 				getId("fm").action="<%=request.getContextPath() %>/pendingTaskAction!newTurnToRep.action";
 				var count = window.frames.rptFrame.document.getElementById("countChk").value;
-				alert(count);
 				if(count==undefined || count==""){
 					alert("请点击任务名称选择要重报的报表!");
 					return false;
@@ -602,7 +601,7 @@ function showdivold(){
 				}
 				reStr   = reStr .substr (0 ,reStr.length-1);
 				getId("tasktemplateIds").value=reStr;
-				alert(reStr);
+				
 				return true;
 				//layerAction('add');
 			}catch(e){
@@ -789,7 +788,7 @@ function showdivold(){
   <tr >
    		<td colspan="9" align="left" style="height:35px;">
    		<!-- <input type="submit"  onclick="return showdivold()" class="searchbtn" value="重报" /> -->
-   		<input type="submit" onclick="return showdiv()" class="searchbtn"  value="报表批量重报" />
+   		<input type="submit" onclick="return showdiv()" class="searchbtn"  value="报表重报" />
    		</td>
   </tr>
   <tr>

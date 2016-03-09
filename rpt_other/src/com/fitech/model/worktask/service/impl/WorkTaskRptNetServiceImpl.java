@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import com.fitech.framework.core.service.BaseServiceException;
 import com.fitech.framework.core.service.impl.DefaultBaseService;
 import com.fitech.framework.core.util.StringUtil;
 import com.fitech.model.worktask.model.pojo.AfReport;
@@ -38,7 +39,7 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 	
 	@Override
 	
-	public String updateReport(List<WorkTaskPendingTaskVo> pvos)
+	public String updateReport(List<WorkTaskPendingTaskVo> pvos , String  cause)
 			throws Exception {
 		// TODO Auto-generated method stub
 		String msg="";
@@ -94,11 +95,19 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 						workTaskRepForceService.saveWorkTaskRepForce(vo.getOrgId(), 
 								vo.getTaskMoniId().intValue(),
 								vo.getNodeId(), reportIn.getChildRepId(), Long.valueOf(repInId));
+
+						if(cause==null )
+							cause = "";
+						String loginSql  = "insert into log_in (LOG_IN_ID, USER_NAME, LOG_TIME, OPERATION, MEMO, LOG_TYPE_ID)"+
+								"values (seq_log_in.nextval, userName, to_date("+setDate+", 'dd-mm-yyyy hh24:mi:ss'), "+"对"+reportIn.getChildRepId()+reportIn.getVersionId()+"进行了退回操作"+", null, 12)";
+						this.updateBysql(loginSql);
 						
 					}
 					
 					String updateSql="update report_in a set a.check_flag=-1 where a.times=1 and a.data_range_id in( select b.data_range_id from m_actu_rep b where b.child_rep_id=a.child_rep_id and a.version_id =b.version_id and b.rep_freq_id="+vo.getFreqIds()+") and a.org_id='"+vo.getOrgId()+"'   and a.child_rep_id in ("+tempIds+") and to_date(a.year||'-'||a.term,'yyyy-mm')=to_date('"+vo.getYear()+"-"+vo.getTerm()+"','yyyy-mm')";
 					this.updateBysql(updateSql);
+					
+					
 				}catch(Exception e ){
 					e.printStackTrace();
 					msg+="更新异常";
@@ -113,11 +122,12 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 				List afReportList=this.findListBySql(afReportSql, null);
 //				String maxIdSql="select max(ras_id) from  af_report_again";
 //				int maxId=0;
+				SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				String setDate ="";
 				try{
 					for (int j = 0;afReportList!=null&& j < afReportList.size(); j++) {
 							int repId=((BigDecimal)afReportList.get(j)).intValue();
-							SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-							String setDate=format.format(new Date());
+							setDate=format.format(new Date());
 //							List maxList=this.findListBySql(maxIdSql, null);
 //							for (int k = 0;maxList!=null&& k < maxList.size(); k++) {
 //								maxId=((BigDecimal)maxList.get(k)).intValue();
@@ -142,6 +152,7 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 					}
 					String updateSql="update  af_report a set a.check_flag=-1 where  a.times=1 and a.rep_freq_id="+vo.getFreqIds()+"  and a.org_id='"+vo.getOrgId()+"'  and a.template_id in("+tempIds+") and to_date(year||'-'||term||'-'||day,'yyyy-mm-dd')=to_date('"+vo.getYear()+"-"+vo.getTerm()+"-"+vo.getDay()+"','yyyy-mm-dd')";
 					this.updateBysql(updateSql);
+				
 				}catch(Exception e){
 					msg+="更新异常";
 				e.printStackTrace();
@@ -155,6 +166,34 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 		}
 		return null;
 	}
-
 	
+
+	@Override
+	public void writLog(String userName, String cuse,
+			List<String> noPass) throws Exception {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		java.util.Date date=new java.util.Date();  
+		String str=sdf.format(date); 
+		for (int i = 0; i < noPass.size(); i++) {
+			String vo=noPass.get(i);
+			
+			String sql  = "insert into log_in (LOG_IN_ID, USER_NAME, LOG_TIME, OPERATION, MEMO, LOG_TYPE_ID)"+
+					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '"+vo+":::"+cuse+"', null, 12)";
+			try {
+				this.updateBysql(sql);
+			} catch (BaseServiceException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		java.util.Date date=new java.util.Date(); 
+		String s = sdf.format(date);
+		System.out.println(s);
+	}
 }
