@@ -1136,10 +1136,15 @@ public class WorkTaskNodeMoniServiceImpl extends DefaultBaseService<WorkTaskNode
 	 */
 	public void findLastNodeRepDate(List<WorkTaskPendingTaskVo> vos)throws Exception{
 		StringBuffer tmids = new StringBuffer("");
-		for(WorkTaskPendingTaskVo vo : vos){
-			tmids.append("," + vo.getTaskMoniId().intValue());
+		for (int i = 0; i < vos.size(); i++) {
+			WorkTaskPendingTaskVo wtpt = vos.get(i);
+			tmids.append("(nm.id.taskMoniId ="+ wtpt.getTaskMoniId().intValue()+")");
+			if(i!=vos.size()-1){
+				tmids.append(" or ");
+			}
 		}
-		String hsql = "from WorkTaskNodeMoni nm where nm.finalExecFlag=1 and nm.id.taskMoniId in (" + tmids.substring(1) + ")";
+		String hsql = "from WorkTaskNodeMoni nm where nm.finalExecFlag=1 and " + tmids+ ")";
+		System.out.println(hsql);
 		List<WorkTaskNodeMoni> moniList = this.findListByHsql(hsql, null);
 		for(WorkTaskPendingTaskVo vo : vos){
 			int taskMoniId = vo.getTaskMoniId().intValue();

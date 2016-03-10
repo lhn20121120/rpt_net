@@ -1132,7 +1132,7 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 							.findPendingTaskVos(cks);
 					if (pvos != null && !pvos.isEmpty()) {
 						String result = workTaskRptNetService
-								.updateReport(pvos , null);
+								.updateReport(op.getUserName(),pvos , null);
 						if (result == null) {
 							boolean res = workTaskNodeMoniService
 									.saveRepTaskInfo(pvos,
@@ -1232,7 +1232,7 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 					if(cks!=null){
 						List<WorkTaskPendingTaskVo> pvos = workTaskNodeMoniService.findPendingTaskVos(cks);
 						if(pvos!=null && !pvos.isEmpty()){
-							String result = rptNetService.updateReport(pvos,"");
+							String result = rptNetService.updateReport(op.getUserName(),pvos,"");
 							if(result==null){
 								boolean res = workTaskNodeMoniService.saveRepTaskInfo(pvos, 
 										pendingTaskQueryConditions,repDay);

@@ -792,8 +792,8 @@ function showdivold(){
    		</td>
   </tr>
   <tr>
-    <td width="5%" bgcolor="#FFF0D0" align="center"><input type="checkbox" id="checkAll"/></td>
-    <td width="13%" bgcolor="#FFF0D0" align="center"><strong>机构名称</strong></td>
+    <td width="20%" bgcolor="#FFF0D0" align="center"><!-- <input type="checkbox" id="checkAll"/> --><!-- </td>
+    <td width="13%" bgcolor="#FFF0D0" align="center"> --><strong>机构名称</strong></td>
     <td width="13%" bgcolor="#FFF0D0" align="center"><strong>任务名称</strong></td>
     <td width="10%" bgcolor="#FFF0D0" align="center"><strong>任务频度</strong></td>
     <td width="12%" bgcolor="#FFF0D0" align="center"><strong>期数</strong></td>
@@ -806,9 +806,9 @@ function showdivold(){
   		<s:iterator value="pageResults.results" status="i">
   			<tr id="th<s:property value='#i.index'/>">
 			  	<td align="center">
-			  	<input type="checkbox" name="cks" id="cks<s:property value='#i.index'/>" term="<s:date name='taskTerm' format='yyyy-MM-dd'/>" freqId="<s:property value='freqId'/>" value="<s:property value="taskMoniId"/>,<s:property value="nodeId"/>,<s:property value="orgId"/>,<s:property value="busiLine"/>,<s:property value="lateRepDate"/>"/>
-			  	</td>
-			  	<td align="center"><s:property value="orgName"/></td>
+			  	<input type="hidden" name="cks" id="cks<s:property value='#i.index'/>" term="<s:date name='taskTerm' format='yyyy-MM-dd'/>" freqId="<s:property value='freqId'/>" value="<s:property value="taskMoniId"/>,<s:property value="nodeId"/>,<s:property value="orgId"/>,<s:property value="busiLine"/>,<s:property value="lateRepDate"/>"/>
+			  	<!-- </td>
+			  	<td align="center"> --><s:property value="orgName"/></td>
 			  	<td align="center">
 				 <a href="javascript:;" onclick="_toUrl(<s:property value="taskMoniId"/>,<s:property value="nodeId"/>,'<s:property value="orgId"/>','<s:property value="orgName"/>','<s:property value="taskName"/>','th<s:property value="#i.index"/>','<s:property value="freqId"/>' ,'<s:date name="taskTerm" format="yyyy-MM-dd"/>')" target="rptFrame" style="color:blue;text-decoration:underline" onmousemove="this.style.color='red';" onmouseout="this.style.color='blue'"><s:property value="taskName"/></a>
 			  	</td>

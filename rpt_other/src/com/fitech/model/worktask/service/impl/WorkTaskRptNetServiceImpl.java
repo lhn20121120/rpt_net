@@ -39,7 +39,7 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 	
 	@Override
 	
-	public String updateReport(List<WorkTaskPendingTaskVo> pvos , String  cause)
+	public String updateReport(String userName ,List<WorkTaskPendingTaskVo> pvos , String  cause)
 			throws Exception {
 		// TODO Auto-generated method stub
 		String msg="";
@@ -99,7 +99,9 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 						if(cause==null )
 							cause = "";
 						String loginSql  = "insert into log_in (LOG_IN_ID, USER_NAME, LOG_TIME, OPERATION, MEMO, LOG_TYPE_ID)"+
-								"values (seq_log_in.nextval, userName, to_date("+setDate+", 'dd-mm-yyyy hh24:mi:ss'), "+"对"+reportIn.getChildRepId()+reportIn.getVersionId()+"进行了退回操作"+", null, 12)";
+								//"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '"+vo+":::"+cuse+"', null, 12)";
+
+								"values (seq_log_in.nextval,'"+userName+"', to_date('"+setDate+"', 'yyyy-mm-dd hh24:mi:ss'), "+"'对"+reportIn.getChildRepId()+"_"+reportIn.getVersionId()+"进行了退回操作"+"', null, 12)";
 						this.updateBysql(loginSql);
 						
 					}
