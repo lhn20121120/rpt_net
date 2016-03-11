@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
@@ -818,10 +819,16 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 					String returnDesc  = pendingTaskQueryConditions.getReturnDesc();
 					if(taskType.contains("djsh")){
 						for (int i = 0; i <pvos.size(); i++) {
+							//不复核退回条件保留下来的报表ID
+							String totalIds[] = pvos.get(i).getTemplateIds().split(",");
+							List <String>totalList  = Arrays.asList(totalIds); 
 							List<String> noPassTemplateList=validateService.getNoPassTemplateIds(pvos.get(i),"goback");
 							if(noPassTemplateList!=null&&noPassTemplateList.size()>0){
 								workTaskMoniService.insertWorkTaskSplit(noPassTemplateList, Integer.valueOf(pvos.get(i).getTaskMoniId()+""), pvos.get(i).getNodeId(), pvos.get(i).getOrgId(), pvos.get(i).getTaskTerm());
-								workTaskRptNetService.writLog(op.getUserName(),returnDesc,noPassTemplateList);
+							}
+							totalList.removeAll(noPassTemplateList);
+							if(totalList!=null&&totalList.size()>0){
+								workTaskRptNetService.writLog(op.getUserName(),returnDesc,totalList);
 							}
 						}
 					}

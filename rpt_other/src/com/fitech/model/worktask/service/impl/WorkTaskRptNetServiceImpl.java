@@ -180,7 +180,7 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 			String vo=noPass.get(i);
 			
 			String sql  = "insert into log_in (LOG_IN_ID, USER_NAME, LOG_TIME, OPERATION, MEMO, LOG_TYPE_ID)"+
-					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '"+vo+":::"+cuse+"', null, 12)";
+					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '对"+vo+"执行了退回操作:::"+cuse+"', null, 12)";
 			try {
 				this.updateBysql(sql);
 			} catch (BaseServiceException e) {
