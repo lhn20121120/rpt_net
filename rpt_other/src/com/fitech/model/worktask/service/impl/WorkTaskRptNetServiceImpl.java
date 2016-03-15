@@ -15,6 +15,7 @@ import com.fitech.model.worktask.model.pojo.ReportIn;
 import com.fitech.model.worktask.model.pojo.WorkTaskNodeMoni;
 import com.fitech.model.worktask.model.pojo.WorkTaskRepForce;
 import com.fitech.model.worktask.model.pojo.WorkTaskRepForceId;
+import com.fitech.model.worktask.service.IWorkTaskOrgService;
 import com.fitech.model.worktask.service.IWorkTaskRepForceService;
 import com.fitech.model.worktask.service.WorkTaskRptNetService;
 import com.fitech.model.worktask.vo.WorkTaskPendingTaskVo;
@@ -27,7 +28,16 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 
 
 	private IWorkTaskRepForceService workTaskRepForceService;
+	private IWorkTaskOrgService workTaskOrgService;
 	
+	public IWorkTaskOrgService getWorkTaskOrgService() {
+		return workTaskOrgService;
+	}
+
+	public void setWorkTaskOrgService(IWorkTaskOrgService workTaskOrgService) {
+		this.workTaskOrgService = workTaskOrgService;
+	}
+
 	public IWorkTaskRepForceService getWorkTaskRepForceService() {
 		return workTaskRepForceService;
 	}
@@ -112,7 +122,7 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 					
 				}catch(Exception e ){
 					e.printStackTrace();
-					msg+="更新异常";
+					msg+="发生异常";
 //					e.printStackTrace();
 				}finally{
 					if(!"".equals(msg)){
@@ -171,16 +181,23 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 	
 
 	@Override
-	public void writLog(String userName, String cuse,
+	public void writLog(WorkTaskPendingTaskVo pto,String userName, String cuse,
 			List<String> noPass) throws Exception {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		java.util.Date date=new java.util.Date();  
+		java.util.Date date=new java.util.Date(); 
+		
 		String str=sdf.format(date); 
+		String content = "";
 		for (int i = 0; i < noPass.size(); i++) {
 			String vo=noPass.get(i);
-			
+			if(pto!=null){
+					String orgName  = workTaskOrgService.getOrgNameByOrgId(pto.getOrgId());
+				 content  = pto.getYear()+ "年"+pto.getTerm()+"期"+ orgName + pto.getTaskName()+"下" +vo ;
+			}else{
+				 content  = vo ;
+			}
 			String sql  = "insert into log_in (LOG_IN_ID, USER_NAME, LOG_TIME, OPERATION, MEMO, LOG_TYPE_ID)"+
-					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '对"+vo+"执行了退回操作:::"+cuse+"', null, 12)";
+					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '"+userName+"对"+content+"执行了退回操作:::"+cuse+"', null, 12)";
 			try {
 				this.updateBysql(sql);
 			} catch (BaseServiceException e) {

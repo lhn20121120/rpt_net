@@ -820,15 +820,22 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 					if(taskType.contains("djsh")){
 						for (int i = 0; i <pvos.size(); i++) {
 							//不复核退回条件保留下来的报表ID
-							String totalIds[] = pvos.get(i).getTemplateIds().split(",");
-							List <String>totalList  = Arrays.asList(totalIds); 
-							List<String> noPassTemplateList=validateService.getNoPassTemplateIds(pvos.get(i),"goback");
+							WorkTaskPendingTaskVo vo = pvos.get(i);
+							String totalIds[] = vo.getTemplateIds().split(",");
+							
+							List <String>totalList  = new ArrayList<String>();
+							for (int j = 0; j < totalIds.length; j++) {
+								String templateId = totalIds[j];
+								totalList.add(templateId);
+							}
+							List<String> noPassTemplateList=validateService.getNoPassTemplateIds(vo,"goback");
 							if(noPassTemplateList!=null&&noPassTemplateList.size()>0){
-								workTaskMoniService.insertWorkTaskSplit(noPassTemplateList, Integer.valueOf(pvos.get(i).getTaskMoniId()+""), pvos.get(i).getNodeId(), pvos.get(i).getOrgId(), pvos.get(i).getTaskTerm());
+								workTaskMoniService.insertWorkTaskSplit(noPassTemplateList, Integer.valueOf(vo.getTaskMoniId()+""), vo.getNodeId(), vo.getOrgId(), vo.getTaskTerm());
 							}
 							totalList.removeAll(noPassTemplateList);
 							if(totalList!=null&&totalList.size()>0){
-								workTaskRptNetService.writLog(op.getUserName(),returnDesc,totalList);
+//								System.out.println(vo.getOrgName()+ vo.getYear()+ vo.getTerm() + vo.getTaskName()+"下" +vo.getOrgName());
+								workTaskRptNetService.writLog(vo,op.getUserName(),returnDesc,totalList);
 							}
 						}
 					}
@@ -1054,7 +1061,7 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 			op = (Operator)this.getRequest().getSession().getAttribute(WorkTaskConfig.OPERATOR_SESSION_NAME);
 			WorkTaskRptNetService workTaskRptNetService = (WorkTaskRptNetService)this.getBean("workTaskRptNetService");
 			try {
-				workTaskRptNetService.writLog(op.getUserName(),returnDesc,noPassTemplateList);
+				workTaskRptNetService.writLog(null,op.getUserName(),returnDesc,noPassTemplateList);
 			} catch (Exception e) {
 				e.printStackTrace();
 				Exception ea = new Exception("重报日志异常");

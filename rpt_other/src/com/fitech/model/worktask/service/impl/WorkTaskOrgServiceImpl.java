@@ -201,4 +201,22 @@ public class WorkTaskOrgServiceImpl extends
 		}
 	}
 
+	@Override
+	public String  getOrgNameByOrgId(String orgId) {
+		String name  = "";
+		String hsql = "select oi.id.orgId,oi.id.orgName from ViewWorktaskOrg oi where oi.id.orgId='"+ orgId+"'" ;
+		try {
+			List list = this.findListByHsql(hsql, null);
+			if(list != null){
+				for (int i = 0; i < list.size(); i++) {
+					Object[] os = (Object[]) list.get(i);
+					name = ((String) os[1]).trim();
+				}
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return name;
+	}
+
 }

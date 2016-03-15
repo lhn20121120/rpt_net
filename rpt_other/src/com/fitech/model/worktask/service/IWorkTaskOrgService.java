@@ -16,4 +16,6 @@ public interface IWorkTaskOrgService extends IBaseService<ViewWorktaskOrg, Strin
 	public List getChildListByOrgId(String id ,String userId);
 
 	public void getChildListByOrgId(List list,String id,String userId);
+	
+	public String getOrgNameByOrgId(String orgId);
 }

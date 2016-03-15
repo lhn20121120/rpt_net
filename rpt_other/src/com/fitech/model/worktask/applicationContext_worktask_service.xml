@@ -215,6 +215,9 @@
 		<property name="workTaskRepForceService">
 			<ref bean="workTaskRepForceService"/>
 		</property>
+		<property name="workTaskOrgService">
+			<ref bean="workTaskOrgService"/>
+		</property>
 	</bean>
 	
 	<bean id="sequenceServiceImpl" class="com.fitech.model.worktask.service.impl.SequenceServiceImpl">
