@@ -1039,9 +1039,10 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 		if (taskName != null && tasktemplateIds != null && wMoni != null
 				&& wMoni.getId() != null && returnDesc != null ) {
 			taskName += "(重报)";
+			String reTaskName = taskName+"(重报)";
 			String[] templateIds  = tasktemplateIds.split(",");
 			String templateStr = "";
-			List <String >noPassTemplateList = new ArrayList<String>();
+			//List <String >noPassTemplateList = new ArrayList<String>();
 			for (int i = 0; i < templateIds.length; i++) {
 				String templateId = templateIds[i];
 				String temId[]  = templateId.split("_");
@@ -1049,9 +1050,9 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 					templateStr += ",";
 				}
 				templateStr += temId[0] ;
-				noPassTemplateList.add(temId[0]+"_"+temId[1]);
+				//noPassTemplateList.add(temId[0]+"_"+temId[1]);
 			}
-			WorkTaskMoni splitMoni = splitSelectReport(taskName, templateStr, wMoni);
+			WorkTaskMoni splitMoni = splitSelectReport(reTaskName, templateStr, wMoni);
 			
 			//286,113,817000000,yjtx,15-2-1 1:00:00.000
 			if(splitMoni!=null&&!StringUtil.isEmpty(taskTaget)){
@@ -1061,7 +1062,9 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 			op = (Operator)this.getRequest().getSession().getAttribute(WorkTaskConfig.OPERATOR_SESSION_NAME);
 			WorkTaskRptNetService workTaskRptNetService = (WorkTaskRptNetService)this.getBean("workTaskRptNetService");
 			try {
-				workTaskRptNetService.writLog(null,op.getUserName(),returnDesc,noPassTemplateList);
+				String orgId = taskTaget.split(",")[2];
+				String term  = taskTaget.split(",")[4].substring(0,taskTaget.split(",")[4].lastIndexOf("-"));
+				workTaskRptNetService.writLog(taskName,orgId,null,term,op.getUserName(),returnDesc,templateStr);
 			} catch (Exception e) {
 				e.printStackTrace();
 				Exception ea = new Exception("重报日志异常");

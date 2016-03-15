@@ -191,13 +191,13 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 		for (int i = 0; i < noPass.size(); i++) {
 			String vo=noPass.get(i);
 			if(pto!=null){
-					String orgName  = workTaskOrgService.getOrgNameByOrgId(pto.getOrgId());
-				 content  = pto.getYear()+ "年"+pto.getTerm()+"期"+ orgName + pto.getTaskName()+"下" +vo ;
+				String orgName  = workTaskOrgService.getOrgNameByOrgId(pto.getOrgId());
+				content  = pto.getYear()+ "年"+pto.getTerm()+"期"+ orgName + "任务编号 ："+pto.getTaskId()+"名称："+pto.getTaskName()+"下的" +vo ;
 			}else{
 				 content  = vo ;
 			}
 			String sql  = "insert into log_in (LOG_IN_ID, USER_NAME, LOG_TIME, OPERATION, MEMO, LOG_TYPE_ID)"+
-					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '"+userName+"对"+content+"执行了退回操作:::"+cuse+"', null, 12)";
+					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '"+userName+"对"+content+"报表执行了退回操作:::"+cuse+"', null, 12)";
 			try {
 				this.updateBysql(sql);
 			} catch (BaseServiceException e) {
@@ -206,6 +206,22 @@ public class WorkTaskRptNetServiceImpl extends DefaultBaseService<WorkTaskNodeMo
 			}
 		}
 		
+	}
+	@Override
+	public void writLog(String taskName, String orgId,String taskId ,String term ,String userName, String cuse,String noPassTemplateId) throws Exception {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		java.util.Date date=new java.util.Date(); 
+		String str=sdf.format(date); 
+		String orgName  = workTaskOrgService.getOrgNameByOrgId(orgId);
+		String content = userName +"对 "+orgName+term+"期"+taskName+"任务中的"+noPassTemplateId+"报表进行了重报设定";
+		String sql  = "insert into log_in (LOG_IN_ID, USER_NAME, LOG_TIME, OPERATION, MEMO, LOG_TYPE_ID)"+
+					"values (seq_log_in.nextval, '"+userName+"' , to_date('"+str+"', 'yyyy-mm-dd hh24:mi:ss'), '"+content+":::"+cuse+"', null, 12)";
+		try {
+			this.updateBysql(sql);
+		} catch (BaseServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

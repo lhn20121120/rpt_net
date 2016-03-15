@@ -15,7 +15,10 @@ public interface WorkTaskRptNetService extends IBaseService<WorkTaskNodeMoni, St
 	 */
 	public String updateReport(String userName ,List<WorkTaskPendingTaskVo> pvos,String cuse) throws Exception;
 
-	void writLog(WorkTaskPendingTaskVo vo, String userName, String cuse, List<String> noPass)
+	void writLog(WorkTaskPendingTaskVo pto, String userName, String cuse, List<String> noPass)
+			throws Exception;
+
+	void writLog(String taskName  ,String orgId ,String taskId, String term ,String userName, String cuse, String noPass)
 			throws Exception;
 	
 	
