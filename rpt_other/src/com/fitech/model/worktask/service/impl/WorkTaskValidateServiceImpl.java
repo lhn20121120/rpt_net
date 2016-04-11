@@ -457,7 +457,9 @@ label1:	for (int i = 0; i < pvos.size(); i++) {
 		}
 		return null;
 	}
-
+	/**
+	 * 不复核退回条件保留下来的报表
+	 */
 	@Override
 	public List<String> getNoPassTemplateIds(WorkTaskPendingTaskVo pvos,String operatorType)
 			throws Exception {
