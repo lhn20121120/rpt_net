@@ -1024,6 +1024,7 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 		System.out.println(tasktemplateIds);
 		System.out.println(wMoni.getId());
 		System.out.println(taskTaget);
+		System.out.println("**************"+pendingTaskQueryConditions.getTaskTerm());
 		repType = "1";
 		return "rep_task_new";
 	}
@@ -1036,10 +1037,12 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 		//                  286,113,817000000,yjtx,15-2-1 1:00:00.000
 //		tasktemplateIds = 	G0300_1510_1_817000000_1,G1500_1010_1_817000000_1
 		String returnDesc = pendingTaskQueryConditions.getReturnDesc();//重报原因
+		String date = pendingTaskQueryConditions.getTaskTerm();
 		if (taskName != null && tasktemplateIds != null && wMoni != null
 				&& wMoni.getId() != null && returnDesc != null ) {
-			taskName += "(重报)";
-			String reTaskName = taskName+"(重报)";
+//			if(taskName.indexOf("重报")==-1)
+//				taskName += "(重报)";
+			String reTaskName = taskName;
 			String[] templateIds  = tasktemplateIds.split(",");
 			String templateStr = "";
 			//List <String >noPassTemplateList = new ArrayList<String>();
@@ -1064,7 +1067,10 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 			try {
 				String orgId = taskTaget.split(",")[2];
 				String term  = taskTaget.split(",")[4].substring(0,taskTaget.split(",")[4].lastIndexOf("-"));
-				workTaskRptNetService.writLog(taskName,orgId,null,term,op.getUserName(),returnDesc,templateStr);
+				String terms[] = term.split("-");
+				String year = terms[0];
+				String month = (terms[1].equals("1")||terms[1].equals("01"))?"12":(Integer.parseInt(terms[1])-1)+"";
+				workTaskRptNetService.writLog(taskName,orgId,null,year+"-"+month,op.getUserName(),returnDesc,templateStr);
 			} catch (Exception e) {
 				e.printStackTrace();
 				Exception ea = new Exception("重报日志异常");
