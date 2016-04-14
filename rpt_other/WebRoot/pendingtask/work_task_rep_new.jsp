@@ -556,7 +556,7 @@ function showdivold(){
 		getId("taskOrgName").value=getId("orgName").value;
 		//	alert(getId("taskTerm").value);
 		getId("wxwtaskTerm").value=getId("datepicker_2").value;
-		//alert(1);
+		//alert(getId("wxwtaskTerm").value);
 		getId("wxwtaskId").value=getId("taskId").value;
 		getId("workbusiLine").value=getId("busiLine").value;
 		
@@ -571,7 +571,7 @@ function showdivold(){
 	function showdiv(){
 		var flag  = true;
 		var taskTaget = getId("taskTaget").value;
-		
+	
          var res = confirm("确认要重报所选的报表吗?");
      	if(res){
 			try{
@@ -601,7 +601,7 @@ function showdivold(){
 				}
 				reStr   = reStr .substr (0 ,reStr.length-1);
 				getId("tasktemplateIds").value=reStr;
-				
+				getId("wxwtaskTerm").value=getId("datepicker_2").value;
 				return true;
 				//layerAction('add');
 			}catch(e){
@@ -772,7 +772,7 @@ function showdivold(){
 			<input type="hidden" name="tasktemplateIds" id="taskTemplateIds"/>
 			<input type="hidden" name="wMoni.id.taskMoniId" id="wMoni.id.taskMoniId" />
 			<input type="hidden" name="wMoni.id.nodeId" id="wMoni.id.nodeId" />
-			<input type="hidden" name="wMoni.id.orgId" id="wMoni.id.nodeId" />
+			<input type="hidden" name="wMoni.id.orgId" id="wMoni.id.orgId" />
 			<input type="hidden" name="taskTaget" id="taskTaget" />
 			<input type="hidden" name="ifreqId" id="ifreqId" />
 			<input type="hidden" name="iterm" id="iterm" />

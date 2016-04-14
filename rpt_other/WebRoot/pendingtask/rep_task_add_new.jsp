@@ -64,6 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<input type="hidden" name="wMoni.id.taskMoniId" value="<s:property value='wMoni.id.taskMoniId'/>"/>
 			<input type="hidden" name="wMoni.id.nodeId" value="<s:property value='wMoni.id.nodeId'/>"/>
 			<input type="hidden" name="wMoni.id.orgId" value="<s:property value='wMoni.id.orgId'/>"/>
+			<input type="hidden" name="pendingTaskQueryConditions.taskTerm" value="<s:property value='pendingTaskQueryConditions.taskTerm'/>"/>
    			<textarea id="returndesc" name="pendingTaskQueryConditions.returnDesc" style="width:100%;height:90%;" rows="" cols=""></textarea>
    		</td>
   </tr>
