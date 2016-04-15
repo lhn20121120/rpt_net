@@ -1068,8 +1068,13 @@ public class WorkTaskPendingTaskAction extends WorkTaskBaseAction {
 				String orgId = taskTaget.split(",")[2];
 				String term  = taskTaget.split(",")[4].substring(0,taskTaget.split(",")[4].lastIndexOf("-"));
 				String terms[] = term.split("-");
-				String year = terms[0];
 				String month = (terms[1].equals("1")||terms[1].equals("01"))?"12":(Integer.parseInt(terms[1])-1)+"";
+				String year ="";
+				if(!month.isEmpty()&& month.equals("12")){
+					year = Integer.parseInt(terms[0])-1+"";
+				}else{
+					year = terms[0];
+				}
 				workTaskRptNetService.writLog(taskName,orgId,null,year+"-"+month,op.getUserName(),returnDesc,templateStr);
 			} catch (Exception e) {
 				e.printStackTrace();
